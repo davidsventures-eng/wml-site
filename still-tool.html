@@ -295,6 +295,8 @@
   function pickE(el,q){pick(el,q);state.emotion=el.getAttribute('data-e');}
   function pickB(el,q){pick(el,q);state.body=el.getAttribute('data-b');}
   function showResult(){render();go('result');}
+  function applyHash(){var h=(location.hash||'').replace('#','').toLowerCase();var valid=['noise','anger','impatience','work','return','stillness'];if(valid.indexOf(h)>-1){state.emotion=h;showResult();}}
+  window.addEventListener('hashchange',applyHash);applyHash();
 </script>
 </body>
 </html>

@@ -542,6 +542,56 @@ function Home({
   }, 'Our comfort lane \u2014 free to read, print, and share, with no sign-up. Faith and real science at the same table through hard seasons.')), /*#__PURE__*/React.createElement("div", {
     className: "hub-grid"
   }, /*#__PURE__*/React.createElement("div", {
+    className: "hub-card still-interactive",
+    style: {
+      gridColumn: "1 / -1",
+      borderTop: "3px solid var(--gold, #e8b04b)"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "hub-card-tag"
+  }, "Interactive \xB7 Always Free"), /*#__PURE__*/React.createElement("h3", {
+    className: "display"
+  }, "Where are you today?"), /*#__PURE__*/React.createElement("p", null, "Name what you\u2019re carrying, and we\u2019ll meet you there \u2014 what\u2019s happening in your body, honest Scripture, and a ninety-second way back to stillness. Tap a feeling to begin."), /*#__PURE__*/React.createElement("div", {
+    className: "still-emotion-chips",
+    style: {
+      display: "flex",
+      flexWrap: "wrap",
+      gap: "8px",
+      margin: "14px 0 4px"
+    }
+  }, [['noise', 'The Noise'], ['anger', 'The Anger'], ['impatience', 'The Impatience'], ['work', 'The Work'], ['return', 'The Return'], ['stillness', 'The Stillness']].map(pair => /*#__PURE__*/React.createElement("a", {
+    key: pair[0],
+    className: "still-chip",
+    href: "/still-tool.html#" + pair[0],
+    style: {
+      display: "inline-block",
+      padding: "8px 14px",
+      borderRadius: "999px",
+      border: "1.5px solid var(--gold, #e8b04b)",
+      background: "transparent",
+      color: "var(--navy, #23344a)",
+      textDecoration: "none",
+      fontWeight: 600,
+      fontSize: "0.92rem"
+    },
+    onClick: () => track('Still Tool Open', {
+      source: 'home hub',
+      emotion: pair[0]
+    })
+  }, pair[1]))), /*#__PURE__*/React.createElement("a", {
+    className: "hub-pick",
+    href: "/still-tool.html",
+    style: {
+      textDecoration: "none",
+      color: "inherit",
+      display: "inline-block",
+      marginTop: "10px"
+    },
+    onClick: () => track('Still Tool Open', {
+      source: 'home hub',
+      emotion: 'begin'
+    })
+  }, "Or just begin \u2192")), /*#__PURE__*/React.createElement("div", {
     className: "hub-card essays",
     role: "button",
     tabIndex: 0,
