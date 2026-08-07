@@ -1,0 +1,13 @@
+# Vercel project link (machine/account-specific — do not commit)
+.vercel
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Node (not used by this static site, but safe to ignore)
+node_modules/
+npm-debug.log*

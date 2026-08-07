@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="p:domain_verify" content="4e5020297e0f4bf98670528849a126f4" />
+  <title>River Detective — Solve the Medical Mystery | Wonderfully Made Labs</title>
+  <meta name="description" content="Become a detective and solve a real medical mystery. Examine the clues along the river, listen to the heartbeat, and diagnose the disease — the way real scientists and doctors do. A free game from Wonderfully Made Labs." />
+  <meta property="og:title" content="River Detective — Solve the Medical Mystery" />
+  <meta property="og:description" content="Examine the clues, listen to the heartbeat, and crack the case. A free faith-filled science game for the whole family." />
+  <meta property="og:image" content="https://wonderfullymadelabs.com/assets/scene1_healthy.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=chillax@400,500,600,700&f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --navy:#23344a; --navy2:#2e445f; --teal:#2a7d8c; --teal-d:#1f5f6b;
+      --cream:#fbf6ea; --cream2:#fdf9f0; --gold:#e8b04b; --gold-d:#c8902b;
+      --sage:#8fa98c; --sage-d:#5f7a5c; --ink:#2a2a28; --muted:#5c5b56;
+      --red:#a12c2c; --redbg:#fbedea; --line:#e3decf;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:'General Sans',system-ui,sans-serif;
+      background:var(--cream); color:var(--ink);
+      line-height:1.6; -webkit-font-smoothing:antialiased;
+    }
+    .wrap{max-width:760px;margin:0 auto;padding:0 1.1rem;}
+    h1,h2,h3,.disp{font-family:'Chillax','General Sans',sans-serif;line-height:1.12;color:var(--navy);}
+
+    /* top bar */
+    .topbar{background:var(--navy);color:var(--cream);padding:.7rem 0;}
+    .topbar .wrap{display:flex;align-items:center;gap:.6rem;}
+    .topbar img{height:30px;width:auto;}
+    .topbar .brand{font-family:'Chillax',sans-serif;font-weight:600;font-size:.95rem;color:var(--cream);letter-spacing:.01em;}
+    .topbar a{color:var(--gold);text-decoration:none;font-size:.85rem;margin-left:auto;font-weight:600;}
+    .topbar a:hover{text-decoration:underline;}
+
+    /* hero */
+    .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:var(--cream);padding:2.6rem 0 2.4rem;text-align:center;}
+    .badge{display:inline-block;background:rgba(232,176,75,.16);border:1px solid rgba(232,176,75,.5);color:var(--gold);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.32rem .8rem;border-radius:999px;margin-bottom:1rem;}
+    .hero h1{color:var(--cream);font-size:clamp(2rem,7vw,2.9rem);font-weight:700;}
+    .hero .sub{color:#d9e2ec;font-size:1.05rem;max-width:30rem;margin:.9rem auto 0;}
+    .hero .case-meta{margin-top:1.3rem;font-size:.82rem;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;}
+
+    /* card / stage */
+    .stage{background:var(--cream2);border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 40px rgba(35,52,74,.10);margin:-1.6rem auto 2rem;overflow:hidden;}
+    .scene-img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;background:#dfe6ea;}
+    .stage-body{padding:1.5rem 1.4rem 1.7rem;}
+    .step-tag{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem;}
+    .step-tag .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);}
+    .stage-body h2{font-size:1.45rem;font-weight:600;margin-bottom:.55rem;}
+    .stage-body p.lead{font-size:1.04rem;color:#3a3a36;}
+    .stage-body p.lead i{color:var(--teal-d);}
+    .stage-body p.lead b{color:var(--navy);}
+
+    /* detective prompt box */
+    .detect{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:1rem 1.1rem;margin-top:1.2rem;}
+    .detect .q-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-d);margin-bottom:.45rem;}
+    .detect .q-text{font-family:'Chillax',sans-serif;font-weight:500;font-size:1.1rem;color:var(--navy);margin-bottom:.85rem;line-height:1.25;}
+
+    .opts{display:grid;gap:.55rem;}
+    .opt{display:block;width:100%;text-align:left;background:var(--cream);border:1.5px solid var(--line);border-radius:10px;padding:.75rem .9rem;cursor:pointer;font-family:inherit;font-size:.97rem;color:var(--ink);transition:all .15s ease;}
+    .opt:hover{border-color:var(--teal);background:#fff;}
+    .opt .ot{font-weight:600;color:var(--navy);}
+    .opt .os{display:block;font-size:.82rem;color:var(--muted);margin-top:.15rem;}
+    .opt.correct{border-color:var(--sage-d);background:#eef3ec;}
+    .opt.wrong{border-color:var(--red);background:var(--redbg);}
+    .opt.dim{opacity:.5;}
+    .opt:disabled{cursor:default;}
+
+    .verdict{margin-top:.9rem;font-size:.94rem;padding:.85rem 1rem;border-radius:10px;display:none;}
+    .verdict.show{display:block;}
+    .verdict.right{background:#eef3ec;border:1px solid var(--sage-d);color:#33502f;}
+    .verdict.notyet{background:var(--redbg);border:1px solid #d8a59f;color:#7a2727;}
+    .verdict b{color:inherit;}
+
+    /* listen button (heartbeat) */
+    .listen-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.4rem;}
+    .listen-btn{font-family:inherit;font-size:.92rem;font-weight:600;border-radius:999px;padding:.6rem 1.1rem;cursor:pointer;border:1.5px solid var(--teal);background:#fff;color:var(--teal-d);display:inline-flex;align-items:center;gap:.5rem;}
+    .listen-btn:hover{background:var(--teal);color:#fff;}
+    .listen-btn.healthy{border-color:var(--sage-d);color:var(--sage-d);}
+    .listen-btn.healthy:hover{background:var(--sage-d);color:#fff;}
+    .beat-note{font-size:.82rem;color:var(--muted);margin-top:.55rem;font-style:italic;}
+
+    /* nav buttons */
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:.8rem;margin-top:1.4rem;}
+    .btn{font-family:'Chillax',sans-serif;font-weight:600;font-size:.98rem;border-radius:999px;padding:.7rem 1.5rem;cursor:pointer;border:none;transition:all .15s ease;}
+    .btn-primary{background:var(--gold);color:var(--navy);box-shadow:0 4px 14px rgba(232,176,75,.4);}
+    .btn-primary:hover{background:var(--gold-d);}
+    .btn-primary:disabled{background:#e6ddc7;color:#a39c86;cursor:not-allowed;box-shadow:none;}
+    .btn-ghost{background:transparent;color:var(--muted);border:1.5px solid var(--line);}
+    .btn-ghost:hover{border-color:var(--navy);color:var(--navy);}
+
+    /* progress */
+    .progress{display:flex;gap:6px;justify-content:center;padding:1rem 0 .2rem;}
+    .progress .pip{width:26px;height:5px;border-radius:3px;background:var(--line);transition:background .2s;}
+    .progress .pip.done{background:var(--sage);}
+    .progress .pip.active{background:var(--gold);}
+
+    /* evidence drawer */
+    .evidence{background:var(--navy);color:var(--cream);border-radius:14px;padding:1.1rem 1.2rem;margin:0 auto 2rem;}
+    .evidence h3{color:var(--gold);font-size:.95rem;font-weight:600;letter-spacing:.04em;margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem;}
+    .evidence ul{list-style:none;display:grid;gap:.4rem;}
+    .evidence li{font-size:.9rem;color:#dde4ec;padding-left:1.2rem;position:relative;}
+    .evidence li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700;}
+    .evidence .empty{font-size:.88rem;color:#9fb0c2;font-style:italic;}
+
+    /* final verdict / diagnosis */
+    .final{text-align:center;padding:2.4rem 1.4rem;}
+    .final .seal{width:88px;height:88px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2.3rem;box-shadow:0 6px 20px rgba(232,176,75,.5);}
+    .final h2{font-size:1.9rem;margin-bottom:.5rem;}
+    .final .dx{font-family:'Chillax',sans-serif;font-weight:600;font-size:1.25rem;color:var(--teal-d);margin-bottom:1rem;}
+    .final p{color:#3a3a36;max-width:30rem;margin:0 auto .8rem;}
+    .final .verse{font-style:italic;color:var(--navy);font-family:'Chillax',sans-serif;font-size:1.05rem;margin:1.3rem auto .3rem;max-width:28rem;}
+    .final .verse-ref{font-size:.82rem;color:var(--gold-d);letter-spacing:.06em;text-transform:uppercase;}
+
+    /* careers reveal */
+    .careers{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin:1.6rem auto;text-align:left;}
+    .career{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.9rem;display:flex;gap:.7rem;align-items:flex-start;}
+    .career img{width:46px;height:46px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--gold);}
+    .career .cn{font-family:'Chillax',sans-serif;font-weight:600;color:var(--navy);font-size:.98rem;}
+    .career .cr{font-size:.78rem;color:var(--teal);font-weight:600;}
+    .career .cw{font-size:.82rem;color:var(--muted);margin-top:.2rem;}
+
+    .cta-row{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-top:1.4rem;}
+    .cta{font-family:'Chillax',sans-serif;font-weight:600;text-decoration:none;border-radius:999px;padding:.75rem 1.5rem;font-size:.96rem;}
+    .cta.gold{background:var(--gold);color:var(--navy);}
+    .cta.gold:hover{background:var(--gold-d);}
+    .cta.outline{border:1.5px solid var(--navy);color:var(--navy);}
+    .cta.outline:hover{background:var(--navy);color:var(--cream);}
+
+    .replay{background:none;border:none;color:var(--teal);font-family:inherit;font-size:.9rem;cursor:pointer;text-decoration:underline;margin-top:1.3rem;}
+
+    footer{background:var(--navy);color:#9fb0c2;text-align:center;padding:1.8rem 1rem;font-size:.8rem;margin-top:1rem;}
+    footer a{color:var(--gold);text-decoration:none;}
+    footer .disc{max-width:34rem;margin:.7rem auto 0;font-size:.74rem;color:#7e8ea0;line-height:1.5;}
+
+    @media(max-width:520px){
+      .careers{grid-template-columns:1fr;}
+      .stage-body{padding:1.2rem 1.1rem 1.4rem;}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <img src="assets/wml_icon.png" alt="Wonderfully Made Labs" />
+      <span class="brand">Wonderfully Made Labs</span>
+      <a href="/">← Home</a>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="badge">A Studying His Creation Mystery</span>
+      <h1>River Detective</h1>
+      <p class="sub">A river forgot how to flow — and something is hiding under the bank. Examine the clues, listen to the heartbeat, and crack the case the way real scientists and doctors do.</p>
+      <p class="case-meta">Case file · Free · Ages 8 to grown-up</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div id="game" class="stage"></div>
+    <div id="evidence" class="evidence">
+      <h3>🔎 Your Evidence Board</h3>
+      <ul id="ev-list"><li class="empty">No clues gathered yet. Start investigating →</li></ul>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <p>From <a href="/">Wonderfully Made Labs</a> · The River Who Forgot How to Flow</p>
+      <p style="margin-top:.5rem;"><a href="/">Read the full story</a> &nbsp;·&nbsp; <a href="https://wonderfullymadelabs.gumroad.com">Shop the modules</a></p>
+      <p class="disc">For education only — this game is not medical advice and is not a substitute for care from a licensed professional. The science follows current American Heart Association / American College of Cardiology guidance. © Wonderfully Made Labs. All glory to God. Psalm 139:14.</p>
+    </div>
+  </footer>
+
+  <script>
+  /* ---------- Heartbeat audio (WebAudio, no files) ---------- */
+  let actx=null;
+  function ac(){ if(!actx) actx=new (window.AudioContext||window.webkitAudioContext)(); return actx; }
+  function thump(t, freq, gain, dur){
+    const c=ac(); const o=c.createOscillator(); const g=c.createGain();
+    o.frequency.setValueAtTime(freq,t); o.type='sine';
+    g.gain.setValueAtTime(0,t);
+    g.gain.linearRampToValueAtTime(gain,t+0.02);
+    g.gain.exponentialRampToValueAtTime(0.001,t+dur);
+    o.connect(g); g.connect(c.destination); o.start(t); o.stop(t+dur+0.02);
+  }
+  function playHealthy(){
+    const c=ac(); if(c.state==='suspended') c.resume();
+    let t=c.currentTime+0.05;
+    for(let i=0;i<3;i++){ // steady lub-dub
+      thump(t,60,0.7,0.16);        // lub
+      thump(t+0.16,48,0.55,0.20);  // dub
+      t+=0.85;
+    }
+  }
+  function playSick(){
+    const c=ac(); if(c.state==='suspended') c.resume();
+    let t=c.currentTime+0.05;
+    // stumbling, skipping rhythm
+    thump(t,60,0.7,0.16); thump(t+0.16,48,0.5,0.2); t+=0.55;
+    thump(t,58,0.6,0.18); t+=0.30;                       // early extra
+    thump(t,50,0.55,0.22); t+=1.05;                      // long pause (skip)
+    thump(t,62,0.75,0.15); thump(t+0.13,46,0.5,0.22); t+=0.40;
+    thump(t,40,0.4,0.30);                                // weak stumble
+  }
+
+  /* ---------- Game data ---------- */
+  const SCENES = [
+    { img:"assets/scene1_healthy.jpg", step:"Step 1 · Observe",
+      title:"The Beautiful River",
+      lead:"Nine friends reach their favorite river. The water runs fast, clear, and straight, and the banks are smooth and slippery. <i>Tempo's</i> drum keeps a steady <i>lub-dub, lub-dub</i> — every beat sends a fresh surge downstream. <b>This is a healthy river.</b>",
+      type:"listen-healthy",
+      evidence:"Baseline: a healthy river flows fast & straight; heartbeat steady." },
+
+    { img:"assets/scene2_bend.jpg", step:"Step 2 · Notice the change",
+      title:"The Bend Where the Water Swirls",
+      lead:"Where the river curves, the water doesn't run straight — it swirls and pushes oddly against the bank. Plum writes: <i>“The bank looks a little tired right here.”</i>",
+      type:"choice",
+      q:"Detective question — where would trouble most likely START?",
+      opts:[
+        {ot:"On the long, straight, fast parts",os:"Where water glides smoothly",correct:false,
+         v:"Not quite. Fast, smooth flow actually <b>protects</b> the bank. Look for where the water behaves strangely."},
+        {ot:"At the swirly bend, where the bank looks tired",os:"Where flow is disturbed",correct:true,
+         v:"Good eye, detective. Trouble begins where flow is <b>disturbed</b> — at bends and branch points. Real arteries get atherosclerosis in these very same spots."},
+        {ot:"It can't start anywhere — the water looks clear",os:"Nothing's wrong yet",correct:false,
+         v:"The water <i>does</i> look clear — but a good detective looks at the bank, not just the water. The swirly bend is the clue."}
+      ],
+      evidence:"Clue #1: Trouble starts at the swirly bend — disturbed flow stresses the bank." },
+
+    { img:"assets/scene3_rocks.jpg", step:"Step 3 · Hypothesize",
+      title:"The First Rocks in the Mud",
+      lead:"Plum looks closely and sees what everyone missed: tiny rocks aren't sitting <i>in</i> the water — they've sunk <b>into the mud behind the bank</b> and gotten stuck. The water still looks fine. Some stuck rocks are starting to look rusty and rotten.",
+      type:"choice",
+      q:"This is the big one. WHERE is the real trouble building up?",
+      opts:[
+        {ot:"Floating in the river water (the blood)",os:"Like dirt clogging a pipe",correct:false,
+         v:"This is what almost <i>everyone</i> guesses — but it's not right. The water can look perfectly clear while the real trouble hides elsewhere."},
+        {ot:"Stuck in the mud under the bank (the artery wall)",os:"Hidden beneath the smooth lining",correct:true,
+         v:"Exactly right, detective. The cholesterol (LDL) is <b>trapped in the wall, beneath the lining</b> — not in the flowing blood. This single fact is the very beginning of the disease, and it's why a person can feel completely fine while trouble quietly grows inside the wall."},
+        {ot:"On top of the bank, in plain sight",os:"Out where you can see it",correct:false,
+         v:"Not quite — the danger is <b>hidden</b>. From the trail the bank looks almost normal while the pile grows underneath."}
+      ],
+      evidence:"KEY CLUE: The buildup is INSIDE the wall — under the lining, not in the flowing water." },
+
+    { img:"assets/scene4_cleanup.jpg", step:"Step 4 · Follow the alarm",
+      title:"Danger Flags & the Cleanup Crews",
+      lead:"Hike after hike, danger flags pop up along the bank and a faint alarm bell rings. Cleanup helpers arrive to carry the rotten rocks away — but they eat so much they puff up like balloons, get stuck in the mud themselves, and become useless lumps.",
+      type:"choice",
+      q:"The cleanup crews came to help. What went wrong?",
+      opts:[
+        {ot:"They cleaned everything and left",os:"Problem solved",correct:false,
+         v:"If only. They came to help — but they couldn't stop eating."},
+        {ot:"They ate too much, bloated, and got stuck — becoming part of the pile",os:"Help that turns into harm",correct:true,
+         v:"Right. The helpers (immune cells called macrophages) gorge on the rotten rocks, bloat into <b>foam cells</b>, and get stuck. The body's rescue squad accidentally makes the pile bigger. This is the <b>inflammation</b> that drives the disease forward."},
+        {ot:"They scared the rocks away",os:"",correct:false,
+         v:"Not quite — the rocks don't leave. The helpers get stuck right alongside them."}
+      ],
+      evidence:"Clue #2: The body's cleanup crews bloat & get stuck — inflammation makes the pile grow." },
+
+    { img:"assets/scene5_thincrust.jpg", step:"Step 5 · Measure the danger",
+      title:"The Growing Pile Under a Thin Crust",
+      lead:"Over a year the hidden pile grows large. A crust of packed dirt forms over it, hiding it. From the trail it looks almost normal — but the crust over the biggest pile is dangerously <b>thin</b>. Rex keeps insisting the trail is fine.",
+      type:"choice",
+      q:"Which pile is the MOST dangerous?",
+      opts:[
+        {ot:"The one that narrows the river the most",os:"The biggest, most obvious blockage",correct:false,
+         v:"Surprisingly, no — and this trips up even smart people. The narrowest spot isn't always the deadliest."},
+        {ot:"The big pile hiding under the thinnest crust",os:"Looks calm, ready to give way",correct:true,
+         v:"Exactly. A big soft pile under a <b>thin crust</b> is a <i>vulnerable plaque</i> — it can break open suddenly, even if it wasn't the narrowest spot. Composition matters more than size."},
+        {ot:"There's no danger as long as water still flows",os:"Rex is right",correct:false,
+         v:"Rex is wrong here. Water still flows right up until the crust cracks — that's what makes it so dangerous."}
+      ],
+      evidence:"Clue #3: A thin crust over a big soft pile = the most dangerous spot (vulnerable plaque)." },
+
+    { img:"assets/scene6_avalanche.jpg", step:"Step 6 · Listen for the warning",
+      title:"The Avalanche",
+      lead:"One stormy day, disaster: the thin crust cracked, the pile slid into the river in an <b>avalanche</b>, and a dam of rock and mud blocked the water. Below the dam the riverbed is dry and cracked. And Tempo's steady drum suddenly stumbles and skips — <i>lub… DUB-dub… skip</i>.",
+      type:"listen-sick",
+      q:"Listen to the heartbeat now. What is it telling you?",
+      opts:[
+        {ot:"Everything's fine — same as before",os:"",correct:false,
+         v:"Listen again — it's not steady anymore. A stumbling, skipping beat is a <b>warning signal</b>."},
+        {ot:"The beat is stumbling — this is an emergency",os:"A warning rhythm",correct:true,
+         v:"Yes. When the river is blocked (a <b>heart attack</b>), the heart's rhythm changes — that's what an EKG can catch. A wrong beat means call for help <b>right away</b>. In real life: call 911."}
+      ],
+      evidence:"Clue #4: A blocked river makes the heartbeat stumble — the warning sign of an emergency." }
+  ];
+
+  const QUIZ = {
+    q:"Time to make your diagnosis, detective. Put it all together — what happened to this river?",
+    opts:[
+      {ot:"The water got too dirty and clogged the pipe",os:"Trouble in the flowing blood",correct:false,
+       v:"That's the common myth — but your own evidence says otherwise. The trouble was never in the water."},
+      {ot:"Cholesterol built up INSIDE the wall, inflamed, grew under a thin crust, then ruptured and blocked the flow",os:"The real story your clues tell",correct:true,
+       v:"Case cracked. You just diagnosed <b>coronary atherosclerosis</b> — and the heart attack that follows when a plaque ruptures. You followed the same trail of evidence real cardiologists and scientists do."},
+      {ot:"The river was just unlucky — nothing could be learned",os:"An accident, not a disease",correct:false,
+       v:"Not so. It's not an accident — it's a <b>disease</b> with a clear story, which means it can be studied, treated, and even prevented."}
+    ]
+  };
+
+  const CAREERS = [
+    {img:"assets/iris.jpeg",name:"Iris",role:"The Radiologist",who:"Sees the pile grow over time in pictures."},
+    {img:"assets/sunny.jpeg",name:"Sunny",role:"The Scientist",who:"Builds models to ask why it happens."},
+    {img:"assets/echo.jpeg",name:"Echo",role:"The Physician",who:"Spots the same pattern in a new patient."},
+    {img:"assets/tempo.jpeg",name:"Tempo",role:"The Cardiologist",who:"Hears the heartbeat change and acts."}
+  ];
+
+  /* ---------- State + render ---------- */
+  const game=document.getElementById('game');
+  const evList=document.getElementById('ev-list');
+  let idx=0, answered=false, evidence=[], phase='scenes';
+
+  function renderProgress(){
+    const total=SCENES.length+1;
+    let pips='';
+    for(let i=0;i<total;i++){
+      let cls='pip';
+      const cur = phase==='scenes'? idx : SCENES.length;
+      if(i<cur) cls+=' done'; else if(i===cur) cls+=' active';
+      pips+=`<div class="${cls}"></div>`;
+    }
+    return `<div class="progress">${pips}</div>`;
+  }
+
+  function renderEvidence(){
+    if(evidence.length===0){ evList.innerHTML='<li class="empty">No clues gathered yet. Start investigating →</li>'; return; }
+    evList.innerHTML=evidence.map(e=>`<li>${e}</li>`).join('');
+  }
+
+  function addEvidence(txt){ if(txt && !evidence.includes(txt)){ evidence.push(txt); renderEvidence(); } }
+
+  function renderScene(){
+    const s=SCENES[idx];
+    answered=false;
+    let interactive='';
+
+    if(s.type==='listen-healthy'){
+      interactive=`
+        <div class="detect">
+          <div class="q-eyebrow">Use your ears</div>
+          <div class="q-text">Listen to a healthy heartbeat. Remember this steady sound.</div>
+          <div class="listen-row">
+            <button class="listen-btn healthy" onclick="playHealthy()">▶ Play the steady heartbeat</button>
+          </div>
+          <p class="beat-note">Steady. Calm. lub-dub … lub-dub … lub-dub.</p>
+        </div>`;
+    } else if(s.type==='listen-sick'){
+      interactive=`
+        <div class="detect">
+          <div class="q-eyebrow">Use your ears, then decide</div>
+          <div class="listen-row">
+            <button class="listen-btn" onclick="playSick()">▶ Play the heartbeat now</button>
+          </div>
+          <div class="q-text" style="margin-top:.9rem">${s.q}</div>
+          <div class="opts" id="opts"></div>
+          <div class="verdict" id="verdict"></div>
+        </div>`;
+    } else if(s.type==='choice'){
+      interactive=`
+        <div class="detect">
+          <div class="q-eyebrow">Detective question</div>
+          <div class="q-text">${s.q}</div>
+          <div class="opts" id="opts"></div>
+          <div class="verdict" id="verdict"></div>
+        </div>`;
+    }
+
+    const nextLabel = idx===SCENES.length-1 ? 'Make the diagnosis →' : 'Next clue →';
+    const needAnswer = (s.type==='choice'||s.type==='listen-sick');
+
+    game.innerHTML=`
+      ${renderProgress()}
+      <img class="scene-img" src="${s.img}" alt="${s.title}" />
+      <div class="stage-body">
+        <span class="step-tag"><span class="dot"></span>${s.step}</span>
+        <h2>${s.title}</h2>
+        <p class="lead">${s.lead}</p>
+        ${interactive}
+        <div class="nav">
+          <button class="btn btn-ghost" onclick="prev()" ${idx===0?'style="visibility:hidden"':''}>← Back</button>
+          <button class="btn btn-primary" id="nextBtn" onclick="next()" ${needAnswer?'disabled':''}>${nextLabel}</button>
+        </div>
+      </div>`;
+
+    if(needAnswer) renderOpts(s.opts, s.evidence);
+    if(s.type==='listen-healthy') addEvidence(s.evidence);
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  function renderOpts(opts, evid){
+    const box=document.getElementById('opts');
+    box.innerHTML=opts.map((o,i)=>`
+      <button class="opt" data-i="${i}" onclick="pick(${i})">
+        <span class="ot">${o.ot}</span>
+        ${o.os?`<span class="os">${o.os}</span>`:''}
+      </button>`).join('');
+    box._opts=opts; box._evid=evid;
+  }
+
+  function pick(i){
+    if(answered) return;
+    const box=document.getElementById('opts');
+    const opts=box._opts;
+    const chosen=opts[i];
+    const buttons=box.querySelectorAll('.opt');
+    buttons.forEach((b,bi)=>{
+      b.disabled=true;
+      if(opts[bi].correct) b.classList.add('correct');
+      else if(bi===i) b.classList.add('wrong');
+      else b.classList.add('dim');
+    });
+    const v=document.getElementById('verdict');
+    v.className='verdict show '+(chosen.correct?'right':'notyet');
+    v.innerHTML=(chosen.correct?'✓ ':'')+chosen.v;
+    if(chosen.correct){
+      answered=true;
+      const nb=document.getElementById('nextBtn'); if(nb) nb.disabled=false;
+      addEvidence(box._evid);
+    } else {
+      // let them try again — re-enable ALL options so the correct one stays clickable
+      setTimeout(()=>{
+        buttons.forEach(b=>{ b.disabled=false; b.classList.remove('wrong','dim','correct'); });
+      },1500);
+    }
+  }
+
+  function next(){
+    if(phase==='scenes'){
+      if(idx<SCENES.length-1){ idx++; renderScene(); }
+      else { phase='diagnose'; renderDiagnose(); }
+    }
+  }
+  function prev(){ if(idx>0){ idx--; renderScene(); } }
+
+  function renderDiagnose(){
+    answered=false;
+    game.innerHTML=`
+      ${renderProgress()}
+      <div class="stage-body" style="padding-top:1.7rem">
+        <span class="step-tag"><span class="dot"></span>Final Step · Name the disease</span>
+        <h2>The Diagnosis</h2>
+        <div class="detect" style="margin-top:1rem">
+          <div class="q-eyebrow">Crack the case</div>
+          <div class="q-text">${QUIZ.q}</div>
+          <div class="opts" id="opts"></div>
+          <div class="verdict" id="verdict"></div>
+        </div>
+        <div class="nav">
+          <button class="btn btn-ghost" onclick="backToLast()">← Back</button>
+          <button class="btn btn-primary" id="nextBtn" onclick="renderWin()" disabled>See the verdict →</button>
+        </div>
+      </div>`;
+    renderOpts(QUIZ.opts, "DIAGNOSIS: Coronary atherosclerosis — and the heart attack that follows a rupture.");
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function backToLast(){ phase='scenes'; idx=SCENES.length-1; renderScene(); }
+
+  function renderWin(){
+    addEvidence("DIAGNOSIS: Coronary atherosclerosis — and the heart attack that follows a rupture.");
+    game.innerHTML=`
+      <div class="final">
+        <div class="seal">🏅</div>
+        <h2>Case Cracked, Detective.</h2>
+        <div class="dx">Diagnosis: Coronary Atherosclerosis</div>
+        <p>You followed the clues exactly the way real scientists and doctors do — and you found the surprising truth: the trouble was never in the flowing water. It was hidden <b>inside the wall</b> all along.</p>
+        <p>The best part? This isn't just a story. It's a real disease — which means it can be studied, treated, and even <b>prevented</b>. The river's Maker even built in repair crews of its own.</p>
+
+        <p style="margin-top:1.4rem;font-weight:600;color:var(--navy)">Every good detective needs a team. Meet yours:</p>
+        <div class="careers">
+          ${CAREERS.map(c=>`
+            <div class="career">
+              <img src="${c.img}" alt="${c.name}" />
+              <div>
+                <div class="cn">${c.name}</div>
+                <div class="cr">${c.role}</div>
+                <div class="cw">${c.who}</div>
+              </div>
+            </div>`).join('')}
+        </div>
+
+        <p class="verse">“He heals the brokenhearted and binds up their wounds.”</p>
+        <p class="verse-ref">Psalm 147:3</p>
+
+        <div class="cta-row">
+          <a class="cta gold" href="/">Read the full River story →</a>
+          <a class="cta outline" href="https://wonderfullymadelabs.gumroad.com">Explore the modules</a>
+        </div>
+        <button class="replay" onclick="restart()">↺ Play the case again</button>
+      </div>`;
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  function restart(){ idx=0; answered=false; evidence=[]; phase='scenes'; renderEvidence(); renderScene(); }
+
+  renderScene();
+  </script>
+</body>
+</html>

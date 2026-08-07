@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Still — Where are you today? (Mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#23344a; --cream:#fbf6ea; --gold:#e8b04b; --gold-deep:#c98a2b;
+    --teal:#2a7d8c; --ink:#2a2a28; --sage:#8fa98c; --line:#e4d9bf;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--cream);color:var(--ink);font-family:'Nunito',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:640px;margin:0 auto;padding:32px 22px 80px}
+  .mocklabel{background:var(--navy);color:var(--cream);font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:8px;font-weight:700}
+  .brandbar{display:flex;align-items:center;justify-content:center;gap:10px;margin:26px 0 8px}
+  .brandbar .cross{font-size:22px;color:var(--gold)}
+  .brandbar span{font-family:'Fraunces',serif;color:var(--navy);font-weight:600;letter-spacing:.02em;font-size:15px}
+  h1{font-family:'Fraunces',serif;color:var(--navy);font-weight:600;font-size:clamp(28px,6vw,40px);line-height:1.12;text-align:center;margin-bottom:14px}
+  .sub{text-align:center;color:#5c5a54;font-size:17px;max-width:460px;margin:0 auto 30px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px 24px;box-shadow:0 10px 30px rgba(35,52,74,.06);margin-bottom:22px}
+  .qnum{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:8px}
+  .qtext{font-family:'Fraunces',serif;color:var(--navy);font-size:22px;font-weight:500;margin-bottom:18px;line-height:1.25}
+  .opt{display:block;width:100%;text-align:left;background:var(--cream);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px;font-family:'Nunito';font-size:16px;color:var(--ink);cursor:pointer;transition:.15s}
+  .opt:hover{border-color:var(--gold);background:#fffdf6}
+  .opt.sel{border-color:var(--teal);background:#eef6f7;box-shadow:inset 0 0 0 1px var(--teal)}
+  .progress{height:6px;background:var(--line);border-radius:6px;overflow:hidden;margin-bottom:24px}
+  .progress i{display:block;height:100%;background:var(--gold);transition:width .35s}
+  .navbtns{display:flex;justify-content:space-between;gap:12px;margin-top:6px}
+  button.act{font-family:'Nunito';font-weight:700;font-size:16px;border:none;border-radius:12px;padding:13px 26px;cursor:pointer;transition:.15s}
+  .primary{background:var(--gold);color:var(--navy)}
+  .primary:hover{background:var(--gold-deep);color:#fff}
+  .primary:disabled{opacity:.4;cursor:not-allowed}
+  .ghost{background:transparent;color:#7a776e;border:1.5px solid var(--line) !important}
+  .step{display:none} .step.on{display:block;animation:fade .3s}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  /* RESULT */
+  .result .rtag{text-align:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:6px}
+  .result .rtitle{font-family:'Fraunces',serif;color:var(--navy);font-size:clamp(26px,5.5vw,34px);text-align:center;font-weight:600;margin-bottom:4px}
+  .result .rsub{text-align:center;color:#5c5a54;font-style:italic;margin-bottom:26px;font-family:'Fraunces',serif}
+  .block{margin-bottom:24px}
+  .blabel{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:4px 11px;border-radius:20px;margin-bottom:10px}
+  .b-body{background:#eef6f7;color:var(--teal)}
+  .b-verse{background:#fbf0d8;color:var(--gold-deep)}
+  .b-notice{background:#eef1ea;color:#5a7a4f}
+  .b-write{background:#f3ecdd;color:var(--gold-deep)}
+  .b-practice{background:#e9edf3;color:var(--navy)}
+  .b-return{background:#f7ece9;color:#a5562f}
+  .block p{font-size:16.5px;margin-bottom:8px}
+  .verse{font-family:'Fraunces',serif;font-style:italic;color:var(--navy);font-size:17px;line-height:1.5;border-left:3px solid var(--gold);padding-left:14px;margin:0 0 10px 0}
+  .writelines{background:var(--cream);border:1px dashed var(--line);border-radius:12px;padding:16px 16px 6px}
+  .writelines .wl{border-bottom:1.5px solid #d8cba9;height:30px;margin-bottom:14px}
+  .practicebox{background:var(--navy);color:var(--cream);border-radius:14px;padding:20px 22px}
+  .practicebox .pn{font-family:'Fraunces',serif;color:var(--gold);font-size:18px;margin-bottom:6px}
+  .practicebox p{color:#e7e2d4}
+  .b-science{background:#eef1f4;color:#4a5a72}
+  .sciencebox{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .sciencebox p{font-size:14px;color:#5c5a54;margin-bottom:8px;line-height:1.5}
+  .sciencebox ul{margin:0;padding-left:18px}
+  .sciencebox li{font-size:12.5px;color:#6a6860;line-height:1.45;margin-bottom:5px}
+  .sciencebox a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(42,125,140,.35)}
+  .sciencebox .discl{font-size:11.5px;color:#8a887f;font-style:italic;margin-top:8px;margin-bottom:0}
+  .safetybox{background:#fbeee9;border:1px solid #e6c3b6;border-radius:12px;padding:14px 16px;margin-bottom:24px}
+  .safetybox .sh{font-weight:700;font-size:13px;color:#a5562f;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+  .safetybox p{font-size:13px;color:#6a5750;line-height:1.5;margin-bottom:6px}
+  .safetybox p:last-child{margin-bottom:0}
+  .safetybox a{color:#a5562f;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(165,86,47,.4)}
+  .cta{background:linear-gradient(135deg,#23344a,#2c4258);color:var(--cream);border-radius:16px;padding:26px 22px;text-align:center;margin-top:8px}
+  .cta h3{font-family:'Fraunces',serif;color:#fff;font-size:22px;font-weight:600;margin-bottom:8px}
+  .cta p{color:#d7dae0;font-size:15px;margin-bottom:18px}
+  .cta .dlrow{display:flex;flex-direction:column;gap:12px;align-items:center}
+  .cta a.dl{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;text-decoration:none;padding:14px 30px;border-radius:12px;font-size:16px}
+  .emailopt{background:rgba(255,255,255,.07);border:1px solid rgba(232,176,75,.35);border-radius:12px;padding:16px;margin-top:6px;width:100%}
+  .emailopt .eh{color:var(--gold);font-weight:700;font-size:14px;margin-bottom:4px}
+  .emailopt .es{color:#c9cdd4;font-size:13px;margin-bottom:12px}
+  .emailrow{display:flex;gap:8px}
+  .emailrow input{flex:1;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.95);border-radius:9px;padding:11px 13px;font-family:'Nunito';font-size:15px;color:var(--ink)}
+  .emailrow button{background:var(--gold);color:var(--navy);border:none;border-radius:9px;padding:0 18px;font-weight:700;font-family:'Nunito';cursor:pointer}
+  .optnote{color:#a9adb5;font-size:11.5px;margin-top:9px;line-height:1.4}
+  .startover{display:inline-block;margin-top:16px;color:var(--gold);text-decoration:none;border:1.5px solid rgba(232,176,75,.5);border-radius:10px;padding:9px 20px;font-weight:600;font-size:14px}
+  .note{font-size:13px;color:#8a877e;text-align:center;margin-top:20px}
+  .allglory{text-align:center;font-family:'Fraunces',serif;color:var(--navy);margin-top:22px;font-size:15px}
+  .allglory2{text-align:center;font-family:'Fraunces',serif;color:var(--navy);margin-top:18px;font-size:15px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brandbar"><span class="cross">✝</span><span>Wonderfully Made Labs</span></div>
+
+  <!-- INTRO -->
+  <div class="step on" id="s-intro">
+    <h1>Where are you today?</h1>
+    <p class="sub">Answer a few honest questions. We'll meet you where you are — with what's happening in your body, a word from Scripture, and one small practice for right now. Takes about a minute. Always free.</p>
+    <div class="card" style="text-align:center">
+      <p style="font-size:16px;color:#5c5a54;margin-bottom:20px">No account. No email required. Nothing to buy.</p>
+      <button class="act primary" onclick="go('q1')">Begin →</button>
+    </div>
+    <p class="allglory">Psalm 139:14 · All glory to God</p>
+  </div>
+
+  <!-- Q1 (routes to emotion) -->
+  <div class="step" id="s-q1">
+    <div class="progress"><i style="width:20%"></i></div>
+    <div class="card">
+      <div class="qnum">Question 1 of 4</div>
+      <div class="qtext">When you're honest with yourself, what are you carrying most right now?</div>
+      <button class="opt" data-e="noise" onclick="pickE(this,'q1')">A restlessness I can't quiet — my mind won't stop</button>
+      <button class="opt" data-e="anger" onclick="pickE(this,'q1')">More frustration and anger than I want to admit</button>
+      <button class="opt" data-e="impatience" onclick="pickE(this,'q1')">Impatience — waiting on something that isn't changing</button>
+      <button class="opt" data-e="work" onclick="pickE(this,'q1')">Exhaustion — my work takes more than it gives</button>
+      <button class="opt" data-e="return" onclick="pickE(this,'q1')">Distance — I've drifted from God and want to come back</button>
+      <button class="opt" data-e="stillness" onclick="pickE(this,'q1')">I'm okay — I just want to practice peace on purpose</button>
+      <div class="navbtns"><button class="act ghost" onclick="go('intro')">← Back</button><button class="act primary" id="n-q1" disabled onclick="go('q2')">Next →</button></div>
+    </div>
+  </div>
+
+  <!-- Q2 (body -> personalizes notice) -->
+  <div class="step" id="s-q2">
+    <div class="progress"><i style="width:45%"></i></div>
+    <div class="card">
+      <div class="qnum">Question 2 of 4</div>
+      <div class="qtext">Where do you feel it most in your body?</div>
+      <button class="opt" data-b="a tight chest or shallow breath" onclick="pickB(this,'q2')">Tight chest or shallow breath</button>
+      <button class="opt" data-b="a clenched jaw and tense shoulders" onclick="pickB(this,'q2')">Clenched jaw, tense shoulders</button>
+      <button class="opt" data-b="a restless buzz you can't settle" onclick="pickB(this,'q2')">A restless buzz I can't settle</button>
+      <button class="opt" data-b="a heaviness, tired all the way through" onclick="pickB(this,'q2')">Heavy and tired, all the way through</button>
+      <div class="navbtns"><button class="act ghost" onclick="go('q1')">← Back</button><button class="act primary" id="n-q2" disabled onclick="go('q3')">Next →</button></div>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="step" id="s-q3">
+    <div class="progress"><i style="width:70%"></i></div>
+    <div class="card">
+      <div class="qnum">Question 3 of 4</div>
+      <div class="qtext">What would help most in the next five minutes?</div>
+      <button class="opt" onclick="pick(this,'q3')">To understand what's actually happening to me</button>
+      <button class="opt" onclick="pick(this,'q3')">A word from God I can hold onto</button>
+      <button class="opt" onclick="pick(this,'q3')">Something to actually do — a small practice</button>
+      <button class="opt" onclick="pick(this,'q3')">To get it out of my head and onto a page</button>
+      <div class="navbtns"><button class="act ghost" onclick="go('q2')">← Back</button><button class="act primary" id="n-q3" disabled onclick="go('q4')">Next →</button></div>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="step" id="s-q4">
+    <div class="progress"><i style="width:92%"></i></div>
+    <div class="card">
+      <div class="qnum">Question 4 of 4</div>
+      <div class="qtext">How long has this been sitting with you?</div>
+      <button class="opt" onclick="pick(this,'q4')">Just today</button>
+      <button class="opt" onclick="pick(this,'q4')">A few weeks — it comes and goes</button>
+      <button class="opt" onclick="pick(this,'q4')">Longer than I'd like to admit</button>
+      <div class="navbtns"><button class="act ghost" onclick="go('q3')">← Back</button><button class="act primary" id="n-q4" disabled onclick="showResult()">See where you are →</button></div>
+    </div>
+  </div>
+
+  <!-- RESULT (rendered dynamically) -->
+  <div class="step result" id="s-result">
+    <div class="progress"><i style="width:100%"></i></div>
+    <div class="rtag">Where you are today</div>
+    <div class="rtitle" id="r-title">The Anger</div>
+    <div class="rsub" id="r-sub"></div>
+    <div class="card" id="r-card"></div>
+
+    <div class="cta">
+      <h3>Want to keep going?</h3>
+      <p>This is one of six emotions in <em>Still</em> — our free journal for the restless and worn-down. Take the whole thing home.</p>
+      <div class="dlrow">
+        <a class="dl" href="assets/wml_still_journal.pdf" download>↓ Download the free journal</a>
+        <div class="emailopt">
+          <div class="eh">Want new stories and journals by email?</div>
+          <div class="es">Optional — subscribe free and we'll send new resources as they come. The download above works without it.</div>
+          <div class="emailrow">
+            <a href="https://inhisglorypsalms13914.substack.com/subscribe" target="_blank" rel="noopener" style="flex:1;text-align:center;background:var(--gold);color:var(--navy);text-decoration:none;border-radius:9px;padding:11px 13px;font-weight:700;font-family:'Nunito'">Subscribe free</a>
+          </div>
+          <div class="optnote">We'll only email you new stories and journals. No spam, unsubscribe anytime.</div>
+        </div>
+      </div>
+      <div style="margin-top:16px"><a class="startover" href="#" onclick="go('intro');return false;">Start over</a> <a class="startover" href="/#journals" style="margin-left:8px">← Back to Wonderfully Made Labs</a></div>
+    </div>
+    <p class="note">Free forever. If it gave you something, you can help us give it to someone else — a gift, never a fee.</p>
+    <p class="allglory2">To God be all the glory.</p>
+  </div>
+</div>
+
+<script>
+  var state={emotion:'anger',body:'a clenched jaw and tense shoulders'};
+
+  var EMO={
+    noise:{title:'The Noise',sub:'When the world is too loud',
+      body:"Your restlessness is not a character weakness — it is a nervous system doing exactly what it was designed to do, pulled toward the wrong thing. Your phone runs on a reward-anticipation loop. Neuroscientists have shown that the brain's dopamine system drives <em>wanting</em> — the pull toward a cue — more than it drives <em>liking</em>, the actual enjoyment. So each scroll, ping, and refresh feeds the anticipation far more than the satisfaction, and the craving quietly outlasts anything it delivers. Researchers have found that behavior on social media follows the same reward-learning rules that shape a lab animal chasing a lever. The result is a mind trained to keep seeking, never quite settling. This is why stillness can feel almost physically difficult — you are asking a well-trained seeking system to stand down. But here is the wonder of it: the same God who wove that seeking-drive into you built it to find its rest in Him, not in a screen. You were made in His image, for communion — the restlessness is simply that design, searching for its true home.",
+      verses:['"Be still, and know that I am God." — Psalm 46:10','"You have made us for Yourself, and our heart is restless until it rests in You." — echoing Psalm 62:1','"Return, O my soul, to your rest; for the Lord has dealt bountifully with you." — Psalm 116:7'],
+      sources:['Berridge &amp; Robinson, <em>American Psychologist</em> (2016): dopamine mediates “wanting” (desire) rather than “liking” (pleasure). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5171207/" target="_blank">PMC5171207</a>','Lindström et al., <em>Nature Communications</em> (2021): social-media behavior follows reward-maximization / reinforcement-learning principles. <a href="https://www.nature.com/articles/s41467-020-19607-x" target="_blank">Nat Commun 12:1311</a>'],
+      verseNote:"God's first word to a restless mind is not <em>try harder</em>. It is <em>be still</em> — not as a reward once you've calmed down, but as the very way the calm begins. Your soul is restless because it was made for Him; the answer is not a quieter phone but a return to the One who is your rest.",
+      write1:"The loudest part of your day — not the busiest, the loudest. The part that leaves your mind buzzing afterward:",
+      write2:"The first thing you reach for in the morning — and what that reveals about where you look for peace:",
+      pn:'Ninety Seconds of Stillness',
+      practice:"Put the phone in another room. Breathe in slowly and pray <em>\"Be still…\"</em> Breathe out and finish it: <em>\"…and know that You are God.\"</em> Repeat, unhurried, until your shoulders drop — that is your body's calming system coming back online. Then read one verse. Just one. Let it be enough.",
+      ret:"You came in with a mind that wouldn't quiet. You've named the noise now — and naming it is the first step to setting it down. The peace you're after was never something to manufacture; it's something to receive, from the One who made you in His image and built you to rest in Him. Come back here whenever the world gets loud."},
+
+    anger:{title:'The Anger',sub:"When you're more frustrated than you want to be",
+      body:"Anger is not a character flaw before it is anything else — it is chemistry moving faster than thought. When something crosses you, the amygdala, your brain's threat-detector, begins responding before your reasoning has finished catching up — intracranial recordings in humans have measured amygdala activity to a threatening face in as little as 74 milliseconds. Your body's fast stress system fires: adrenaline surges, heart rate climbs, blood is redirected to the large muscles, the jaw clenches, the chest heats, the hands want to move. This is the ancient fight-or-flight response, and it is doing exactly what it was built to do — protect you. The trouble is that it cannot always tell the difference between a genuine danger and a rude email. Then the prefrontal cortex — the reasoning, choosing part of the brain — catches up, and studies show it can quiet the alarm when given the chance. And notice this: God gave you this circuitry on purpose. The capacity to be moved by wrong is part of being made in His image — Scripture shows God's own righteous anger at injustice. The battle is never to feel nothing; it is to bring that God-given fire under the reign of the God who gave it.",
+      verses:['"Be angry and do not sin; do not let the sun go down on your anger." — Ephesians 4:26','"Everyone should be quick to listen, slow to speak and slow to become angry." — James 1:19','"A gentle answer turns away wrath, but a harsh word stirs up anger." — Proverbs 15:1'],
+      sources:['Méndez-Bértolo et al., <em>Nature Neuroscience</em> (2016): human amygdala responds to fearful faces from ~74 ms. <a href="https://pubmed.ncbi.nlm.nih.gov/27294508/" target="_blank">PubMed 27294508</a>','Kredlow et al., <em>Neuropsychopharmacology</em> (2021): the prefrontal cortex (vmPFC) regulates and suppresses amygdala threat responses. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8617299/" target="_blank">PMC8617299</a>','Chu et al., <em>Physiology, Stress Reaction</em> (StatPearls, 2024): acute stress raises heart rate and redirects blood to large muscles. <a href="https://www.ncbi.nlm.nih.gov/books/NBK541120/" target="_blank">NCBI Bookshelf</a>'],
+      verseNote:"Notice what Scripture does: <em>\"Be angry\"</em> — it grants the feeling, because He designed it. What it asks for is the space <em>between</em> the alarm and the action — the pause where the reasoning mind catches up to the chemistry, and you choose. <em>Slow to become angry. A gentle answer.</em> These are not commands to suppress what God built; they are the way to steward it. That pause is the whole battle.",
+      write1:"The frustration you've been carrying without saying out loud:",
+      write2:"What it's really trying to protect — what you're afraid you'll lose if you set it down:",
+      pn:'The Pause',
+      practice:"The next time you feel the heat rise — before you speak or send — take one slow breath and pray four words: <em>\"Lord, catch up with me.\"</em> Physiologically, that slow breath signals the body it is safe and lets the prefrontal cortex come back online. Spiritually, you're inviting Him into the gap between the alarm and the action — the exact place where anger is either sinned with, or surrendered.",
+      ret:"You came in carrying something heavy and unnamed. You've named it now — you can hand it over. That's the whole movement: the broken thing brought to the Lord, not to be scolded, but to be softened and made new. The One who gave you the fire can also govern it. Let the sun go down. You don't have to carry it into tomorrow."},
+
+    impatience:{title:'The Impatience',sub:"When you can't stand the waiting",
+      body:"Impatience has a physiology, too. Neuroscientists studying the dopamine system have found that when a reward you expect is delayed or doesn't arrive, dopamine neurons don't simply hold steady — their activity dips <em>below</em> baseline, a signal the brain uses to register 'less than I predicted.' The longer the delay, the smaller the reward feels; researchers call it temporal discounting. At the same time, the uncertainty of <em>not knowing when</em> the wait will end is itself a stress driver — experiments show it is uncertainty, more than the bad outcome itself, that tracks with rising stress, pupil dilation, and cortisol. Our screens have sharpened all of this: instant replies and endless feeds have trained the nervous system to expect the gap between wanting and having to be nearly zero. So real waiting — on healing, on a decision, on a season to turn — can feel less like patience and more like a low, physical ache. But your capacity to endure and hope was also woven in by God. He made you not merely to react to the moment but to trust across time — and He promises that the waiting itself is where He renews the very strength it seems to drain.",
+      verses:['"Wait for the Lord; be strong and take heart and wait for the Lord." — Psalm 27:14','"They who wait for the Lord shall renew their strength; they shall mount up with wings like eagles." — Isaiah 40:31','"Be still before the Lord and wait patiently for Him." — Psalm 37:7'],
+      sources:['Schultz, <em>Dialogues in Clinical Neuroscience</em> (2016): dopamine neurons dip below baseline for less-than-predicted reward; reward value falls with delay (temporal discounting). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4826767/" target="_blank">PMC4826767</a>','de Berker et al., <em>Nature Communications</em> (2016): uncertainty — not the adverse outcome itself — tracks subjective stress, pupil diameter, and cortisol. <a href="https://pubmed.ncbi.nlm.nih.gov/27020312/" target="_blank">PubMed 27020312</a>'],
+      verseNote:"Scripture sees waiting differently — not as wasted time, but as the very place where strength is renewed. The waiting is not the obstacle to growth. Often the waiting <em>is</em> the growth — where God does the work a quick answer never could. The same verses call you to <em>be strong, take heart, be still</em>: not to manufacture patience, but to lean the weight of the wait onto Him.",
+      write1:"The thing you are waiting on right now that you find hard to bear:",
+      write2:"Finish this line: \"While I wait, I will trust Him to…\" — with something small and true:",
+      pn:'The Unhurried Breath',
+      practice:"When the urge to force it rises — to send the message, make the call, push the outcome — stop and take three slow breaths before you act. On each one, pray: <em>\"Not yet is not the same as no.\"</em> The slow breathing settles the stress response; the prayer hands the timing back to the One who holds it. Then choose, instead of react.",
+      ret:"You came in worn down by the waiting. But you're not waiting alone, and you're not waiting for nothing. This is the shape of being made new — not a quick fix, but strength renewed in the very place that felt like delay. The God who made you can be trusted with the timing. Come back here whenever the waiting gets heavy."},
+
+    work:{title:'The Work',sub:"When your job takes more than it gives",
+      body:"When work becomes the place you prove your worth, the body keeps the receipts. Healthy stress is meant to spike and then clear — adrenaline for the deadline, then rest. But under chronic striving, the body's stress systems never fully reset, and over time the cortisol rhythm that should rise and fall across the day gets thrown out of balance. Researchers call the cumulative cost <em>allostatic load</em> — the wear and tear of a stress response left on too long. It disrupts sleep, strains the cardiovascular system, and can suppress immune function; in prolonged burnout the cortisol rhythm can even flatten or drop. That Sunday-evening dread, the shallow sleep, the running-hard-arriving-nowhere feeling — these are not just moods. They are a nervous system that has been told, day after day, that it is not yet safe, not yet enough. But here is the truth your biology is aching toward: you were made in the image of God, and your worth was assigned by Him before you produced a single thing. The body was never designed to carry your worth. It was designed to rest in it.",
+      verses:['"Come to me, all who labor and are heavy laden, and I will give you rest." — Matthew 11:28','"Whatever you do, work heartily, as for the Lord and not for men." — Colossians 3:23','"Unless the Lord builds the house, those who build it labor in vain." — Psalm 127:1'],
+      sources:['McEwen, <em>Chronic Stress</em> (2017): allostatic load — the pathophysiology of an over-used, dysregulated stress response; chronic stress can suppress immune function. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5573220/" target="_blank">PMC5573220</a>','McEwen, <em>Dialogues in Clinical Neuroscience</em> (2006): the stress–sleep–cortisol–cardiovascular chain and chronic wear on the heart. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3181832/" target="_blank">PMC3181832</a>','Noushad et al., <em>Int. J. Health Sciences</em> (2021): systematic review — burnout can present with <em>low</em> cortisol (hypocortisolism), so chronic stress means dysregulation, not simply “high cortisol.” <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8434839/" target="_blank">PMC8434839</a>'],
+      verseNote:"Christ does not say <em>prove yourself, and then you may rest</em>. He says <em>come to me… and I will give you rest</em>. Rest first. Worth first — settled and secure, not up for daily negotiation. Work <em>heartily, as for the Lord</em>: the pressure lifts when the audience changes. And <em>unless the Lord builds the house</em>, the striving is in vain — so you can labor with open hands, not clenched ones.",
+      write1:"Where you honestly are with work right now — the frustration and the hope both:",
+      write2:"Now write this, and mean it: \"My worth is not in this. My worth is in the One who made me.\"",
+      pn:'Laying It Down',
+      practice:"At the end of the workday, before you cross back into the rest of your life, pause at the door — literal or mental. Take one breath and pray: <em>\"I did what I could. The rest I leave with You.\"</em> You are telling your body the striving is over for today, letting cortisol fall — and telling your soul that its worth was never on the line to begin with.",
+      ret:"You came in worn thin by work that takes more than it gives. Hear this plainly: your worth was settled long before your first day on the job — assigned by the God who made you in His image — and nothing you do or fail to do can add to it or take from it. Bring the weariness to the Lord. He gives rest to the heavy-laden, and He is making you new."},
+
+    "return":{title:'The Return',sub:"Coming back to the Word",
+      body:"There is a real, measurable reason that slowing down to sit with one verse can steady you more than an hour of scrolling — and much of it comes down to how you breathe while you do it. When you read slowly and aloud, your breathing naturally lengthens, and slow breathing has been shown across hundreds of studies to shift the body toward its parasympathetic 'rest and digest' state by way of the vagus nerve: heart rate eases and heart-rate variability rises, markers of a calmer nervous system. Scrolling tends to do the opposite — rapid novelty keeps the 'alert' system switched on and attention fragmented, so an hour on your phone can leave you more depleted than when you began. Coming back to the Word is not only spiritually good; done slowly and unhurried, it also settles the body. And that is no accident. God made you an embodied soul, in His image; His Word dwelt on slowly ministers to body and spirit together. The homecoming your mind craves and the calm your body needs are the same movement: turning back to Him.",
+      verses:['"Your word is a lamp to my feet and a light to my path." — Psalm 119:105','"Take heart; I have overcome the world." — John 16:33','"Draw near to God, and He will draw near to you." — James 4:8'],
+      sources:['Zaccaro et al., <em>Frontiers in Human Neuroscience</em> (2018): slow breathing promotes parasympathetic (vagal) predominance and raises heart-rate variability. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6137615/" target="_blank">PMC6137615</a>','Laborde et al., <em>Neuroscience &amp; Biobehavioral Reviews</em> (2022): meta-analysis of 223 studies — voluntary slow breathing increases vagally-mediated HRV. <a href="https://pubmed.ncbi.nlm.nih.gov/35623448/" target="_blank">PubMed 35623448</a>'],
+      verseNote:"This is not one more task to feel behind on. It is not a performance. It is a homecoming — <em>draw near to God, and He will draw near to you</em>. You don't have to read for an hour or understand everything at once. You simply have to come — the way you'd step to a window to feel the sun. One verse is a lamp enough for the next step.",
+      write1:"What keeps you from returning to the Word — time, guilt, distraction, or something you haven't named:",
+      write2:"Copy out, by hand, the one verse that has met you most. Then write why it reached you:",
+      pn:'One Verse, Slowly',
+      practice:"Open to one verse — any verse. Read it out loud, slowly, three times. The slow reading engages the vagus nerve and settles the body; the repetition lets the words land. The first time to hear it, the second to let it settle, the third as if God were saying it directly to you — because in His Word, He is. One verse is enough to begin.",
+      ret:"You came in feeling the distance. But coming back was never meant to be a performance you pass or fail — it's a homecoming, and the door was never locked. Set the noise down, pick the Word up, and let Him meet you there. <em>Draw near, and He draws near.</em> He is making all things new, starting with you."},
+
+    stillness:{title:'The Stillness',sub:'Practicing peace on purpose',
+      body:"Peace, it turns out, has a physiology — and the doorway to it is your breath. When you deliberately slow your breathing, the parasympathetic 'calm' branch of your nervous system, carried by the vagus nerve, takes the lead: heart rate eases and heart-rate variability rises in the moment. Something remarkable happens with recited prayer, too. In a study published in the <em>BMJ</em>, researchers found that praying the rosary — like a slow yoga mantra — naturally paced people's breathing to about six breaths a minute, the very rhythm at which the body's calming reflexes synchronize most strongly. So the ancient practice of unhurried, spoken prayer was quietly doing what modern breathing science now measures. A word of honesty: sitting still by itself doesn't reliably retrain the body — it's the slowed breath that does the work, and structured slow-breathing practice has been shown to lower stress and anxiety over time. The world will not get quieter, so a settled body isn't something you find once; it's something you practice into being. And that, too, reflects how God made you: an embodied soul, so that turning to Him in unhurried prayer settles body and spirit together.",
+      verses:['"You keep him in perfect peace whose mind is stayed on you, because he trusts in you." — Isaiah 26:3','"And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus." — Philippians 4:7','"Peace I leave with you; my peace I give to you. Not as the world gives do I give to you." — John 14:27'],
+      sources:['Bernardi et al., <em>BMJ</em> (2001): reciting the rosary (and yoga mantras) slows breathing to ~6 breaths/min and enhances cardiovascular rhythms and baroreflex sensitivity. <a href="https://pubmed.ncbi.nlm.nih.gov/11751348/" target="_blank">PubMed 11751348</a>','Goessl et al., <em>Psychological Medicine</em> (2017): meta-analysis — HRV biofeedback (structured slow breathing) reduces self-reported stress and anxiety. <a href="https://pubmed.ncbi.nlm.nih.gov/28478782/" target="_blank">PubMed 28478782</a>','Brown et al., <em>Psychophysiology</em> (2021): meta-analysis — seated meditation alone does not reliably raise resting HRV versus controls, so the breath, not stillness by itself, drives the effect. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8243562/" target="_blank">PMC8243562</a>'],
+      verseNote:"Peace is less something you find once and more something you practice — a mind <em>stayed on Him</em>. And notice the source: <em>not as the world gives</em>. The world's peace is fragile and screen-deep; His <em>surpasses understanding</em> and <em>guards</em> you. Stillness is the daily act of trust that says, <em>I cannot make peace on my own, but I know Who can, and I am turning to Him again.</em>",
+      write1:"Where in your day could you plant ninety seconds of chosen stillness:",
+      write2:"The one sentence you most need to hear from God today — write it, then read it back slowly:",
+      pn:'The Stillness Practice',
+      practice:"Ninety seconds, no screen. Put the phone away. Breathe in: <em>\"Be still…\"</em> Breathe out: <em>\"…and know that You are God.\"</em> The slow, unhurried breath is what settles the body — heart rate easing, the calm branch of your nervous system taking the lead; the words fix your mind on Him. Repeat until your shoulders drop. Then read one verse and let it be enough. Return to this any time the noise rises.",
+      ret:"You didn't come in broken today — you came to build something. That's its own kind of wisdom. This is the shape of a life being made new: not one dramatic fix, but a steady series of returns to the same source. He gives a peace the world cannot — and He built you, body and soul, to receive it. Keep choosing it. And you'll know exactly Who to thank."}
+  };
+
+  function render(){
+    var e=EMO[state.emotion];
+    document.getElementById('r-title').textContent=e.title;
+    document.getElementById('r-sub').textContent=e.sub;
+    var noticeLines={
+      noise:"You said the restlessness lives in "+state.body+". That's your nervous system still switched on — information worth listening to before you try to override it.",
+      anger:"You said you feel it in "+state.body+" — that's your body handing you information before your mind has words for it. What's the surface thing you're frustrated about? And underneath it, the real thing?",
+      impatience:"You said the waiting shows up as "+state.body+". That tension is the stress circuit treating delay like a threat. Name what you're really waiting on — and what you fear it means if it doesn't come.",
+      work:"You said it settles into "+state.body+". That's a body that hasn't been told it's allowed to power down. Where has your job become the voice that tells you whether you matter?",
+      "return":"You said you're carrying "+state.body+". Slowing down to one verse is the fastest way to shift that state. What has kept you from coming back?",
+      stillness:"You noticed "+state.body+". Even a settled person carries some of that — the practice below is how you keep it from building."
+    };
+    var c=document.getElementById('r-card');
+    c.innerHTML=
+      block('b-body',"What's happening in your body",'<p>'+e.body+'</p>')+
+      block('b-science','The science behind this','<div class="sciencebox"><p>Every claim above is drawn from peer-reviewed research. Sources:</p><ul>'+e.sources.map(function(s){return '<li>'+s+'</li>';}).join('')+'</ul><p class="discl">Shared for understanding, not as medical advice or treatment. Prayer and Scripture are offered as faith, not as a cure.</p></div>')+
+      block('b-verse','A word from Scripture',e.verses.map(function(v){return '<p class="verse">'+v+'</p>';}).join('')+'<p style="margin-top:12px">'+e.verseNote+'</p>')+
+      block('b-notice','Notice it in yourself','<p>'+noticeLines[state.emotion]+'</p>')+
+      block('b-write','Write it down','<p style="margin-bottom:12px">'+e.write1+'</p>'+lines()+'<p style="margin:12px 0">'+e.write2+'</p>'+lines())+
+      block('b-practice','A small practice — right now','<div class="practicebox"><div class="pn">'+e.pn+'</div><p>'+e.practice+'</p></div>')+
+      '<div class="block" style="margin-bottom:6px"><span class="blabel b-return">The return</span><p>'+e.ret+'</p></div>'+
+      safetyBox();
+  }
+  function safetyBox(){
+    return '<div class="safetybox">'+
+      '<div class="sh">Please read</div>'+
+      '<p><strong>If you feel you may be having a medical emergency, call 911</strong> (or your local emergency number) right away. If you are struggling with thoughts of harming yourself or are in crisis, call or text <strong>988</strong> (the Suicide &amp; Crisis Lifeline, U.S.) any time, day or night.</p>'+
+      '<p>Wonderfully Made Labs is a faith and education resource. This tool is offered for reflection and encouragement only. It is not medical, psychological, or professional advice, does not diagnose or treat any condition, and is not a substitute for care from a qualified doctor or licensed mental-health professional. Scripture and prayer are shared as expressions of faith, not as a treatment or cure. By using this tool you agree that Wonderfully Made Labs is not liable for how you choose to act on it — always seek the counsel of a qualified professional for medical or mental-health concerns.</p>'+
+    '</div>';
+  }
+  function block(cls,label,inner){return '<div class="block"><span class="blabel '+cls+'">'+label+'</span>'+inner+'</div>';}
+  function lines(){return '<div class="writelines"><div class="wl"></div><div class="wl"></div></div>';}
+
+  function go(id){document.querySelectorAll('.step').forEach(s=>s.classList.remove('on'));document.getElementById('s-'+id).classList.add('on');window.scrollTo({top:0,behavior:'smooth'});}
+  function pick(el,q){el.parentNode.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));el.classList.add('sel');var b=document.getElementById('n-'+q);if(b)b.disabled=false;}
+  function pickE(el,q){pick(el,q);state.emotion=el.getAttribute('data-e');}
+  function pickB(el,q){pick(el,q);state.body=el.getAttribute('data-b');}
+  function showResult(){render();go('result');}
+</script>
+</body>
+</html>
