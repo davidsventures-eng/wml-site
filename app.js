@@ -387,7 +387,55 @@ function Home({
     className: "help-finder-lede"
   }, "Wherever you are today, there's a place to start. Pick what fits, and we'll take you straight there."), /*#__PURE__*/React.createElement("div", {
     className: "help-finder-grid"
-  }, [["I just got a diagnosis", "Plain answers about what's happening in the body \u2014 and real hope alongside them.", "adult"], ["I'm caring for someone who is sick", "Honest writing for caregivers, for the long and tiring days.", "essays"], ["I'm scared or anxious", "A Christian journal that gives fear words, with a calming Prayer Breath.", "journals"], ["I'm grieving or worn down", "A companion that sits with grief and walks the slow road back to faith.", "journals"], ["Someone I love has cancer", "A tender, wonder-filled way to understand cancer \u2014 and why it is never your fault.", "cancer"], ["I want to learn with my kids", "Painted story-mysteries about the body, for ages 8 to pre-med.", "story"]].map(item => /*#__PURE__*/React.createElement("button", {
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "help-finder-card help-finder-card-still",
+    style: {
+      gridColumn: "1 / -1",
+      cursor: "default",
+      borderTop: "3px solid var(--gold, #e8b04b)"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "help-finder-card-title"
+  }, "Where are you today?"), /*#__PURE__*/React.createElement("span", {
+    className: "help-finder-card-desc"
+  }, "Name what you\u2019re carrying, and we\u2019ll meet you there \u2014 what\u2019s happening in your body, honest Scripture, and a ninety-second way back to stillness. Tap a feeling to begin."), /*#__PURE__*/React.createElement("div", {
+    className: "still-emotion-chips",
+    style: {
+      display: "flex",
+      flexWrap: "wrap",
+      gap: "8px",
+      margin: "14px 0 6px"
+    }
+  }, [['noise', 'The Noise'], ['anger', 'The Anger'], ['impatience', 'The Impatience'], ['work', 'The Work'], ['return', 'The Return'], ['stillness', 'The Stillness']].map(pair => /*#__PURE__*/React.createElement("a", {
+    key: pair[0],
+    className: "still-chip",
+    href: "/still-tool.html#" + pair[0],
+    style: {
+      display: "inline-block",
+      padding: "8px 14px",
+      borderRadius: "999px",
+      border: "1.5px solid var(--gold, #e8b04b)",
+      background: "transparent",
+      color: "var(--navy, #23344a)",
+      textDecoration: "none",
+      fontWeight: 600,
+      fontSize: "0.92rem"
+    },
+    onClick: () => track('Still Tool Open', {
+      source: 'help finder',
+      emotion: pair[0]
+    })
+  }, pair[1]))), /*#__PURE__*/React.createElement("a", {
+    className: "help-finder-card-go",
+    href: "/still-tool.html",
+    style: {
+      textDecoration: "none"
+    },
+    onClick: () => track('Still Tool Open', {
+      source: 'help finder',
+      emotion: 'begin'
+    })
+  }, "Or just begin \u2192")), [["I just got a diagnosis", "Plain answers about what's happening in the body \u2014 and real hope alongside them.", "adult"], ["I'm caring for someone who is sick", "Honest writing for caregivers, for the long and tiring days.", "essays"], ["I'm scared or anxious", "A Christian journal that gives fear words, with a calming Prayer Breath.", "journals"], ["I'm grieving or worn down", "A companion that sits with grief and walks the slow road back to faith.", "journals"], ["Someone I love has cancer", "A tender, wonder-filled way to understand cancer \u2014 and why it is never your fault.", "cancer"], ["I want to learn with my kids", "Painted story-mysteries about the body, for ages 8 to pre-med.", "story"]].map(item => /*#__PURE__*/React.createElement("button", {
     type: "button",
     className: "help-finder-card",
     key: item[2] + item[0],
@@ -542,56 +590,6 @@ function Home({
   }, 'Our comfort lane \u2014 free to read, print, and share, with no sign-up. Faith and real science at the same table through hard seasons.')), /*#__PURE__*/React.createElement("div", {
     className: "hub-grid"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "hub-card still-interactive",
-    style: {
-      gridColumn: "1 / -1",
-      borderTop: "3px solid var(--gold, #e8b04b)"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "hub-card-tag"
-  }, "Interactive \xB7 Always Free"), /*#__PURE__*/React.createElement("h3", {
-    className: "display"
-  }, "Where are you today?"), /*#__PURE__*/React.createElement("p", null, "Name what you\u2019re carrying, and we\u2019ll meet you there \u2014 what\u2019s happening in your body, honest Scripture, and a ninety-second way back to stillness. Tap a feeling to begin."), /*#__PURE__*/React.createElement("div", {
-    className: "still-emotion-chips",
-    style: {
-      display: "flex",
-      flexWrap: "wrap",
-      gap: "8px",
-      margin: "14px 0 4px"
-    }
-  }, [['noise', 'The Noise'], ['anger', 'The Anger'], ['impatience', 'The Impatience'], ['work', 'The Work'], ['return', 'The Return'], ['stillness', 'The Stillness']].map(pair => /*#__PURE__*/React.createElement("a", {
-    key: pair[0],
-    className: "still-chip",
-    href: "/still-tool.html#" + pair[0],
-    style: {
-      display: "inline-block",
-      padding: "8px 14px",
-      borderRadius: "999px",
-      border: "1.5px solid var(--gold, #e8b04b)",
-      background: "transparent",
-      color: "var(--navy, #23344a)",
-      textDecoration: "none",
-      fontWeight: 600,
-      fontSize: "0.92rem"
-    },
-    onClick: () => track('Still Tool Open', {
-      source: 'home hub',
-      emotion: pair[0]
-    })
-  }, pair[1]))), /*#__PURE__*/React.createElement("a", {
-    className: "hub-pick",
-    href: "/still-tool.html",
-    style: {
-      textDecoration: "none",
-      color: "inherit",
-      display: "inline-block",
-      marginTop: "10px"
-    },
-    onClick: () => track('Still Tool Open', {
-      source: 'home hub',
-      emotion: 'begin'
-    })
-  }, "Or just begin \u2192")), /*#__PURE__*/React.createElement("div", {
     className: "hub-card essays",
     role: "button",
     tabIndex: 0,
