@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Move &amp; Be Still — The Wonderfully Made Reset | Wonderfully Made Labs</title>
+  <meta name="description" content="Unplug every 90 minutes. A daily-changing 10-minute bodyweight movement flow for every age, a breathing reset, and Scripture for the mind and soul. Body, mind, and soul — cared for together." />
+  <meta property="og:title" content="Move & Be Still — The Wonderfully Made Reset" />
+  <meta property="og:description" content="A daily bodyweight movement flow, a breathing reset, and Scripture. Step away from the screen and care for the body you were given." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="assets/favicon-48.png" />
+  <link rel="apple-touch-icon" href="assets/favicon-180.png" />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=chillax@400,500,600,700&f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+  <style>
+    :root{
+      --navy:#23344a; --navy-deep:#1a2738; --gold:#e8b04b; --teal:#2a7d8c;
+      --cream:#faf6ee; --cream-2:#f3ecdd; --ink:#2a3543; --muted:#5b6b7d;
+      --card:#ffffff; --line:#e4dcc9; --ok:#437a22; --work:#2a7d8c; --rest:#b5822b;
+      --shadow:0 10px 30px rgba(35,52,74,.10); --shadow-lg:0 20px 50px rgba(35,52,74,.16);
+    }
+    *{box-sizing:border-box;}
+    html,body{margin:0;padding:0;}
+    body{
+      font-family:'General Sans',system-ui,-apple-system,sans-serif;
+      color:var(--ink); background:var(--cream);
+      -webkit-font-smoothing:antialiased; line-height:1.6;
+    }
+    h1,h2,h3,.display{font-family:'Chillax','General Sans',sans-serif;letter-spacing:-.01em;line-height:1.15;color:var(--navy);}
+    a{color:var(--teal);}
+    .wrap{max-width:920px;margin:0 auto;padding:0 20px;}
+
+    /* Header */
+    .topbar{background:var(--navy);color:#fff;}
+    .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;}
+    .brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-family:'Chillax',sans-serif;font-weight:600;font-size:1.05rem;}
+    .brand .dot{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#f0c674);display:inline-block;}
+    .topbar a.home{color:#dfe6ef;text-decoration:none;font-size:.92rem;}
+    .topbar a.home:hover{color:#fff;}
+
+    /* Hero */
+    .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;padding:54px 0 60px;text-align:center;position:relative;}
+    .hero h1{color:#fff;font-size:clamp(2rem,5vw,3.1rem);margin:0 0 14px;}
+    .hero .kicker{color:var(--gold);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;margin-bottom:16px;}
+    .hero p.lede{max-width:620px;margin:0 auto;color:#e7edf4;font-size:1.12rem;}
+    .verse{font-family:'Nunito',serif;font-style:italic;color:#f2e6c9;margin-top:22px;font-size:1.02rem;}
+
+    /* Sections */
+    section{padding:44px 0;}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:26px;margin:18px 0;}
+    .eyebrow{color:var(--teal);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.76rem;margin-bottom:8px;}
+    h2{font-size:clamp(1.5rem,3.4vw,2.05rem);margin:0 0 6px;}
+    .sub{color:var(--muted);margin:0 0 8px;}
+
+    /* Rhythm steps */
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:16px;}
+    .step{background:var(--cream-2);border-radius:14px;padding:16px;border:1px solid var(--line);}
+    .step .n{width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Chillax';margin-bottom:10px;}
+    .step h4{margin:0 0 4px;font-family:'Chillax';color:var(--navy);font-size:1.02rem;}
+    .step p{margin:0;font-size:.92rem;color:var(--muted);}
+
+    /* 90-min timer */
+    .timer-card{text-align:center;background:linear-gradient(160deg,#fff,#fbf7ee);}
+    .clock{font-family:'Chillax',sans-serif;font-weight:600;font-size:clamp(3rem,12vw,5rem);color:var(--navy);letter-spacing:.02em;font-variant-numeric:tabular-nums;line-height:1;margin:6px 0 4px;}
+    .clock.small{font-size:clamp(2.4rem,9vw,3.6rem);}
+    .timer-label{color:var(--muted);font-size:.95rem;margin-bottom:16px;}
+    .btnrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+    button.b{font-family:'General Sans',sans-serif;font-weight:600;font-size:1rem;border:none;border-radius:999px;padding:12px 26px;cursor:pointer;transition:transform .08s ease,box-shadow .2s ease;}
+    button.b:active{transform:translateY(1px);}
+    .b.primary{background:var(--gold);color:var(--navy-deep);box-shadow:0 6px 18px rgba(232,176,75,.35);}
+    .b.primary:hover{box-shadow:0 8px 24px rgba(232,176,75,.5);}
+    .b.ghost{background:transparent;color:var(--navy);border:1.5px solid var(--line);}
+    .b.teal{background:var(--teal);color:#fff;}
+    .b.small{padding:8px 16px;font-size:.9rem;}
+
+    /* Age selector */
+    .ages{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:6px 0 4px;}
+    .age-btn{border:1.5px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;padding:9px 16px;cursor:pointer;font-weight:600;font-size:.9rem;font-family:'General Sans';transition:all .15s;}
+    .age-btn:hover{border-color:var(--teal);}
+    .age-btn.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+
+    /* Flow list */
+    .flow-meta{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.92rem;margin:6px 0 14px;}
+    .flow-meta b{color:var(--navy);}
+    .movelist{list-style:none;padding:0;margin:0;counter-reset:mv;}
+    .movelist li{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--line);}
+    .movelist li:first-child{border-top:none;}
+    .mv-num{counter-increment:mv;flex:0 0 34px;height:34px;border-radius:50%;background:var(--cream-2);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Chillax';border:1px solid var(--line);}
+    .mv-num::before{content:counter(mv);}
+    .mv-body h4{margin:0 0 2px;font-family:'Chillax';font-size:1.05rem;color:var(--navy);}
+    .mv-body p{margin:0;color:var(--muted);font-size:.93rem;}
+    .anchor-tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);background:rgba(42,125,140,.1);border-radius:6px;padding:2px 7px;margin-left:8px;vertical-align:middle;}
+    .warmup{background:var(--cream-2);border-radius:12px;padding:14px 16px;margin-bottom:14px;font-size:.95rem;}
+    .warmup b{color:var(--navy);}
+    .band-note{color:var(--muted);font-size:.9rem;font-style:italic;margin-top:12px;}
+
+    /* Guided exercise timer overlay */
+    .guided{background:var(--navy);color:#fff;border-radius:18px;padding:30px 22px;text-align:center;margin-top:16px;}
+    .guided .phase{letter-spacing:.16em;text-transform:uppercase;font-weight:700;font-size:.9rem;margin-bottom:6px;}
+    .guided.workp .phase{color:#7fd4e2;}
+    .guided.restp .phase{color:#f2c877;}
+    .guided .movename{font-family:'Chillax';font-size:clamp(1.5rem,5vw,2.2rem);color:#fff;margin:4px 0;}
+    .guided .movecue{color:#cdd8e4;max-width:520px;margin:0 auto 8px;font-size:.98rem;}
+    .guided .gclock{font-family:'Chillax';font-size:clamp(3rem,14vw,5.2rem);font-variant-numeric:tabular-nums;line-height:1;margin:8px 0;}
+    .guided .rd{color:#aebfd0;font-size:.9rem;margin-bottom:14px;}
+    .guided .next{color:#8fa3b8;font-size:.85rem;margin-top:8px;}
+
+    /* Reset + breathing */
+    .breath-orb{width:130px;height:130px;border-radius:50%;margin:14px auto;background:radial-gradient(circle at 40% 35%,#7fd4e2,var(--teal));box-shadow:0 0 40px rgba(42,125,140,.4);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Chillax';font-size:1.05rem;text-align:center;transition:transform 4s ease-in-out;}
+    .breath-orb.inhale{transform:scale(1.28);}
+    .breath-orb.exhale{transform:scale(.85);}
+    @media (prefers-reduced-motion:reduce){.breath-orb{transition:none;}}
+    .stretch-list{margin:6px 0 0;padding-left:20px;color:var(--muted);}
+    .stretch-list li{margin:6px 0;}
+
+    /* Scripture */
+    .scripture{background:linear-gradient(160deg,#fff,#f7f0e2);border-left:4px solid var(--gold);}
+    .scripture .ref{color:var(--teal);font-weight:600;letter-spacing:.06em;font-size:.9rem;}
+    .scripture blockquote{font-family:'Nunito',serif;font-style:italic;font-size:1.18rem;color:var(--navy);margin:10px 0 14px;line-height:1.5;}
+    .scripture .teaching{color:var(--ink);}
+    .scripture .prayer{margin-top:12px;color:var(--muted);font-style:italic;}
+
+    /* Safety */
+    .safety{background:#fff6ed;border:1px solid #f0d9bd;border-radius:14px;padding:20px;font-size:.92rem;color:#6b5638;}
+    .safety b{color:#8a5a1e;}
+
+    /* Sources / footer */
+    .sources{font-size:.82rem;color:var(--muted);}
+    .sources a{color:var(--teal);word-break:break-word;}
+    footer{background:var(--navy);color:#dfe6ef;text-align:center;padding:30px 20px;margin-top:20px;}
+    footer .glory{font-family:'Chillax';color:var(--gold);margin-bottom:6px;}
+    footer a{color:#fff;}
+    .hidden{display:none !important;}
+    .center{text-align:center;}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="dot"></span> Wonderfully Made Labs</a>
+      <a class="home" href="/">&larr; Home</a>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="kicker">The Wonderfully Made Reset</div>
+      <h1>Move &amp; Be Still</h1>
+      <p class="lede">We spend so much of the day on screens. Every 90 minutes, step away. Move the body you were given, breathe, and be still with a word for your soul.</p>
+      <p class="verse">"I praise you because I am fearfully and wonderfully made; your works are wonderful." — Psalm 139:14</p>
+    </div>
+  </header>
+
+  <!-- The rhythm -->
+  <section>
+    <div class="wrap">
+      <div class="eyebrow">How the rhythm works</div>
+      <h2>Body, mind, and soul — cared for together</h2>
+      <p class="sub">A daily-changing flow so there's always something new. Total time away from the screen: about 15 minutes.</p>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h4>90-minute timer</h4><p>It runs quietly while you work. When it chimes, you unplug.</p></div>
+        <div class="step"><div class="n">2</div><h4>10 minutes of movement</h4><p>Today's bodyweight flow for your age — all body movement, no equipment.</p></div>
+        <div class="step"><div class="n">3</div><h4>2–3 minute reset</h4><p>Gentle stretches and "Be Still" breathing to settle the nervous system.</p></div>
+        <div class="step"><div class="n">4</div><h4>Scripture &amp; soul</h4><p>A short reading and reflection — rest for the mind and heart.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 90-min timer -->
+  <section>
+    <div class="wrap">
+      <div class="card timer-card">
+        <div class="eyebrow">Step away every 90 minutes</div>
+        <h2 style="margin-bottom:4px;">The Unplug Timer</h2>
+        <div id="clock90" class="clock">90:00</div>
+        <div id="timer90label" class="timer-label">Start the timer, then keep working. We'll chime when it's time to move.</div>
+        <div class="btnrow">
+          <button class="b primary" id="start90">Start 90-minute timer</button>
+          <button class="b ghost" id="reset90">Reset</button>
+          <button class="b ghost small" id="skip90">Time to move now &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Today's flow -->
+  <section id="flow-section">
+    <div class="wrap">
+      <div class="eyebrow">Today's movement</div>
+      <h2 id="flow-date">Today's Flow</h2>
+      <p class="sub">Choose your age group. Every flow includes squats, push-ups, and mountain climbers, plus flowing ground movements — and it changes every day.</p>
+      <div class="ages" id="ages"></div>
+
+      <div class="card" id="flow-card">
+        <div class="warmup" id="warmup"></div>
+        <div class="flow-meta" id="flow-meta"></div>
+        <ul class="movelist" id="movelist"></ul>
+        <div class="band-note" id="band-note"></div>
+        <div class="btnrow" style="margin-top:18px;">
+          <button class="b teal" id="startGuided">Start the guided flow</button>
+        </div>
+      </div>
+
+      <!-- Guided timer -->
+      <div class="guided hidden" id="guided">
+        <div class="phase" id="g-phase">Get ready</div>
+        <div class="movename" id="g-move">—</div>
+        <div class="movecue" id="g-cue"></div>
+        <div class="gclock" id="g-clock">0:05</div>
+        <div class="rd" id="g-round"></div>
+        <div class="btnrow">
+          <button class="b ghost small" id="g-pause">Pause</button>
+          <button class="b ghost small" id="g-stop">Stop</button>
+        </div>
+        <div class="next" id="g-next"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reset -->
+  <section>
+    <div class="wrap">
+      <div class="eyebrow">The reset</div>
+      <h2>Stretch &amp; "Be Still" Breathing</h2>
+      <p class="sub">Flow straight from the movement into this 2–3 minute reset. It brings your heart rate down and shifts you from "go" to "rest."</p>
+      <div class="card center">
+        <div class="breath-orb" id="orb">Breathe</div>
+        <div id="breath-label" class="timer-label">Follow the circle: in for 4, hold for 4, out for 6.</div>
+        <div class="btnrow"><button class="b teal" id="breathBtn">Start breathing reset</button></div>
+        <hr style="border:none;border-top:1px solid var(--line);margin:22px 0;" />
+        <div style="text-align:left;">
+          <b style="font-family:'Chillax';color:var(--navy);">Gentle stretches (hold each ~20–30 sec, never bounce):</b>
+          <ul class="stretch-list">
+            <li>Overhead reach — inhale, reach both arms up tall; exhale, soften.</li>
+            <li>Chest opener — clasp hands behind your back, gently open the chest (undoes screen-hunched posture).</li>
+            <li>Standing forward fold — soft knees, hang toward the floor, release the neck.</li>
+            <li>Gentle neck release — ear toward shoulder, each side.</li>
+            <li>Calf or figure-four stretch — whatever your body needs most.</li>
+          </ul>
+          <p class="band-note">As you breathe out, let your shoulders drop. The longer exhale is what tells your body it is safe to rest. Let each exhale be a small act of trust.</p>
+          <p class="verse" style="color:var(--teal);">"Be still, and know that I am God." — Psalm 46:10</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripture reset -->
+  <section>
+    <div class="wrap">
+      <div class="eyebrow">For the mind &amp; soul</div>
+      <h2>Today's Scripture Reset</h2>
+      <p class="sub">Read it slowly — once to hear it, once to let it land.</p>
+      <div class="card scripture" id="scripture">
+        <div class="ref" id="s-ref"></div>
+        <h3 id="s-title" style="margin:6px 0 2px;"></h3>
+        <blockquote id="s-verse"></blockquote>
+        <div class="teaching" id="s-teaching"></div>
+        <div class="prayer" id="s-prayer"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Safety -->
+  <section>
+    <div class="wrap">
+      <div class="safety">
+        <b>A word before you begin.</b> This program is offered for general wellness and encouragement — it is <b>not medical advice, diagnosis, or treatment.</b> Talk with your doctor before starting a new exercise routine, especially if you are pregnant, recovering from injury or surgery, or living with heart, joint, balance, or other health conditions. Stop and rest if you feel pain, dizziness, chest discomfort, or shortness of breath. <b>If you think you may be having a medical emergency, call 911.</b> If you are struggling with your mental health or in crisis, call or text <b>988</b> (Suicide &amp; Crisis Lifeline) any time. Faith and Scripture here are offered as hope and encouragement, not as a substitute for medical or mental-health care.
+      </div>
+    </div>
+  </section>
+
+  <!-- Sources -->
+  <section>
+    <div class="wrap">
+      <div class="eyebrow">Built on the evidence</div>
+      <h2 style="font-size:1.3rem;">Sources</h2>
+      <p class="sources">
+        Guidance is drawn from the American College of Sports Medicine and peer-reviewed research:<br/>
+        &bull; ACSM — <a href="https://acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines/" target="_blank" rel="noopener">Physical Activity Guidelines</a> and <a href="https://acsm.org/physical-activity-guidelines-faqs/" target="_blank" rel="noopener">Guidelines FAQs</a><br/>
+        &bull; Bushman BA, "Coming of Age: Exercise for Older Adults," <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4969034/" target="_blank" rel="noopener">PMC4969034</a><br/>
+        &bull; NSCA — <a href="https://www.nsca.com/globalassets/about/position-statements/position_stand_youth_resistance_training---2009.pdf" target="_blank" rel="noopener">Youth Resistance Training Position Statement</a><br/>
+        &bull; Bodyweight interval training, <a href="https://pubmed.ncbi.nlm.nih.gov/32960155/" target="_blank" rel="noopener">PubMed 32960155</a><br/>
+        &bull; Fall-prevention in older adults, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10435089/" target="_blank" rel="noopener">PMC10435089</a><br/>
+        Scripture quotations are from the English Standard Version (ESV).
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="glory">To God be all the glory.</div>
+      <div>Real science, told with wonder — so you can see the Maker in what He made.</div>
+      <div style="margin-top:10px;font-size:.9rem;">Questions or prayer requests: <a href="mailto:davidsventures@gmail.com?subject=Move%20%26%20Be%20Still%20—%20wonderfullymadelabs.com">davidsventures@gmail.com</a></div>
+    </div>
+  </footer>
+
+  <!-- Chime (WebAudio, no asset needed) -->
+  <script src="move-and-be-still.js?v=20260912a"></script>
+  <script>
+  (function(){
+    var M = window.MoveAndBeStill;
+    var dateStr = M.todayStr();
+    // Safe storage: falls back to in-memory if localStorage is unavailable (e.g. preview iframe / private mode).
+    var _mem = {};
+    var store = {
+      get: function(k){ try{ return localStorage.getItem(k); }catch(e){ return (k in _mem)?_mem[k]:null; } },
+      set: function(k,v){ try{ localStorage.setItem(k,v); }catch(e){ _mem[k]=v; } }
+    };
+    var currentBand = store.get("mbs_band") || "adult1";
+
+    /* ---------- friendly chime ---------- */
+    var AC = window.AudioContext || window.webkitAudioContext;
+    var actx = null;
+    function chime(times){
+      try{
+        if(!actx) actx = new AC();
+        times = times || 2;
+        for(var i=0;i<times;i++){
+          var o=actx.createOscillator(), g=actx.createGain();
+          o.type="sine"; o.frequency.value = i%2===0?660:880;
+          var t=actx.currentTime + i*0.28;
+          g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(.25,t+.03);
+          g.gain.exponentialRampToValueAtTime(.001,t+.26);
+          o.connect(g); g.connect(actx.destination); o.start(t); o.stop(t+.28);
+        }
+      }catch(e){}
+    }
+
+    /* ---------- format ---------- */
+    function fmt(s){var m=Math.floor(s/60),sec=s%60;return m+":"+("0"+sec).slice(-2);}
+
+    /* ================= 90-MIN TIMER ================= */
+    var T90 = 90*60, t90 = T90, iv90=null, running90=false;
+    var clock90=document.getElementById("clock90"),
+        lbl90=document.getElementById("timer90label"),
+        start90=document.getElementById("start90"),
+        reset90=document.getElementById("reset90"),
+        skip90=document.getElementById("skip90");
+    function render90(){clock90.textContent=fmt(t90);}
+    function tick90(){
+      t90--; render90();
+      if(t90<=0){clearInterval(iv90);running90=false;t90=T90;render90();
+        chime(4); lbl90.textContent="Time to unplug and move. Scroll to today's flow.";
+        start90.textContent="Start 90-minute timer";
+        document.getElementById("flow-section").scrollIntoView({behavior:"smooth"});
+      }
+    }
+    start90.onclick=function(){
+      if(actx&&actx.state==="suspended")actx.resume();
+      if(!actx){try{actx=new AC();}catch(e){}}
+      if(running90){clearInterval(iv90);running90=false;start90.textContent="Resume";lbl90.textContent="Paused.";}
+      else{running90=true;iv90=setInterval(tick90,1000);start90.textContent="Pause";lbl90.textContent="Timer running. Keep working — we'll chime in "+fmt(t90)+".";}
+    };
+    reset90.onclick=function(){clearInterval(iv90);running90=false;t90=T90;render90();start90.textContent="Start 90-minute timer";lbl90.textContent="Start the timer, then keep working. We'll chime when it's time to move.";};
+    skip90.onclick=function(){clearInterval(iv90);running90=false;t90=T90;render90();start90.textContent="Start 90-minute timer";document.getElementById("flow-section").scrollIntoView({behavior:"smooth"});};
+    render90();
+
+    /* ================= AGE SELECTOR + FLOW ================= */
+    var agesEl=document.getElementById("ages");
+    M.BANDS.forEach(function(b){
+      var btn=document.createElement("button");
+      btn.className="age-btn"+(b.id===currentBand?" active":"");
+      btn.textContent=b.label; btn.setAttribute("data-id",b.id);
+      btn.onclick=function(){currentBand=b.id;store.set("mbs_band",b.id);
+        document.querySelectorAll(".age-btn").forEach(function(x){x.classList.remove("active");});
+        btn.classList.add("active"); renderFlow();};
+      agesEl.appendChild(btn);
+    });
+
+    function isAnchor(name){return /squat|sit-to-stand|push-?up|climber/i.test(name);}
+    var flowData=null;
+    function renderFlow(){
+      var band=M.getBand(currentBand);
+      flowData=M.buildFlow(band,dateStr);
+      var d=new Date(dateStr+"T00:00:00");
+      document.getElementById("flow-date").textContent="Today's Flow — "+d.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'});
+      document.getElementById("warmup").innerHTML="<b>Warm-up (about 1 min):</b> "+flowData.warmup;
+      document.getElementById("flow-meta").innerHTML=
+        "<span><b>"+flowData.rounds+"</b> rounds</span>"+
+        "<span><b>"+flowData.work+"s</b> work</span>"+
+        "<span><b>"+flowData.rest+"s</b> rest</span>"+
+        "<span>Repeat the circuit each round</span>";
+      var ul=document.getElementById("movelist"); ul.innerHTML="";
+      flowData.moves.forEach(function(m){
+        var li=document.createElement("li");
+        var tag=isAnchor(m.name)?'<span class="anchor-tag">Core move</span>':'';
+        li.innerHTML='<div class="mv-num"></div><div class="mv-body"><h4>'+m.name+tag+'</h4><p>'+m.cue+'</p></div>';
+        ul.appendChild(li);
+      });
+      document.getElementById("band-note").textContent=flowData.note;
+    }
+    renderFlow();
+
+    /* ================= GUIDED FLOW TIMER ================= */
+    var guided=document.getElementById("guided"),
+        gPhase=document.getElementById("g-phase"),
+        gMove=document.getElementById("g-move"),
+        gCue=document.getElementById("g-cue"),
+        gClock=document.getElementById("g-clock"),
+        gRound=document.getElementById("g-round"),
+        gNext=document.getElementById("g-next"),
+        gPause=document.getElementById("g-pause"),
+        gStop=document.getElementById("g-stop");
+    var seq=[], idx=0, gt=0, giv=null, gpaused=false;
+
+    function buildSeq(){
+      seq=[]; 
+      seq.push({phase:"ready",label:"Get ready",move:"Warm-up",cue:flowData.warmup,secs:15});
+      for(var r=1;r<=flowData.rounds;r++){
+        flowData.moves.forEach(function(m,i){
+          seq.push({phase:"work",label:"Work — Round "+r+"/"+flowData.rounds,move:m.name,cue:m.cue,secs:flowData.work});
+          var last=(r===flowData.rounds&&i===flowData.moves.length-1);
+          if(!last) seq.push({phase:"rest",label:"Rest",move:"Recover",cue:"Breathe. Shake it out. Get set for the next move.",secs:flowData.rest});
+        });
+      }
+      seq.push({phase:"done",label:"Well done",move:"Flow complete",cue:"Now flow into the stretch & breathing reset below.",secs:0});
+    }
+    function showStep(){
+      var s=seq[idx];
+      guided.classList.remove("workp","restp");
+      if(s.phase==="work")guided.classList.add("workp");
+      if(s.phase==="rest")guided.classList.add("restp");
+      gPhase.textContent=s.label; gMove.textContent=s.move; gCue.textContent=s.cue;
+      gt=s.secs; gClock.textContent=fmt(gt);
+      gRound.textContent = s.phase==="work"||s.phase==="rest" ? "Step "+idx+" of "+(seq.length-2) : "";
+      var nx=seq[idx+1];
+      gNext.textContent = nx&&nx.phase!=="done" ? "Next: "+nx.move : (nx&&nx.phase==="done"?"Almost there — final move!":"");
+      if(s.phase==="done"){gClock.textContent="";chime(3);}
+    }
+    function gtick(){
+      if(gpaused)return;
+      gt--; gClock.textContent=fmt(Math.max(gt,0));
+      if(gt<=0){
+        var cur=seq[idx];
+        if(idx<seq.length-1){
+          idx++;
+          var nn=seq[idx];
+          if(nn.phase==="work")chime(1); else if(nn.phase==="rest")chime(1);
+          showStep();
+        } else {clearInterval(giv);}
+      }
+    }
+    document.getElementById("startGuided").onclick=function(){
+      if(!actx){try{actx=new AC();}catch(e){}}
+      if(actx&&actx.state==="suspended")actx.resume();
+      buildSeq(); idx=0; gpaused=false; guided.classList.remove("hidden"); showStep();
+      clearInterval(giv); giv=setInterval(gtick,1000);
+      guided.scrollIntoView({behavior:"smooth",block:"center"});
+      gPause.textContent="Pause";
+    };
+    gPause.onclick=function(){gpaused=!gpaused;gPause.textContent=gpaused?"Resume":"Pause";};
+    gStop.onclick=function(){clearInterval(giv);guided.classList.add("hidden");};
+
+    /* ================= BREATHING ORB ================= */
+    var orb=document.getElementById("orb"), bLabel=document.getElementById("breath-label"),
+        bBtn=document.getElementById("breathBtn"), bRunning=false, bTimer=null, bStep=0;
+    var phases=[{t:"Breathe in…",c:"inhale",s:4},{t:"Hold…",c:"",s:4},{t:"Breathe out…",c:"exhale",s:6}];
+    function breathCycle(){
+      var p=phases[bStep%phases.length];
+      orb.classList.remove("inhale","exhale"); if(p.c)orb.classList.add(p.c);
+      orb.textContent=p.t.replace("…",""); bLabel.textContent=p.t+" ("+p.s+"s)";
+      bStep++; bTimer=setTimeout(breathCycle,p.s*1000);
+    }
+    bBtn.onclick=function(){
+      if(bRunning){clearTimeout(bTimer);bRunning=false;bBtn.textContent="Start breathing reset";orb.classList.remove("inhale","exhale");orb.textContent="Breathe";bLabel.textContent="Follow the circle: in for 4, hold for 4, out for 6.";return;}
+      bRunning=true;bStep=0;bBtn.textContent="Stop";breathCycle();
+    };
+
+    /* ================= SCRIPTURE ================= */
+    var reset=M.resetForDate(dateStr);
+    document.getElementById("s-ref").textContent=reset.ref;
+    document.getElementById("s-title").textContent=reset.title;
+    document.getElementById("s-verse").textContent="\u201C"+reset.verse+"\u201D";
+    document.getElementById("s-teaching").textContent=reset.teaching;
+    document.getElementById("s-prayer").textContent="Prayer: "+reset.prayer;
+  })();
+  </script>
+</body>
+</html>

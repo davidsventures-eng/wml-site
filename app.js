@@ -666,6 +666,19 @@ function Home({
     className: "hub-pick"
   }, "\uD83D\uDD0E Play the mystery \u2192")), /*#__PURE__*/React.createElement("a", {
     className: "hub-card journals",
+    href: "/move-and-be-still.html",
+    style: {
+      textDecoration: 'none',
+      color: 'inherit'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "hub-card-tag"
+  }, "Move & Be Still \xB7 Free \xB7 All Ages 8+"), /*#__PURE__*/React.createElement("h3", {
+    className: "display"
+  }, "Move & Be Still"), /*#__PURE__*/React.createElement("p", null, "We spend so much of the day on screens. Every 90 minutes, unplug: a 10-minute bodyweight movement flow for your age \u2014 it changes every day \u2014 then a breathing reset and a word of Scripture. Body, mind, and soul, cared for together. Free, works on any phone."), /*#__PURE__*/React.createElement("span", {
+    className: "hub-pick"
+  }, "Start the reset \u2192")), /*#__PURE__*/React.createElement("a", {
+    className: "hub-card journals",
     href: "/heart",
     style: {
       textDecoration: 'none',
