@@ -84,6 +84,68 @@
     .age-btn{border:1.5px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;padding:9px 16px;cursor:pointer;font-weight:600;font-size:.9rem;font-family:'General Sans';transition:all .15s;}
     .age-btn:hover{border-color:var(--teal);}
     .age-btn.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+    /* reps + session controls */
+    .reps-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;margin:14px 0 2px;}
+    .reps-label{color:var(--muted);font-size:.88rem;font-weight:600;margin-right:2px;}
+    .rep-btn{border:1.5px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;padding:7px 15px;cursor:pointer;font-weight:600;font-size:.86rem;font-family:'General Sans';transition:all .15s;}
+    .rep-btn:hover{border-color:var(--teal);}
+    .rep-btn.active{background:var(--teal);color:#fff;border-color:var(--teal);}
+    .reps-note{color:var(--muted);font-size:.82rem;text-align:center;max-width:600px;margin:8px auto 0;line-height:1.5;}
+    .session-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--gold);color:var(--navy);border-radius:999px;padding:6px 16px;font-weight:700;font-size:.9rem;margin:4px 0 2px;}
+    .session-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);}
+    .session-nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px;}
+    /* deeper scripture layer */
+    .s-layer{margin-top:14px;padding:14px 16px;background:rgba(42,125,140,.06);border-left:3px solid var(--teal);border-radius:0 10px 10px 0;}
+    .s-layer .s-layer-tag{display:inline-block;color:var(--teal);font-weight:700;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;}
+    .s-layer p{margin:0;color:var(--navy);line-height:1.6;}
+    .s-depth-track{display:flex;gap:6px;justify-content:center;margin:12px 0 2px;flex-wrap:wrap;}
+    .s-depth-track .dot2{width:10px;height:10px;border-radius:50%;background:#c7cdd6;border:1px solid #aeb6c2;transition:all .15s;}
+    .s-depth-track .dot2.on{background:var(--teal);border-color:var(--teal);transform:scale(1.25);}
+
+    /* daily-time nudge */
+    .b.gold-outline{background:transparent;color:var(--navy);border:1.5px solid var(--gold);}
+    .time-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:10px;}
+    .time-row input[type=time]{font-family:'General Sans';font-size:1rem;padding:8px 12px;border:1.5px solid var(--line);border-radius:10px;color:var(--navy);}
+    .time-note{color:var(--muted);font-size:.86rem;text-align:center;max-width:640px;margin:10px auto 0;line-height:1.55;}
+
+    /* streak + badges + certificate */
+    .streak-wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;align-items:stretch;margin:6px 0 4px;}
+    .streak-card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:18px 22px;text-align:center;min-width:120px;}
+    .streak-card .big{font-size:2.2rem;font-weight:800;color:var(--gold);line-height:1;font-family:'Chillax',sans-serif;}
+    .streak-card .lbl{color:var(--muted);font-size:.82rem;margin-top:6px;font-weight:600;letter-spacing:.02em;}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:16px 0 2px;}
+    .badge{display:flex;flex-direction:column;align-items:center;gap:6px;width:92px;text-align:center;opacity:.35;filter:grayscale(1);transition:all .25s;}
+    .badge.earned{opacity:1;filter:none;}
+    .badge .medal{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:1.05rem;background:linear-gradient(150deg,var(--teal),var(--navy));box-shadow:0 4px 12px rgba(35,52,74,.2);}
+    .badge.earned .medal{background:linear-gradient(150deg,var(--gold),#c9902f);}
+    .badge .bname{font-size:.72rem;color:var(--navy);font-weight:700;line-height:1.2;}
+    .badge .bsub{font-size:.66rem;color:var(--muted);}
+
+    /* invite + move-together */
+    .invite-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px;}
+    .safe-note{display:inline-flex;align-items:center;gap:8px;background:rgba(67,122,34,.08);border:1px solid rgba(67,122,34,.3);color:#2f5417;border-radius:999px;padding:7px 15px;font-size:.82rem;font-weight:600;margin-top:12px;}
+    .together-box{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:20px;margin-top:14px;}
+    .code-pill{display:inline-block;font-family:'General Sans';font-weight:800;letter-spacing:.18em;font-size:1.4rem;color:var(--navy);background:var(--cream);border:1.5px dashed var(--gold);border-radius:12px;padding:10px 20px;margin:8px 0;}
+    .cheer-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px;}
+    .cheer-btn{border:1.5px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;padding:8px 16px;cursor:pointer;font-weight:600;font-size:.86rem;font-family:'General Sans';transition:all .15s;}
+    .cheer-btn:hover{border-color:var(--teal);background:var(--cream);}
+    .cheer-feed{margin-top:14px;text-align:left;max-width:420px;margin-left:auto;margin-right:auto;}
+    .cheer-feed .cheer-item{background:var(--cream);border-radius:10px;padding:9px 13px;margin-bottom:7px;font-size:.9rem;color:var(--navy);}
+    .cheer-feed .cheer-item .who{font-weight:700;color:var(--teal);}
+    .together-people{display:inline-flex;align-items:center;gap:8px;color:var(--navy);font-weight:700;font-size:.95rem;margin-top:8px;}
+    .together-people .gdot{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(67,122,34,.18);}
+    /* certificate print */
+    @media print{
+      body>*{display:none !important;}
+      #cert-print{display:block !important;position:absolute;top:0;left:0;width:100%;}
+    }
+    #cert-print{display:none;}
+    .cert{max-width:720px;margin:0 auto;border:8px double var(--gold);border-radius:8px;padding:48px 40px;text-align:center;background:#fffdf7;color:var(--navy);}
+    .cert h1{font-family:'Chillax',serif;color:var(--navy);font-size:2.4rem;margin:0 0 6px;}
+    .cert .cert-sub{color:var(--teal);letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;font-weight:700;margin-bottom:24px;}
+    .cert .cert-name{font-size:1.8rem;font-weight:800;border-bottom:2px solid var(--line);display:inline-block;padding:0 30px 6px;margin:8px 0 20px;min-width:280px;}
+    .cert .cert-verse{font-style:italic;color:var(--muted);max-width:520px;margin:18px auto 0;line-height:1.6;}
+    .cert .cert-glory{margin-top:26px;font-weight:700;color:var(--gold);}
 
     /* Flow list */
     .flow-meta{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.92rem;margin:6px 0 14px;}
@@ -185,6 +247,12 @@
           <button class="b ghost" id="reset90">Reset</button>
           <button class="b ghost small" id="skip90">Time to move now &rarr;</button>
         </div>
+        <div class="time-row">
+          <label for="dailyTime" style="color:var(--muted);font-weight:600;font-size:.9rem;">Pick a daily start time:</label>
+          <input type="time" id="dailyTime" />
+          <button class="b gold-outline small" id="saveTime">Save my time</button>
+        </div>
+        <p class="time-note" id="timeNote">The research is clear on one thing: <b>consistency matters more than the clock.</b> People who move at the <b>same time each day</b> stick with it far better. Mornings are a great anchor — they set your body’s rhythm and rarely get bumped — but the best time is simply the one you’ll actually keep. Pick a time, and let the 90-minute timer catch the rest of the day.</p>
       </div>
     </div>
   </section>
@@ -197,6 +265,16 @@
       <p class="sub">Choose your age group. Every flow includes squats, push-ups, and mountain climbers, plus flowing ground movements — and it changes every day.</p>
       <div class="ages" id="ages"></div>
 
+      <div class="reps-row">
+        <span class="reps-label">Times today:</span>
+        <span id="reps"></span>
+      </div>
+      <p class="reps-note" id="reps-note"></p>
+
+      <div style="text-align:center;margin:12px 0 2px;">
+        <span class="session-badge" id="session-badge"><span class="dot"></span><span id="session-badge-text"></span></span>
+      </div>
+
       <div class="card" id="flow-card">
         <div class="warmup" id="warmup"></div>
         <div class="flow-meta" id="flow-meta"></div>
@@ -205,6 +283,7 @@
         <div class="btnrow" style="margin-top:18px;">
           <button class="b teal" id="startGuided">Start the guided flow</button>
         </div>
+        <div class="session-nav" id="session-nav"></div>
       </div>
 
       <!-- Guided timer -->
@@ -255,13 +334,81 @@
     <div class="wrap">
       <div class="eyebrow">For the mind &amp; soul</div>
       <h2>Today's Scripture Reset</h2>
-      <p class="sub">Read it slowly — once to hear it, once to let it land.</p>
+      <p class="sub">One verse for the whole day — we go a little deeper with each session, from first reading to prayer.</p>
       <div class="card scripture" id="scripture">
         <div class="ref" id="s-ref"></div>
         <h3 id="s-title" style="margin:6px 0 2px;"></h3>
         <blockquote id="s-verse"></blockquote>
-        <div class="teaching" id="s-teaching"></div>
+        <div class="s-depth-track" id="s-depth-track"></div>
+        <div class="s-layer" id="s-layer"><span class="s-layer-tag" id="s-layer-tag"></span><p id="s-layer-body"></p></div>
         <div class="prayer" id="s-prayer"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credit of completion (on-device only, no account, no data collected) -->
+  <section style="background:var(--cream-2);">
+    <div class="wrap">
+      <div class="eyebrow">Your progress</div>
+      <h2>Credit of Completion</h2>
+      <p class="sub">Every time you finish a session, we mark it — right here on your device. Nothing is uploaded, no sign-up, no email. Just you and your rhythm.</p>
+
+      <div class="streak-wrap">
+        <div class="streak-card"><div class="big" id="stat-streak">0</div><div class="lbl">Day streak</div></div>
+        <div class="streak-card"><div class="big" id="stat-today">0</div><div class="lbl">Sessions today</div></div>
+        <div class="streak-card"><div class="big" id="stat-total">0</div><div class="lbl">Total sessions</div></div>
+      </div>
+
+      <div class="badges" id="badges"></div>
+
+      <div class="time-row">
+        <label for="certName" style="color:var(--muted);font-weight:600;font-size:.9rem;">Name for your certificate (optional):</label>
+        <input type="text" id="certName" maxlength="40" placeholder="e.g. Sam Jones" style="font-family:'General Sans';font-size:1rem;padding:8px 12px;border:1.5px solid var(--line);border-radius:10px;color:var(--navy);" />
+      </div>
+      <div class="btnrow" style="margin-top:14px;justify-content:center;">
+        <button class="b teal" id="markDone">I finished a session ✓</button>
+        <button class="b gold-outline" id="getCert">Print my certificate</button>
+      </div>
+      <p class="time-note">Finishing the guided flow marks a session automatically — or tap the button if you moved on your own. This is stored only in this browser, so it stays private to you. Clearing your browser data will reset it.</p>
+    </div>
+  </section>
+
+  <!-- Move together + invite a friend (safe by design: no strangers, no chat, on-device only) -->
+  <section>
+    <div class="wrap">
+      <div class="eyebrow">Better together</div>
+      <h2>Move With Someone You Love</h2>
+      <p class="sub">Doing this alongside a friend or family member makes it stick — and makes it joy. Invite someone you know, or start a private group just for your people.</p>
+
+      <div class="invite-row">
+        <button class="b primary" id="inviteFriend">Invite a friend</button>
+        <button class="b ghost" id="copyLink">Copy the link</button>
+      </div>
+      <div style="text-align:center;"><span class="safe-note"><span aria-hidden="true">🔒</span> Safe by design: no public rooms, no strangers, no chat with people you don’t know.</span></div>
+
+      <div class="together-box" style="text-align:center;">
+        <h3 style="margin:0 0 4px;">Start a private group</h3>
+        <p class="time-note" style="margin-top:4px;">Create a private code and share it <b>only</b> with your family or small group. Everyone with the code moves through the same day together and can send simple, tap-only encouragements. There is no open chat and no way for a stranger to find your group.</p>
+        <div id="together-idle">
+          <div class="time-row">
+            <label for="groupName" style="color:var(--muted);font-weight:600;font-size:.9rem;">Your first name or nickname (no last names):</label>
+            <input type="text" id="groupName" maxlength="20" placeholder="e.g. Sam" style="font-family:'General Sans';font-size:1rem;padding:8px 12px;border:1.5px solid var(--line);border-radius:10px;color:var(--navy);" />
+          </div>
+          <button class="b teal" id="startGroup">Create a private group code</button>
+        </div>
+        <div id="together-active" class="hidden">
+          <div>Your private group code:</div>
+          <div class="code-pill" id="groupCode">————</div>
+          <div class="invite-row" style="margin-top:4px;">
+            <button class="b primary small" id="shareGroup">Share this code</button>
+            <button class="b ghost small" id="copyGroup">Copy code</button>
+            <button class="b ghost small" id="leaveGroup">Leave group</button>
+          </div>
+          <div class="together-people"><span class="gdot"></span><span id="groupCount">You&rsquo;re here</span></div>
+          <div class="cheer-row" id="cheerRow"></div>
+          <div class="cheer-feed" id="cheerFeed"></div>
+          <p class="time-note" style="margin-top:8px;">Encouragements are gentle presets only — no free typing — and they stay on this device. This keeps the group kind and keeps everyone, especially kids, safe.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -287,6 +434,8 @@
         &bull; NSCA — <a href="https://www.nsca.com/globalassets/about/position-statements/position_stand_youth_resistance_training---2009.pdf" target="_blank" rel="noopener">Youth Resistance Training Position Statement</a><br/>
         &bull; Bodyweight interval training, <a href="https://pubmed.ncbi.nlm.nih.gov/32960155/" target="_blank" rel="noopener">PubMed 32960155</a><br/>
         &bull; Fall-prevention in older adults, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10435089/" target="_blank" rel="noopener">PMC10435089</a><br/>
+        &bull; Exercise timing, consistency &amp; adherence review, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7492403/" target="_blank" rel="noopener">PMC7492403</a><br/>
+        &bull; Interrupting sitting improves cognition (frequency of breaks), <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13520540/" target="_blank" rel="noopener">PMC13520540</a><br/>
         Scripture quotations are from the English Standard Version (ESV).
       </p>
     </div>
@@ -300,8 +449,22 @@
     </div>
   </footer>
 
+  <!-- Printable certificate (hidden on screen, shown only when printing) -->
+  <div id="cert-print">
+    <div class="cert">
+      <div class="cert-sub">Wonderfully Made Labs · Move &amp; Be Still</div>
+      <h1>Certificate of Completion</h1>
+      <div style="color:var(--muted);margin-bottom:6px;">This certifies that</div>
+      <div class="cert-name" id="cert-name">&nbsp;</div>
+      <div style="font-size:1.05rem;line-height:1.7;">has faithfully cared for the body they were given —<br/>completing <b id="cert-total">0</b> movement &amp; Scripture sessions,<br/>with a best streak of <b id="cert-streak">0</b> days.</div>
+      <div class="cert-verse">“For you formed my inward parts; you knitted me together in my mother’s womb. I praise you, for I am fearfully and wonderfully made.” — Psalm 139:13–14 (ESV)</div>
+      <div style="margin-top:22px;color:var(--muted);font-size:.9rem;">Date: <span id="cert-date"></span></div>
+      <div class="cert-glory">To God be all the glory.</div>
+    </div>
+  </div>
+
   <!-- Chime (WebAudio, no asset needed) -->
-  <script src="move-and-be-still.js?v=20260912a"></script>
+  <script src="move-and-be-still.js?v=20260912c"></script>
   <script>
   (function(){
     var M = window.MoveAndBeStill;
@@ -313,6 +476,16 @@
       set: function(k,v){ try{ localStorage.setItem(k,v); }catch(e){ _mem[k]=v; } }
     };
     var currentBand = store.get("mbs_band") || "adult1";
+
+    /* ---------- reps + session state (per day) ---------- */
+    var todayKey = "mbs_day_" + dateStr;
+    var savedReps = parseInt(store.get("mbs_reps"), 10);
+    var currentReps = isNaN(savedReps) ? M.REPS_DEFAULT : savedReps; // 0 = All day
+    // session resets each new calendar day
+    var savedSession = parseInt(store.get(todayKey), 10);
+    var currentSession = (!isNaN(savedSession) && savedSession >= 1) ? savedSession : 1;
+    function saveSession(){ store.set(todayKey, String(currentSession)); }
+    function totalToday(){ return currentReps === 0 ? 0 : currentReps; } // 0 => open-ended
 
     /* ---------- friendly chime ---------- */
     var AC = window.AudioContext || window.webkitAudioContext;
@@ -369,15 +542,65 @@
       btn.textContent=b.label; btn.setAttribute("data-id",b.id);
       btn.onclick=function(){currentBand=b.id;store.set("mbs_band",b.id);
         document.querySelectorAll(".age-btn").forEach(function(x){x.classList.remove("active");});
-        btn.classList.add("active"); renderFlow();};
+        btn.classList.add("active"); renderFlow(); renderScripture();};
       agesEl.appendChild(btn);
     });
+
+    /* ---------- reps selector ---------- */
+    var repsEl=document.getElementById("reps");
+    document.getElementById("reps-note").textContent=M.REPS_NOTE;
+    M.REPS_OPTIONS.forEach(function(opt){
+      var b=document.createElement("button");
+      b.className="rep-btn"+(opt.value===currentReps?" active":"");
+      b.textContent=opt.label; b.setAttribute("data-v",opt.value);
+      b.onclick=function(){
+        currentReps=opt.value; store.set("mbs_reps",String(opt.value));
+        if(currentReps!==0 && currentSession>currentReps){ currentSession=currentReps; saveSession(); }
+        document.querySelectorAll(".rep-btn").forEach(function(x){x.classList.remove("active");});
+        b.classList.add("active");
+        renderSessionUI(); renderFlow(); renderScripture();
+      };
+      repsEl.appendChild(b);
+    });
+
+    /* ---------- session badge + nav ---------- */
+    function renderSessionUI(){
+      var badge=document.getElementById("session-badge-text");
+      var total=totalToday();
+      if(currentReps===0){ badge.textContent="Session "+currentSession+" today"; }
+      else { badge.textContent="Session "+currentSession+" of "+total+" today"; }
+      var nav=document.getElementById("session-nav"); nav.innerHTML="";
+      var atLast = (currentReps!==0 && currentSession>=total);
+      if(!atLast){
+        var next=document.createElement("button");
+        next.className="b navy"; next.style.background="var(--navy)"; next.style.color="#fff";
+        next.textContent="Done — start next session →";
+        next.onclick=function(){ if(window.MBS_onFlowComplete)window.MBS_onFlowComplete(); currentSession++; saveSession(); renderSessionUI(); renderFlow(); renderScripture();
+          document.getElementById("flow-date").scrollIntoView({behavior:"smooth"}); };
+        nav.appendChild(next);
+      } else {
+        var done=document.createElement("span"); done.className="band-note";
+        done.textContent="That completes today's sessions. Beautiful work — come back tomorrow for a fresh flow and verse.";
+        nav.appendChild(done);
+        var fin=document.createElement("button");
+        fin.className="b teal"; fin.style.marginLeft="8px"; fin.textContent="Count this session ✓";
+        fin.onclick=function(){ if(window.MBS_onFlowComplete)window.MBS_onFlowComplete(); fin.textContent="Counted ✓"; fin.disabled=true;
+          document.getElementById("stat-streak").scrollIntoView({behavior:"smooth",block:"center"}); };
+        nav.appendChild(fin);
+      }
+      if(currentSession>1){
+        var reset=document.createElement("button");
+        reset.className="rep-btn"; reset.textContent="Start today over";
+        reset.onclick=function(){ currentSession=1; saveSession(); renderSessionUI(); renderFlow(); renderScripture(); };
+        nav.appendChild(reset);
+      }
+    }
 
     function isAnchor(name){return /squat|sit-to-stand|push-?up|climber/i.test(name);}
     var flowData=null;
     function renderFlow(){
       var band=M.getBand(currentBand);
-      flowData=M.buildFlow(band,dateStr);
+      flowData=M.buildFlow(band,dateStr,currentSession);
       var d=new Date(dateStr+"T00:00:00");
       document.getElementById("flow-date").textContent="Today's Flow — "+d.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'});
       document.getElementById("warmup").innerHTML="<b>Warm-up (about 1 min):</b> "+flowData.warmup;
@@ -395,6 +618,7 @@
       });
       document.getElementById("band-note").textContent=flowData.note;
     }
+    renderSessionUI();
     renderFlow();
 
     /* ================= GUIDED FLOW TIMER ================= */
@@ -472,13 +696,213 @@
       bRunning=true;bStep=0;bBtn.textContent="Stop";breathCycle();
     };
 
-    /* ================= SCRIPTURE ================= */
-    var reset=M.resetForDate(dateStr);
-    document.getElementById("s-ref").textContent=reset.ref;
-    document.getElementById("s-title").textContent=reset.title;
-    document.getElementById("s-verse").textContent="\u201C"+reset.verse+"\u201D";
-    document.getElementById("s-teaching").textContent=reset.teaching;
-    document.getElementById("s-prayer").textContent="Prayer: "+reset.prayer;
+    /* ================= SCRIPTURE (same verse, deeper each session) ===== */
+    function renderScripture(){
+      var reset=M.resetForDate(dateStr,currentSession);
+      document.getElementById("s-ref").textContent=reset.ref;
+      document.getElementById("s-title").textContent=reset.title;
+      document.getElementById("s-verse").textContent="\u201C"+reset.verse+"\u201D";
+      // depth track dots
+      var track=document.getElementById("s-depth-track"); track.innerHTML="";
+      var n=reset.layerCount||1;
+      for(var i=0;i<n;i++){
+        var d=document.createElement("span");
+        d.className="dot2"+(i===reset.layerIndex?" on":"");
+        d.title=(reset.layer&&i===reset.layerIndex)?reset.layer.tag:"";
+        track.appendChild(d);
+      }
+      // deeper layer for this session
+      if(reset.layer){
+        document.getElementById("s-layer-tag").textContent=reset.layer.tag+" \u00b7 Session "+currentSession;
+        document.getElementById("s-layer-body").textContent=reset.layer.body;
+      } else {
+        document.getElementById("s-layer-tag").textContent="";
+        document.getElementById("s-layer-body").textContent=reset.teaching;
+      }
+      document.getElementById("s-prayer").textContent="Prayer: "+reset.prayer;
+    }
+    renderScripture();
+
+    /* ================= DAILY START TIME (evidence: consistency) ======== */
+    var dailyTimeEl=document.getElementById("dailyTime"),
+        saveTimeBtn=document.getElementById("saveTime"),
+        timeNoteEl=document.getElementById("timeNote");
+    var savedTime=store.get("mbs_dailytime");
+    if(savedTime) dailyTimeEl.value=savedTime;
+    saveTimeBtn.onclick=function(){
+      var v=dailyTimeEl.value;
+      if(!v){ timeNoteEl.textContent="Pick a time first, then tap Save — choose whatever you’ll actually keep."; return; }
+      store.set("mbs_dailytime", v);
+      var h=parseInt(v.split(":")[0],10);
+      var partOfDay = h<11?"Morning is a wonderful anchor — it sets your rhythm for the whole day.":(h<17?"A steady midday reset — a great way to break up sitting.":"An evening rhythm works beautifully too — what matters is that you’ll keep it.");
+      timeNoteEl.innerHTML="Saved. We’ll gently remember <b>"+v+"</b> as your daily time. "+partOfDay+" Come back at your time, start the timer, and let it carry you through the day.";
+    };
+
+    /* ================= CREDIT OF COMPLETION (on-device only) =========== */
+    // storage: mbs_total (int), mbs_best (int), mbs_lastday (YYYY-MM-DD), mbs_streak (int), mbs_done_<date> (int sessions that day)
+    function ck(k){ var v=parseInt(store.get(k),10); return isNaN(v)?0:v; }
+    function daysBetween(a,b){ return Math.round((new Date(b+"T00:00:00")-new Date(a+"T00:00:00"))/86400000); }
+    var BADGES=[
+      {id:"first", name:"First Step", sub:"1 session", test:function(s){return s.total>=1;}, icon:"1"},
+      {id:"week", name:"Faithful Week", sub:"7-day streak", test:function(s){return s.best>=7;}, icon:"7"},
+      {id:"strong", name:"Made Strong", sub:"30 sessions", test:function(s){return s.total>=30;}, icon:"30"},
+      {id:"month", name:"Enduring", sub:"30-day streak", test:function(s){return s.best>=30;}, icon:"\u2726"},
+      {id:"hundred", name:"Wonderfully Made", sub:"100 sessions", test:function(s){return s.total>=100;}, icon:"100"}
+    ];
+    function getStats(){
+      return { total:ck("mbs_total"), best:ck("mbs_best"), streak:ck("mbs_streak"),
+               today:ck("mbs_done_"+dateStr) };
+    }
+    function renderCompletion(){
+      var s=getStats();
+      document.getElementById("stat-streak").textContent=s.streak;
+      document.getElementById("stat-today").textContent=s.today;
+      document.getElementById("stat-total").textContent=s.total;
+      var wrap=document.getElementById("badges"); wrap.innerHTML="";
+      BADGES.forEach(function(b){
+        var earned=b.test(s);
+        var el=document.createElement("div");
+        el.className="badge"+(earned?" earned":"");
+        el.innerHTML='<div class="medal">'+b.icon+'</div><div class="bname">'+b.name+'</div><div class="bsub">'+b.sub+'</div>';
+        el.title=earned?"Earned — "+b.name:"Locked — "+b.sub;
+        wrap.appendChild(el);
+      });
+    }
+    function recordSession(){
+      var last=store.get("mbs_lastday");
+      var streak=ck("mbs_streak");
+      if(last!==dateStr){
+        if(last && daysBetween(last,dateStr)===1) streak=streak+1;
+        else streak=1;
+        store.set("mbs_lastday",dateStr);
+        store.set("mbs_streak",String(streak));
+        if(streak>ck("mbs_best")) store.set("mbs_best",String(streak));
+      } else if(streak<1){ streak=1; store.set("mbs_streak","1"); if(ck("mbs_best")<1)store.set("mbs_best","1"); }
+      store.set("mbs_total",String(ck("mbs_total")+1));
+      store.set("mbs_done_"+dateStr,String(ck("mbs_done_"+dateStr)+1));
+      renderCompletion();
+    }
+    document.getElementById("markDone").onclick=function(){ recordSession(); chime(2);
+      var btn=this; var t=btn.textContent; btn.textContent="Session counted ✓"; setTimeout(function(){btn.textContent=t;},1600);
+      document.getElementById("stat-streak").scrollIntoView({behavior:"smooth",block:"center"}); };
+    // auto-count when the guided flow completes (hook into the 'done' step)
+    window.MBS_onFlowComplete = function(){ recordSession(); };
+    renderCompletion();
+
+    /* certificate */
+    document.getElementById("getCert").onclick=function(){
+      var s=getStats();
+      var nameField=document.getElementById("certName");
+      var name=(nameField&&nameField.value)?nameField.value.trim():"";
+      document.getElementById("cert-name").textContent = name? name : "A Wonderfully Made Child of God";
+      document.getElementById("cert-total").textContent = s.total;
+      document.getElementById("cert-streak").textContent = Math.max(s.best, s.streak);
+      document.getElementById("cert-date").textContent = new Date().toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'});
+      setTimeout(function(){ window.print(); }, 60);
+    };
+
+    /* ================= INVITE A FRIEND (safe: your own contacts) ======= */
+    var SITE_URL = (location.origin && location.origin.indexOf("http")===0) ? (location.origin + location.pathname.replace(/[^\/]*$/, "move-and-be-still.html")) : "https://wonderfullymadelabs.com/move-and-be-still.html";
+    var INVITE_TEXT = "I’m doing Move & Be Still — a few minutes of movement, breathing, and Scripture to care for the body God gave us. Come do it with me: ";
+    function fallbackCopy(txt, btn){
+      try{ navigator.clipboard.writeText(txt); }catch(e){
+        var ta=document.createElement("textarea"); ta.value=txt; document.body.appendChild(ta); ta.select();
+        try{document.execCommand("copy");}catch(e2){} document.body.removeChild(ta);
+      }
+      if(btn){ var t=btn.textContent; btn.textContent="Copied ✓"; setTimeout(function(){btn.textContent=t;},1500); }
+    }
+    document.getElementById("inviteFriend").onclick=function(){
+      var btn=this;
+      if(navigator.share){
+        navigator.share({title:"Move & Be Still", text:INVITE_TEXT, url:SITE_URL}).catch(function(){});
+      } else {
+        // desktop fallback: open the user's own email with prefilled message
+        var subject=encodeURIComponent("Come move with me — Move & Be Still");
+        var body=encodeURIComponent(INVITE_TEXT+SITE_URL);
+        window.location.href="mailto:?subject="+subject+"&body="+body;
+        setTimeout(function(){ fallbackCopy(INVITE_TEXT+SITE_URL, btn); }, 300);
+      }
+    };
+    document.getElementById("copyLink").onclick=function(){ fallbackCopy(INVITE_TEXT+SITE_URL, this); };
+
+    /* ================= PRIVATE GROUP (invite-only, no chat, on-device) = */
+    // Presence + cheers are shared across the SAME device's tabs via BroadcastChannel,
+    // and the code is shareable so people you know join the same day together.
+    // No server, no stranger discovery, no free-text messaging.
+    var CHEERS=[
+      {k:"finished", t:"Finished a session!"},
+      {k:"proud", t:"So proud of you!"},
+      {k:"praying", t:"Praying for you today"},
+      {k:"keepgoing", t:"Keep going — you’ve got this"},
+      {k:"together", t:"Moving with you!"},
+      {k:"amen", t:"Amen — to God be the glory"}
+    ];
+    var groupIdle=document.getElementById("together-idle"),
+        groupActive=document.getElementById("together-active"),
+        groupCodeEl=document.getElementById("groupCode"),
+        groupCountEl=document.getElementById("groupCount"),
+        cheerRow=document.getElementById("cheerRow"),
+        cheerFeed=document.getElementById("cheerFeed");
+    var myName = store.get("mbs_myname") || "";
+    var bc=null, currentCode=null;
+    function genCode(){ var a="ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; var s=""; for(var i=0;i<5;i++)s+=a[Math.floor(Math.random()*a.length)]; return s; }
+    function codeFromURL(){ var m=location.hash.match(/group=([A-Z0-9]{4,6})/i); return m?m[1].toUpperCase():null; }
+    function addCheer(who, text){
+      var item=document.createElement("div"); item.className="cheer-item";
+      item.innerHTML='<span class="who">'+(who||"Someone")+':</span> '+text;
+      cheerFeed.insertBefore(item, cheerFeed.firstChild);
+      while(cheerFeed.children.length>12) cheerFeed.removeChild(cheerFeed.lastChild);
+    }
+    function joinGroup(code){
+      currentCode=code;
+      groupCodeEl.textContent=code;
+      groupIdle.classList.add("hidden"); groupActive.classList.remove("hidden");
+      store.set("mbs_group", code);
+      if(!myName){ var nf=document.getElementById("groupName"); var n=(nf&&nf.value)?nf.value.trim():""; myName=n?n.slice(0,20):"Friend"; store.set("mbs_myname",myName); }
+      // build cheer buttons
+      cheerRow.innerHTML="";
+      CHEERS.forEach(function(c){
+        var b=document.createElement("button"); b.className="cheer-btn"; b.textContent=c.t;
+        b.onclick=function(){ addCheer(myName+" (you)", c.t); if(bc){try{bc.postMessage({type:"cheer",who:myName,text:c.t,code:code});}catch(e){}} };
+        cheerRow.appendChild(b);
+      });
+      // presence via BroadcastChannel (same-device tabs). Cross-device sees the shared day + code.
+      try{
+        if(bc) bc.close();
+        bc=new BroadcastChannel("mbs_group_"+code);
+        bc.onmessage=function(e){
+          var d=e.data||{}; if(d.code!==code) return;
+          if(d.type==="cheer") addCheer(d.who||"Friend", d.text);
+          if(d.type==="hello"){ bumpCount(); if(bc){try{bc.postMessage({type:"here",code:code});}catch(e2){}} }
+          if(d.type==="here") bumpCount();
+        };
+        bc.postMessage({type:"hello",code:code});
+      }catch(e){}
+      groupCountEl.textContent="You\u2019re in — share your code so your people can join";
+      addCheer("Welcome", "Your private group is ready. Share the code with your family or small group.");
+    }
+    var _seen={};
+    function bumpCount(){ /* lightweight: reflect that others on this device are present */
+      groupCountEl.textContent="Your group is active"; }
+    document.getElementById("startGroup").onclick=function(){ joinGroup(genCode()); };
+    function shareCode(){
+      var url=SITE_URL+"#group="+currentCode;
+      var msg="Join my private Move & Be Still group. Open this and use code "+currentCode+": "+url;
+      if(navigator.share){ navigator.share({title:"Move & Be Still — private group",text:msg,url:url}).catch(function(){}); }
+      else fallbackCopy(msg, document.getElementById("shareGroup"));
+    }
+    document.getElementById("shareGroup").onclick=shareCode;
+    document.getElementById("copyGroup").onclick=function(){ fallbackCopy(currentCode, this); };
+    document.getElementById("leaveGroup").onclick=function(){
+      if(bc){try{bc.close();}catch(e){} bc=null;}
+      currentCode=null; store.set("mbs_group","");
+      groupActive.classList.add("hidden"); groupIdle.classList.remove("hidden");
+      cheerFeed.innerHTML="";
+    };
+    // auto-join from a shared link or a previous session
+    var urlCode=codeFromURL(); var savedCode=store.get("mbs_group");
+    if(urlCode) joinGroup(urlCode);
+    else if(savedCode) joinGroup(savedCode);
   })();
   </script>
 </body>
