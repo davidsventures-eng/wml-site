@@ -6,6 +6,7 @@ const {
 const D = window.WML;
 
 /* ---- support the mission (Stripe pay-what-you-want) ---- */
+const ETSY_URL = "https://www.etsy.com/shop/WonderfullyMadeLab";
 const SUPPORT_URL = "https://buy.stripe.com/9B600ka9p5aiddBcX39Zm00";
 
 /* ---- brand logo (cross & crown) ---- */
@@ -716,7 +717,16 @@ function Home({
     className: "hub-card-tag"
   }, "Books & Merch \xB7 The Store"), /*#__PURE__*/React.createElement("h3", {
     className: "display"
-  }, "The Wonder, To Keep"), /*#__PURE__*/React.createElement("p", null, "Beautiful printed editions of the stories and journals, plus original-character merch built around our painted friends \u2014 Discover, Treat, Serve, and the \u201CFearfully and Wonderfully Made\u201D comfort line. Printed editions arriving soon on Etsy; everything online stays free, always."), /*#__PURE__*/React.createElement("a", {
+  }, "The Wonder, To Keep"), /*#__PURE__*/React.createElement("p", null, "Beautiful printed editions of the stories and journals, plus original-character merch built around our painted friends \u2014 Discover, Treat, Serve, and the \u201CFearfully and Wonderfully Made\u201D comfort line. Printable coloring pages and journals are now on Etsy, and printed editions are on Amazon; everything online stays free, always."), /*#__PURE__*/React.createElement("a", {
+    className: "hub-pick",
+    href: ETSY_URL,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    style: { display: "block", marginBottom: "8px" },
+    onClick: () => track('Etsy Click', {
+      source: 'Home Store Card'
+    })
+  }, "Shop printables on Etsy \u2192"), /*#__PURE__*/React.createElement("a", {
     className: "hub-pick",
     href: SUPPORT_URL,
     target: "_blank",
@@ -1798,7 +1808,11 @@ function App() {
       marginTop: '8px',
       opacity: .8
     }
-  }, "Comfort pages & journals: always free. The classroom: free to join. Printed editions coming soon on Etsy."), /*#__PURE__*/React.createElement("div", {
+  }, "Comfort pages & journals: always free. The classroom: free to join. Printables now on ", /*#__PURE__*/React.createElement("a", {
+    href: ETSY_URL,
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, "Etsy"), "."), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: '8px',
       opacity: .8
