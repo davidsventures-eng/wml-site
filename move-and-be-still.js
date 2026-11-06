@@ -153,7 +153,7 @@
   // sessions walk through layers[1..3], then gently cycle.
   var RESETS = [
     { title: "Made on Purpose", ref: "Psalm 139:13–14",
-      verse: "For you formed my inward parts; you knitted me together in my mother's womb. I praise you, for I am fearfully and wonderfully made.",
+      verse: "For you formed my inmost being. You knit me together in my mother’s womb. I will give thanks to you, for I am fearfully and wonderfully made.",
       teaching: "The heart that just carried you through those minutes has been beating since before your first breath — a rhythm you never started. You did not build this body; you were given it. Movement is one way to say thank you for the gift.",
       prayer: "Thank You for this body I did not make. Help me to care for it as Yours.",
       layers: [
@@ -163,7 +163,7 @@
         { tag: "Pray & respond", body: "Thank You for this body I did not make — for the breath in my lungs and the strength I just spent. Help me to care for it as Yours, and to see the wonder You built into it. To God be the glory." }
       ] },
     { title: "Strength for the Weary", ref: "Isaiah 40:29–31",
-      verse: "He gives power to the faint, and to him who has no might he increases strength… they who wait for the Lord shall renew their strength.",
+      verse: "He gives power to the weak. He increases the strength of him who has no might… those who wait for Yahweh will renew their strength.",
       teaching: "Some days the movement feels like a lot — that's honest. Physical strength is real and worth building, but Scripture points to a deeper strength that doesn't run out, given to the tired and the faint. Train your body, and lean on a strength beyond it.",
       prayer: "When I am weary, renew me — in body, and in the places training can't reach.",
       layers: [
@@ -173,7 +173,7 @@
         { tag: "Pray & respond", body: "When I am weary, renew me — in my body, and in the places training can't reach. I stop striving for a moment and wait on You. Be my strength today. To God be the glory." }
       ] },
     { title: "The Temple", ref: "1 Corinthians 6:19–20",
-      verse: "Do you not know that your body is a temple of the Holy Spirit within you… So glorify God in your body.",
+      verse: "Or don’t you know that your body is a temple of the Holy Spirit who is in you… Therefore glorify God in your body and in your spirit, which are God’s.",
       teaching: "Caring for your body isn't vanity — it's stewardship. You're tending something entrusted to you. This movement, this breath, is a quiet way of honoring the One who dwells with you.",
       prayer: "Let the way I treat my body be an offering back to You.",
       layers: [
@@ -183,7 +183,7 @@
         { tag: "Pray & respond", body: "Let the way I treat my body be an offering back to You — how I move it, feed it, and rest it. Make this temple a place where Your presence is welcome. To God be the glory." }
       ] },
     { title: "Rest for the Restless", ref: "Matthew 11:28–29",
-      verse: "Come to me, all who labor and are heavy laden, and I will give you rest… you will find rest for your souls.",
+      verse: "Come to me, all you who labor and are heavily burdened, and I will give you rest… you will find rest for your souls.",
       teaching: "We spend so much of the day pulled at by screens and noise. You just unplugged — that alone is a small rebellion against the hurry. But the deepest rest isn't a break; it's the One who offers rest for the soul itself. Come as you are.",
       prayer: "Quiet the noise in me. I bring You my tired mind and receive Your rest.",
       layers: [
@@ -193,7 +193,7 @@
         { tag: "Pray & respond", body: "I come to You just as I am — tired, distracted, heavy. Quiet the noise in me. I bring You my restless mind and receive the rest only You can give. To God be the glory." }
       ] },
     { title: "Peace That Guards", ref: "Philippians 4:6–7",
-      verse: "Do not be anxious about anything, but in everything by prayer… let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your minds.",
+      verse: "In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus.",
       teaching: "The slow breathing you just did calms the body's alarm system — that's how God wired it. But there's a peace that goes further, one that surpasses understanding and stands guard over an anxious mind. Bring Him the thing you're carrying.",
       prayer: "I give You what I've been carrying. Guard my heart and my mind with Your peace.",
       layers: [
@@ -203,7 +203,7 @@
         { tag: "Pray & respond", body: "I give You what I've been carrying — I'll name it plainly. Thank You that I don't have to understand Your peace for it to guard me. Post it at the door of my heart and mind today. To God be the glory." }
       ] },
     { title: "Made New", ref: "2 Corinthians 5:17",
-      verse: "Therefore, if anyone is in Christ, he is a new creation. The old has passed away; behold, the new has come.",
+      verse: "Therefore if anyone is in Christ, he is a new creation. The old things have passed away. Behold, all things have become new.",
       teaching: "Bodies get tired and worn — and so do we, inside. But the promise at the center of everything we do here is that broken people can be made new. Not patched. New. However you came to this reset, you are not beyond restoration.",
       prayer: "Where I am worn and broken, make me new. I come to You just as I am.",
       layers: [

@@ -11,7 +11,7 @@ window.WML_ADULT = {
     eyebrow: "For Adults · Take Heart",
     title: "Take Heart",
     sub: "You've been told it's your cholesterol, your weight, your lifestyle — yet heart disease is still the world's #1 killer. Here is the truth cardiologists now tell, the numbers that actually matter, and the part no clinic puts on the wall.",
-    verse: "“Take heart! I have overcome the world.” — John 16:33",
+    verse: "“Cheer up! I have overcome the world.” — from John 16:33 (WEB)",
     cta: "Start here"
   },
 
@@ -55,7 +55,7 @@ window.WML_ADULT = {
       "I spent over twenty years as a molecular pathologist studying exactly how this disease takes hold. I know the science cold. And I will tell you plainly: the science never made the fear go away on its own. What changed was coming to the Lord — going to Him with nothing, and being given everything. My old self died, and I was made new.",
       "So when I say take heart, I don't mean ignore your numbers or pray instead of seeing your doctor. I mean: do the work of caring for this body — and let yourself be held while you do it."
     ],
-    verse: "“Cast all your anxiety on Him, because He cares for you.” — 1 Peter 5:7",
+    verse: "“Casting all your worries on him, because he cares for you.” — 1 Peter 5:7 (WEB)",
     close: "I died with my old self, and I was made new. Praise God in the highest."
   },
 
@@ -64,7 +64,7 @@ window.WML_ADULT = {
     title: "Release what you can't carry; tend what you've been given",
     lead: "Faith and responsibility are not rivals. Picture two open hands. One releases the fear you were never meant to carry alone. The other tends, faithfully, the body you were entrusted with.",
     hands: [
-      { h: "The releasing hand", ref: "1 Peter 5:7", p: "“Cast all your anxiety on Him.” This is not a command to stop feeling afraid — it's permission to stop carrying the fear by yourself." },
+      { h: "The releasing hand", ref: "1 Peter 5:7", p: "“Casting all your worries on him.” This is not a command to stop feeling afraid — it's permission to stop carrying the fear by yourself." },
       { h: "The tending hand", ref: "1 Corinthians 6:19–20", p: "Your body is a temple. Honoring God with it means knowing your numbers, moving, resting, and seeking good care — not out of fear, but out of gratitude." }
     ],
     turn: "Not “Jesus, take the wheel.” More like: He steadies you, and you still tend the road."
@@ -138,7 +138,7 @@ window.WML_ADULT = {
   },
 
   close: {
-    verse: "“Take heart! I have overcome the world.” — John 16:33",
+    verse: "“Cheer up! I have overcome the world.” — from John 16:33 (WEB)",
     body: "Tend this body well — know your numbers, do the daily work, and lean on good care. But hold one more truth gently: the most wonderfully made heart still wears out one day. That is true for every one of us. The hope this page finally points to isn't a perfect heart — it's the One who overcame death, so that we don't have to face it alone or afraid.",
     sign: "— Molecular pathologist, husband, and the one writing these stories",
     cta: "↑ Back to the top"

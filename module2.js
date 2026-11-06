@@ -75,7 +75,7 @@
       }, "I'd like to know more \u2192"),
       open && /*#__PURE__*/React.createElement("div", { className: "hope-more" },
         /*#__PURE__*/React.createElement("p", null, "For most of my life I kept God at arm's length \u2014 through pride, through anger, through the belief that I'd built my success on my own. The turning point came in a hospital, with heart and stroke symptoms, when a friend asked me to read the Gospel of John. Back in the hotel room I opened it, and before I got through the first few verses I was on my knees. I didn't see or hear anything. But I felt a peace I had never known \u2014 no judgment, only love. I went to the Lord with nothing, and He gave me everything. My old self died, and I was made new."),
-        /*#__PURE__*/React.createElement("blockquote", { className: "hope-verse" }, "\u201CFor God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.\u201D", /*#__PURE__*/React.createElement("cite", null, "\u2014 John 3:16")),
+        /*#__PURE__*/React.createElement("blockquote", { className: "hope-verse" }, "\u201CFor God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.\u201D", /*#__PURE__*/React.createElement("cite", null, "\u2014 John 3:16 (WEB)")),
         /*#__PURE__*/React.createElement("p", null, "That is the gift on offer to you, too \u2014 eternal life, freely given by grace, not earned. If something in you is stirring tonight, you don't have to clean yourself up first, and you don't have to have the right words. You can simply turn to Him."),
         /*#__PURE__*/React.createElement("div", { className: "hope-steps" },
           /*#__PURE__*/React.createElement("h3", { className: "display" }, "If you want to take a step"),
@@ -95,7 +95,7 @@
   function Gate2({ onPick }) {
     return /*#__PURE__*/React.createElement("section", { className: "gate" },
       /*#__PURE__*/React.createElement("div", { className: "series-tag eyebrow" }, "Wonderfully Made Labs \xB7 Studying His Creation"),
-      /*#__PURE__*/React.createElement("p", { className: "verse" }, "\u201CI praise you because I am fearfully and wonderfully made; your works are wonderful.\u201D \u2014 Psalm 139:14"),
+      /*#__PURE__*/React.createElement("p", { className: "verse" }, "\u201CI will give thanks to you, for I am fearfully and wonderfully made. Your works are wonderful.\u201D \u2014 from Psalm 139:14 (WEB)"),
       /*#__PURE__*/React.createElement("h1", { className: "display" }, "The Guards Who Forgot Their Friends"),
       /*#__PURE__*/React.createElement("p", { className: "lede" }, "Solve a real medical mystery the way scientists and doctors do. One walled kingdom. One puzzle \u2014 autoimmunity, when the body's own defenders mistake friend for foe. Three depths of understanding. Choose where you'd like to begin."),
       /*#__PURE__*/React.createElement("div", { className: "tier-cards" },

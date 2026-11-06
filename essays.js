@@ -11,8 +11,8 @@ const ESSAYS_DATA = [
     readingTime: "9 min read",
     excerpt: "For the nurse, the scientist, the physician's spouse, the well-read caregiver — afraid not because they don't understand the body, but because they do. The research on why autoimmune diagnosis is so cruelly slow, the organ-by-organ shuffle, the \"it's all in your head\" wound, the COVID connection, and the part the journals can't hold.",
     epigraph: {
-      quote: "\u201CCast all your anxiety on Him, because He cares for you.\u201D",
-      cite: "\u2014 1 Peter 5:7"
+      quote: "\u201CCasting all your worries on him, because he cares for you.\u201D",
+      cite: "\u2014 1 Peter 5:7 (WEB)"
     },
     sections: [
       { id: "intro", toc: "To one specific person", html:
@@ -68,8 +68,8 @@ const ESSAYS_DATA = [
         "<h2 class='essay-h'>And the part the journals can't hold</h2>" +
         "<p>Now the harder thing. Because you can do all of that \u2014 every right step \u2014 and still lie awake at 2 a.m. with a person you love in pain and no clean answer.</p>" +
         "<p>I won't hand you a verse like a closed door. But I'll tell you what I've watched Scripture do for people in exactly this place, and what it has done for me.</p>" +
-        "<p>It does not promise the disease will lift on your timeline. It promises you will not carry it alone. <em>\u201CCast all your anxiety on Him, because He cares for you\u201D</em> (1 Peter 5:7) is not a command to stop feeling afraid \u2014 it's permission to stop carrying the fear by yourself. <em>\u201CAfter you have suffered a little while, He will himself restore you and make you strong, firm and steadfast\u201D</em> (1 Peter 5:10) does not deny the suffering; it names it, and then refuses to let it be the last word.</p>" +
-        "<p>For the caregiver specifically \u2014 the one holding everyone else together \u2014 there is <em>\u201CCome to me, all you who are weary and burdened, and I will give you rest\u201D</em> (Matthew 11:28). Not rest from the work. Rest <em>in</em> it.</p>" +
+        "<p>It does not promise the disease will lift on your timeline. It promises you will not carry it alone. <em>\u201CCasting all your worries on him, because he cares for you\u201D</em> (1 Peter 5:7, WEB) is not a command to stop feeling afraid \u2014 it's permission to stop carrying the fear by yourself. <em>\u201Cafter you have suffered a little while, perfect, establish, strengthen, and settle you\u201D</em> (from 1 Peter 5:10, WEB) does not deny the suffering; it names it, and then refuses to let it be the last word.</p>" +
+        "<p>For the caregiver specifically \u2014 the one holding everyone else together \u2014 there is <em>\u201CCome to me, all you who labor and are heavily burdened, and I will give you rest\u201D</em> (Matthew 11:28, WEB). Not rest from the work. Rest <em>in</em> it.</p>" +
         "<p>And when the system has made your loved one feel invisible, there is the quiet, almost unbearable comfort of Psalm 139: that they are <em>fearfully and wonderfully made</em>, seen completely, known down to the cell \u2014 by the One who built the immune system in the first place. No doctor missed them. They were never a medical mystery to God.</p>" +
         "<p>Strength, in my experience, has not come as a feeling. It has come as the next right thing: the next appointment, the next question, the next night you sat in the room and stayed. Prayer didn't replace the medicine. It made me able to keep showing up for it.</p>" },
 

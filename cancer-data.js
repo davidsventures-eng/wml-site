@@ -16,7 +16,7 @@ window.WML_CANCER = {
     eyebrow: "For Patients \u00B7 Take Heart, Friend \u2014 Cancer",
     title: "Take Heart, Friend",
     sub: "If you were just told you have cancer, or you are walking through treatment now, this is for you. Plain words, small steps, and real hope \u2014 written to be easy to read on purpose, because fear and big words do not help you heal.",
-    verse: "\u201CTake heart! I have overcome the world.\u201D \u2014 John 16:33",
+    verse: "\u201CCheer up! I have overcome the world.\u201D \u2014 from John 16:33 (WEB)",
     cta: "Start here"
   },
 
@@ -208,7 +208,7 @@ window.WML_CANCER = {
           { b: "Be honest", t: "You can tell God exactly how scared or angry you feel. He can take it." },
           { b: "Start small", t: "A single sentence prayer counts. \u201CHelp me.\u201D \u201CThank you for this breath.\u201D" },
           { b: "Lean on others", t: "A church, a small group, a chaplain, or one praying friend can carry you when you are weak. We were never meant to suffer alone." },
-          { b: "Rest in being held", t: "\u201CI praise you, for I am fearfully and wonderfully made\u201D (Psalm 139:14). The same care that knit you together is with you now." }
+          { b: "Rest in being held", t: "\u201CI will give thanks to you, for I am fearfully and wonderfully made\u201D (from Psalm 139:14, WEB). The same care that knit you together is with you now." }
         ]
       },
       hope: {
@@ -275,11 +275,11 @@ window.WML_CANCER = {
       { b: "Share what helped", t: "A small habit, a verse, a friend, a prayer, a good question \u2014 hand it forward." }
     ],
     close: "The hardest road you walk can become the very thing that lights the way for someone else. That is how hope keeps moving \u2014 from one healing life to the next. To pass it on is to be a good and faithful servant with what you were given (Matthew 25:21). Through our own struggles and pain, we are blessed \u2014 and what we are given was never meant to be kept.",
-    verse: "\u201CPraise be to the God of all comfort, who comforts us in all our troubles, so that we can comfort those in any trouble with the comfort we ourselves receive from God.\u201D \u2014 2 Corinthians 1:3\u20134"
+    verse: "\u201CBlessed be the God and Father of our Lord Jesus Christ, the Father of mercies and God of all comfort; who comforts us in all our affliction, that we may be able to comfort those who are in any affliction, through the comfort with which we ourselves are comforted by God.\u201D \u2014 2 Corinthians 1:3\u20134 (WEB)"
   },
 
   close: {
-    verse: "\u201CHe heals the brokenhearted and binds up their wounds.\u201D \u2014 Psalm 147:3",
+    verse: "\u201CHe heals the broken in heart, and binds up their wounds.\u201D \u2014 Psalm 147:3 (WEB)",
     body: "Take it one small step at a time. You are healing, you are held, and you are not alone.",
     sign: "\u2014 With you on the road, Wonderfully Made Labs",
     cta: "Back to top \u2191"
