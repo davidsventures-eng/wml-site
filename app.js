@@ -190,7 +190,7 @@ function FreeGiftSignup() {
     className: "gift-card"
   }, /*#__PURE__*/React.createElement("div", {
     className: "gift-eyebrow eyebrow"
-  }, "A free gift \xB7 No cost, ever"), /*#__PURE__*/React.createElement("h2", {
+  }, "A free gift for you"), /*#__PURE__*/React.createElement("h2", {
     className: "display gift-title"
   }, "Start with 31 days of prayer \u2014 free."), /*#__PURE__*/React.createElement("p", {
     className: "gift-lede"
@@ -524,7 +524,7 @@ function Home({
     className: "display hub-head-title"
   }, "Doors into the wonder"), /*#__PURE__*/React.createElement("p", {
     className: "hub-head-lede"
-  }, "Comfort for patients and caregivers is always free \u2014 no sign-up, ever. The learning modules are our members' classroom, free to join. And our books and merch help keep the whole mission going. Start anywhere that speaks to where you are today.")), /*#__PURE__*/React.createElement("div", {
+  }, "Comfort pages for patients and caregivers are free to read, with no sign-up. The learning modules are our members' classroom. Our books, printables, and merch are available in the Store and help keep the mission going. Start anywhere that speaks to where you are today.")), /*#__PURE__*/React.createElement("div", {
     className: "hub-sections"
   }, /*#__PURE__*/React.createElement("div", {
     className: "hub-section"
@@ -532,7 +532,7 @@ function Home({
     className: "hub-section-head"
   }, /*#__PURE__*/React.createElement("h3", {
     className: "hub-section-label display"
-  }, 'For Patients \xB7 Always Free'), /*#__PURE__*/React.createElement("p", {
+  }, 'For Patients \xB7 Free to Read'), /*#__PURE__*/React.createElement("p", {
     className: "hub-section-lede"
   }, 'Our comfort lane \u2014 free for anyone, no sign-up, ever. Just diagnosed, or healing after a heart attack? A gentle, plain-language companion to sit with you.')), /*#__PURE__*/React.createElement("div", {
     className: "hub-grid"
@@ -586,7 +586,7 @@ function Home({
     className: "hub-section-head"
   }, /*#__PURE__*/React.createElement("h3", {
     className: "hub-section-label display"
-  }, 'Journals & Essays \xB7 Always Free'), /*#__PURE__*/React.createElement("p", {
+  }, 'Journals & Essays \xB7 Free to Read'), /*#__PURE__*/React.createElement("p", {
     className: "hub-section-lede"
   }, 'Our comfort lane \u2014 free to read, print, and share, with no sign-up. Faith and real science at the same table through hard seasons.')), /*#__PURE__*/React.createElement("div", {
     className: "hub-grid"
@@ -633,7 +633,7 @@ function Home({
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "hub-card-tag"
-  }, "31-Day Prayer \xB7 Always Free"), /*#__PURE__*/React.createElement("h3", {
+  }, "31-Day Prayer \xB7 Free to Read"), /*#__PURE__*/React.createElement("h3", {
     className: "display"
   }, "Finding Christ in the Darkness"), /*#__PURE__*/React.createElement("p", null, "A 31-day prayer & meditation companion for the soul that feels lost \u2014 a Psalm or Gospel word, an honest reflection, a written prayer, and one small doable step each day. Read it here or download the free PDF."), /*#__PURE__*/React.createElement("span", {
     className: "hub-pick"
@@ -704,7 +704,7 @@ function Home({
     className: "hub-section-label display"
   }, 'The Store'), /*#__PURE__*/React.createElement("p", {
     className: "hub-section-lede"
-  }, 'Books and original-character merch \u2014 the one place we sell, and how the free mission keeps going. The classroom, comfort pages, and journals stay free; this helps us build more of them.')), /*#__PURE__*/React.createElement("div", {
+  }, 'Printed books, printable downloads, and original-character merch. Every purchase helps us create and share more resources.')), /*#__PURE__*/React.createElement("div", {
     className: "hub-grid"
   }, /*#__PURE__*/React.createElement("div", {
     className: "hub-card journals"
@@ -717,7 +717,7 @@ function Home({
     className: "hub-card-tag"
   }, "Books & Merch \xB7 The Store"), /*#__PURE__*/React.createElement("h3", {
     className: "display"
-  }, "The Wonder, To Keep"), /*#__PURE__*/React.createElement("p", null, "Beautiful printed editions of the stories and journals, plus original-character merch built around our painted friends \u2014 Discover, Treat, Serve, and the \u201CFearfully and Wonderfully Made\u201D comfort line. Printable coloring pages and journals are now on Etsy, and printed editions are on Amazon; everything online stays free, always."), /*#__PURE__*/React.createElement("a", {
+  }, "The Wonder, To Keep"), /*#__PURE__*/React.createElement("p", null, "Beautiful printed editions of the stories and journals, plus original-character merch built around our painted friends \u2014 Discover, Treat, Serve, and the \u201CFearfully and Wonderfully Made\u201D comfort line. Printable coloring pages and journals are now on Etsy, and printed editions are on Amazon."), /*#__PURE__*/React.createElement("a", {
     className: "hub-pick",
     href: ETSY_URL,
     target: "_blank",
@@ -873,7 +873,7 @@ function Home({
     className: "support-tag"
   }, "Support the Mission"), /*#__PURE__*/React.createElement("h3", {
     className: "display"
-  }, "If this gave you something, help us give it to someone else"), /*#__PURE__*/React.createElement("p", null, "Everything here stays free \u2014 the stories, the journals, the prayer companion, all of it. We keep it that way on purpose, so no one is ever priced out of comfort. If a page met you in a hard moment and you'd like to help us reach the next family, you can give whatever it's worth to you. Every bit goes straight back into making and sharing more."), /*#__PURE__*/React.createElement("a", {
+  }, "If this gave you something, help us give it to someone else"), /*#__PURE__*/React.createElement("p", null, "Many of our stories, journals, and the prayer companion are free to read here. If a page met you in a hard moment and you'd like to help us reach the next family, you can give whatever it's worth to you. Every bit goes straight back into making and sharing more."), /*#__PURE__*/React.createElement("a", {
     className: "support-btn",
     href: SUPPORT_URL,
     target: "_blank",
@@ -883,7 +883,7 @@ function Home({
     })
   }, "Support the Mission \u2661"), /*#__PURE__*/React.createElement("p", {
     className: "support-fine"
-  }, "A gift, never a fee. Give what you like, or nothing at all \u2014 you're welcome here either way.")), /*#__PURE__*/React.createElement(WordOfHope, null));
+  }, "Give what you like, or nothing at all \u2014 you're welcome here either way.")), /*#__PURE__*/React.createElement(WordOfHope, null));
 }
 
 /* ---- free journals page (spoke) ---- */
@@ -914,7 +914,7 @@ function Journals({
     className: "display res-title"
   }, "Take One Home \u2014 Freely"), /*#__PURE__*/React.createElement("p", {
     className: "res-lede"
-  }, "These guided journals are yours at no cost. They pair Scripture with the real science of fear and grief, so hearts can understand what their bodies feel and find God's peace. Download, print, and share with anyone who needs them.")), /*#__PURE__*/React.createElement("div", {
+  }, "These guided journals are free to download here. They pair Scripture with the real science of fear and grief, so hearts can understand what their bodies feel and find God's peace. Download, print, and share with anyone who needs them.")), /*#__PURE__*/React.createElement("div", {
     className: "res-cards fade-up"
   }, /*#__PURE__*/React.createElement("div", {
     className: "res-card kids" + (kidsJournalOpen ? " open" : "")
@@ -1031,7 +1031,7 @@ function Journals({
     className: "res-print fade-up"
   }, /*#__PURE__*/React.createElement("p", {
     className: "res-print-lede"
-  }, "Prefer a printed copy to hold, gift, or keep by the bedside? Beautiful paperback editions of both journals are coming soon to Etsy \u2014 and the digital versions here will always be free."), /*#__PURE__*/React.createElement("span", {
+  }, "Prefer a printed copy to hold, gift, or keep by the bedside? Paperback editions and printable downloads are available in our Store on Amazon and Etsy."), /*#__PURE__*/React.createElement("span", {
     className: "res-print-soon"
   }, "Printed editions \xB7 Coming soon on Etsy")), /*#__PURE__*/React.createElement("div", {
     className: "support-card fade-up"
@@ -1039,7 +1039,7 @@ function Journals({
     className: "support-tag"
   }, "Support the Mission"), /*#__PURE__*/React.createElement("h3", {
     className: "display"
-  }, "If this gave you something, help us give it to someone else"), /*#__PURE__*/React.createElement("p", null, "Everything here stays free \u2014 the stories, the journals, the prayer companion, all of it. We keep it that way on purpose, so no one is ever priced out of comfort. If a page met you in a hard moment and you'd like to help us reach the next family, you can give whatever it's worth to you. Every bit goes straight back into making and sharing more."), /*#__PURE__*/React.createElement("a", {
+  }, "If this gave you something, help us give it to someone else"), /*#__PURE__*/React.createElement("p", null, "Many of our stories, journals, and the prayer companion are free to read here. If a page met you in a hard moment and you'd like to help us reach the next family, you can give whatever it's worth to you. Every bit goes straight back into making and sharing more."), /*#__PURE__*/React.createElement("a", {
     className: "support-btn",
     href: SUPPORT_URL,
     target: "_blank",
@@ -1049,7 +1049,7 @@ function Journals({
     })
   }, "Support the Mission \u2661"), /*#__PURE__*/React.createElement("p", {
     className: "support-fine"
-  }, "A gift, never a fee. Give what you like, or nothing at all \u2014 you're welcome here either way."))), /*#__PURE__*/React.createElement(WordOfHope, null));
+  }, "Give what you like, or nothing at all \u2014 you're welcome here either way."))), /*#__PURE__*/React.createElement(WordOfHope, null));
 }
 
 /* ---- essays hub (spoke) ---- */
@@ -1808,7 +1808,7 @@ function App() {
       marginTop: '8px',
       opacity: .8
     }
-  }, "Comfort pages & journals: always free. The classroom: free to join. Printables now on ", /*#__PURE__*/React.createElement("a", {
+  }, "Books on Amazon. Printables on ", /*#__PURE__*/React.createElement("a", {
     href: ETSY_URL,
     target: "_blank",
     rel: "noopener noreferrer"

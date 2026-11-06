@@ -1,7 +1,7 @@
 # Wonderfully Made Labs — Website
 
 Static site for **wonderfullymadelabs.com** — a faith + science ministry by David Crider.
-Wonder first, faith stated plainly. Free forever: patient/caregiver support, journals, and
+Wonder first, faith stated plainly. Free to read: patient/caregiver support, journals, and
 the 31-day prayer plan. To God be all the glory. (Psalm 139:14)
 
 This repo is a plain static site. There is **no build step** — Vercel serves the files as-is.
