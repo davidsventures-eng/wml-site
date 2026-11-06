@@ -1185,7 +1185,7 @@ function EssayPage({
     className: "essay-meta"
   }, /*#__PURE__*/React.createElement("span", null, essay.readingTime), /*#__PURE__*/React.createElement("span", {
     className: "essay-meta-dot"
-  }, "\xB7"), /*#__PURE__*/React.createElement("span", null, "David Crider, PhD")), essay.epigraph && /*#__PURE__*/React.createElement("blockquote", {
+  }, "\xB7"), /*#__PURE__*/React.createElement("span", null, "David")), essay.epigraph && /*#__PURE__*/React.createElement("blockquote", {
     className: "essay-epigraph"
   }, essay.epigraph.quote, /*#__PURE__*/React.createElement("cite", null, essay.epigraph.cite))), /*#__PURE__*/React.createElement("div", {
     className: "essay-layout"
@@ -1817,7 +1817,7 @@ function App() {
       marginTop: '8px',
       opacity: .8
     }
-  }, "Original character art hand-painted by C. Pascual."), /*#__PURE__*/React.createElement("div", {
+  }, "Original character art hand-painted by Cher."), /*#__PURE__*/React.createElement("div", {
     className: "footer-connect",
     style: {
       marginTop: '18px',

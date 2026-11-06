@@ -316,7 +316,7 @@
       /*#__PURE__*/React.createElement("footer", null,
         /*#__PURE__*/React.createElement("div", { className: "brand" }, /*#__PURE__*/React.createElement(Logo2, null), " Wonderfully Made Labs"),
         /*#__PURE__*/React.createElement("div", null, "Studying His Creation \xB7 Module 2: Autoimmunity"),
-        /*#__PURE__*/React.createElement("div", { style: { marginTop: '8px', opacity: .8 } }, "Original character art hand-painted by C. Pascual."),
+        /*#__PURE__*/React.createElement("div", { style: { marginTop: '8px', opacity: .8 } }, "Original character art hand-painted by Cher."),
         /*#__PURE__*/React.createElement("p", { className: "src" }, "Science drawn from peer-reviewed and clinical sources including the American College of Rheumatology clinical practice guidelines, the Cleveland Clinic, Mayo Clinic, JCI, Nature, Frontiers in Immunology, and PMC. This experience is educational and is not medical advice.")));
   }
 

@@ -316,7 +316,7 @@
       /*#__PURE__*/React.createElement("footer", null,
         /*#__PURE__*/React.createElement("div", { className: "brand" }, /*#__PURE__*/React.createElement(Logo2, null), " Wonderfully Made Labs"),
         /*#__PURE__*/React.createElement("div", null, "Studying His Creation \xB7 Module 3: Preventive Health"),
-        /*#__PURE__*/React.createElement("div", { style: { marginTop: '8px', opacity: .8 } }, "Original character art hand-painted by C. Pascual."),
+        /*#__PURE__*/React.createElement("div", { style: { marginTop: '8px', opacity: .8 } }, "Original character art hand-painted by Cher."),
         /*#__PURE__*/React.createElement("p", { className: "src" }, "Science drawn from peer-reviewed and clinical sources including the ACSM physical activity guidelines, the WHO, the American Heart Association and ACC, the American Society for Preventive Cardiology, the 2020\u20132025 Dietary Guidelines for Americans, the European Society of Cardiology, and PMC. This experience is educational and is not medical advice.")));
   }
 

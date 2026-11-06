@@ -316,7 +316,7 @@
       /*#__PURE__*/React.createElement("footer", null,
         /*#__PURE__*/React.createElement("div", { className: "brand" }, /*#__PURE__*/React.createElement(Logo4, null), " Wonderfully Made Labs"),
         /*#__PURE__*/React.createElement("div", null, "Studying His Creation \xB7 Module 4: Cancer Biology"),
-        /*#__PURE__*/React.createElement("div", { style: { marginTop: '8px', opacity: .8 } }, "Original character art hand-painted by C. Pascual."),
+        /*#__PURE__*/React.createElement("div", { style: { marginTop: '8px', opacity: .8 } }, "Original character art hand-painted by Cher."),
         /*#__PURE__*/React.createElement("p", { className: "src" }, "Science drawn from peer-reviewed and clinical sources including the National Cancer Institute, Dana-Farber Cancer Institute, MedlinePlus / NIH, NIH NIGMS, Ludwig Cancer Research / Johns Hopkins, the ASCO Post, and PubMed / PMC (Hanahan & Weinberg, The Hallmarks of Cancer). This experience is educational and is not medical advice.")));
   }
 

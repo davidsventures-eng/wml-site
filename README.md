@@ -1,6 +1,6 @@
 # Wonderfully Made Labs — Website
 
-Static site for **wonderfullymadelabs.com** — a faith + science ministry by David Crider.
+Static site for **wonderfullymadelabs.com** — a faith + science ministry by David.
 Wonder first, faith stated plainly. Free to read: patient/caregiver support, journals, and
 the 31-day prayer plan. To God be all the glory. (Psalm 139:14)
 
