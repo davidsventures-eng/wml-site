@@ -16,10 +16,10 @@
 <style>
 :root{--navy:#1f2f4f;--gold:#c9a24a;--cream:#fbf6ea;--ink:#2b2a28;--muted:#5d5a52}
 *{box-sizing:border-box}body{margin:0;font-family:Georgia,'Times New Roman',serif;background:var(--cream);color:var(--ink);line-height:1.55}
-a{color:var(--navy)}header{background:var(--navy);color:#fff;padding:28px 20px 34px;text-align:center}
-header .nav{max-width:1080px;margin:0 auto 18px;display:flex;justify-content:space-between;align-items:center;font-family:system-ui,sans-serif;font-size:15px}
-header .nav a{color:#fff;text-decoration:none;opacity:.9}header h1{margin:6px 0 8px;font-size:clamp(28px,4.5vw,44px);line-height:1.15}
-header p{margin:0 auto;max-width:640px;color:#e9e4d6;font-size:18px}.eyebrow{color:var(--gold);font-family:system-ui,sans-serif;font-weight:700;letter-spacing:.08em;font-size:13px;text-transform:uppercase}
+a{color:var(--navy)}header:not(.wml-nav){background:var(--navy);color:#fff;padding:28px 20px 34px;text-align:center}
+header:not(.wml-nav) .nav{max-width:1080px;margin:0 auto 18px;display:flex;justify-content:space-between;align-items:center;font-family:system-ui,sans-serif;font-size:15px}
+header:not(.wml-nav) .nav a{color:#fff;text-decoration:none;opacity:.9}header:not(.wml-nav) h1{margin:6px 0 8px;font-size:clamp(28px,4.5vw,44px);line-height:1.15}
+header:not(.wml-nav) p{margin:0 auto;max-width:640px;color:#e9e4d6;font-size:18px}.eyebrow{color:var(--gold);font-family:system-ui,sans-serif;font-weight:700;letter-spacing:.08em;font-size:13px;text-transform:uppercase}
 main{max-width:1080px;margin:0 auto;padding:30px 18px 50px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
 .card{background:#fff;border-radius:16px;box-shadow:0 10px 30px -18px rgba(0,0,0,.35);overflow:hidden;display:flex;flex-direction:column}
 .card img{width:100%;height:auto;display:block;background:#f3eee0}.card .b{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
@@ -38,10 +38,11 @@ footer{text-align:center;padding:30px 18px 44px;font-family:system-ui,sans-serif
 <script defer data-domain="wonderfullymadelabs.com" src="https://plausible.io/js/script.tagged-events.js"></script>
 <script>window.plausible = window.plausible || function(){(window.plausible.q = window.plausible.q || []).push(arguments)}</script>
 <script defer src="/_vercel/insights/script.js"></script>
+<link rel="stylesheet" href="/site/nav.css?v=1" />
+<script defer src="/site/nav.js?v=1"></script>
 </head>
 <body>
 <header>
-  <div class="nav"><a href="/">← Wonderfully Made Labs</a><a href="https://www.etsy.com/shop/WonderfullyMadeLab?utm_source=wml_site&amp;utm_medium=shop_nav" data-t="etsy_shop_nav">Etsy shop</a></div>
   <div class="eyebrow">The Wonderfully Made Shop</div>
   <h1>Science that points to the Creator</h1>
   <p>Coloring books, journals, and devotionals where wonder comes first and faith is stated plainly. Every verse is quoted word for word from the World English Bible.</p>

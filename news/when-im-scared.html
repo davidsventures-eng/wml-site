@@ -11,10 +11,10 @@
 <style>
 :root{--navy:#1f2f4f;--gold:#c9a24a;--cream:#fbf6ea;--ink:#2b2a28;--muted:#5d5a52}
 *{box-sizing:border-box}body{margin:0;font-family:Georgia,serif;background:var(--cream);color:var(--ink);line-height:1.6}
-header{background:var(--navy);color:#fff;padding:22px 20px 30px;text-align:center}header a{color:#fff}
+header:not(.wml-nav){background:var(--navy);color:#fff;padding:22px 20px 30px;text-align:center}header:not(.wml-nav) a{color:#fff}
 .nav{max-width:900px;margin:0 auto 14px;display:flex;justify-content:space-between;font-family:system-ui,sans-serif;font-size:15px}.nav a{text-decoration:none;opacity:.9}
 .eyebrow{color:var(--gold);font-family:system-ui,sans-serif;font-weight:700;letter-spacing:.08em;font-size:13px;text-transform:uppercase}
-h1{margin:6px 0 6px;font-size:clamp(28px,4.5vw,42px);line-height:1.15}header p{margin:0 auto;max-width:620px;color:#e9e4d6}
+h1{margin:6px 0 6px;font-size:clamp(28px,4.5vw,42px);line-height:1.15}header:not(.wml-nav) p{margin:0 auto;max-width:620px;color:#e9e4d6}
 main{max-width:900px;margin:0 auto;padding:28px 18px 40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
 @media(max-width:760px){main{grid-template-columns:1fr}}
 .prev{background:#fff;border-radius:14px;box-shadow:0 10px 30px -18px rgba(0,0,0,.35);padding:12px}.prev img{width:100%;height:auto;display:block}
@@ -31,8 +31,10 @@ ul{padding-left:20px}li{margin:4px 0}h2.sec{font-size:22px;margin:22px 0 6px}
 <script>window.plausible = window.plausible || function(){(window.plausible.q = window.plausible.q || []).push(arguments)}</script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "When I'm Scared, God Is With Me: A Kids' Faith & Feelings Journal", "bookFormat": "https://schema.org/Paperback", "author": {"@type": "Person", "name": "David"}, "illustrator": {"@type": "Person", "name": "Cher"}, "publisher": {"@type": "Organization", "name": "Wonderfully Made Labs"}, "image": "https://wonderfullymadelabs.com/news/when-im-scared-cover.jpg", "url": "https://wonderfullymadelabs.com/news/when-im-scared.html", "offers": {"@type": "Offer", "price": "9.99", "priceCurrency": "USD", "url": "https://www.amazon.com/dp/B0HQW9NV5T"}}</script>
+<link rel="stylesheet" href="/site/nav.css?v=1" />
+<script defer src="/site/nav.js?v=1"></script>
 </head><body>
-<header><div class="nav"><a href="/">&larr; Wonderfully Made Labs</a><a href="/shop.html">Shop</a></div>
+<header>
 <div class="eyebrow">New book &middot; Ages 6–11</div><h1>New Paperback: When I'm Scared, God Is With Me</h1><p>A Kids' Faith &amp; Feelings Journal, now in paperback on Amazon.</p></header>
 <main>
 <div class="prev" style="align-self:start"><img src="/news/when-im-scared-cover.jpg" alt="Front cover of the When I'm Scared, God Is With Me paperback journal with a praying child, Tempo and Iris" width="510" height="673" /></div>

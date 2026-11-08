@@ -1649,8 +1649,19 @@ function useScrollDepth(view) {
 
 /* ---- app ---- */
 function App() {
-  const initialView = typeof window !== 'undefined' && (window.location.hash === '#adult' || window.location.hash === '#story' || window.location.hash === '#story2' || window.location.hash === '#testimony' || window.location.hash === '#essays' || window.location.hash === '#journals' || window.location.hash === '#patient' || window.location.hash === '#cancer' || window.location.hash === '#story4') ? window.location.hash.slice(1) : 'home';
+  const initialView = typeof window !== 'undefined' && (window.location.hash === '#adult' || window.location.hash === '#story' || window.location.hash === '#story2' || window.location.hash === '#testimony' || window.location.hash === '#essays' || window.location.hash === '#journals' || window.location.hash === '#patient' || window.location.hash === '#cancer' || window.location.hash === '#story4' || window.location.hash === '#story3') ? window.location.hash.slice(1) : 'home';
   const [view, setView] = useState(initialView); // 'home' | 'story' | 'adult' | 'testimony' | 'journals' | 'essays' | 'essay'
+  /* Header menu links (e.g. /learn/#essays) switch views without a reload */
+  useEffect(() => {
+    const VIEWS = ['adult', 'story', 'story2', 'story3', 'story4', 'testimony', 'essays', 'journals', 'patient', 'cancer'];
+    const onHash = () => {
+      const h = window.location.hash.slice(1);
+      if (VIEWS.indexOf(h) > -1) { setView(h); setTier(null); setEssaySlug(null); window.scrollTo({ top: 0, behavior: 'instant' }); }
+      else if (!h) { setView('home'); setTier(null); setEssaySlug(null); }
+    };
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, []);
   const [tier, setTier] = useState(null);
   const [essaySlug, setEssaySlug] = useState(null);
   useScrollDepth(view + (essaySlug ? ':' + essaySlug : ''));

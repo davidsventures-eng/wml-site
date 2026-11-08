@@ -4,28 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="p:domain_verify" content="4e5020297e0f4bf98670528849a126f4" />
-  <title>The River That Forgot How to Flow — Wonderfully Made Labs</title>
-  <meta name="description" content="A faith-filled, scientifically accurate journey into how the heart's arteries work — and what happens when they don't. From Wonderfully Made Labs' Studying His Creation series." />
-  <meta property="og:title" content="The River That Forgot How to Flow" />
-  <meta property="og:description" content="Study His creation. Solve a real medical mystery the way scientists and doctors do — one river, three depths of understanding." />
+  <title>Wonderfully Made Labs | Color, Pray and Learn How Wonderfully You Were Made</title>
+  <meta name="description" content="Color a hidden Bible verse, solve a heart mystery, pray through 31 days, or find plain answers for a hard season. Real body science and World English Bible Scripture for kids and grown-ups." />
+  <link rel="canonical" href="https://wonderfullymadelabs.com/" />
+  <meta property="og:title" content="Wonderfully Made Labs: see the Maker in what He made" />
+  <meta property="og:description" content="Color a hidden verse, solve a heart mystery, or find plain answers and real hope for a hard season." />
+  <meta property="og:image" content="https://wonderfullymadelabs.com/color/cover.jpg" />
   <meta property="og:type" content="website" />
-  <link rel="icon" type="image/png" href="assets/favicon-48.png" />
-  <link rel="apple-touch-icon" href="assets/favicon-180.png" />
+  <meta property="og:url" content="https://wonderfullymadelabs.com/" />
+  <meta name="theme-color" content="#23344a" />
+  <link rel="icon" type="image/png" href="/assets/favicon-48.png" />
+  <link rel="apple-touch-icon" href="/assets/favicon-180.png" />
+  <script>
+    /* Old links like /#patient or /#essays now live in the library at /learn/ */
+    (function () {
+      var h = location.hash.slice(1);
+      if (['adult','story','story2','story3','story4','testimony','essays','journals','patient','cancer'].indexOf(h) > -1) location.replace('/learn/#' + h);
+    })();
+  </script>
   <link rel="preconnect" href="https://api.fontshare.com" />
-  <link href="https://api.fontshare.com/v2/css?f[]=chillax@400,500,600,700&f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=chillax@500,600,700&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260807d" />
-  <!-- ============ ANALYTICS ============ -->
-  <!-- Vercel Web Analytics: page views, referrers (Substack/YouTube/Etsy), devices, countries. Privacy-friendly, no cookies. Enable in Vercel dashboard: Project > Analytics > Enable. -->
+  <link rel="stylesheet" href="/site/nav.css?v=1" />
+  <link rel="stylesheet" href="/site/home.css?v=1" />
+  <script defer src="/site/nav.js?v=1"></script>
+  <script defer src="/site/home.js?v=1"></script>
+  <!-- Analytics (unchanged from the previous homepage) -->
   <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
   <script defer src="/_vercel/insights/script.js"></script>
-
-  <!-- Vercel Speed Insights: load performance (affects retention). Enable in Vercel dashboard: Project > Speed Insights > Enable. -->
   <script defer src="/_vercel/speed-insights/script.js"></script>
-
-  <!-- Microsoft Clarity: scroll-depth heatmaps + session recordings to see how far visitors get through the modules. Free. Create a project at clarity.microsoft.com, then replace x3im23f5jn below with your real ID. -->
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -33,45 +42,193 @@
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "x3im23f5jn");
   </script>
-
-  <!-- (Legacy) Plausible tag kept inert; only records if a paid Plausible account has this domain added. Safe to leave. -->
   <script defer data-domain="wonderfullymadelabs.com" src="https://plausible.io/js/script.tagged-events.js"></script>
   <script>window.plausible = window.plausible || function(){(window.plausible.q = window.plausible.q || []).push(arguments)}</script>
-  <!-- ==================================== -->
-  <script defer src="vendor/react.production.min.js"></script>
-  <script defer src="vendor/react-dom.production.min.js"></script>
-  <style>
-    /* Branded loading state shown until React mounts (helps slow connections) */
-    #app-loading{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;padding:2rem;font-family:'General Sans',system-ui,sans-serif;color:#23344a;}
-    #app-loading .al-ring{width:42px;height:42px;border-radius:50%;border:3px solid rgba(35,52,74,.15);border-top-color:#e8b04b;animation:al-spin .9s linear infinite;margin-bottom:1.1rem;}
-    #app-loading .al-text{font-size:1rem;letter-spacing:.02em;color:#3a3226;opacity:.8;}
-    #app-loading .al-sub{font-size:.85rem;color:#2a7d8c;margin-top:.35rem;opacity:.7;}
-    @keyframes al-spin{to{transform:rotate(360deg)}}
-    @media (prefers-reduced-motion: reduce){#app-loading .al-ring{animation:none;}}
-  </style>
 </head>
-<body>
-  <div id="root">
-    <div id="app-loading">
-      <div class="al-ring" aria-hidden="true"></div>
-      <div class="al-text">Studying His creation…</div>
-      <div class="al-sub">One moment — loading the wonder.</div>
+<body class="home">
+
+<main id="main">
+  <!-- 1. Hero: one promise, one primary action, one alternative -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Studying His Creation</p>
+        <h1>See the Maker in what He made.</h1>
+        <p class="lede">Color a hidden Bible verse, solve a heart mystery, or find plain answers and real hope for a hard season. Real body science and honest Scripture, for kids and grown-ups.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="/color/" data-t="home_hero_color" id="heroColor">Color this week&rsquo;s hidden verse</a>
+          <a class="btn btn-line" href="#paths" data-t="home_hero_paths">Find what you need</a>
+        </div>
+        <p class="hero-verse">&ldquo;I will give thanks to you, for I am fearfully and wonderfully made. Your works are wonderful.&rdquo; <span>from Psalm 139:14 (WEB)</span></p>
+      </div>
+      <a class="hero-art" href="/color/" aria-label="Open the hidden verse coloring puzzles" data-t="home_hero_art">
+        <img src="/color/cover.jpg" width="600" height="776" alt="Seek and You Will Find: a mosaic where the words of a verse appear as it is colored" fetchpriority="high" />
+        <span class="hero-tag">New puzzle every Monday</span>
+      </a>
     </div>
-  </div>
-  <script defer src="essays.js?v=20261106w"></script>
-  <script defer src="content.js?v=20261106w"></script>
-  <script defer src="adult-data.js?v=20261106w"></script>
-  <script defer src="adult.js?v=20261106w"></script>
-  <script defer src="content2.js?v=20261106w"></script>
-  <script defer src="module2.js?v=20261106w"></script>
-  <script defer src="content3.js?v=20261106w"></script>
-  <script defer src="module3.js?v=20261106w"></script>
-  <script defer src="patient-data.js?v=20261106w"></script>
-  <script defer src="patient.js?v=20261106w"></script>
-  <script defer src="cancer-data.js?v=20261106w"></script>
-  <script defer src="cancer.js?v=20261106w"></script>
-  <script defer src="cancer-module-data.js?v=20261106w"></script>
-  <script defer src="cancer-module.js?v=20261106w"></script>
-  <script defer src="app.js?v=20261108a"></script>
+  </section>
+
+  <!-- 2. Returning visitors: pick up where you left off (filled in from this device only) -->
+  <section class="continue" id="continue" hidden aria-labelledby="contH">
+    <div class="wrap">
+      <h2 id="contH">Pick up where you left off</h2>
+      <div class="cont-row" id="contRow"></div>
+    </div>
+  </section>
+
+  <!-- 3. Self-identification: four paths, every destination one tap away -->
+  <section class="paths" id="paths" aria-labelledby="pathsH">
+    <div class="wrap">
+      <p class="eyebrow">Start here</p>
+      <h2 id="pathsH">Where are you today?</h2>
+      <p class="sub">Pick what fits, and go straight there.</p>
+      <div class="path-grid">
+        <article class="path">
+          <img src="/assets/thumb_cancer_patient.jpg" alt="" width="460" height="460" loading="lazy" />
+          <div class="path-b">
+            <h3>I want quiet time with God</h3>
+            <a href="/color/" data-t="path_quiet_color"><b>Hidden Verse Coloring</b><span>Color slowly. The verse appears at the end.</span></a>
+            <a href="/prayer" data-t="path_quiet_prayer"><b>31-Day Prayer Companion</b><span>A Psalm, a prayer, and one small step a day</span></a>
+            <a href="/still-tool.html" data-t="path_quiet_still"><b>Be Still in 90 Seconds</b><span>Name what you feel, then breathe and pray</span></a>
+          </div>
+        </article>
+        <article class="path">
+          <img src="/assets/thumb_patient.jpg" alt="" width="460" height="460" loading="lazy" />
+          <div class="path-b">
+            <h3>I&rsquo;m walking through something hard</h3>
+            <a href="/learn/#patient" data-t="path_hard_heart"><b>I just got a heart diagnosis</b><span>What is happening and what comes next</span></a>
+            <a href="/learn/#cancer" data-t="path_hard_cancer"><b>Someone I love has cancer</b><span>Plain words, real hope</span></a>
+            <a href="/learn/#journals" data-t="path_hard_journals"><b>Journals for fear and grief</b><span>Give the heavy things words</span></a>
+          </div>
+        </article>
+        <article class="path">
+          <img src="/assets/thumb_river.jpg" alt="" width="460" height="460" loading="lazy" />
+          <div class="path-b">
+            <h3>I&rsquo;m learning with my kids</h3>
+            <a href="/river-detective.html" data-t="path_kids_game"><b>River Detective</b><span>Solve a real heart mystery, ages 8+</span></a>
+            <a href="/learn/#story" data-t="path_kids_story"><b>Painted body-science stories</b><span>Told three ways, ages 8 to pre-med</span></a>
+            <a href="/shop.html#coloring" data-t="path_kids_shop"><b>Coloring books and journals</b><span>Scripture and science to print or hold</span></a>
+          </div>
+        </article>
+        <article class="path">
+          <img src="/assets/dx_artery.jpg" alt="" width="733" height="1100" loading="lazy" />
+          <div class="path-b">
+            <h3>I want to understand my body</h3>
+            <a href="/heart" data-t="path_body_heart"><b>The Story Behind the Mystery</b><span>How a plaque forms and how the body heals</span></a>
+            <a href="/learn/#adult" data-t="path_body_adult"><b>Take Heart, for adults</b><span>The truth about your heart in plain numbers</span></a>
+            <a href="/move-and-be-still.html" data-t="path_body_move"><b>Move &amp; Be Still</b><span>A 10-minute movement and prayer reset</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. A weekly rhythm: one new thing every Monday -->
+  <section class="week" aria-labelledby="weekH">
+    <div class="wrap week-grid">
+      <div class="week-copy">
+        <p class="eyebrow">This week</p>
+        <h2 id="weekH">A hidden verse is waiting</h2>
+        <p id="weekLine">Each mosaic hides a Bible verse that only appears when the last piece is colored. A new puzzle opens every Monday.</p>
+        <div class="week-progress" id="weekProg" hidden>
+          <div class="bar"><span id="weekBar"></span></div>
+          <p id="weekProgText"></p>
+        </div>
+        <a class="btn btn-gold" href="/color/" id="weekCta" data-t="home_week_color">Start coloring</a>
+        <p class="week-fine">Works on a phone, iPad, or computer. Your progress stays on your device.</p>
+      </div>
+      <a class="week-art" href="/color/" data-t="home_week_art" aria-label="Open this week's puzzle">
+        <img id="weekImg" src="/pins/seek-06.jpg" width="1000" height="1500" alt="A partly colored mosaic with the verse still hidden" loading="lazy" />
+      </a>
+    </div>
+  </section>
+
+  <!-- 5. Most-loved free tools: social proof by curation, low effort to begin -->
+  <section class="loved" aria-labelledby="lovedH">
+    <div class="wrap">
+      <p class="eyebrow">Most loved</p>
+      <h2 id="lovedH">Begin with one of these</h2>
+      <div class="loved-grid">
+        <a class="tile" href="/river-detective.html" data-t="home_loved_river">
+          <img src="/assets/thumb_river.jpg" alt="" width="460" height="460" loading="lazy" />
+          <span class="tag">Game &middot; ages 8+</span>
+          <b>River Detective</b>
+          <span>A river forgot how to flow. Examine the clues and diagnose it yourself.</span>
+        </a>
+        <a class="tile" href="/prayer" data-t="home_loved_prayer">
+          <img src="/assets/prayer-og.jpg" alt="" width="1200" height="630" loading="lazy" class="wide" />
+          <span class="tag">31 days &middot; read or print</span>
+          <b>Finding Christ in the Darkness</b>
+          <span>A prayer companion for the soul that feels lost.</span>
+        </a>
+        <a class="tile" href="/move-and-be-still.html" data-t="home_loved_move">
+          <img src="/assets/dx_hands.jpg" alt="" width="733" height="1100" loading="lazy" />
+          <span class="tag">10 minutes &middot; all ages 8+</span>
+          <b>Move &amp; Be Still</b>
+          <span>Step away from the screen: move, breathe, and rest in a word of Scripture.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Take it home: products after value has been given -->
+  <section class="shopteaser" aria-labelledby="shopH">
+    <div class="wrap">
+      <div class="shop-head">
+        <div>
+          <p class="eyebrow">Take it home</p>
+          <h2 id="shopH">Books and printables</h2>
+          <p class="sub">Paperbacks on Amazon and instant printables on Etsy. Every purchase helps us make more.</p>
+        </div>
+        <a class="btn btn-navy" href="/shop.html" data-t="home_shop_all">Visit the shop</a>
+      </div>
+      <div class="shop-grid">
+        <a class="prod" href="/shop.html#advent" data-t="home_shop_advent"><img src="/shop/img/advent.jpg" alt="" loading="lazy" /><span class="tag gold">Advent begins Nov 29</span><b>The Light Has Come</b><span>25 days of Advent coloring</span></a>
+        <a class="prod" href="/shop.html#coloring" data-t="home_shop_coloring"><img src="/shop/img/coloring.jpg" alt="" loading="lazy" /><span class="tag">Coloring book</span><b>Fearfully and Wonderfully Made</b><span>Scripture and body science</span></a>
+        <a class="prod" href="/shop.html#journal" data-t="home_shop_journal"><img src="/shop/img/journal.jpg" alt="" loading="lazy" /><span class="tag">Kids&rsquo; journal</span><b>When I&rsquo;m Scared, God Is With Me</b><span>Faith and feelings, ages 6 to 11</span></a>
+        <a class="prod" href="/shop.html#posters" data-t="home_shop_posters"><img src="/shop/img/posters.jpg" alt="" loading="lazy" /><span class="tag">Printable</span><b>Bible Verse Posters</b><span>For a bedroom or classroom wall</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Stay in touch: a gift first, then the ask -->
+  <section class="signup" id="signup" aria-labelledby="signH">
+    <div class="wrap sign-card">
+      <div>
+        <p class="eyebrow">A gift for you</p>
+        <h2 id="signH">Get the 31-Day Prayer Companion</h2>
+        <p>Plus a short note when a new puzzle, story, or book opens. No schedule and no pressure. You can opt out any time.</p>
+      </div>
+      <form id="signForm" novalidate>
+        <label class="sr" for="sName">First name (optional)</label>
+        <input id="sName" type="text" placeholder="First name (optional)" autocomplete="given-name" />
+        <label class="sr" for="sEmail">Email</label>
+        <input id="sEmail" type="email" placeholder="Your email" autocomplete="email" required />
+        <button class="btn btn-gold" type="submit" id="sBtn">Send me the companion</button>
+        <p class="sign-msg" id="sMsg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- 8. Why we exist -->
+  <section class="story" aria-labelledby="storyH">
+    <div class="wrap story-grid">
+      <div>
+        <p class="eyebrow">Our story</p>
+        <h2 id="storyH">Made by a scientist who found peace on his knees</h2>
+        <p>For over twenty years he studied the body as a molecular pathologist and carried life on his own. Then his own heart caught up with him in a hospital bed, and one night reading the Gospel of John he met a peace he had never known. Wonderfully Made Labs exists for families walking that same road: frightened, worn down, and hoping for something both true and kind.</p>
+        <div class="story-cta">
+          <a class="btn btn-line" href="/learn/#testimony" data-t="home_story">Read our testimony</a>
+          <a class="text-link" href="https://buy.stripe.com/9B600ka9p5aiddBcX39Zm00" target="_blank" rel="noopener" data-t="home_support">Support the mission &rarr;</a>
+        </div>
+      </div>
+      <figure class="story-art">
+        <img src="/assets/sunny.jpeg" width="453" height="604" alt="Sunny, a hand-painted character by Cher" loading="lazy" />
+        <figcaption>Character art hand-painted by Cher</figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
 </body>
 </html>
