@@ -3,8 +3,16 @@
 // Actions (?a=): board, post, react, found, admin_list, admin_approve, admin_delete
 const crypto = require('crypto');
 
-const R_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || '';
-const R_TOK = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || '';
+// Find the Upstash REST settings even if Vercel added a custom prefix (e.g. STORAGE_KV_REST_API_URL).
+const envFind = (re, not) => { const k = Object.keys(process.env).find((n) => re.test(n) && !(not && not.test(n)) && process.env[n]); return k ? process.env[k] : ''; };
+const R_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || envFind(/(KV_REST_API_URL|REDIS_REST_URL)$/);
+const R_TOK = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || envFind(/(KV_REST_API_TOKEN|REDIS_REST_TOKEN)$/, /READ_ONLY/);
+// Some setups only give a redis:// URL; the REST endpoint and token can be derived from it.
+let R_URL2 = R_URL, R_TOK2 = R_TOK;
+if (!R_URL2 || !R_TOK2) {
+  const ru = envFind(/(KV_URL|REDIS_URL)$/);
+  try { const u = new URL(ru); if (/upstash\.io$/.test(u.hostname) && u.password) { R_URL2 = 'https://' + u.hostname; R_TOK2 = decodeURIComponent(u.password); } } catch (e) {}
+}
 // sha256 of the admin passphrase (the passphrase itself is never stored in the repo).
 // Setting SEEK_ADMIN_KEY in Vercel overrides this.
 const ADMIN_HASH = '3be75aba452a3c89015025b49f58a48abe0f29ba638f7986802936d0743c4169';
@@ -14,9 +22,9 @@ const NOUN = ['Sparrow', 'Dove', 'Lamb', 'Cedar', 'Olive', 'Lily', 'River', 'Lan
 const P = 'wml:seek:';
 
 async function redis(cmds) {
-  const r = await fetch(R_URL.replace(/\/$/, '') + '/pipeline', {
+  const r = await fetch(R_URL2.replace(/\/$/, '') + '/pipeline', {
     method: 'POST',
-    headers: { Authorization: `Bearer ${R_TOK}`, 'Content-Type': 'application/json' },
+    headers: { Authorization: `Bearer ${R_TOK2}`, 'Content-Type': 'application/json' },
     body: JSON.stringify(cmds),
   });
   if (!r.ok) throw new Error('store ' + r.status);
@@ -67,7 +75,7 @@ module.exports = async (req, res) => {
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
   res.setHeader('X-Robots-Tag', 'noindex');
   const send = (code, obj) => { res.statusCode = code; res.end(JSON.stringify(obj)); };
-  if (!R_URL || !R_TOK) return send(503, { error: 'not_configured' });
+  if (!R_URL2 || !R_TOK2) return send(503, { error: 'not_configured', seen: Object.keys(process.env).filter((n) => /KV|REDIS|UPSTASH/.test(n)) });
   const q = req.query || Object.fromEntries(new URL(req.url, 'http://x').searchParams);
   const a = String(q.a || '');
   let body = req.body;
