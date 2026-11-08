@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Seek and You Will Find: Hidden Scripture Mosaic to Color on Your Phone or iPad | Wonderfully Made Labs</title>
-<meta name="description" content="Tap to color a hidden Scripture mosaic on your phone, tablet, or computer. The Bible verse appears only when the last piece is filled. Three puzzles to try from the Seek and You Will Find coloring book." />
+<meta name="description" content="Tap to color a hidden Scripture mosaic on your phone, tablet, or computer. The Bible verse appears only when the last piece is filled. A new puzzle opens every Monday, with a fellowship board for anonymous encouragement." />
 <link rel="canonical" href="https://wonderfullymadelabs.com/color/" />
 <meta property="og:title" content="Seek and You Will Find: color a hidden verse" />
 <meta property="og:description" content="Color by number on your phone or iPad. The verse appears only when you finish." />
@@ -37,19 +37,37 @@
         <li><b>Pick a color</b> from the bar at the bottom.</li>
         <li><b>Tap a piece</b> with that number to fill it. Pinch or use + and − to zoom in and see the numbers.</li>
         <li><b>Take your time.</b> Your progress saves on this device, so you can come back any day.</li>
+        <li><b>Reflect to go on.</b> When the verse appears, write a private reflection to open the next puzzle. It never leaves your device. A new puzzle opens every Monday.</li>
       </ol>
       <p class="quiet">Let the slow, steady work become quiet time with the Lord.</p>
     </section>
     <section>
       <h2>Choose a puzzle</h2>
+      <p class="drop" id="nextDrop"></p>
       <div id="list" class="list" aria-live="polite"></div>
+    </section>
+    <section class="board" aria-labelledby="boardH">
+      <h2 id="boardH">Fellowship board</h2>
+      <p>We seek together. When you find a verse, you can leave an anonymous encouragement for the next person who finds it, and pray for those who wrote before you. Every post is read before it appears.</p>
+      <div class="stats" id="boardStats" hidden>
+        <div><b id="stFound">0</b><span>verses found</span></div>
+        <div><b id="stPray">0</b><span>prayers prayed</span></div>
+        <div><b id="stShared">0</b><span>encouragements shared</span></div>
+      </div>
+      <p class="muted" id="boardSoon">The fellowship board is opening soon.</p>
+    </section>
+    <section aria-labelledby="badgeH">
+      <h2 id="badgeH">Your badges</h2>
+      <p class="muted">Badges are only for you. They stay on this device.</p>
+      <div class="new-badge" id="newBadge" role="status" hidden></div>
+      <div class="badges" id="badges" role="list"></div>
     </section>
     <section class="book">
       <img src="cover.jpg" alt="Seek and You Will Find coloring book cover: a mosaic half colored to reveal the words Seek, and you will find" width="600" height="776" loading="lazy" />
       <div>
         <div class="eyebrow">The full book</div>
         <h2>24 hidden verses to color by hand</h2>
-        <p>The paperback has 24 mosaics in three levels (Gentle, Deeper, and Still), single-sided pages, and an answer key with a reflection prompt for each verse.</p>
+        <p>Twelve verses open here online, one each week. The paperback has all 24 mosaics in three levels (Gentle, Deeper, and Still), single-sided pages, and an answer key with a reflection prompt for each verse.</p>
         <a class="btn p" href="/shop.html?utm_source=wml_site&amp;utm_medium=color&amp;utm_campaign=seek" data-t="color_book">See it in the shop</a>
       </div>
     </section>
@@ -99,13 +117,28 @@
     <h2 id="doneT"></h2>
     <div class="ref" id="doneRef"></div>
     <p class="prompt" id="donePrompt"></p>
-    <label for="journal" class="jl">What is God saying to you?</label>
-    <textarea id="journal" rows="4" placeholder="Write a prayer or a thought. It stays on this device."></textarea>
+    <label for="journal" class="jl">Your private reflection</label>
+    <textarea id="journal" rows="4" placeholder="Write a prayer or a thought. Only you can see this. It stays on this device."></textarea>
+    <p class="unlock" id="unlockMsg" role="status"></p>
     <div class="row">
       <button class="btn s" id="doneView">View my mosaic</button>
       <button class="btn p" id="doneNext">Next puzzle</button>
     </div>
-    <a class="book-link" href="/shop.html?utm_source=wml_site&amp;utm_medium=color&amp;utm_campaign=seek_done" data-t="color_book_done">21 more hidden verses are in the book →</a>
+    <details class="share" id="shareBox" hidden>
+      <summary>Encourage the next person who finds this verse</summary>
+      <p class="small">Optional. You'll appear as <b id="myName"></b>. Please leave out names and contact details. Every post is read before it appears.</p>
+      <label for="shareText" class="jl">Your encouragement</label>
+      <textarea id="shareText" rows="3" maxlength="500" placeholder="What did God show you in this verse?"></textarea>
+      <input type="text" id="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp" />
+      <button class="btn p full" id="shareBtn">Share anonymously</button>
+      <p class="small" id="shareMsg" role="status"></p>
+    </details>
+    <section class="wall" id="wall" hidden aria-labelledby="wallH">
+      <h3 id="wallH">From fellow seekers</h3>
+      <div id="wallList"></div>
+      <p class="small muted">If you're struggling or in crisis, you are not alone. In the US, call or text 988.</p>
+    </section>
+    <a class="book-link" href="/shop.html?utm_source=wml_site&amp;utm_medium=color&amp;utm_campaign=seek_done" data-t="color_book_done">The book has all 24 hidden verses →</a>
   </div>
 </div>
 <script src="color.js"></script>

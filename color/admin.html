@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Fellowship board review | Seek and You Will Find</title>
+<link rel="stylesheet" href="color.css" />
+<style>
+.wrap{max-width:760px;margin:0 auto;padding:22px 16px 60px}
+h1{color:var(--navy);font-size:28px;margin:0 0 4px}
+.item{background:#fff;border-radius:14px;padding:14px 16px;margin:12px 0;box-shadow:0 10px 30px -22px rgba(0,0,0,.4);border:1px solid var(--line)}
+.item.flag{border:2px solid #b4562f}
+.item p{margin:6px 0 10px;white-space:pre-wrap}
+.meta2{font-family:var(--ui);font-size:13px;color:var(--muted)}
+.acts{display:flex;gap:8px;flex-wrap:wrap}
+.btn.d{background:#fff;border:2px solid #9c3d1c;color:#9c3d1c}
+.login{background:#fff;border-radius:14px;padding:18px;margin-top:16px}
+input[type=password]{width:100%;font-size:16px;padding:10px;border:1px solid var(--line);border-radius:10px;margin:8px 0}
+.tag{display:inline-block;background:#b4562f;color:#fff;font-family:var(--ui);font-size:12px;font-weight:700;border-radius:999px;padding:2px 8px;margin-left:6px}
+h2{color:var(--navy);margin:26px 0 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Fellowship board review</h1>
+  <p class="muted">Approve encouragements before anyone else can see them. Nothing appears on the board until you approve it.</p>
+  <form class="login" id="login">
+    <label for="key" class="jl">Review passphrase</label>
+    <input type="password" id="key" autocomplete="current-password" required />
+    <label class="small"><input type="checkbox" id="remember" checked /> Remember on this device</label>
+    <button class="btn p" type="submit">Open review</button>
+    <p class="small" id="loginMsg" role="status"></p>
+  </form>
+  <div id="app" hidden>
+    <p class="small"><b id="sum"></b> <button class="btn s" id="reload" type="button">Refresh</button> <button class="btn s" id="out" type="button">Sign out</button></p>
+    <h2>Waiting for review</h2>
+    <div id="pending"></div>
+    <h2>Recently approved</h2>
+    <div id="approved"></div>
+  </div>
+</div>
+<script>
+(() => {
+  const VERSES = {1:'from 1 John 4:8',8:'from Psalm 46:10',12:'1 John 4:19',6:'from Psalm 55:22',13:'from Psalm 136:1',3:'from John 14:27',7:'from Philippians 4:4',5:'from Matthew 28:20',4:'from John 8:12',14:'from Psalm 30:5',16:'from Lamentations 3:23',17:'from Psalm 46:1'};
+  const $ = (id) => document.getElementById(id);
+  const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  let KEY = '';
+  try { KEY = localStorage.getItem('wml-seek-admin') || ''; } catch (e) {}
+  async function call(a, body) {
+    const r = await fetch('/api/seek?a=' + a, { method: 'POST', headers: { 'Content-Type': 'application/json', 'x-seek-key': KEY }, body: JSON.stringify(body || {}) });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok) { const e = new Error(j.error || r.status); e.code = j.error || r.status; throw e; }
+    return j;
+  }
+  const when = (t) => new Date(t).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+  function card(c, pending) {
+    return `<div class="item${c.flag ? ' flag' : ''}"><div class="meta2">Puzzle ${c.p} · ${esc(VERSES[c.p] || '')} · ${esc(c.name)} · ${when(c.t)}${c.flag ? '<span class="tag">Check wording</span>' : ''}${pending ? '' : ` · Praying ${c.pray} · Amen ${c.amen}`}</div>` +
+      `<p>${esc(c.text)}</p><div class="acts">${pending ? `<button class="btn p" data-a="admin_approve" data-id="${c.id}">Approve</button>` : ''}<button class="btn d" data-a="admin_delete" data-id="${c.id}">${pending ? 'Delete' : 'Remove'}</button></div></div>`;
+  }
+  async function load() {
+    const j = await call('admin_list');
+    $('login').hidden = true; $('app').hidden = false;
+    $('sum').textContent = `${j.pending.length} waiting · ${(j.stats && j.stats.shared) || 0} approved in total`;
+    $('pending').innerHTML = j.pending.length ? j.pending.map((c) => card(c, true)).join('') : '<p class="muted">Nothing waiting. Thank you for shepherding this space.</p>';
+    $('approved').innerHTML = j.approved.length ? j.approved.map((c) => card(c, false)).join('') : '<p class="muted">None yet.</p>';
+  }
+  document.addEventListener('click', async (e) => {
+    const b = e.target.closest('button[data-a]'); if (!b) return;
+    if (b.dataset.a === 'admin_delete' && !confirm('Delete this post? This cannot be undone.')) return;
+    b.disabled = true;
+    try { await call(b.dataset.a, { id: b.dataset.id }); await load(); } catch (err) { alert('That did not work. Please try again.'); b.disabled = false; }
+  });
+  $('login').addEventListener('submit', async (e) => {
+    e.preventDefault(); KEY = $('key').value.trim(); $('loginMsg').textContent = 'Checking…';
+    try {
+      await load();
+      try { if ($('remember').checked) localStorage.setItem('wml-seek-admin', KEY); } catch (er) {}
+      $('loginMsg').textContent = '';
+    } catch (err) {
+      $('loginMsg').textContent = err.code === 'key' ? 'That passphrase did not match.' : err.code === 'not_configured' ? 'The board database is not connected yet.' : 'Could not reach the board. Please try again.';
+    }
+  });
+  $('reload').onclick = () => load().catch(() => {});
+  $('out').onclick = () => { try { localStorage.removeItem('wml-seek-admin'); } catch (e) {} KEY = ''; $('app').hidden = true; $('login').hidden = false; $('key').value = ''; };
+  if (KEY) load().catch(() => { KEY = ''; });
+})();
+</script>
+</body>
+</html>

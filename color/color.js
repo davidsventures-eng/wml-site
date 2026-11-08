@@ -1,6 +1,15 @@
 (() => {
   'use strict';
-  const PUZZLES = [1, 8, 12];
+  // A new puzzle opens each Monday (Pacific). Each one also needs a private reflection on the one before it.
+  const SCHED = [
+    [1, null], [8, null], [12, null],
+    [6, '2026-11-16'], [13, '2026-11-23'], [3, '2026-11-30'], [7, '2026-12-07'], [5, '2026-12-14'],
+    [4, '2026-12-21'], [14, '2026-12-28'], [16, '2027-01-04'], [17, '2027-01-11'],
+  ];
+  const PUZZLES = SCHED.map((x) => x[0]);
+  const RELEASE = {}; SCHED.forEach(([n, d]) => (RELEASE[n] = d ? Date.parse(d + 'T08:00:00Z') : 0));
+  const API = '/api/seek';
+  const MIN_REFLECT = 15;
   const $ = (id) => document.getElementById(id);
   const store = {
     get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
@@ -9,6 +18,94 @@
   };
   const track = (ev, props) => { try { window.plausible && window.plausible(ev, props ? { props } : undefined); } catch (e) {} };
   const cache = {};
+  const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const fmtDate = (ms) => new Date(ms).toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric', timeZone: 'America/Los_Angeles' });
+  const isDone = (n) => store.get(`wml-seek-done${n}`) === '1';
+  const reflection = (n) => (store.get(`wml-seek-j${n}`) || '').trim();
+  const reflected = (n) => reflection(n).length >= MIN_REFLECT;
+  const started = (n) => !!store.get(`wml-seek-p${n}`);
+  const released = (n) => Date.now() >= RELEASE[n];
+  // state: open | soon | reflect (finish/reflect on previous first)
+  function stateOf(n) {
+    const i = PUZZLES.indexOf(n);
+    if (i === 0 || started(n) || isDone(n)) return 'open';
+    if (!released(n)) return 'soon';
+    const prev = PUZZLES[i - 1];
+    return isDone(prev) && reflected(prev) ? 'open' : 'reflect';
+  }
+  const jsonGet = (k, d) => { try { return JSON.parse(store.get(k)) || d; } catch (e) { return d; } };
+  function markDay() {
+    const day = new Date().toLocaleDateString('en-CA');
+    const days = jsonGet('wml-seek-days', []);
+    if (!days.includes(day)) { days.push(day); store.set('wml-seek-days', JSON.stringify(days.slice(-120))); }
+  }
+  // anonymous name, made on this device
+  const ADJ = ['Quiet', 'Gentle', 'Hopeful', 'Faithful', 'Joyful', 'Grateful', 'Steady', 'Humble', 'Kind', 'Patient', 'Bright', 'Restful', 'Peaceful', 'Trusting', 'Glad', 'Still'];
+  const NOUN = ['Sparrow', 'Dove', 'Lamb', 'Cedar', 'Olive', 'Lily', 'River', 'Lantern', 'Meadow', 'Harbor', 'Willow', 'Robin', 'Shepherd', 'Pilgrim', 'Vine', 'Morning'];
+  function myName() {
+    let n = store.get('wml-seek-name');
+    if (!n) {
+      const r = (k) => Math.floor(Math.random() * k);
+      n = `${ADJ[r(ADJ.length)]} ${NOUN[r(NOUN.length)]} ${r(900) + 100}`;
+      store.set('wml-seek-name', n);
+    }
+    return n;
+  }
+  async function api(a, opts) {
+    const o = opts || {};
+    const url = `${API}?a=${a}${o.q ? '&' + o.q : ''}`;
+    const r = await fetch(url, o.body ? { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(o.body) } : { cache: 'no-store' });
+    let j = {}; try { j = await r.json(); } catch (e) {}
+    if (!r.ok) { const err = new Error(j.error || 'http'); err.code = j.error || r.status; throw err; }
+    return j;
+  }
+
+  // ---------- badges (private, on this device) ----------
+  const BADGES = [
+    ['seeker', 'Seeker', 'Found your first hidden verse'],
+    ['reflective', 'Reflective', 'Wrote 3 private reflections'],
+    ['steadfast', 'Steadfast', 'Colored on 7 different days'],
+    ['encourager', 'Encourager', 'Shared an encouragement'],
+    ['partner', 'Prayer Partner', 'Prayed for 5 fellow seekers'],
+    ['faithful', 'Faithful', 'Found all 12 verses online'],
+  ];
+  function earned() {
+    const done = PUZZLES.filter(isDone).length;
+    const refl = PUZZLES.filter(reflected).length;
+    return {
+      seeker: done >= 1,
+      reflective: refl >= 3,
+      steadfast: jsonGet('wml-seek-days', []).length >= 7,
+      encourager: +(store.get('wml-seek-shared') || 0) >= 1,
+      partner: jsonGet('wml-seek-prayed', []).length >= 5,
+      faithful: done >= PUZZLES.length,
+    };
+  }
+  function renderBadges() {
+    const e = earned();
+    const seen = jsonGet('wml-seek-badges', []);
+    const fresh = BADGES.filter(([k]) => e[k] && !seen.includes(k));
+    $('badges').innerHTML = BADGES.map(([k, name, how]) =>
+      `<div class="badge${e[k] ? ' on' : ''}" role="listitem" aria-label="${esc(name)}: ${esc(how)}${e[k] ? ', earned' : ', not yet earned'}">` +
+      `<span class="medal" aria-hidden="true">${e[k] ? '&#10022;' : '&#9675;'}</span><b>${esc(name)}</b><small>${esc(how)}</small></div>`).join('');
+    if (fresh.length) {
+      $('newBadge').textContent = `New badge: ${fresh.map((b) => b[1]).join(', ')}`;
+      $('newBadge').hidden = false;
+      store.set('wml-seek-badges', JSON.stringify(BADGES.filter(([k]) => e[k]).map(([k]) => k)));
+    } else $('newBadge').hidden = true;
+  }
+
+  // ---------- fellowship board ----------
+  async function renderStats() {
+    try {
+      const j = await api('board');
+      const st = j.stats;
+      $('stFound').textContent = st.found.toLocaleString();
+      $('stPray').textContent = st.prayers.toLocaleString();
+      $('stShared').textContent = st.shared.toLocaleString();
+      $('boardStats').hidden = false; $('boardSoon').hidden = true;
+    } catch (e) { $('boardStats').hidden = true; $('boardSoon').hidden = false; }
+  }
 
   async function load(n) {
     if (cache[n]) return cache[n];
@@ -62,21 +159,51 @@
   // ---------- home ----------
   async function renderList() {
     const list = $('list'); list.innerHTML = '';
+    const next = PUZZLES.find((n) => !released(n));
+    $('nextDrop').textContent = next ? `Next new puzzle: ${fmtDate(RELEASE[next])}` : 'All 12 online puzzles are open.';
+    let shownSoon = 0;
     for (const n of PUZZLES) {
-      const p = await load(n);
-      const done = count(p);
+      const st = stateOf(n);
+      if (st === 'soon' && shownSoon++ >= 1) continue;
       const b = document.createElement('button');
-      b.className = 'pz'; b.type = 'button';
-      b.setAttribute('aria-label', `Puzzle ${n}, ${p.level}, ${p.ng} pieces, ${done ? Math.round((done / p.ng) * 100) + '% colored' : 'not started'}`);
-      const c = document.createElement('canvas'); c.width = 168; c.height = 184;
-      thumb(p, c);
+      b.className = 'pz' + (st === 'open' ? '' : ' locked'); b.type = 'button';
       const d = document.createElement('div');
-      d.innerHTML = `<h3>Puzzle ${n}</h3><div class="meta">${p.level} · ${p.ng.toLocaleString()} pieces · ${p.colors.length} colors</div>` +
-        `<div class="meta">${done === p.ng ? 'Finished' : done ? `${Math.round((done / p.ng) * 100)}% colored` : 'Not started'}</div><div class="bar"><i style="width:${(done / p.ng) * 100}%"></i></div>`;
-      b.append(c, d);
-      b.addEventListener('click', () => openPuzzle(n));
+      let thumbEl;
+      if (st === 'soon') {
+        thumbEl = document.createElement('div'); thumbEl.className = 'lockart'; thumbEl.innerHTML = '<svg width="28" height="32" viewBox="0 0 28 32" aria-hidden="true"><rect x="3" y="14" width="22" height="16" rx="3" fill="#c9a24a"/><path d="M8 14V9a6 6 0 0 1 12 0v5" fill="none" stroke="#1f2f4f" stroke-width="3"/></svg>';
+        d.innerHTML = `<h3>Puzzle ${n}</h3><div class="meta">Opens ${fmtDate(RELEASE[n])}</div>`;
+        b.setAttribute('aria-label', `Puzzle ${n}, opens ${fmtDate(RELEASE[n])}`);
+        b.disabled = true;
+      } else {
+        const p = await load(n);
+        const done = count(p);
+        thumbEl = document.createElement('canvas'); thumbEl.width = 168; thumbEl.height = 184; thumb(p, thumbEl);
+        const pct = Math.round((done / p.ng) * 100);
+        let status;
+        if (st === 'reflect') {
+          const prev = PUZZLES[PUZZLES.indexOf(n) - 1];
+          status = isDone(prev) ? `Write your reflection on Puzzle ${prev} to open this one` : `Finish Puzzle ${prev} and write a reflection to open this one`;
+        } else status = done === p.ng ? (reflected(n) ? 'Finished · reflection saved' : 'Finished · add your reflection') : done ? `${pct}% colored` : 'Not started';
+        d.innerHTML = `<h3>Puzzle ${n}</h3><div class="meta">${p.level} · ${p.ng.toLocaleString()} pieces · ${p.colors.length} colors</div>` +
+          `<div class="meta st">${status}</div>` + (st === 'open' ? `<div class="bar"><i style="width:${(done / p.ng) * 100}%"></i></div>` : '');
+        b.setAttribute('aria-label', `Puzzle ${n}, ${p.level}. ${status}`);
+        b.addEventListener('click', () => {
+          if (st === 'open') return openPuzzle(n);
+          const target = PUZZLES.find((m) => stateOf(m) === 'open' && !(isDone(m) && reflected(m)));
+          if (target) openPuzzle(target);
+        });
+      }
+      b.append(thumbEl, d);
       list.append(b);
     }
+    const later = PUZZLES.filter((n) => !released(n)).length - 1;
+    if (later > 0) {
+      const last = PUZZLES[PUZZLES.length - 1];
+      const m = document.createElement('p'); m.className = 'later';
+      m.textContent = `${later} more after that, one each Monday through ${new Date(RELEASE[last]).toLocaleDateString('en-US', { month: 'long', day: 'numeric', timeZone: 'America/Los_Angeles' })}.`;
+      list.append(m);
+    }
+    renderBadges(); renderStats();
   }
   function thumb(p, c) {
     const x = c.getContext('2d');
@@ -214,7 +341,7 @@
     if (g < 0 || P.filled[g]) return;
     if (view.s < NUM_MIN * 0.75) { zoomAt(Math.max(1.6, (NUM_MIN * 1.6) / view.s), sx, sy); return; }
     if (P.num[g] !== sel) { toast(`That piece is number ${P.num[g]}`); return; }
-    P.filled[g] = 1; save(P); draw(); updateCounts();
+    P.filled[g] = 1; save(P); draw(); updateCounts(); markDay();
     if (count(P) === P.ng) setTimeout(finish, 450);
   }
 
@@ -268,18 +395,76 @@
   }
 
   function finish() {
-    const s = P.secret;
+    const s = P.secret, n = P.n;
     $('doneT').textContent = s.verse.charAt(0).toUpperCase() + s.verse.slice(1);
     $('doneRef').textContent = `${s.ref} (WEB)`;
     $('donePrompt').textContent = s.prompt;
-    const jk = `wml-seek-j${P.n}`;
+    const jk = `wml-seek-j${n}`;
     const j = $('journal'); j.value = store.get(jk) || '';
-    j.oninput = () => store.set(jk, j.value);
-    const idx = PUZZLES.indexOf(P.n);
-    $('doneNext').textContent = idx < PUZZLES.length - 1 ? 'Next puzzle' : 'All puzzles';
-    $('done').hidden = false;
-    if (!store.get(`wml-seek-done${P.n}`)) { store.set(`wml-seek-done${P.n}`, '1'); track('color_complete', { puzzle: String(P.n) }); }
+    j.oninput = () => { store.set(jk, j.value); unlockState(); };
+    $('shareText').value = ''; $('shareMsg').textContent = ''; $('shareBox').open = false;
+    $('myName').textContent = myName();
+    $('done').hidden = false; $('done').querySelector('.card').scrollTop = 0;
+    if (!isDone(n)) {
+      store.set(`wml-seek-done${n}`, '1');
+      track('color_complete', { puzzle: String(n) });
+      api('found', { body: { p: n } }).catch(() => {});
+    }
+    unlockState();
+    loadWall(n);
   }
+  function unlockState() {
+    const n = P.n, i = PUZZLES.indexOf(n), next = PUZZLES[i + 1];
+    const ok = reflected(n);
+    const msg = $('unlockMsg'), btn = $('doneNext');
+    if (!next) { msg.textContent = ok ? 'Reflection saved on this device.' : 'Write a sentence or two. It stays on this device.'; btn.textContent = 'All puzzles'; btn.disabled = false; return; }
+    if (!ok) { msg.textContent = `Write a sentence or two to open Puzzle ${next}. It stays on this device.`; btn.textContent = 'All puzzles'; btn.disabled = false; btn.dataset.go = 'home'; return; }
+    if (!released(next)) { msg.textContent = `Saved. Puzzle ${next} opens ${fmtDate(RELEASE[next])}.`; btn.textContent = 'All puzzles'; btn.dataset.go = 'home'; return; }
+    msg.textContent = `Saved. Puzzle ${next} is open.`; btn.textContent = `Open Puzzle ${next}`; btn.dataset.go = String(next);
+  }
+  async function loadWall(n) {
+    const wall = $('wall'), list = $('wallList');
+    list.innerHTML = '<p class="muted">Loading…</p>'; wall.hidden = false;
+    try {
+      const j = await api('board', { q: `p=${n}` });
+      $('shareBox').hidden = false;
+      const posts = j.posts || [];
+      const prayed = jsonGet('wml-seek-prayed', []), amened = jsonGet('wml-seek-amened', []);
+      if (!posts.length) { list.innerHTML = '<p class="muted">No one has shared on this verse yet. Your words could be the first.</p>'; return; }
+      list.innerHTML = posts.map((c) =>
+        `<article class="post"><p>${esc(c.text).replace(/\n/g, '<br>')}</p><div class="by">${esc(c.name)}</div>` +
+        `<div class="rx"><button type="button" class="chipbtn${prayed.includes(c.id) ? ' on' : ''}" data-id="${c.id}" data-k="pray" aria-pressed="${prayed.includes(c.id)}">Praying · <span>${c.pray}</span></button>` +
+        `<button type="button" class="chipbtn${amened.includes(c.id) ? ' on' : ''}" data-id="${c.id}" data-k="amen" aria-pressed="${amened.includes(c.id)}">Amen · <span>${c.amen}</span></button></div></article>`).join('');
+    } catch (e) { wall.hidden = true; $('shareBox').hidden = true; }
+  }
+  $('wallList').addEventListener('click', (e) => {
+    const b = e.target.closest('.chipbtn'); if (!b || b.classList.contains('on')) return;
+    const id = b.dataset.id, k = b.dataset.k, sk = k === 'pray' ? 'wml-seek-prayed' : 'wml-seek-amened';
+    const arr = jsonGet(sk, []); arr.push(id); store.set(sk, JSON.stringify(arr.slice(-500)));
+    b.classList.add('on'); b.setAttribute('aria-pressed', 'true');
+    const sp = b.querySelector('span'); sp.textContent = +sp.textContent + 1;
+    api('react', { body: { id, kind: k } }).catch(() => {});
+    track('color_react', { kind: k });
+  });
+  $('shareBtn').onclick = async () => {
+    const text = $('shareText').value.trim(), m = $('shareMsg');
+    if (text.length < 5) { m.textContent = 'Write a few words first.'; return; }
+    if (/(https?:|www\.|@|\d[\d\s().-]{6,}\d)/i.test(text)) { m.textContent = 'Please leave out links, emails, and phone numbers so everyone stays anonymous.'; return; }
+    $('shareBtn').disabled = true; m.textContent = 'Sending…';
+    try {
+      await api('post', { body: { p: P.n, name: myName(), text, website: $('hp').value } });
+      store.set('wml-seek-shared', String(+(store.get('wml-seek-shared') || 0) + 1));
+      $('shareText').value = '';
+      m.textContent = 'Thank you. Your encouragement will appear after it is reviewed.';
+      track('color_share', { puzzle: String(P.n) });
+    } catch (e) {
+      m.textContent = e.code === 'slow' ? 'Thank you. Please wait a little before sharing again.'
+        : e.code === 'contact' ? 'Please leave out links, emails, and phone numbers.'
+        : e.code === 'length' ? 'Please keep it between a few words and 500 characters.'
+        : 'Sharing is not available right now. Please try again later.';
+    }
+    $('shareBtn').disabled = false;
+  };
 
   // pointer handling: tap fills, drag pans, pinch zooms
   const pts = new Map(); let start = null, moved = false, pinch = null;
@@ -351,8 +536,8 @@
   $('doneView').onclick = () => { $('done').hidden = true; fitView(); draw(); };
   $('doneNext').onclick = () => {
     $('done').hidden = true;
-    const idx = PUZZLES.indexOf(P.n);
-    if (idx < PUZZLES.length - 1) openPuzzle(PUZZLES[idx + 1]); else goHome();
+    const go = $('doneNext').dataset.go;
+    if (go && go !== 'home') openPuzzle(+go); else goHome();
   };
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') ['menu', 'confirm', 'done'].forEach((m) => ($(m).hidden = true));
@@ -364,7 +549,6 @@
   });
   window.addEventListener('resize', () => { if (P) { resize(); clampView(); draw(); } });
 
-  // test hook (used for QA only): fill all but n pieces
 
   renderList();
 })();
