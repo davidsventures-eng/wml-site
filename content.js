@@ -1,4 +1,4 @@
-// Wonderfully Made Labs — "The River Who Forgot How to Flow"
+// Wonderfully Made Labs — "The River That Forgot How to Flow"
 // All narrative content, three tiers, drawn from the story bible.
 
 window.WML = {

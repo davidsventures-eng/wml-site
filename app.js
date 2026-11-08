@@ -771,7 +771,7 @@ function Home({
     className: "hub-card-tag"
   }, "For Families, Kids & Students"), /*#__PURE__*/React.createElement("h3", {
     className: "display"
-  }, "The River Who Forgot How to Flow"), /*#__PURE__*/React.createElement("p", null, "A painted story-mystery about coronary heart disease, told three ways \u2014 simple enough for an 8-year-old, deep enough for a pre-med student. Hand-painted characters, a discovery game, and a look at real careers in medicine."), /*#__PURE__*/React.createElement("span", {
+  }, "The River That Forgot How to Flow"), /*#__PURE__*/React.createElement("p", null, "A painted story-mystery about coronary heart disease, told three ways \u2014 simple enough for an 8-year-old, deep enough for a pre-med student. Hand-painted characters, a discovery game, and a look at real careers in medicine."), /*#__PURE__*/React.createElement("span", {
     className: "hub-pick"
   }, "Enter the story \u2192")), /*#__PURE__*/React.createElement("div", {
     className: "hub-card story",
@@ -1280,7 +1280,7 @@ function Gate({
     className: "verse"
   }, "\u201CI will give thanks to you, for I am fearfully and wonderfully made. Your works are wonderful.\u201D \u2014 from Psalm 139:14 (WEB)"), /*#__PURE__*/React.createElement("h1", {
     className: "display"
-  }, "The River Who Forgot How to Flow"), /*#__PURE__*/React.createElement("p", {
+  }, "The River That Forgot How to Flow"), /*#__PURE__*/React.createElement("p", {
     className: "lede"
   }, "Solve a real medical mystery the way scientists and doctors do. One river. One disease \u2014 coronary heart disease. Three depths of understanding. Choose where you'd like to begin."), /*#__PURE__*/React.createElement("div", {
     className: "tier-cards"
