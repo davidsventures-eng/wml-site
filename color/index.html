@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Seek and You Will Find: Hidden Scripture Mosaic to Color on Your Phone or iPad | Wonderfully Made Labs</title>
+<meta name="description" content="Tap to color a hidden Scripture mosaic on your phone, tablet, or computer. The Bible verse appears only when the last piece is filled. Three puzzles to try from the Seek and You Will Find coloring book." />
+<link rel="canonical" href="https://wonderfullymadelabs.com/color/" />
+<meta property="og:title" content="Seek and You Will Find: color a hidden verse" />
+<meta property="og:description" content="Color by number on your phone or iPad. The verse appears only when you finish." />
+<meta property="og:image" content="https://wonderfullymadelabs.com/color/cover.jpg" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://wonderfullymadelabs.com/color/" />
+<meta name="theme-color" content="#1f2f4f" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Seek & Find" />
+<link rel="icon" type="image/png" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/wml_icon.png" />
+<link rel="stylesheet" href="color.css" />
+<script defer data-domain="wonderfullymadelabs.com" src="https://plausible.io/js/script.tagged-events.js"></script>
+<script>window.plausible = window.plausible || function(){(window.plausible.q = window.plausible.q || []).push(arguments)}</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+<!-- Start screen -->
+<div id="home" class="screen">
+  <header class="hero">
+    <div class="nav"><a href="/">← Wonderfully Made Labs</a><a href="/shop.html">Shop</a></div>
+    <div class="eyebrow">Hidden Scripture Mosaic</div>
+    <h1>Seek and You Will Find</h1>
+    <p>Tap to color by number on your phone, tablet, or computer. A Bible verse is hidden in every pattern, and it only comes into view as you finish.</p>
+  </header>
+  <main class="home-main">
+    <section class="how">
+      <h2>How it works</h2>
+      <ol>
+        <li><b>Pick a color</b> from the bar at the bottom.</li>
+        <li><b>Tap a piece</b> with that number to fill it. Pinch or use + and − to zoom in and see the numbers.</li>
+        <li><b>Take your time.</b> Your progress saves on this device, so you can come back any day.</li>
+      </ol>
+      <p class="quiet">Let the slow, steady work become quiet time with the Lord.</p>
+    </section>
+    <section>
+      <h2>Choose a puzzle</h2>
+      <div id="list" class="list" aria-live="polite"></div>
+    </section>
+    <section class="book">
+      <img src="cover.jpg" alt="Seek and You Will Find coloring book cover: a mosaic half colored to reveal the words Seek, and you will find" width="600" height="776" loading="lazy" />
+      <div>
+        <div class="eyebrow">The full book</div>
+        <h2>24 hidden verses to color by hand</h2>
+        <p>The paperback has 24 mosaics in three levels (Gentle, Deeper, and Still), single-sided pages, and an answer key with a reflection prompt for each verse.</p>
+        <a class="btn p" href="/shop.html?utm_source=wml_site&amp;utm_medium=color&amp;utm_campaign=seek" data-t="color_book">See it in the shop</a>
+      </div>
+    </section>
+  </main>
+  <footer><div class="g">To God be the glory.</div>Scripture from the World English Bible. Wonderfully Made Labs · David</footer>
+</div>
+
+<!-- Coloring screen -->
+<div id="play" class="screen" hidden>
+  <div class="topbar">
+    <button class="icon" id="back" aria-label="Back to puzzles">←</button>
+    <div class="ttl"><b id="pTitle">Puzzle</b><span id="pProg">0 of 0 pieces</span></div>
+    <div class="tools">
+      <button class="icon" id="zoomOut" aria-label="Zoom out">−</button>
+      <button class="icon" id="zoomIn" aria-label="Zoom in">+</button>
+      <button class="icon wide" id="fit" aria-label="Show the whole puzzle">Fit</button>
+      <button class="icon wide" id="find" aria-label="Show a piece I missed in this color">Find</button>
+      <button class="icon wide" id="more" aria-label="More options">⋯</button>
+    </div>
+  </div>
+  <div class="stage" id="stage">
+    <canvas id="cv"></canvas>
+    <div class="hint" id="hint">Pinch or tap + to zoom in and see the numbers</div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+  <div class="palette" id="palette" role="radiogroup" aria-label="Colors"></div>
+</div>
+
+<!-- Dialogs -->
+<div class="modal" id="menu" hidden>
+  <div class="card" role="dialog" aria-modal="true" aria-labelledby="menuT">
+    <h2 id="menuT">Options</h2>
+    <button class="btn s full" id="restart">Start this puzzle over</button>
+    <button class="btn s full" id="closeMenu">Close</button>
+  </div>
+</div>
+<div class="modal" id="confirm" hidden>
+  <div class="card" role="dialog" aria-modal="true" aria-labelledby="confT">
+    <h2 id="confT">Start over?</h2>
+    <p>This clears every colored piece on this puzzle.</p>
+    <div class="row"><button class="btn s" id="confNo">Keep my coloring</button><button class="btn p" id="confYes">Start over</button></div>
+  </div>
+</div>
+<div class="modal" id="done" hidden>
+  <div class="card done" role="dialog" aria-modal="true" aria-labelledby="doneT">
+    <div class="eyebrow">You found it</div>
+    <h2 id="doneT"></h2>
+    <div class="ref" id="doneRef"></div>
+    <p class="prompt" id="donePrompt"></p>
+    <label for="journal" class="jl">What is God saying to you?</label>
+    <textarea id="journal" rows="4" placeholder="Write a prayer or a thought. It stays on this device."></textarea>
+    <div class="row">
+      <button class="btn s" id="doneView">View my mosaic</button>
+      <button class="btn p" id="doneNext">Next puzzle</button>
+    </div>
+    <a class="book-link" href="/shop.html?utm_source=wml_site&amp;utm_medium=color&amp;utm_campaign=seek_done" data-t="color_book_done">21 more hidden verses are in the book →</a>
+  </div>
+</div>
+<script src="color.js"></script>
+</body>
+</html>
