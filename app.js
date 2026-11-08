@@ -719,6 +719,13 @@ function Home({
     className: "display"
   }, "The Wonder, To Keep"), /*#__PURE__*/React.createElement("p", null, "Beautiful printed editions of the stories and journals, plus original-character merch built around our painted friends \u2014 Discover, Treat, Serve, and the \u201CFearfully and Wonderfully Made\u201D comfort line. Printable coloring pages and journals are now on Etsy, and printed editions are on Amazon."), /*#__PURE__*/React.createElement("a", {
     className: "hub-pick",
+    href: "/news/fearfully-and-wonderfully-made.html",
+    style: { display: "block", marginBottom: "8px" },
+    onClick: () => track('News Click', {
+      source: 'Home Store Card'
+    })
+  }, "New: our first paperback is on Amazon \u2192"), /*#__PURE__*/React.createElement("a", {
+    className: "hub-pick",
     href: ETSY_URL,
     target: "_blank",
     rel: "noopener noreferrer",
