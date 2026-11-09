@@ -37,7 +37,7 @@ section{padding:72px 0}
 .hero-tag{position:absolute;right:-16px;top:-14px;background:var(--gold);color:var(--navy);font-family:var(--alt);font-weight:700;font-size:14px;padding:9px 14px;border-radius:999px;box-shadow:0 10px 20px -10px rgba(0,0,0,.4);transform:rotate(-3deg)}
 
 /* continue */
-.continue{padding:0 0 8px}
+.continue{padding:32px 0 4px}
 .continue h2{font-size:22px;margin-bottom:14px}
 .cont-row{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
 .cont{flex:0 0 auto;min-width:220px;max-width:300px;background:#fff;border-radius:14px;padding:14px 16px;text-decoration:none;color:var(--ink);box-shadow:0 0 0 1px rgba(35,52,74,.08)}
