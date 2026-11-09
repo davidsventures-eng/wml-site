@@ -69,3 +69,14 @@ body:has(.topbar .tier-switch) .wml-nav{display:none}
 /* Library (/learn/) floating buttons: the header now carries these links */
 .wml-nav ~ #root .home-game-pill{display:none!important}
 @media (min-width:601px){.wml-nav ~ #root .home-contact-row{position:static;justify-content:center;margin:18px auto 0}}
+
+/* Walk with Him ribbon */
+.wml-walkr{position:fixed;left:16px;bottom:max(16px,env(safe-area-inset-bottom));z-index:900;display:flex;align-items:stretch;max-width:min(380px,calc(100vw - 32px));background:#23344a;color:#f3ede0;border-radius:16px;border:1px solid rgba(232,176,75,.45);box-shadow:0 18px 40px -16px rgba(0,0,0,.5);font-family:'General Sans','Inter',system-ui,sans-serif;animation:wmlWalkIn .5s ease both}
+@keyframes wmlWalkIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.wml-walkr a{flex:1;color:#fff;text-decoration:none;padding:12px 6px 12px 16px;font-size:14.5px;font-weight:600;line-height:1.35}
+.wml-walkr a small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#e8b04b;font-weight:700;margin-bottom:2px}
+.wml-walkr a b{color:#e8b04b}
+.wml-walkr button{background:none;border:0;color:#cdbf9f;font-size:22px;padding:0 14px;cursor:pointer;border-left:1px solid rgba(255,255,255,.12)}
+.wml-walkr button:hover{color:#fff}
+.wml-walkr a:focus-visible,.wml-walkr button:focus-visible{outline:3px solid #e8b04b;outline-offset:-3px;border-radius:12px}
+@media (prefers-reduced-motion:reduce){.wml-walkr{animation:none}}

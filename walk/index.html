@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Walk with Him | Start from How You Feel | Wonderfully Made Labs</title>
+<meta name="description" content="Tell us how your heart is today. We will walk a few quiet steps with you: a word from Scripture, a little time with the Lord, a check-in, and a moment to give Him glory. World English Bible Scripture." />
+<link rel="canonical" href="https://wonderfullymadelabs.com/walk/" />
+<meta property="og:title" content="Walk with Him: start from how you feel" />
+<meta property="og:description" content="A few quiet steps through Scripture and time with the Lord, starting from where your heart is today." />
+<meta property="og:image" content="https://wonderfullymadelabs.com/assets/home_path.jpg" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#23344a" />
+<link rel="icon" type="image/png" href="/assets/favicon-48.png" />
+<link rel="preconnect" href="https://api.fontshare.com" />
+<link href="https://api.fontshare.com/v2/css?f[]=chillax@500,600,700&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/site/nav.css?v=3" />
+<link rel="stylesheet" href="/site/home.css?v=3" />
+<script defer src="/site/nav.js?v=3"></script>
+<script defer data-domain="wonderfullymadelabs.com" src="https://plausible.io/js/script.tagged-events.js"></script>
+<script>window.plausible = window.plausible || function(){(window.plausible.q = window.plausible.q || []).push(arguments)}</script>
+<style>
+.w-hero{padding:0;background:var(--navy);color:#f3ede0;overflow:hidden}
+.w-hero-grid{display:grid;grid-template-columns:1.1fr .9fr;min-height:420px}
+.w-hero-copy{padding:64px 48px 56px max(20px,calc((100vw - 1200px)/2 + 20px));display:flex;flex-direction:column;justify-content:center}
+.w-hero h1{color:#fff;font-size:clamp(38px,5vw,60px);font-weight:700;max-width:14ch}
+.w-hero .eyebrow{color:var(--gold)}
+.w-hero .lede{color:#efe7d6;max-width:540px}
+.w-hero-art{position:relative;min-height:300px}
+.w-hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.w-hero-art::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 0%,rgba(35,52,74,0) 35%)}
+
+.pick{padding:56px 0 64px}
+.pick-in{max-width:980px;margin:0 auto;padding:0 20px}
+.feel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-top:26px}
+.feel{display:flex;flex-direction:column;gap:2px;text-align:left;font:inherit;background:#fff;border:1.5px solid rgba(35,52,74,.12);border-radius:16px;padding:16px 18px;cursor:pointer;color:var(--ink);transition:border-color .15s,transform .15s,box-shadow .15s;min-height:72px}
+.feel:hover{border-color:var(--gold);transform:translateY(-1px);box-shadow:0 12px 24px -18px rgba(35,52,74,.5)}
+.feel b{font-family:var(--alt);color:var(--navy);font-size:16.5px}
+.feel span{font-size:14px;color:var(--soft)}
+.feel[aria-pressed="true"]{border-color:var(--gold);background:#fff8e8}
+.hist{margin:18px 0 0;font-size:14.5px;color:var(--soft)}
+
+.walk{padding:8px 0 80px;display:none}
+.walk.on{display:block}
+.walk-in{max-width:760px;margin:0 auto;padding:0 20px}
+.trail{display:flex;gap:8px;list-style:none;padding:0;margin:0 0 22px;flex-wrap:wrap}
+.trail li{font-family:var(--alt);font-size:13px;font-weight:600;color:var(--soft);display:flex;align-items:center;gap:8px}
+.trail li::before{content:"";width:10px;height:10px;border-radius:50%;background:rgba(35,52,74,.18)}
+.trail li.done::before{background:var(--gold-d)}
+.trail li.now{color:var(--navy)}
+.trail li.now::before{background:var(--gold);box-shadow:0 0 0 4px rgba(232,176,75,.25)}
+.trail li+li{padding-left:6px}
+.card{background:#fff;border-radius:26px;padding:40px 40px 34px;box-shadow:0 24px 60px -34px rgba(35,52,74,.5)}
+.card h2{font-size:clamp(26px,3.2vw,36px)}
+.card .eyebrow{margin-bottom:8px}
+.word{margin:22px 0 0;padding:24px 26px;border-left:4px solid var(--gold);background:var(--cream);border-radius:0 16px 16px 0;font-size:clamp(19px,2.2vw,22px);line-height:1.6;color:var(--navy);font-style:italic}
+.word cite{display:block;font-style:normal;font-family:var(--alt);font-size:13.5px;color:var(--soft);margin-top:10px}
+.gentle{margin:18px 0 0;font-size:17.5px}
+.hint{margin:14px 0 0;font-size:15px;color:var(--soft)}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.res{display:grid;gap:12px;margin-top:22px}
+.res a{display:block;text-decoration:none;color:var(--ink);background:var(--cream);border-radius:16px;padding:16px 46px 16px 18px;position:relative;border:1.5px solid transparent}
+.res a:hover{border-color:var(--gold)}
+.res a::after{content:"\2192";position:absolute;right:18px;top:50%;transform:translateY(-50%);color:var(--gold-d);font-weight:700}
+.res a b{display:block;font-family:var(--alt);color:var(--navy);font-size:16.5px}
+.res a span{font-size:14.5px;color:var(--soft)}
+.res a.first{background:var(--navy);color:#efe7d6}
+.res a.first b{color:#fff}
+.res a.first span{color:#d7ccb4}
+.res a.first::after{color:var(--gold)}
+.now-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.now-grid button{font:inherit;text-align:left;background:var(--cream);border:1.5px solid rgba(35,52,74,.12);border-radius:16px;padding:16px 18px;cursor:pointer;color:var(--ink)}
+.now-grid button:hover{border-color:var(--gold)}
+.now-grid b{display:block;font-family:var(--alt);color:var(--navy)}
+.now-grid span{font-size:14px;color:var(--soft)}
+.heavy{display:none;margin-top:24px;padding-top:24px;border-top:1px solid rgba(35,52,74,.1)}
+.heavy.show{display:block;animation:rise .5s ease}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+textarea.note{font:inherit;font-size:16px;width:100%;min-height:96px;margin-top:18px;padding:14px 16px;border-radius:14px;border:1.5px solid rgba(35,52,74,.2);background:var(--cream);color:var(--ink);resize:vertical}
+.fine{font-size:13.5px;color:var(--soft);margin:8px 0 0}
+.amen{text-align:center}
+.amen h2{margin-top:6px}
+.amen .acts{justify-content:center}
+.step{display:none}
+.step:focus{outline:none}
+#trail{scroll-margin-top:84px}
+.step.show{display:block;animation:rise .5s ease}
+.crisis{max-width:760px;margin:22px auto 0;padding:0 20px}
+.crisis p{background:#fff;border-radius:14px;padding:14px 18px;box-shadow:0 0 0 1px rgba(168,69,42,.25);font-size:15px;margin:0}
+@media (max-width:860px){
+  .w-hero-grid{grid-template-columns:1fr;min-height:0}
+  .w-hero-art{order:-1;min-height:220px}
+  .w-hero-art::after{background:linear-gradient(0deg,var(--navy) 0%,rgba(35,52,74,0) 50%)}
+  .w-hero-copy{padding:6px 20px 40px}
+  .card{padding:28px 22px 24px;border-radius:22px}
+  .word{padding:18px 20px}
+}
+@media (max-width:560px){.now-grid{grid-template-columns:1fr}.acts .btn{flex:1 1 100%}.trail li{font-size:12px}}
+@media (prefers-reduced-motion:reduce){.step.show,.heavy.show{animation:none}}
+</style>
+</head>
+<body class="home">
+<main id="main">
+<section class="w-hero" aria-labelledby="wH">
+  <div class="w-hero-grid">
+    <div class="w-hero-copy">
+      <p class="eyebrow">Walk with Him</p>
+      <h1 id="wH">How is your heart right now?</h1>
+      <p class="lede">There is no wrong answer. Choose whatever is closest, and we will walk a few quiet steps together: a word from Scripture, a little time with the Lord, a gentle check-in, and a moment to give Him glory.</p>
+      <p class="hero-verse" style="color:#e4dac4">&ldquo;You will show me the path of life. In your presence is fullness of joy. In your right hand there are pleasures forever more.&rdquo; <span style="color:#cdbf9f">Psalm 16:11 (WEB)</span></p>
+    </div>
+    <div class="w-hero-art"><img src="/assets/home_path.jpg" alt="A quiet path winding through a meadow toward morning light" width="1031" height="1100" fetchpriority="high" /></div>
+  </div>
+</section>
+
+<section class="pick" id="pick" aria-labelledby="pickH">
+  <div class="pick-in">
+    <p class="eyebrow">Step 1 of 4</p>
+    <h2 id="pickH">Start where you are.</h2>
+    <p class="sub">He already knows. Naming it is simply a way of bringing it to Him.</p>
+    <div class="feel-grid" id="feelGrid" role="group" aria-label="How are you feeling?"></div>
+    <p class="hist" id="hist" hidden></p>
+  </div>
+</section>
+
+<section class="walk" id="walk" aria-live="polite">
+  <div class="walk-in">
+    <ol class="trail" id="trail" aria-label="Your steps">
+      <li data-s="1">Rest in His Word</li>
+      <li data-s="2">Time with Him</li>
+      <li data-s="3">Your heart now</li>
+      <li data-s="4">Give Him glory</li>
+    </ol>
+
+    <!-- Step 1: His Word -->
+    <div class="card step" id="s1" tabindex="-1">
+      <p class="eyebrow" id="s1Eye"></p>
+      <h2>Let Him speak first.</h2>
+      <blockquote class="word" id="s1Verse"></blockquote>
+      <p class="gentle" id="s1Word"></p>
+      <p class="hint">Read it slowly, twice. Then take one long, slow breath before you go on.</p>
+      <div class="acts">
+        <button class="btn btn-gold" type="button" data-go="2">I&rsquo;m ready for the next step</button>
+        <button class="btn btn-line" type="button" data-pickagain>Choose a different feeling</button>
+      </div>
+    </div>
+
+    <!-- Step 2: time with Him -->
+    <div class="card step" id="s2" tabindex="-1">
+      <p class="eyebrow">A little time with Him</p>
+      <h2>Spend a few minutes together.</h2>
+      <p class="gentle">Pick one. There is no rush. When you are done, come back here, and we will save your place.</p>
+      <div class="res" id="s2Res"></div>
+      <div class="acts">
+        <button class="btn btn-line" type="button" data-go="3">I&rsquo;m back, or I&rsquo;d rather just sit here a moment</button>
+      </div>
+    </div>
+
+    <!-- Step 3: check in -->
+    <div class="card step" id="s3" tabindex="-1">
+      <p class="eyebrow">A gentle check-in</p>
+      <h2>How is your heart now?</h2>
+      <p class="gentle">Be honest. He meets you in the heavy places too.</p>
+      <div class="now-grid">
+        <button type="button" data-now="lighter"><b>A little lighter</b><span>Something eased, even a little</span></button>
+        <button type="button" data-now="heavy"><b>Still heavy</b><span>It hasn&rsquo;t lifted yet</span></button>
+        <button type="button" data-now="other"><b>Something else came up</b><span>Start again from a new feeling</span></button>
+        <button type="button" data-now="jesus"><b>I want to know Jesus</b><span>Read the good news, simply</span></button>
+      </div>
+      <div class="heavy" id="heavy">
+        <p class="gentle">That&rsquo;s okay. Some days stay heavy, and He stays too. Here is one more word to carry with you.</p>
+        <blockquote class="word" id="s3Verse"></blockquote>
+        <div class="res">
+          <a href="/jesus/#pray" data-res="Ask us to pray"><b>Ask us to pray for you</b><span>Share what is heavy. It stays private.</span></a>
+          <a href="/breathe/" data-res="Breath Prayer"><b>Breath Prayer</b><span>Three quiet minutes, breathing a verse</span></a>
+        </div>
+        <div class="acts"><button class="btn btn-gold" type="button" data-go="4">Go on to the last step</button></div>
+      </div>
+    </div>
+
+    <!-- Step 4: glory -->
+    <div class="card step" id="s4" tabindex="-1">
+      <p class="eyebrow">Give Him glory</p>
+      <h2 id="s4H">Lift your eyes to Him.</h2>
+      <p class="gentle" id="s4Word"></p>
+      <blockquote class="word" id="s4Verse"></blockquote>
+      <label class="gentle" for="note" style="display:block;font-family:var(--alt);font-weight:600;color:var(--navy);font-size:16px">Name one thing He has done, or one thing He made, that you can thank Him for today.</label>
+      <textarea class="note" id="note" placeholder="Thank You, Lord, for&hellip;"></textarea>
+      <p class="fine">This stays on your device. We never see it.</p>
+      <div class="acts"><button class="btn btn-gold" type="button" id="amenBtn">Amen</button></div>
+    </div>
+
+    <!-- Closing -->
+    <div class="card step amen" id="s5" tabindex="-1">
+      <p class="eyebrow">You walked with Him today</p>
+      <h2>Go in His peace.</h2>
+      <blockquote class="word" style="text-align:left">&ldquo;Yahweh is my shepherd: I shall lack nothing. He makes me lie down in green pastures. He leads me beside still waters. He restores my soul. He guides me in the paths of righteousness for his name&rsquo;s sake.&rdquo;<cite>Psalm 23:1&ndash;3 (WEB)</cite></blockquote>
+      <p class="gentle" id="s5Count"></p>
+      <div class="acts">
+        <a class="btn btn-navy" href="/jesus/" id="s5Jesus">Who is Jesus?</a>
+        <button class="btn btn-line" type="button" data-pickagain>Walk again</button>
+        <a class="btn btn-line" href="/#serve">Share His love with someone</a>
+      </div>
+    </div>
+  </div>
+  <div class="crisis"><p><b>If you are in danger or thinking about ending your life,</b> please call or text <a href="tel:988">988</a> (the Suicide &amp; Crisis Lifeline in the US) or your local emergency number now. You are not alone.</p></div>
+</section>
+</main>
+
+<script>
+(function(){
+  var V = {
+    phil4:  ['In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus.', 'Philippians 4:6\u20137'],
+    isa41:  ['Don\u2019t you be afraid, for I am with you. Don\u2019t be dismayed, for I am your God. I will strengthen you. Yes, I will help you. Yes, I will uphold you with the right hand of my righteousness.', 'Isaiah 41:10'],
+    mat11:  ['Come to me, all you who labor and are heavily burdened, and I will give you rest.', 'Matthew 11:28'],
+    isa40:  ['But those who wait for Yahweh will renew their strength. They will mount up with wings like eagles. They will run, and not be weary. They will walk, and not faint.', 'Isaiah 40:31'],
+    ps34:   ['Yahweh is near to those who have a broken heart, and saves those who have a crushed spirit.', 'Psalm 34:18'],
+    mat5:   ['Blessed are those who mourn, for they shall be comforted.', 'Matthew 5:4'],
+    luk15:  ['But while he was still far off, his father saw him, and was moved with compassion, and ran, and fell on his neck, and kissed him.', 'from Luke 15:20'],
+    jer29:  ['You shall seek me, and find me, when you search for me with all your heart.', 'Jeremiah 29:13'],
+    ps73:   ['My flesh and my heart fails, but God is the strength of my heart and my portion forever.', 'Psalm 73:26'],
+    cor4:   ['Therefore we don\u2019t faint, but though our outward man is decaying, yet our inward man is renewed day by day.', '2 Corinthians 4:16'],
+    jn1:    ['If we confess our sins, he is faithful and righteous to forgive us the sins, and to cleanse us from all unrighteousness.', '1 John 1:9'],
+    rom8:   ['There is therefore now no condemnation to those who are in Christ Jesus, who don\u2019t walk according to the flesh, but according to the Spirit.', 'Romans 8:1'],
+    deu31:  ['Yahweh himself is who goes before you. He will be with you. He will not fail you nor forsake you. Don\u2019t be afraid. Don\u2019t be discouraged.', 'Deuteronomy 31:8'],
+    zep3:   ['Yahweh, your God, is among you, a mighty one who will save. He will rejoice over you with joy. He will calm you in his love. He will rejoice over you with singing.', 'Zephaniah 3:17'],
+    ps107:  ['Give thanks to Yahweh, for he is good, for his loving kindness endures forever.', 'Psalm 107:1'],
+    ps34b:  ['Oh taste and see that Yahweh is good. Blessed is the man who takes refuge in him.', 'Psalm 34:8'],
+    jn14:   ['I am the way, the truth, and the life. No one comes to the Father, except through me.', 'from John 14:6'],
+    jn6:    ['He who comes to me I will in no way throw out.', 'from John 6:37'],
+    ps118:  ['This is the day that Yahweh has made. We will rejoice and be glad in it!', 'Psalm 118:24'],
+    ps62:   ['My soul rests in God alone. My salvation is from him.', 'Psalm 62:1'],
+    lam3:   ['It is because of Yahweh\u2019s loving kindnesses that we are not consumed, because his compassion doesn\u2019t fail. They are new every morning. Great is your faithfulness.', 'Lamentations 3:22\u201323'],
+    ps150:  ['Let everything that has breath praise Yah! Praise Yah!', 'Psalm 150:6'],
+    ps42:   ['Why are you in despair, my soul? Why are you disturbed within me? Hope in God! For I shall still praise him, the saving help of my countenance, and my God.', 'Psalm 42:11'],
+    ps103:  ['Praise Yahweh, my soul! All that is within me, praise his holy name!', 'Psalm 103:1'],
+    ps19:   ['The heavens declare the glory of God. The expanse shows his handiwork.', 'Psalm 19:1']
+  };
+  var R = {
+    breathe: ['/breathe/', 'Breath Prayer', 'Breathe a verse slowly, then rest with Him in silence'],
+    still:   ['/still-tool.html', 'Be Still', 'Name what you feel, then breathe and pray'],
+    journals:['/learn/#journals', 'Guided Journals', 'For fear, grief, and heavy days'],
+    move:    ['/move-and-be-still.html', 'Move & Be Still', 'Move gently, breathe, and rest in a word of Scripture'],
+    color:   ['/color/', 'Hidden Verse Coloring', 'Color slowly. The verse appears only when you finish.'],
+    prayer:  ['/prayer', '31-Day Prayer Companion', 'A Psalm, a prayer, and one small step a day'],
+    essays:  ['/learn/#essays', 'Essays for the journey', 'Faith and medicine, written plainly'],
+    jesus:   ['/jesus/', 'Who is Jesus?', 'The good news, told simply from the Bible'],
+    pray:    ['/jesus/#pray', 'Ask us to pray for you', 'Share what you are carrying. It stays private.'],
+    patient: ['/learn/#patient', 'I just got a heart diagnosis', 'What is happening, what to do, what comes next'],
+    cancer:  ['/learn/#cancer', 'When someone has cancer', 'A gentle companion for patients and families'],
+    board:   ['/color/#boardH', 'Fellowship board', 'Read what others are thankful for, and add your own'],
+    story:   ['/learn/#testimony', 'Our testimony', 'How a scientist found peace on his knees'],
+    river:   ['/river-detective.html', 'River Detective', 'See His design in the heart, ages 8+'],
+    heart:   ['/heart', 'The Story Behind the Mystery', 'How the heart works, from age 8 to pre-med'],
+    serve:   ['/#serve', 'Serve with us', 'Simple ways to share His love this week']
+  };
+  var F = [
+    {id:'anxious', t:'Anxious or afraid', d:'My mind won\u2019t settle', v:'phil4', v2:'isa41', w:'You don\u2019t have to hold this alone. He invites you to hand it to Him, one worry at a time.', r:['still','breathe','journals']},
+    {id:'weary', t:'Tired and worn out', d:'I have nothing left', v:'mat11', v2:'isa40', w:'He isn\u2019t asking you to do more right now. He is asking you to come.', r:['breathe','move','color']},
+    {id:'grieving', t:'Grieving', d:'I miss someone, or something', v:'ps34', v2:'mat5', w:'Grief is love with nowhere to go. He is close to you in it, closer than you can feel.', r:['journals','prayer','essays']},
+    {id:'far', t:'Far from God', d:'I can\u2019t feel Him', v:'luk15', v2:'jer29', w:'You don\u2019t have to find the whole way back. Turn toward Him. He is already running toward you.', r:['prayer','breathe','jesus']},
+    {id:'sick', t:'Sick or facing a diagnosis', d:'My body is hurting', v:'ps73', v2:'cor4', w:'Your body may be weak today, and He is still the strength of your heart. Let Him carry what you can\u2019t.', r:['breathe','patient','cancer']},
+    {id:'guilty', t:'Carrying guilt or shame', d:'I keep replaying it', v:'jn1', v2:'rom8', w:'You can bring it into the light. He doesn\u2019t turn away; He forgives and makes clean.', r:['jesus','breathe','pray']},
+    {id:'lonely', t:'Lonely', d:'No one really sees me', v:'deu31', v2:'zep3', w:'He sees you right now, and He is glad you are here. You have not been forgotten.', r:['board','pray','story']},
+    {id:'grateful', t:'Grateful', d:'I want to thank Him', v:'ps107', v2:'ps34b', w:'Gratitude is a way of seeing. Let\u2019s look a little longer at what He has done and what He made.', r:['color','river','heart']},
+    {id:'curious', t:'Curious about Jesus', d:'I want to know who He is', v:'jn14', v2:'jn6', w:'You are welcome to come with questions. He is not afraid of them, and neither are we.', r:['jesus','story','heart']},
+    {id:'joyful', t:'Full of joy', d:'My cup is running over', v:'ps118', v2:'ps62', w:'Joy is worth pausing for. Let\u2019s turn it back to Him, and maybe pass a little on.', r:['board','serve','color']}
+  ];
+  var byId = {}; F.forEach(function(f){ byId[f.id]=f; });
+  var KEY='wml-walk', LOG='wml-walk-log';
+  var state = { f:null, s:0, heavy:false };
+  function $(id){ return document.getElementById(id); }
+  function track(n,p){ try{ window.plausible && window.plausible(n,{props:p||{}}); }catch(e){} }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify({f:state.f, s:state.s, heavy:state.heavy, ts:Date.now()})); }catch(e){} }
+  function clear(){ try{ localStorage.removeItem(KEY); }catch(e){} }
+  function vHTML(k){ var v=V[k]; return '&ldquo;'+v[0]+'&rdquo;<cite>'+v[1]+' (WEB)</cite>'; }
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+
+  var grid = $('feelGrid');
+  grid.innerHTML = F.map(function(f){ return '<button type="button" class="feel" data-f="'+f.id+'" aria-pressed="false"><b>'+f.t+'</b><span>'+f.d+'</span></button>'; }).join('');
+
+  function show(s, focus){
+    state.s = s; save();
+    $('walk').classList.add('on');
+    [1,2,3,4,5].forEach(function(i){ $('s'+i).classList.toggle('show', i===s); });
+    [].forEach.call(document.querySelectorAll('#trail li'), function(li){ var n=+li.dataset.s; li.className = n<s ? 'done' : (n===s ? 'now' : ''); });
+    if (s===5) [].forEach.call(document.querySelectorAll('#trail li'), function(li){ li.className='done'; });
+    if (focus !== false) { var c=$('s'+s); setTimeout(function(){ $('trail').scrollIntoView({behavior:'smooth',block:'start'}); c.focus({preventScroll:true}); }, 30); }
+  }
+  function begin(id, focus){
+    var f = byId[id]; if(!f) return;
+    state.f = id; state.heavy = false;
+    [].forEach.call(grid.children, function(b){ b.setAttribute('aria-pressed', b.dataset.f===id ? 'true':'false'); });
+    $('s1Eye').textContent = f.t;
+    $('s1Verse').innerHTML = vHTML(f.v);
+    $('s1Word').textContent = f.w;
+    $('s2Res').innerHTML = f.r.map(function(k,i){ var r=R[k]; return '<a href="'+r[0]+'" class="'+(i?'':'first')+'" data-res="'+esc(r[1])+'"><b>'+r[1]+'</b><span>'+r[2]+'</span></a>'; }).join('');
+    $('s3Verse').innerHTML = vHTML(f.v2);
+    $('heavy').classList.remove('show');
+    show(1, focus);
+  }
+  function glory(){
+    var f = byId[state.f] || {};
+    var praise = (f.id==='grateful' || f.id==='joyful');
+    if (state.heavy) {
+      $('s4Word').textContent = 'Praise is not pretending. Even on heavy days, the psalmists chose to hope in God and praise Him anyway.';
+      $('s4Verse').innerHTML = vHTML('ps42');
+    } else if (praise) {
+      $('s4Word').textContent = 'Let\u2019s give it all back to the One it came from.';
+      $('s4Verse').innerHTML = vHTML('ps103');
+    } else if (f.id==='curious') {
+      $('s4Word').textContent = 'Look up tonight, or out a window today. Everything He made is pointing back to Him.';
+      $('s4Verse').innerHTML = vHTML('ps19');
+    } else {
+      $('s4Word').textContent = 'You took a breath to get here. That breath is His gift, so let\u2019s use one to praise Him.';
+      $('s4Verse').innerHTML = vHTML('ps150');
+    }
+    show(4);
+  }
+
+  grid.addEventListener('click', function(e){
+    var b = e.target.closest('.feel'); if(!b) return;
+    begin(b.dataset.f); track('Walk Start', {feeling: b.dataset.f});
+  });
+  document.addEventListener('click', function(e){
+    var g = e.target.closest('[data-go]');
+    if (g) { var n=+g.dataset.go; if (n===4) glory(); else show(n); return; }
+    if (e.target.closest('[data-pickagain]')) { state.s=0; clear(); $('walk').classList.remove('on'); [].forEach.call(grid.children,function(b){b.setAttribute('aria-pressed','false');}); $('pick').scrollIntoView({behavior:'smooth'}); grid.firstChild.focus({preventScroll:true}); return; }
+    var r = e.target.closest('#walk .res a');
+    if (r) { state.s = 3; save(); track('Walk Resource', {feeling: state.f, resource: r.dataset.res}); return; }
+    var nw = e.target.closest('[data-now]');
+    if (nw) {
+      var k = nw.dataset.now; track('Walk Check-in', {feeling: state.f, now: k});
+      if (k==='lighter') { state.heavy=false; glory(); }
+      else if (k==='heavy') { state.heavy=true; save(); $('heavy').classList.add('show'); setTimeout(function(){ $('heavy').scrollIntoView({behavior:'smooth',block:'center'}); },30); }
+      else if (k==='other') { document.querySelector('[data-pickagain]').click(); }
+      else if (k==='jesus') { state.s=3; save(); location.href='/jesus/'; }
+    }
+  });
+  $('amenBtn').addEventListener('click', function(){
+    var note = $('note').value.trim(), log=[];
+    try { log = JSON.parse(localStorage.getItem(LOG)||'[]'); } catch(e){}
+    log.unshift({f:state.f, ts:Date.now(), note: note.slice(0,500)});
+    try { localStorage.setItem(LOG, JSON.stringify(log.slice(0,60))); } catch(e){}
+    $('note').value='';
+    var n = log.length;
+    $('s5Count').textContent = n===1 ? 'This was your first walk with Him here. He is glad you came.' : 'You have walked with Him here '+n+' times. He has been with you every step.';
+    var saidYes=false; try{ saidYes = !!localStorage.getItem('wml-said-yes'); }catch(e){}
+    $('s5Jesus').hidden = saidYes;
+    track('Walk Complete', {feeling: state.f, heavy: state.heavy ? 'yes':'no'});
+    clear(); show(5);
+  });
+
+  // history and resume
+  try {
+    var log = JSON.parse(localStorage.getItem(LOG)||'[]');
+    if (log.length) { var h=$('hist'); h.hidden=false; h.textContent = 'You have walked with Him here '+log.length+(log.length===1?' time':' times')+'.'; }
+  } catch(e){}
+  var qs = new URLSearchParams(location.search).get('f');
+  var saved=null; try { saved = JSON.parse(localStorage.getItem(KEY)||'null'); } catch(e){}
+  if (location.hash==='#now' && saved && byId[saved.f] && Date.now()-saved.ts < 864e5) {
+    begin(saved.f, false); state.heavy=!!saved.heavy; show(3);
+  } else if (qs && byId[qs]) {
+    begin(qs); track('Walk Start', {feeling: qs, from: 'link'});
+  }
+})();
+</script>
+</body>
+</html>

@@ -13,6 +13,7 @@
     ]},
     { id: 'time', label: 'Time with Him', blurb: 'Quiet ways to be with the Lord today', items: [
       { t: 'Breath Prayer', d: 'Breathe a verse slowly, then rest with Him in silence', u: '/breathe/', badge: 'New' },
+      { t: 'Walk with Him', d: 'Start from how you feel, and be guided through Scripture', u: '/walk/' },
       { t: '31-Day Prayer Companion', d: 'A Psalm, a prayer, and one small step a day', u: '/prayer' },
       { t: 'Hidden Verse Coloring', d: 'Color slowly. The verse appears when you finish.', u: '/color/', badge: 'New every Monday' },
       { t: 'Move & Be Still', d: 'Move, breathe, and rest in a word of Scripture', u: '/move-and-be-still.html' },
@@ -170,5 +171,19 @@
       document.body.appendChild(f);
     }
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build); else build();
+
+  /* ---- gentle "Walk with Him" ribbon: shown on a resource page while a walk is in progress ---- */
+  function walkRibbon() { try {
+    if (/^\/walk\/?$/.test(path) || /admin/.test(path)) return;
+    var w = JSON.parse(localStorage.getItem('wml-walk') || 'null');
+    if (!w || w.s !== 3 || Date.now() - w.ts > 864e5) return;
+    if (sessionStorage.getItem('wml-walk-hide')) return;
+    var r = el('div', { class: 'wml-walkr', role: 'complementary', 'aria-label': 'Your walk with Him' });
+    r.innerHTML = '<a href="/walk/#now"><small>Walking with Him</small>When you\u2019re ready: how is your heart now? <b aria-hidden="true">\u2192</b></a>' +
+      '<button type="button" aria-label="Hide for now">\u00d7</button>';
+    r.querySelector('button').addEventListener('click', function () { try { sessionStorage.setItem('wml-walk-hide', '1'); } catch (e) {} r.remove(); });
+    document.body.appendChild(r);
+  } catch (e) {} }
+  function boot() { build(); walkRibbon(); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
 })();
