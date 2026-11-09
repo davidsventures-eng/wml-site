@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Breath Prayer — Be still with God | Wonderfully Made Labs</title>
+<meta name="description" content="A few quiet minutes to slow your breath, pray a line of Scripture, and rest in God's presence." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" type="image/png" href="/assets/favicon-48.png" />
+<link rel="preconnect" href="https://api.fontshare.com" />
+<link href="https://api.fontshare.com/v2/css?f[]=chillax@500,600&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/site/nav.css?v=1" />
+<script defer src="/site/nav.js?v=1"></script>
+<link rel="preload" as="image" href="/breathe/art/dawn.jpg" />
+<style>
+:root{--navy:#23344a;--navy-2:#16222f;--gold:#e8b04b;--gold-d:#c98a2b;--cream:#fbf6ea;--cream-2:#f4ecd9;--ink:#3a3226;--soft:#6a5f4e;--teal:#2a7d8c;--line:#e6dcc3;
+  --display:'Chillax','Trebuchet MS',sans-serif;--alt:'General Sans',system-ui,sans-serif;--body:'Nunito','Segoe UI',system-ui,sans-serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+a{color:var(--teal)}
+button{font:inherit;color:inherit}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
+
+/* ---------- Intro ---------- */
+.hero{position:relative;min-height:min(78vh,720px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#3c4a5a}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,34,47,.05) 0%,rgba(22,34,47,.25) 45%,rgba(22,34,47,.82) 100%)}
+.hero .in{position:relative;z-index:1;max-width:1100px;width:100%;margin:0 auto;padding:120px 22px 56px}
+.eyebrow{font-family:var(--alt);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:12.5px;color:var(--gold);margin:0 0 12px}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(40px,7vw,76px);line-height:1.02;letter-spacing:-.02em;margin:0 0 16px;max-width:12ch}
+.hero p.lede{font-size:clamp(17px,2vw,20px);max-width:560px;margin:0 0 18px;color:#f3ede0}
+.hero .verse{font-style:italic;color:#efe6d2;max-width:560px;margin:0;font-size:16px}
+.hero .verse small{display:block;font-style:normal;font-family:var(--alt);font-size:13px;letter-spacing:.04em;color:#d9cfbb;margin-top:4px}
+
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+.setup{padding:56px 0 24px}
+.setup h2{font-family:var(--display);color:var(--navy);font-weight:600;font-size:clamp(26px,3.2vw,36px);margin:0 0 6px;letter-spacing:-.01em}
+.setup .sub{color:var(--soft);margin:0 0 26px}
+.prayers{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin:0 0 40px;padding:0;list-style:none}
+.pcard{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:18px 18px 16px;cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .15s;min-height:100%}
+.pcard:hover{border-color:var(--gold);transform:translateY(-1px)}
+.pcard[aria-checked="true"]{border-color:var(--teal);box-shadow:inset 0 0 0 1.5px var(--teal),0 10px 24px rgba(42,125,140,.12)}
+.pcard .need{font-family:var(--alt);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-d)}
+.pcard .line{display:block;font-family:var(--display);color:var(--navy);font-weight:500;font-size:19px;line-height:1.25;margin:8px 0 6px}
+.pcard .ref{font-size:13.5px;color:var(--soft)}
+
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin-bottom:34px}
+.opt h3{font-family:var(--alt);font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin:0 0 10px}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:10px 16px;min-height:44px;cursor:pointer;font-family:var(--alt);font-weight:600;font-size:15px;color:var(--navy)}
+.seg button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.opt .hint{font-size:14px;color:var(--soft);margin:8px 0 0}
+
+.begin-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px 22px;padding:22px;border-radius:22px;background:var(--navy);color:#fff}
+.begin-row p{margin:0;flex:1 1 280px;color:#dfe5ec}
+.begin-row strong{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--alt);font-weight:700;font-size:17px;border-radius:999px;padding:15px 30px;border:0;cursor:pointer;min-height:52px;background:var(--gold);color:var(--navy);transition:background .15s,transform .15s}
+.btn:hover{background:#f0c165;transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:inherit;border:1.5px solid currentColor}
+
+.how{padding:56px 0 16px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:18px 0 0;padding:0;list-style:none;counter-reset:s}
+.steps li{background:var(--cream-2);border-radius:16px;padding:16px 16px 14px;counter-increment:s}
+.steps li::before{content:counter(s);display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--gold);color:var(--navy);font-family:var(--alt);font-weight:700;font-size:14px;margin-bottom:8px}
+.steps b{display:block;font-family:var(--alt);color:var(--navy)}
+.steps span{font-size:15px;color:var(--soft)}
+
+details.why{margin:34px 0 0;border-top:1px solid var(--line);padding-top:18px}
+details.why summary{cursor:pointer;font-family:var(--alt);font-weight:700;color:var(--navy);font-size:16px}
+details.why ul{padding-left:20px;color:var(--soft);font-size:15.5px}
+details.why li{margin:8px 0}
+.note{font-size:14px;color:var(--soft);margin:16px 0 0}
+.mine{padding:30px 0 70px}
+.mine .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 22px}
+.mine h3{font-family:var(--alt);font-size:15px;margin:0 0 6px;color:var(--navy)}
+.mine p{margin:0;color:var(--soft);font-size:15.5px}
+.mine button{background:none;border:0;color:var(--teal);text-decoration:underline;cursor:pointer;padding:0;font-size:15px}
+.log{margin:12px 0 0;padding:0;list-style:none;max-height:260px;overflow:auto}
+.log li{border-top:1px solid var(--line);padding:10px 0;font-size:15px}
+.log time{display:block;font-family:var(--alt);font-size:12.5px;color:var(--soft)}
+
+/* ---------- Session (full screen) ---------- */
+body.immersive{overflow:hidden}
+body.immersive .wml-nav,body.immersive .wml-drawer,body.immersive .wml-foot,body.immersive main{display:none!important}
+#session{position:fixed;inset:0;z-index:1000;color:#fff;background:#0f1822;display:none}
+body.immersive #session{display:block}
+.bg{position:absolute;inset:-4%;background-size:cover;background-position:center;transform:scale(1);animation:drift 120s ease-in-out infinite alternate;transition:filter 2.5s ease}
+@keyframes drift{from{transform:scale(1) translate(0,0)}to{transform:scale(1.08) translate(-1.5%,-1%)}}
+.shade{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 46%,rgba(10,18,28,.18) 0%,rgba(10,18,28,.5) 70%,rgba(10,18,28,.72) 100%);transition:background 2.5s}
+#session.silent .shade{background:rgba(10,18,28,.62)}
+.top{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:max(14px,env(safe-area-inset-top)) 16px 0;z-index:3;transition:opacity .8s}
+.top .phase{font-family:var(--alt);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.82)}
+.ctrls{display:flex;gap:8px}
+.icon{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(15,24,34,.35);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;place-items:center;cursor:pointer;color:#fff}
+.icon svg{width:20px;height:20px}
+#session.calm .top{opacity:.25}
+#session.calm .top:hover,#session.calm .top:focus-within{opacity:1}
+
+.center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 22px 110px;text-align:center;z-index:2}
+.orb{position:relative;width:min(56vw,300px);aspect-ratio:1;display:grid;place-items:center;margin-bottom:34px}
+.orb .ring{position:absolute;inset:0;border-radius:50%;border:1.5px solid rgba(255,255,255,.4)}
+.orb .fill{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 42%,rgba(255,236,190,.55),rgba(232,176,75,.28) 55%,rgba(232,176,75,.06) 75%);box-shadow:0 0 70px rgba(255,214,140,.35);transform:scale(.42);will-change:transform}
+.orb .cue{position:relative;font-family:var(--alt);font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.9);transition:opacity .6s}
+.phrase{font-family:var(--display);font-weight:500;font-size:clamp(26px,4.6vw,46px);line-height:1.18;max-width:20ch;min-height:2.5em;margin:0;text-shadow:0 2px 24px rgba(0,0,0,.45);transition:opacity 1s ease}
+.phrase.dim{opacity:0}
+.subline{margin:14px 0 0;max-width:32ch;font-size:17px;color:rgba(255,255,255,.86);text-shadow:0 1px 14px rgba(0,0,0,.5);transition:opacity 1s;min-height:1.6em}
+.bar{position:absolute;left:50%;bottom:max(26px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(320px,70vw);height:3px;border-radius:3px;background:rgba(255,255,255,.18);overflow:hidden;z-index:3}
+.bar i{display:block;height:100%;width:0;background:rgba(255,226,170,.85);transition:width 1s linear}
+
+/* closing cards */
+.closing{position:absolute;inset:0;z-index:4;display:none;align-items:flex-start;justify-content:center;padding:max(24px,env(safe-area-inset-top)) 18px 32px;overflow:auto;-webkit-overflow-scrolling:touch}
+#session.end .top{display:none}
+#session.end .closing{display:flex}
+#session.end .center,#session.end .bar{display:none}
+.panel{margin:auto 0;width:min(560px,100%);background:rgba(251,246,234,.97);color:var(--ink);border-radius:24px;padding:28px 26px 24px;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:rise .8s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.panel .eyebrow{color:var(--gold-d)}
+.panel h2{font-family:var(--display);color:var(--navy);font-weight:600;font-size:28px;margin:0 0 10px;line-height:1.1}
+.panel .full{font-size:19px;font-style:italic;color:var(--navy);margin:0 0 4px;line-height:1.45}
+.panel .fullref{font-family:var(--alt);font-size:13.5px;color:var(--soft);margin:0 0 18px}
+.wonder{background:var(--cream-2);border-radius:14px;padding:14px 16px;margin:0 0 18px;font-size:16px}
+.wonder b{font-family:var(--alt);color:var(--navy);display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.panel label{display:block;font-family:var(--alt);font-weight:600;color:var(--navy);margin:0 0 6px}
+.panel textarea{width:100%;min-height:96px;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;font:inherit;font-size:16px;resize:vertical;background:#fff}
+.panel .private{font-size:13.5px;color:var(--soft);margin:6px 0 16px}
+.panel .row{display:flex;flex-wrap:wrap;gap:10px}
+.panel .btn.ghost{color:var(--navy)}
+.panel .nextlinks{margin:16px 0 0;font-size:15px;color:var(--soft)}
+
+@media (prefers-reduced-motion:reduce){
+  .bg{animation:none}
+  .orb .fill{transition:opacity 1s!important}
+}
+@media (max-width:600px){
+  .hero{min-height:70vh}
+  .hero .in{padding:110px 20px 40px}
+  .begin-row{padding:18px}
+  .begin-row .btn{width:100%}
+  .orb{width:min(62vw,260px);margin-bottom:26px}
+}
+</style>
+</head>
+<body>
+<main id="main">
+  <section class="hero" aria-labelledby="t">
+    <img id="heroImg" src="/breathe/art/dawn.jpg" alt="A painted sunrise over still water and soft hills" />
+    <div class="in">
+      <p class="eyebrow">Breath Prayer · 5 to 10 quiet minutes</p>
+      <h1 id="t">Be still with the One who gave you breath.</h1>
+      <p class="lede">Slow your breathing, pray one line of Scripture, and rest in His presence. No score, no hurry, nothing to finish.</p>
+      <p class="verse">“Yahweh God formed man from the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.”<small>Genesis 2:7 (WEB)</small></p>
+    </div>
+  </section>
+
+  <section class="setup wrap" aria-labelledby="pick">
+    <h2 id="pick">What do you need today?</h2>
+    <p class="sub">Choose a prayer. You'll breathe in on the first half and out on the second.</p>
+    <ul class="prayers" id="prayers" role="radiogroup" aria-label="Choose a prayer"></ul>
+
+    <div class="opts">
+      <div class="opt">
+        <h3 id="lenH">How long</h3>
+        <div class="seg" role="group" aria-labelledby="lenH" data-key="len">
+          <button type="button" data-v="3">3 min</button>
+          <button type="button" data-v="5">5 min</button>
+          <button type="button" data-v="10">10 min</button>
+        </div>
+        <p class="hint">Plus a one-minute settle and a minute of silence.</p>
+      </div>
+      <div class="opt">
+        <h3 id="paceH">Breathing pace</h3>
+        <div class="seg" role="group" aria-labelledby="paceH" data-key="pace">
+          <button type="button" data-v="even">Even · 5 in, 5 out</button>
+          <button type="button" data-v="long">Gentle · 4 in, 6 out</button>
+        </div>
+        <p class="hint">Both are about six breaths a minute. If either feels strained, breathe however is comfortable.</p>
+      </div>
+      <div class="opt">
+        <h3 id="sndH">Sound</h3>
+        <div class="seg" role="group" aria-labelledby="sndH" data-key="snd">
+          <button type="button" data-v="on">Soft tone</button>
+          <button type="button" data-v="off">Silent</button>
+        </div>
+        <p class="hint">A quiet tone rises as you breathe in and falls as you breathe out.</p>
+      </div>
+    </div>
+
+    <div class="begin-row">
+      <p><strong id="sumLine">Be still · 5 minutes</strong><br/>Find a comfortable seat. You can close your eyes once the rhythm feels natural; the tone will guide you.</p>
+      <button class="btn" id="beginBtn" type="button">Begin</button>
+    </div>
+  </section>
+
+  <section class="how wrap" aria-labelledby="howH">
+    <h2 id="howH" style="font-family:var(--display);color:var(--navy);font-weight:600;font-size:clamp(24px,3vw,32px);margin:0">How it flows</h2>
+    <ol class="steps">
+      <li><b>Settle</b><span>Look at what He made. Let your shoulders drop.</span></li>
+      <li><b>Breathe the Word</b><span>In on the first half of the line, out on the second.</span></li>
+      <li><b>Silence</b><span>No words for a minute. Just rest with Him.</span></li>
+      <li><b>Wonder</b><span>See how He designed your breath and heart to move together.</span></li>
+      <li><b>Answer Him</b><span>Write one line back to God. It stays on your device.</span></li>
+    </ol>
+
+    <details class="why">
+      <summary>Why breath and Scripture together</summary>
+      <ul>
+        <li>When people prayed a rhythmic prayer aloud, their breathing slowed to about six breaths a minute, and their heart rhythm and breath began moving together (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC61046/" target="_blank" rel="noopener">BMJ, 2001</a>).</li>
+        <li>Across 31 studies, slow-paced breathing lowered heart rate and blood pressure in the moment, with a smaller effect on stress (<a href="https://link.springer.com/article/10.1007/s12671-023-02294-2" target="_blank" rel="noopener">Mindfulness, 2023</a>).</li>
+        <li>People who meditated on a phrase about God had less anxiety and more sense of closeness to God than people using a secular phrase (<a href="https://link.springer.com/content/pdf/10.1007/s10865-005-9008-5.pdf" target="_blank" rel="noopener">Journal of Behavioral Medicine, 2005</a>).</li>
+        <li>A two-week program of the Jesus Prayer lowered daily stress for Christians compared with waiting (<a href="https://psycnet.apa.org/record/2018-03412-001" target="_blank" rel="noopener">Spirituality in Clinical Practice, 2018</a>).</li>
+      </ul>
+      <p class="note">These studies are small, and this is a way to pray, not a medical treatment. If you are in crisis, call or text 988 (US) or go to your nearest emergency room. You can also <a href="/prayer/">pray with us</a>.</p>
+    </details>
+  </section>
+
+  <section class="mine wrap" aria-labelledby="mineH" id="mine" hidden>
+    <div class="card">
+      <h3 id="mineH">Your quiet times</h3>
+      <p id="mineCount"></p>
+      <ul class="log" id="log"></ul>
+      <p style="margin-top:10px"><button type="button" id="clearLog">Delete my saved prayers from this device</button></p>
+    </div>
+  </section>
+</main>
+
+<div id="session" role="dialog" aria-modal="true" aria-label="Breath Prayer session">
+  <div class="bg" id="bg"></div>
+  <div class="shade"></div>
+  <div class="top">
+    <span class="phase" id="phase">Settle</span>
+    <div class="ctrls">
+      <button class="icon" id="pauseBtn" type="button" aria-label="Pause"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
+      <button class="icon" id="sndBtn" type="button" aria-label="Turn sound off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 9a4 4 0 0 1 0 6"/></svg></button>
+      <button class="icon" id="endBtn" type="button" aria-label="End session"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+  </div>
+  <div class="center" aria-live="polite">
+    <div class="orb" aria-hidden="true"><div class="ring"></div><div class="fill" id="fill"></div><span class="cue" id="cue">Breathe in</span></div>
+    <p class="phrase" id="phrase"></p>
+    <p class="subline" id="subline"></p>
+  </div>
+  <div class="bar" aria-hidden="true"><i id="prog"></i></div>
+
+  <div class="closing" id="closing">
+    <div class="panel" id="panel">
+      <p class="eyebrow">You rested with Him</p>
+      <h2 id="endTitle" tabindex="-1">Today's prayer</h2>
+      <p class="full" id="fullVerse"></p>
+      <p class="fullref" id="fullRef"></p>
+      <div class="wonder"><b>Wonderfully made</b><span id="wonder"></span></div>
+      <label for="reply">What would you like to say to Him?</label>
+      <textarea id="reply" placeholder="Thank you for… / Help me with… / I give You…"></textarea>
+      <p class="private">Saved only on this device. We never see it.</p>
+      <div class="row">
+        <button class="btn" id="saveBtn" type="button">Save and finish</button>
+        <button class="btn ghost" id="againBtn" type="button">Pray again</button>
+      </div>
+      <p class="nextlinks">When you're ready: <a href="/prayer/">31-Day Prayer Companion</a> · <a href="/color/">This week's hidden verse</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Every verse is World English Bible, word for word. Partial verses are labelled "from".
+  var PRAYERS=[
+    {id:'still',need:'To slow down',inn:'Be still,',out:'and know that I am God.',ref:'from Psalm 46:10',full:'“Be still, and know that I am God. I will be exalted among the nations. I will be exalted in the earth.”',fullRef:'Psalm 46:10 (WEB)',art:'dawn',short:'Be still'},
+    {id:'peace',need:'When I\u2019m anxious',inn:'Peace I leave with you.',out:'My peace I give to you;',ref:'from John 14:27',full:'“Peace I leave with you. My peace I give to you; not as the world gives, give I to you. Don\u2019t let your heart be troubled, neither let it be fearful.”',fullRef:'John 14:27 (WEB)',art:'sea',short:'Peace I leave with you'},
+    {id:'rest',need:'When I\u2019m weary',inn:'My soul rests in God alone.',out:'My salvation is from him.',ref:'Psalm 62:1',full:'“My soul rests in God alone. My salvation is from him.”',fullRef:'Psalm 62:1 (WEB)',art:'lilies',short:'My soul rests'},
+    {id:'shepherd',need:'When I feel I\u2019m lacking',inn:'Yahweh is my shepherd:',out:'I shall lack nothing.',ref:'Psalm 23:1',full:'“Yahweh is my shepherd: I shall lack nothing.”',fullRef:'Psalm 23:1 (WEB)',art:'lilies',short:'My shepherd'},
+    {id:'made',need:'To thank Him for my body',inn:'I will give thanks to you,',out:'for I am fearfully and wonderfully made.',ref:'from Psalm 139:14',full:'“I will give thanks to you, for I am fearfully and wonderfully made. Your works are wonderful. My soul knows that very well.”',fullRef:'Psalm 139:14 (WEB)',art:'dawn',short:'Wonderfully made'},
+    {id:'night',need:'At bedtime',inn:'In peace I will both lay myself down and sleep,',out:'for you, Yahweh alone, make me live in safety.',ref:'Psalm 4:8',full:'“In peace I will both lay myself down and sleep, for you, Yahweh alone, make me live in safety.”',fullRef:'Psalm 4:8 (WEB)',art:'stars',short:'In peace I will sleep'},
+    {id:'mercy',need:'When I need mercy',inn:'Lord Jesus Christ, Son of God,',out:'have mercy on me.',ref:'The Jesus Prayer, an ancient Christian prayer',full:'“Lord Jesus Christ, Son of God, have mercy on me.”',fullRef:'The Jesus Prayer, prayed by Christians since the early centuries of the church',art:'stars',short:'The Jesus Prayer'}
+  ];
+  var WONDERS=[
+    'At this slow pace, your heartbeat speeds up a little as you breathe in and slows as you breathe out, so your breath and heart move together. He designed your body to answer stillness.',
+    'Your lungs hold hundreds of millions of tiny air sacs. Spread out flat, their surface would cover about the floor of a small apartment, all folded inside your chest.',
+    'You breathe about 20,000 times a day, almost always without thinking. He keeps that rhythm going even while you sleep.'
+  ];
+  var SETTLE=45, SILENCE=60;
+
+  // storage that never throws (private browsing, sandboxed previews)
+  var mem={};
+  var S={get:function(k){try{return localStorage.getItem(k)}catch(e){return mem[k]||null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){mem[k]=v}},del:function(k){try{localStorage.removeItem(k)}catch(e){delete mem[k]}}};
+  function getJSON(k,d){try{return JSON.parse(S.get(k))||d}catch(e){return d}}
+
+  var prefs=getJSON('wml-breathe-prefs',{p:'still',len:'5',pace:'even',snd:'on'});
+  var $=function(id){return document.getElementById(id)};
+
+  // ----- build cards
+  var ul=$('prayers');
+  PRAYERS.forEach(function(p){
+    var li=document.createElement('li');
+    var b=document.createElement('button');b.type='button';b.className='pcard';b.setAttribute('role','radio');b.dataset.id=p.id;
+    b.innerHTML='<span class="need"></span><span class="line"></span><span class="ref"></span>';
+    b.querySelector('.need').textContent=p.need;
+    b.querySelector('.line').textContent=p.inn+' '+p.out;
+    b.querySelector('.ref').textContent=p.ref+(p.id==='mercy'?'':' (WEB)');
+    b.addEventListener('click',function(){prefs.p=p.id;sync();});
+    li.appendChild(b);ul.appendChild(li);
+  });
+  ul.addEventListener('keydown',function(e){
+    if(['ArrowRight','ArrowDown','ArrowLeft','ArrowUp'].indexOf(e.key)<0)return;
+    e.preventDefault();var i=PRAYERS.findIndex(function(p){return p.id===prefs.p});
+    i=(i+(e.key==='ArrowRight'||e.key==='ArrowDown'?1:-1)+PRAYERS.length)%PRAYERS.length;
+    prefs.p=PRAYERS[i].id;sync();ul.querySelector('[data-id="'+prefs.p+'"]').focus();
+  });
+  document.querySelectorAll('.seg').forEach(function(g){
+    g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;prefs[g.dataset.key]=b.dataset.v;sync();});
+  });
+  function cur(){return PRAYERS.find(function(p){return p.id===prefs.p})||PRAYERS[0]}
+  function sync(){
+    ul.querySelectorAll('.pcard').forEach(function(b){var on=b.dataset.id===prefs.p;b.setAttribute('aria-checked',on);b.tabIndex=on?0:-1;});
+    document.querySelectorAll('.seg').forEach(function(g){g.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.v===prefs[g.dataset.key]);});});
+    var p=cur();$('sumLine').textContent=p.short+' · '+prefs.len+' minutes';
+    var img=$('heroImg'),src='/breathe/art/'+p.art+'.jpg';if(img.getAttribute('src')!==src){img.setAttribute('src',src);}
+    S.set('wml-breathe-prefs',JSON.stringify(prefs));
+  }
+  sync();
+
+  // ----- quiet-times log (local only)
+  function renderLog(){
+    var log=getJSON('wml-breathe-log',[]);var sec=$('mine');
+    if(!log.length){sec.hidden=true;return;}
+    sec.hidden=false;
+    $('mineCount').textContent='You have rested with Him '+log.length+(log.length===1?' time':' times')+' on this device.';
+    var l=$('log');l.innerHTML='';
+    log.slice().reverse().slice(0,30).forEach(function(x){
+      if(!x.t)return;var li=document.createElement('li');var tm=document.createElement('time');
+      tm.textContent=new Date(x.d).toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'})+' · '+x.ref;
+      li.appendChild(tm);li.appendChild(document.createTextNode(x.t));l.appendChild(li);
+    });
+    if(!l.children.length){var li=document.createElement('li');li.textContent='Your written prayers will appear here.';l.appendChild(li);}
+  }
+  $('clearLog').addEventListener('click',function(){S.del('wml-breathe-log');renderLog();});
+  renderLog();
+
+  // ----- audio: a soft pad whose brightness follows the breath
+  var AC=null,master=null,filt=null;
+  function audioStart(){
+    if(AC)return;try{AC=new (window.AudioContext||window.webkitAudioContext)();}catch(e){return;}
+    master=AC.createGain();master.gain.value=0;master.connect(AC.destination);
+    filt=AC.createBiquadFilter();filt.type='lowpass';filt.frequency.value=380;filt.Q.value=.6;filt.connect(master);
+    [[110,0],[164.81,-4],[220,3],[277.18,-2]].forEach(function(f,i){
+      var o=AC.createOscillator();o.type=i%2?'sine':'triangle';o.frequency.value=f[0];o.detune.value=f[1];
+      var g=AC.createGain();g.gain.value=i===0?.22:.12;o.connect(g);g.connect(filt);o.start();
+    });
+  }
+  function audioLevel(on){if(!AC)return;var t=AC.currentTime;master.gain.cancelScheduledValues(t);master.gain.setTargetAtTime(on?.16:0,t,on?1.2:.4);}
+  function audioBreath(up,secs){if(!AC||prefs.snd!=='on')return;var t=AC.currentTime;filt.frequency.cancelScheduledValues(t);filt.frequency.setValueAtTime(filt.frequency.value,t);filt.frequency.linearRampToValueAtTime(up?1100:340,t+secs);}
+  function chime(){if(!AC||prefs.snd!=='on')return;var t=AC.currentTime;[523.25,784].forEach(function(f,i){var o=AC.createOscillator(),g=AC.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.07/(i+1),t+.05);g.gain.exponentialRampToValueAtTime(.0001,t+3.5);o.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+3.6);});}
+
+  // ----- session engine
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sess=$('session'),fill=$('fill'),cue=$('cue'),phraseEl=$('phrase'),sub=$('subline'),phaseEl=$('phase'),prog=$('prog');
+  var timer=null,paused=false,state=null,wake=null,lastFocus=null;
+
+  function setOrb(up,secs){
+    if(reduce){fill.style.transition='opacity '+secs+'s ease-in-out';fill.style.transform='scale(.8)';fill.style.opacity=up?1:.35;return;}
+    fill.style.transition='transform '+secs+'s cubic-bezier(.45,.05,.55,.95)';fill.style.transform=up?'scale(1)':'scale(.42)';
+  }
+  function showPhrase(t){phraseEl.classList.add('dim');setTimeout(function(){phraseEl.textContent=t;phraseEl.classList.remove('dim');},450);}
+
+  function begin(){
+    var p=cur();var pace=prefs.pace==='long'?[4,6]:[5,5];
+    state={p:p,pace:pace,t:0,total:SETTLE+(+prefs.len)*60+SILENCE,word:(+prefs.len)*60,step:'settle',half:0,next:0,cycles:0};
+    $('bg').style.backgroundImage='url(/breathe/art/'+p.art+'.jpg)';
+    lastFocus=document.activeElement;
+    document.body.classList.add('immersive');sess.classList.remove('end','silent','calm');
+    $('reply').value='';prog.style.width='0';
+    if(prefs.snd==='on'){audioStart();if(AC&&AC.state==='suspended')AC.resume();audioLevel(true);}
+    syncSndBtn();
+    try{if(navigator.wakeLock)navigator.wakeLock.request('screen').then(function(w){wake=w}).catch(function(){});}catch(e){}
+    phaseEl.textContent='Settle';
+    phraseEl.textContent='Look at what He made.';sub.textContent='Let your shoulders drop. Breathe with the light.';
+    cue.style.opacity=1;
+    paused=false;setPauseIcon();
+    $('pauseBtn').focus();
+    tickBreath(true);
+    timer=setInterval(tick,1000);
+    track('Breath Prayer Start',{prayer:p.id,len:prefs.len});
+  }
+  // breathing loop runs on its own clock; tick() moves through phases
+  var breathT=null;
+  function tickBreath(first){
+    if(!state||paused)return;
+    var up=state.half===0, secs=state.pace[up?0:1];
+    if(up&&state.step==='settle'&&state.t>=SETTLE-2)enterWord();
+    setOrb(up,secs);audioBreath(up,secs);
+    if(state.step==='word'){
+      showPhrase(up?state.p.inn:state.p.out);
+      if(state.cycles<4)cue.textContent=up?'Breathe in':'Breathe out';else cue.style.opacity=0;
+      if(!up)state.cycles++;
+      if(state.cycles===6)sess.classList.add('calm');
+    }else if(state.step==='settle'){cue.textContent=up?'Breathe in':'Breathe out';}
+    else if(state.step==='silence'){cue.style.opacity=0;}
+    state.half=up?1:0;
+    breathT=setTimeout(tickBreath,secs*1000);
+  }
+  function tick(){
+    if(!state||paused)return;
+    state.t++;prog.style.width=Math.min(100,state.t/(state.total+2)*100)+'%';
+    if(state.step==='settle'&&state.t>=SETTLE+8){enterWord();}
+    else if(state.step==='word'&&state.t>=state.wordStart+state.word){
+      state.step='silence';phaseEl.textContent='Silence';sess.classList.add('silent');
+      showPhrase('Rest with Him.');sub.style.opacity=1;sub.textContent='No words needed. He is here.';chime();
+    }else if(state.step==='silence'&&state.t>=state.wordStart+state.word+SILENCE){finish(true);}
+  }
+  function enterWord(){
+    state.step='word';state.wordStart=state.t;phaseEl.textContent='Breathe the Word';
+    showPhrase(state.half===1?state.p.inn:state.p.out);
+    sub.style.opacity=1;sub.textContent=state.p.ref+(state.p.id==='mercy'?'':' (WEB)');
+    setTimeout(function(){if(state&&state.step==='word')sub.style.opacity=.6},12000);
+  }
+  function finish(done){
+    clearInterval(timer);clearTimeout(breathT);timer=breathT=null;
+    audioLevel(false);if(done)chime();
+    var p=state.p;
+    $('fullVerse').textContent=p.full;$('fullRef').textContent=p.fullRef;
+    var n=getJSON('wml-breathe-log',[]).length;$('wonder').textContent=WONDERS[n%WONDERS.length];
+    sess.classList.add('end');sess.classList.remove('calm');phaseEl.textContent='';
+    $('closing').scrollTop=0;
+    var coarse=window.matchMedia&&matchMedia('(pointer: coarse)').matches;
+    setTimeout(function(){(coarse?$('endTitle'):$('reply')).focus({preventScroll:true});},300);
+    if(done)track('Breath Prayer Complete',{prayer:p.id,len:prefs.len});
+  }
+  function close(save){
+    if(save&&state){
+      var log=getJSON('wml-breathe-log',[]);
+      log.push({d:Date.now(),p:state.p.id,ref:state.p.fullRef.replace(' (WEB)',''),m:+prefs.len,t:($('reply').value||'').trim().slice(0,2000)});
+      S.set('wml-breathe-log',JSON.stringify(log.slice(-200)));
+    }
+    clearInterval(timer);clearTimeout(breathT);timer=breathT=null;audioLevel(false);
+    if(wake){try{wake.release()}catch(e){}wake=null;}
+    state=null;document.body.classList.remove('immersive');sess.classList.remove('end','silent','calm');
+    renderLog();
+    if(save&&!$('mine').hidden){$('mine').scrollIntoView({block:'center'});}
+    else if(lastFocus&&lastFocus.focus){lastFocus.focus();}
+  }
+  function setPauseIcon(){
+    $('pauseBtn').setAttribute('aria-label',paused?'Resume':'Pause');
+    $('pauseBtn').innerHTML=paused?'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>':'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+  }
+  function togglePause(){
+    if(!state||sess.classList.contains('end'))return;
+    paused=!paused;setPauseIcon();sess.classList.remove('calm');
+    if(paused){clearTimeout(breathT);audioLevel(false);var cs=getComputedStyle(fill).transform;fill.style.transition='none';fill.style.transform=cs;phaseEl.textContent='Paused';}
+    else{if(prefs.snd==='on')audioLevel(true);phaseEl.textContent=state.step==='settle'?'Settle':state.step==='word'?'Breathe the Word':'Silence';state.half=0;tickBreath();}
+  }
+  function syncSndBtn(){var on=prefs.snd==='on';$('sndBtn').setAttribute('aria-label',on?'Turn sound off':'Turn sound on');$('sndBtn').style.opacity=on?1:.55;}
+  $('beginBtn').addEventListener('click',begin);
+  $('pauseBtn').addEventListener('click',togglePause);
+  $('sndBtn').addEventListener('click',function(){prefs.snd=prefs.snd==='on'?'off':'on';sync();syncSndBtn();if(prefs.snd==='on'){audioStart();if(AC&&AC.state==='suspended')AC.resume();if(state&&!paused&&!sess.classList.contains('end'))audioLevel(true);}else audioLevel(false);});
+  $('endBtn').addEventListener('click',function(){if(sess.classList.contains('end'))close(false);else finish(false);});
+  $('saveBtn').addEventListener('click',function(){close(true)});
+  $('againBtn').addEventListener('click',function(){close(false);begin();});
+  document.addEventListener('keydown',function(e){
+    if(!document.body.classList.contains('immersive'))return;
+    if(e.key==='Escape'){e.preventDefault();if(sess.classList.contains('end'))close(false);else finish(false);}
+    else if(e.key===' '&&e.target.tagName!=='TEXTAREA'&&e.target.tagName!=='BUTTON'){e.preventDefault();togglePause();}
+    else if(e.key==='Tab'){var f=[].slice.call(sess.querySelectorAll('button,textarea,a')).filter(function(x){return x.offsetParent!==null});if(!f.length)return;var i=f.indexOf(document.activeElement);if(e.shiftKey&&i<=0){e.preventDefault();f[f.length-1].focus();}else if(!e.shiftKey&&i===f.length-1){e.preventDefault();f[0].focus();}}
+  });
+  document.addEventListener('visibilitychange',function(){if(document.hidden&&state&&!paused&&!sess.classList.contains('end'))togglePause();});
+  function track(n,props){try{window.plausible&&window.plausible(n,{props:props})}catch(e){}}
+  // preload the other paintings quietly
+  setTimeout(function(){['sea','lilies','stars'].forEach(function(k){var i=new Image();i.src='/breathe/art/'+k+'.jpg';});},1500);
+})();
+</script>
+</body>
+</html>
