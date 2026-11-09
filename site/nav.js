@@ -5,31 +5,34 @@
   if (window.__wmlNav) return; window.__wmlNav = true;
 
   var MENU = [
-    { id: 'play', label: 'Color & Play', blurb: 'Hands-on, a few quiet minutes at a time', items: [
-      { t: 'Hidden Verse Coloring', d: 'Tap to color. The verse appears when you finish.', u: '/color/', badge: 'New every Monday' },
+    { id: 'know', label: 'Know Jesus', blurb: 'The best news there is, in His own words', items: [
+      { t: 'Who is Jesus?', d: 'Come and meet Him, simply, in Scripture', u: '/jesus/' },
+      { t: 'I want to follow Jesus', d: 'A simple prayer and your first steps', u: '/jesus/#respond' },
+      { t: 'Ask us to pray for you', d: 'Share a need or tell us you said yes', u: '/jesus/#pray' },
+      { t: 'Our testimony', d: 'How a scientist found peace on his knees', u: '/learn/#testimony' }
+    ]},
+    { id: 'time', label: 'Time with Him', blurb: 'Quiet ways to be with the Lord today', items: [
+      { t: 'Breath Prayer', d: 'Breathe a verse slowly, then rest with Him in silence', u: '/breathe/', badge: 'New' },
+      { t: '31-Day Prayer Companion', d: 'A Psalm, a prayer, and one small step a day', u: '/prayer' },
+      { t: 'Hidden Verse Coloring', d: 'Color slowly. The verse appears when you finish.', u: '/color/', badge: 'New every Monday' },
+      { t: 'Move & Be Still', d: 'Move, breathe, and rest in a word of Scripture', u: '/move-and-be-still.html' },
+      { t: 'Guided Journals', d: 'For fear, grief, and heavy days', u: '/learn/#journals' }
+    ]},
+    { id: 'hard', label: 'Hard Seasons', blurb: 'He is near to those who have a broken heart', items: [
+      { t: 'I just got a heart diagnosis', d: 'What is happening, what to do, what comes next', u: '/learn/#patient' },
+      { t: 'Someone I love has cancer', d: 'A gentle companion for patients and families', u: '/learn/#cancer' },
+      { t: 'I\u2019m scared or anxious', d: 'Name what you feel, then breathe and pray', u: '/still-tool.html' },
+      { t: 'I feel far from God', d: 'Finding Christ in the darkness, 31 days', u: '/prayer' },
+      { t: 'Essays for the journey', d: 'Faith and medicine, written plainly', u: '/learn/#essays' }
+    ]},
+    { id: 'creation', label: 'His Creation', blurb: 'See the Maker in what He made', items: [
       { t: 'River Detective', d: 'Solve a real heart mystery, ages 8+', u: '/river-detective.html' },
-      { t: 'Move & Be Still', d: 'A 10-minute movement and prayer reset', u: '/move-and-be-still.html' },
-      { t: 'Be Still in 90 Seconds', d: 'Name what you feel, then breathe and pray', u: '/still-tool.html' }
-    ]},
-    { id: 'pray', label: 'Pray & Read', blurb: 'Scripture and honest writing for every season', items: [
-      { t: '31-Day Prayer Companion', d: 'Finding Christ in the darkness', u: '/prayer' },
-      { t: 'Essays for the Journey', d: 'Faith and medicine, written plainly', u: '/learn/#essays' },
-      { t: 'Guided Journals', d: 'For fear, grief, and heavy days', u: '/learn/#journals' },
-      { t: 'Free Printables', d: 'Advent Day 1 and more to print at home', u: '/free/' }
-    ]},
-    { id: 'learn', label: 'Learn', blurb: 'Body science stories, told with wonder', items: [
       { t: 'The River That Forgot How to Flow', d: 'How the heart\u2019s arteries work, 3 reading levels', u: '/learn/#story' },
       { t: 'The Story Behind the Mystery', d: 'Ages 8 to pre-med', u: '/heart' },
       { t: 'The Guards Who Forgot Their Friends', d: 'The immune system and autoimmunity', u: '/learn/#story2' },
       { t: 'The Furnace Friend', d: 'Why healthy food and movement matter', u: '/learn/#story3' },
       { t: 'The Worker Who Forgot the Rule', d: 'What cancer really is, for families', u: '/learn/#story4' },
       { t: 'Take Heart, for Adults', d: 'The truth about your heart, in plain numbers', u: '/learn/#adult' }
-    ]},
-    { id: 'hard', label: 'Hard Seasons', blurb: 'Plain answers and real hope', items: [
-      { t: 'I just got a heart diagnosis', d: 'What is happening, what to do, what comes next', u: '/learn/#patient' },
-      { t: 'Someone I love has cancer', d: 'A gentle companion for patients and families', u: '/learn/#cancer' },
-      { t: 'I\u2019m scared or anxious', d: 'Journals that give fear words', u: '/learn/#journals' },
-      { t: 'I just need a quiet minute', d: 'A 90-second reset with Scripture', u: '/still-tool.html' }
     ]}
   ];
   window.WML_MENU = MENU;
@@ -91,7 +94,7 @@
       '<div class="wml-bar">' +
         '<a class="wml-brand" href="/" aria-label="Wonderfully Made Labs home">' + LOGO + '<span>Wonderfully Made Labs</span></a>' +
         '<nav class="wml-menu" aria-label="Main"><ul>' + groups +
-          '<li><a class="wml-link' + (isCurrent('/learn/#testimony') ? ' is-active' : '') + '" href="/learn/#testimony">Our Story</a></li>' +
+          '<li><a class="wml-link" href="/#serve">Serve</a></li>' +
         '</ul></nav>' +
         '<a class="wml-shop' + (path === '/shop.html' ? ' is-active' : '') + '" href="/shop.html">Shop</a>' +
         '<button class="wml-burger" type="button" aria-expanded="false" aria-controls="wml-drawer" aria-label="Open menu"><span></span><span></span><span></span></button>' +
@@ -99,9 +102,10 @@
 
     var drawer = el('div', { class: 'wml-drawer', id: 'wml-drawer', hidden: '' });
     drawer.innerHTML = '<div class="wml-drawer-in">' +
-      '<a class="wml-drawer-cta" href="/color/">Color this week\u2019s hidden verse \u2192</a>' +
+      '<a class="wml-drawer-cta" href="/breathe/">Spend 3 quiet minutes with Him \u2192</a>' +
       MENU.map(function (g) { return '<section><h3>' + esc(g.label) + '</h3>' + g.items.map(itemHTML).join('') + '</section>'; }).join('') +
-      '<section><h3>More</h3>' + itemHTML({ t: 'Our Story', d: 'Why Wonderfully Made Labs exists', u: '/learn/#testimony' }) +
+      '<section><h3>More</h3>' + itemHTML({ t: 'Serve with us', d: 'Pray for someone, share, or support the mission', u: '/#serve' }) +
+      itemHTML({ t: 'Free Printables', d: 'Advent Day 1 and more to print at home', u: '/free/' }) +
       itemHTML({ t: 'The Shop', d: 'Books on Amazon, printables on Etsy', u: '/shop.html' }) +
       itemHTML({ t: 'Everything in one place', d: 'The full library', u: '/learn/' }) + '</section></div>';
 
@@ -155,13 +159,13 @@
       var f = el('footer', { class: 'wml-foot' });
       f.innerHTML = '<div class="wml-foot-in">' +
         '<div class="wml-foot-brand"><a class="wml-brand" href="/">' + LOGO + '<span>Wonderfully Made Labs</span></a>' +
-        '<p>Real science, honest Scripture, and a place to start wherever you are today.</p>' +
+        '<p>A quiet place to find the Lord, spend time with Him, and see His glory in what He made.</p>' +
         '<a class="wml-foot-cta" href="https://inhisglorypsalms13914.substack.com/subscribe" target="_blank" rel="noopener">Get a note when something new opens</a>' +
         '<p class="wml-foot-social"><a href="https://www.youtube.com/@WonderfullyMadeLabs" target="_blank" rel="noopener">YouTube</a> \u00b7 <a href="https://inhisglorypsalms13914.substack.com" target="_blank" rel="noopener">Substack</a> \u00b7 <a href="https://www.instagram.com/wonderfullymadelabs/" target="_blank" rel="noopener">Instagram</a> \u00b7 <a href="https://www.tiktok.com/@wonderfullymadelabs" target="_blank" rel="noopener">TikTok</a></p></div>' +
         MENU.map(function (g) {
           return '<div class="wml-foot-col"><h4>' + esc(g.label) + '</h4>' + g.items.map(function (i) { return '<a href="' + i.u + '">' + esc(i.t) + '</a>'; }).join('') + '</div>';
         }).join('') +
-        '<div class="wml-foot-col"><h4>About</h4><a href="/learn/#testimony">Our Story</a><a href="/shop.html">The Shop</a><a href="https://www.etsy.com/shop/WonderfullyMadeLab" target="_blank" rel="noopener">Printables on Etsy</a><a href="https://buy.stripe.com/9B600ka9p5aiddBcX39Zm00" target="_blank" rel="noopener">Support the mission</a><a href="/learn/">The full library</a></div>' +
+        '<div class="wml-foot-col"><h4>Serve</h4><a href="/#serve">Serve with us</a><a href="/color/#boardH">Fellowship board</a><a href="/free/">Free Printables</a><a href="/shop.html">The Shop</a><a href="https://www.etsy.com/shop/WonderfullyMadeLab" target="_blank" rel="noopener">Printables on Etsy</a><a href="https://buy.stripe.com/9B600ka9p5aiddBcX39Zm00" target="_blank" rel="noopener">Support the mission</a><a href="/learn/">The full library</a></div>' +
         '</div><p class="wml-foot-fine">Scripture quotations are from the World English Bible. Educational content, not medical advice. To God be the glory.</p>';
       document.body.appendChild(f);
     }

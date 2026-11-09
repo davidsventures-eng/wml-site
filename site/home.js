@@ -23,7 +23,7 @@
   }
 
   // This-week card
-  var line = $('weekLine'), cta = $('weekCta'), img = $('weekImg'), hero = $('heroColor');
+  var line = $('weekLine'), go = $('weekGo'), img = $('weekImg');
   if (next) {
     img.src = '/pins/seek-' + String(next[0]).padStart(2, '0') + '.jpg';
     line.textContent = 'Each mosaic hides a Bible verse that only appears when the last piece is colored. ' + open.length +
@@ -37,8 +37,26 @@
     $('weekBar').style.width = Math.round(done / SCHED.length * 100) + '%';
     $('weekProgText').textContent = 'You have found ' + done + ' of ' + SCHED.length + ' hidden verses.' + (started.length ? ' One is in progress.' : '');
   }
-  if (started.length) { cta.textContent = 'Continue your puzzle'; hero.textContent = 'Continue your hidden verse'; }
-  else if (done) { cta.textContent = 'Color the next puzzle'; }
+  if (started.length) { go.textContent = 'Continue your puzzle \u2192'; }
+  else if (done) { go.textContent = 'Color the next puzzle \u2192'; }
+
+  // Quiet times with Him (Breath Prayer log, this device only)
+  try {
+    var bl = JSON.parse(ls('wml-breathe-log') || '[]').length;
+    if (bl) { var hr = $('heroRested'); hr.textContent = 'You have rested with Him ' + bl + (bl === 1 ? ' time' : ' times') + ' on this device. Welcome back.'; hr.hidden = false;
+      $('heroBreathe').textContent = 'Rest with Him again'; }
+  } catch (e) {}
+
+  // Share a quiet minute (serve)
+  var sb = $('shareBtn');
+  if (sb) sb.addEventListener('click', function () {
+    var url = 'https://wonderfullymadelabs.com/breathe/', m = $('shareMsg');
+    var data = { title: 'Breath Prayer', text: 'I thought of you. Here is a quiet 3 minutes with the Lord:', url: url };
+    if (navigator.share) { navigator.share(data).catch(function () {}); return; }
+    var done = function () { m.className = 'sign-msg ok'; m.textContent = 'Link copied. Send it to someone who needs a quiet minute.'; };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, function () { m.className = 'sign-msg'; m.textContent = url; });
+    else { m.className = 'sign-msg'; m.textContent = url; }
+  });
 
   // Pick up where you left off
   var rec = [];
