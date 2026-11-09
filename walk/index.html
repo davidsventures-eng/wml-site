@@ -41,6 +41,8 @@
 .feel b{font-family:var(--alt);color:var(--navy);font-size:16.5px}
 .feel span{font-size:14px;color:var(--soft)}
 .feel[aria-pressed="true"]{border-color:var(--gold);background:#fff8e8}
+.settle{margin:18px 0 0;padding:14px 18px;background:#fff;border-radius:14px;border-left:4px solid var(--gold);font-size:16px;max-width:720px}
+.settle a{color:var(--navy);font-weight:700}
 .hist{margin:18px 0 0;font-size:14.5px;color:var(--soft)}
 
 .walk{padding:8px 0 80px;display:none}
@@ -121,6 +123,7 @@ textarea.note{font:inherit;font-size:16px;width:100%;min-height:96px;margin-top:
     <p class="eyebrow">Step 1 of 4</p>
     <h2 id="pickH">Start where you are.</h2>
     <p class="sub">He already knows. Naming it is simply a way of bringing it to Him.</p>
+    <p class="settle">Mind racing? You may want to begin with <a href="/breathe/" data-t="walk_settle_breathe">three quiet minutes of Breath Prayer</a> to calm your heart and focus on Him, then come back here.</p>
     <div class="feel-grid" id="feelGrid" role="group" aria-label="How are you feeling?"></div>
     <p class="hist" id="hist" hidden></p>
   </div>
@@ -237,6 +240,9 @@ textarea.note{font:inherit;font-size:16px;width:100%;min-height:96px;margin-top:
     ps150:  ['Let everything that has breath praise Yah! Praise Yah!', 'Psalm 150:6'],
     ps42:   ['Why are you in despair, my soul? Why are you disturbed within me? Hope in God! For I shall still praise him, the saving help of my countenance, and my God.', 'Psalm 42:11'],
     ps103:  ['Praise Yahweh, my soul! All that is within me, praise his holy name!', 'Psalm 103:1'],
+    ps46:   ['Be still, and know that I am God. I will be exalted among the nations. I will be exalted in the earth.', 'Psalm 46:10'],
+    ps139:  ['Search me, God, and know my heart. Try me, and know my thoughts. See if there is any wicked way in me, and lead me in the everlasting way.', 'Psalm 139:23\u201324'],
+    mat6:   ['But you, when you pray, enter into your inner room, and having shut your door, pray to your Father who is in secret, and your Father who sees in secret will reward you openly.', 'Matthew 6:6'],
     ps19:   ['The heavens declare the glory of God. The expanse shows his handiwork.', 'Psalm 19:1']
   };
   var R = {
@@ -258,7 +264,8 @@ textarea.note{font:inherit;font-size:16px;width:100%;min-height:96px;margin-top:
     serve:   ['/#serve', 'Serve with us', 'Simple ways to share His love this week']
   };
   var F = [
-    {id:'anxious', t:'Anxious or afraid', d:'My mind won\u2019t settle', v:'phil4', v2:'isa41', w:'You don\u2019t have to hold this alone. He invites you to hand it to Him, one worry at a time.', r:['still','breathe','journals']},
+    {id:'quiet', t:'I want quiet time with the Lord', d:'Just to be with Him', v:'mat6', v2:'ps62', w:'Shut the door on the noise for a few minutes. He has been waiting for this time with you too.', r:['breathe','color','prayer']},
+    {id:'anxious', t:'Anxious or afraid', d:'My mind won\u2019t settle', v:'phil4', v2:'isa41', w:'You don\u2019t have to hold this alone. He invites you to hand it to Him, one worry at a time.', r:['breathe','still','journals']},
     {id:'weary', t:'Tired and worn out', d:'I have nothing left', v:'mat11', v2:'isa40', w:'He isn\u2019t asking you to do more right now. He is asking you to come.', r:['breathe','move','color']},
     {id:'grieving', t:'Grieving', d:'I miss someone, or something', v:'ps34', v2:'mat5', w:'Grief is love with nowhere to go. He is close to you in it, closer than you can feel.', r:['journals','prayer','essays']},
     {id:'far', t:'Far from God', d:'I can\u2019t feel Him', v:'luk15', v2:'jer29', w:'You don\u2019t have to find the whole way back. Turn toward Him. He is already running toward you.', r:['prayer','breathe','jesus']},
@@ -267,8 +274,10 @@ textarea.note{font:inherit;font-size:16px;width:100%;min-height:96px;margin-top:
     {id:'lonely', t:'Lonely', d:'No one really sees me', v:'deu31', v2:'zep3', w:'He sees you right now, and He is glad you are here. You have not been forgotten.', r:['board','pray','story']},
     {id:'grateful', t:'Grateful', d:'I want to thank Him', v:'ps107', v2:'ps34b', w:'Gratitude is a way of seeing. Let\u2019s look a little longer at what He has done and what He made.', r:['color','river','heart']},
     {id:'curious', t:'Curious about Jesus', d:'I want to know who He is', v:'jn14', v2:'jn6', w:'You are welcome to come with questions. He is not afraid of them, and neither are we.', r:['jesus','story','heart']},
+    {id:'unsure', t:'Not sure', d:'I can\u2019t name it yet', v:'ps46', v2:'ps139', w:'You don\u2019t have to name it yet. Sometimes the first step is simply to be still and let Him search your heart.', r:['breathe','still','prayer']},
     {id:'joyful', t:'Full of joy', d:'My cup is running over', v:'ps118', v2:'ps62', w:'Joy is worth pausing for. Let\u2019s turn it back to Him, and maybe pass a little on.', r:['board','serve','color']}
   ];
+  F.push(F.splice(F.findIndex(function(f){return f.id==='unsure';}),1)[0]);
   var byId = {}; F.forEach(function(f){ byId[f.id]=f; });
   var KEY='wml-walk', LOG='wml-walk-log';
   var state = { f:null, s:0, heavy:false };

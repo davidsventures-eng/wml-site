@@ -260,7 +260,7 @@ body.immersive #session{display:block}
         <button class="btn" id="saveBtn" type="button">Save and finish</button>
         <button class="btn ghost" id="againBtn" type="button">Pray again</button>
       </div>
-      <p class="nextlinks">When you're ready: <a href="/prayer/">31-Day Prayer Companion</a> · <a href="/color/">This week's hidden verse</a></p>
+      <p class="nextlinks" id="nextLinks">When you're ready: <a href="/walk/" id="walkNext">Walk with Him from how you feel</a> · <a href="/prayer/">31-Day Prayer Companion</a> · <a href="/color/">This week's hidden verse</a></p>
     </div>
   </div>
 </div>
@@ -471,5 +471,6 @@ body.immersive #session{display:block}
   setTimeout(function(){['sea','lilies','stars'].forEach(function(k){var i=new Image();i.src='/breathe/art/'+k+'.jpg';});},1500);
 })();
 </script>
+<script>(function(){try{var w=JSON.parse(localStorage.getItem('wml-walk')||'null');if(w&&w.s===3&&Date.now()-w.ts<864e5){var a=document.getElementById('walkNext');a.href='/walk/#now';a.textContent='Continue your walk: how is your heart now?';}}catch(e){}})();</script>
 </body>
 </html>
