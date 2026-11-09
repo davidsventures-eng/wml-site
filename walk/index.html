@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="/site/nav.css?v=3" />
 <link rel="stylesheet" href="/site/home.css?v=3" />
 <script defer src="/site/nav.js?v=3"></script>
+<script defer src="/site/share.js?v=1"></script>
 <script defer data-domain="wonderfullymadelabs.com" src="https://plausible.io/js/script.tagged-events.js"></script>
 <script>window.plausible = window.plausible || function(){(window.plausible.q = window.plausible.q || []).push(arguments)}</script>
 <style>
@@ -90,6 +91,11 @@ textarea.note{font:inherit;font-size:16px;width:100%;min-height:96px;margin-top:
 .step:focus{outline:none}
 #trail{scroll-margin-top:84px}
 .step.show{display:block;animation:rise .5s ease}
+.sendbox{margin:24px 0 0;padding:20px 22px;background:var(--cream);border-radius:18px;text-align:left}
+.sendbox p{margin:0 0 12px;font-size:16.5px}
+.sendbox b{color:var(--navy);font-family:var(--alt)}
+.gift{display:none;margin:0 0 12px;font-family:var(--alt);font-weight:600;color:var(--teal);font-size:15px}
+.gift.show{display:block}
 .crisis{max-width:760px;margin:22px auto 0;padding:0 20px}
 .crisis p{background:#fff;border-radius:14px;padding:14px 18px;box-shadow:0 0 0 1px rgba(168,69,42,.25);font-size:15px;margin:0}
 @media (max-width:860px){
@@ -103,6 +109,7 @@ textarea.note{font:inherit;font-size:16px;width:100%;min-height:96px;margin-top:
 @media (max-width:560px){.now-grid{grid-template-columns:1fr}.acts .btn{flex:1 1 100%}.trail li{font-size:12px}}
 @media (prefers-reduced-motion:reduce){.step.show,.heavy.show{animation:none}}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://wonderfullymadelabs.com/walk/", "name": "Walk with Him: start from how you feel", "description": "Choose how your heart is today and be guided through a word from Scripture, a little time with the Lord, a gentle check-in, and a moment to give Him glory.", "isPartOf": {"@id": "https://wonderfullymadelabs.com/#site"}, "publisher": {"@id": "https://wonderfullymadelabs.com/#org"}, "inLanguage": "en"}</script>
 </head>
 <body class="home">
 <main id="main">
@@ -140,6 +147,7 @@ textarea.note{font:inherit;font-size:16px;width:100%;min-height:96px;margin-top:
 
     <!-- Step 1: His Word -->
     <div class="card step" id="s1" tabindex="-1">
+      <p class="gift" id="gift">Someone who cares about you sent you this. Take a quiet minute.</p>
       <p class="eyebrow" id="s1Eye"></p>
       <h2>Let Him speak first.</h2>
       <blockquote class="word" id="s1Verse"></blockquote>
@@ -202,6 +210,10 @@ textarea.note{font:inherit;font-size:16px;width:100%;min-height:96px;margin-top:
       <h2>Go in His peace.</h2>
       <blockquote class="word" style="text-align:left">&ldquo;Yahweh is my shepherd: I shall lack nothing. He makes me lie down in green pastures. He leads me beside still waters. He restores my soul. He guides me in the paths of righteousness for his name&rsquo;s sake.&rdquo;<cite>Psalm 23:1&ndash;3 (WEB)</cite></blockquote>
       <p class="gentle" id="s5Count"></p>
+      <div class="sendbox">
+        <p><b>Who do you know who is carrying something heavy?</b> Send them <span id="sendRef">the word that met you today</span>, with a quiet place to meet Him.</p>
+        <button class="btn btn-gold" type="button" id="sendBtn">Send this verse to someone</button>
+      </div>
       <div class="acts">
         <a class="btn btn-navy" href="/jesus/" id="s5Jesus">Who is Jesus?</a>
         <button class="btn btn-line" type="button" data-pickagain>Walk again</button>
@@ -350,6 +362,7 @@ textarea.note{font:inherit;font-size:16px;width:100%;min-height:96px;margin-top:
     }
   });
   $('amenBtn').addEventListener('click', function(){
+    try{ var sf = byId[state.f]; if (sf) $('sendRef').textContent = V[sf.v][1] + ', the word that met you today'; }catch(e){}
     var note = $('note').value.trim(), log=[];
     try { log = JSON.parse(localStorage.getItem(LOG)||'[]'); } catch(e){}
     log.unshift({f:state.f, ts:Date.now(), note: note.slice(0,500)});
@@ -362,6 +375,13 @@ textarea.note{font:inherit;font-size:16px;width:100%;min-height:96px;margin-top:
     track('Walk Complete', {feeling: state.f, heavy: state.heavy ? 'yes':'no'});
     clear(); show(5);
   });
+
+  $('sendBtn').addEventListener('click', function(){
+    var f = byId[state.f] || F[0], v = V[f.v];
+    if (!window.WMLShare) return;
+    WMLShare.open({ verse: v[0], ref: v[1] + ' (WEB)', link: '/walk/?f=' + f.id, source: 'walk', item: f.id, art: '/assets/home_path.jpg', cta: 'Take a quiet walk with Him' });
+  });
+  try { if (new URLSearchParams(location.search).get('utm_medium') === 'share-card') $('gift').classList.add('show'); } catch(e){}
 
   // history and resume
   try {

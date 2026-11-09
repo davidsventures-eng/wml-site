@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Breath Prayer — Be still with God | Wonderfully Made Labs</title>
 <meta name="description" content="A few quiet minutes to slow your breath, pray a line of Scripture, and rest in God's presence." />
+<link rel="canonical" href="https://wonderfullymadelabs.com/breathe/" />
+<meta property="og:title" content="Breath Prayer: three quiet minutes with God" />
+<meta property="og:description" content="Slow your breath, pray a line of Scripture, and rest in His presence." />
+<meta property="og:image" content="https://wonderfullymadelabs.com/breathe/art/dawn.jpg" />
+<meta property="og:type" content="website" />
 
 <link rel="icon" type="image/png" href="/assets/favicon-48.png" />
 <link rel="preconnect" href="https://api.fontshare.com" />
@@ -130,6 +135,11 @@ body.immersive #session{display:block}
 .panel .private{font-size:13.5px;color:var(--soft);margin:6px 0 16px}
 .panel .row{display:flex;flex-wrap:wrap;gap:10px}
 .panel .btn.ghost{color:var(--navy)}
+.panel .sendrow{margin:18px 0 0;padding:16px 0 0;border-top:1px solid rgba(35,52,74,.12)}
+.panel .sendrow p{margin:0 0 10px;font-size:15.5px;color:var(--ink)}
+.panel .sendrow b{color:var(--navy)}
+.panel .sendrow .btn{width:100%}
+.gift{margin:0 0 14px;font-family:var(--alt);font-weight:600;color:var(--gold);font-size:15px}
 .panel .nextlinks{margin:16px 0 0;font-size:15px;color:var(--soft)}
 
 @media (prefers-reduced-motion:reduce){
@@ -144,6 +154,8 @@ body.immersive #session{display:block}
   .orb{width:min(62vw,260px);margin-bottom:26px}
 }
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://wonderfullymadelabs.com/breathe/", "name": "Breath Prayer: be still with God", "description": "A few quiet minutes to slow your breath, pray a line of Scripture, and rest in God’s presence.", "isPartOf": {"@id": "https://wonderfullymadelabs.com/#site"}, "publisher": {"@id": "https://wonderfullymadelabs.com/#org"}, "inLanguage": "en"}</script>
+<script defer src="/site/share.js?v=1"></script>
 </head>
 <body>
 <main id="main">
@@ -151,6 +163,7 @@ body.immersive #session{display:block}
     <img id="heroImg" src="/breathe/art/dawn.jpg" alt="A painted sunrise over still water and soft hills" />
     <div class="in">
       <p class="eyebrow">Breath Prayer · 5 to 10 quiet minutes</p>
+      <p class="gift" id="gift" hidden>Someone who cares about you sent you this. Take a quiet minute.</p>
       <h1 id="t">Be still with the One who gave you breath.</h1>
       <p class="lede">Slow your breathing, pray one line of Scripture, and rest in His presence. No score, no hurry, nothing to finish.</p>
       <p class="verse">“Yahweh God formed man from the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.”<small>Genesis 2:7 (WEB)</small></p>
@@ -260,6 +273,7 @@ body.immersive #session{display:block}
         <button class="btn" id="saveBtn" type="button">Save and finish</button>
         <button class="btn ghost" id="againBtn" type="button">Pray again</button>
       </div>
+      <div class="sendrow"><p><b>Who do you know who is carrying something heavy?</b> Send them this verse and three quiet minutes.</p><button class="btn ghost" id="sendBtn" type="button">Send this verse to someone</button></div>
       <p class="nextlinks" id="nextLinks">When you're ready: <a href="/walk/" id="walkNext">Walk with Him from how you feel</a> · <a href="/prayer/">31-Day Prayer Companion</a> · <a href="/color/">This week's hidden verse</a></p>
     </div>
   </div>
@@ -290,6 +304,7 @@ body.immersive #session{display:block}
   function getJSON(k,d){try{return JSON.parse(S.get(k))||d}catch(e){return d}}
 
   var prefs=getJSON('wml-breathe-prefs',{p:'still',len:'5',pace:'even',snd:'on'});
+  try{var qp=new URLSearchParams(location.search).get('p');if(qp&&PRAYERS.some(function(x){return x.id===qp}))prefs.p=qp;}catch(e){}
   var $=function(id){return document.getElementById(id)};
 
   // ----- build cards
@@ -429,6 +444,11 @@ body.immersive #session{display:block}
     setTimeout(function(){(coarse?$('endTitle'):$('reply')).focus({preventScroll:true});},300);
     if(done)track('Breath Prayer Complete',{prayer:p.id,len:prefs.len});
   }
+  try{if(new URLSearchParams(location.search).get('utm_medium')==='share-card')$('gift').hidden=false;}catch(e){}
+  $('sendBtn').addEventListener('click',function(){
+    var p=state&&state.p||cur();if(!window.WMLShare)return;
+    WMLShare.open({verse:p.full,ref:p.fullRef,link:'/breathe/?p='+p.id,source:'breathe',item:p.id,art:'/breathe/art/'+p.art+'.jpg',cta:'Take 3 quiet minutes with Him'});
+  });
   function close(save){
     if(save&&state){
       var log=getJSON('wml-breathe-log',[]);
