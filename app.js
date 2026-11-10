@@ -733,6 +733,13 @@ function Home({
     })
   }, "New: When I'm Scared, God Is With Me journal \u2192"), /*#__PURE__*/React.createElement("a", {
     className: "hub-pick",
+    href: "/news/the-light-has-come.html",
+    style: { display: "block", marginBottom: "8px" },
+    onClick: () => track('News Click', {
+      source: 'Home Store Card Advent'
+    })
+  }, "New for Advent: The Light Has Come paperback \u2192"), /*#__PURE__*/React.createElement("a", {
+    className: "hub-pick",
     href: ETSY_URL,
     target: "_blank",
     rel: "noopener noreferrer",
