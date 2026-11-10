@@ -114,7 +114,7 @@ function WordOfHope() {
     className: "hope-more"
   }, /*#__PURE__*/React.createElement("p", null, "For most of my life I kept God at arm's length \u2014 through pride, through anger, through the belief that I'd built my success on my own. The turning point came in a hospital, with heart and stroke symptoms, when a friend asked me to read the Gospel of John. Back in the hotel room I opened it, and before I got through the first few verses I was on my knees. I didn't see or hear anything. But I felt a peace I had never known \u2014 no judgment, only love. I went to the Lord with nothing, and He gave me everything. My old self died, and I was made new."), /*#__PURE__*/React.createElement("blockquote", {
     className: "hope-verse"
-  }, "\u201CFor God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.\u201D", /*#__PURE__*/React.createElement("cite", null, "\u2014 John 3:16 (WEB)")), /*#__PURE__*/React.createElement("p", null, "That is the gift on offer to you, too \u2014 eternal life, freely given by grace, not earned. If something in you is stirring tonight, you don't have to clean yourself up first, and you don't have to have the right words. You can simply turn to Him."), /*#__PURE__*/React.createElement("div", {
+  }, "\u201CFor God so loved the world, that he gave his only born Son, that whoever believes in him should not perish, but have eternal life.\u201D", /*#__PURE__*/React.createElement("cite", null, "\u2014 John 3:16 (WEBU)")), /*#__PURE__*/React.createElement("p", null, "That is the gift on offer to you, too \u2014 eternal life, freely given by grace, not earned. If something in you is stirring tonight, you don't have to clean yourself up first, and you don't have to have the right words. You can simply turn to Him."), /*#__PURE__*/React.createElement("div", {
     className: "hope-steps"
   }, /*#__PURE__*/React.createElement("h3", {
     className: "display hope-steps-title"
@@ -373,7 +373,7 @@ function Home({
     className: "series-tag eyebrow"
   }, "Wonderfully Made Labs \xB7 In His Glory"), /*#__PURE__*/React.createElement("p", {
     className: "verse home-verse"
-  }, "\u201CI will give thanks to you, for I am fearfully and wonderfully made. Your works are wonderful.\u201D \u2014 from Psalm 139:14 (WEB)"), /*#__PURE__*/React.createElement("h1", {
+  }, "\u201CI will give thanks to you, for I am fearfully and wonderfully made. Your works are wonderful.\u201D \u2014 from Psalm 139:14 (WEBU)"), /*#__PURE__*/React.createElement("h1", {
     className: "display home-title"
   }, "Studying His Creation"), /*#__PURE__*/React.createElement("p", {
     className: "home-lede"
@@ -505,7 +505,7 @@ function Home({
     className: "odds-lede"
   }, "You woke up today in a body you did not build \u2014 one that has been keeping you alive since before you took your first breath, your heart keeping a rhythm you never started."), /*#__PURE__*/React.createElement("blockquote", {
     className: "odds-verse"
-  }, "\u201CFor you formed my inmost being. You knit me together in my mother’s womb. I will give thanks to you, for I am fearfully and wonderfully made.\u201D", /*#__PURE__*/React.createElement("cite", null, "\u2014 from Psalm 139:13\u201314 (WEB)")), /*#__PURE__*/React.createElement("p", {
+  }, "\u201CFor you formed my inmost being. You knit me together in my mother’s womb. I will give thanks to you, for I am fearfully and wonderfully made.\u201D", /*#__PURE__*/React.createElement("cite", null, "\u2014 from Psalm 139:13\u201314 (WEBU)")), /*#__PURE__*/React.createElement("p", {
     className: "odds-close"
   }, "You weren't a long shot that happened to land. You were ", /*#__PURE__*/React.createElement("strong", null, "knitted together"), " \u2014 chosen, intended, made on purpose. That is the wonder we begin with. You don't have to share our faith to be welcome here. You just have to be willing to be amazed.")), /*#__PURE__*/React.createElement("button", {
     className: "odds-toggle",
@@ -1263,7 +1263,7 @@ function Testimony({
     className: "display tp-title"
   }, "A River, and the One Who Made It Flow Again"), /*#__PURE__*/React.createElement("blockquote", {
     className: "tp-epigraph"
-  }, "\u201CBut may the God of all grace, who called you to his eternal glory by Christ Jesus, after you have suffered a little while, perfect, establish, strengthen, and settle you.\u201D", /*#__PURE__*/React.createElement("cite", null, "\u2014 1 Peter 5:10 (WEB)"))), /*#__PURE__*/React.createElement("div", {
+  }, "\u201CBut may the God of all grace, who called you to his eternal glory by Christ Jesus, after you have suffered a little while, perfect, establish, strengthen, and settle you.\u201D", /*#__PURE__*/React.createElement("cite", null, "\u2014 1 Peter 5:10 (WEBU)"))), /*#__PURE__*/React.createElement("div", {
     className: "tp-body fade-up"
   }, /*#__PURE__*/React.createElement("p", null, "For most of my life, I looked like a man who had it together. Over twenty years as a molecular pathologist, a marriage, children, a career built on my own two hands. But underneath, I carried an anxiety I could never quite name, and a quiet pride that kept God at arm's length. I grew up in the church \u2014 I had the foundation \u2014 but somewhere along the way I decided I could do life on my own. And I did. It just cost me more than I understood at the time."), /*#__PURE__*/React.createElement("p", null, "When my father passed \u2014 while I was away at a heart conference, of all places \u2014 something in me went quiet. I did what I always did: squared my shoulders and pushed on. But you can only outrun your own heart for so long. Mine finally caught up with me in a hospital, with symptoms I spent my whole career studying in other people. I was scared, and for once I couldn't fix it myself."), /*#__PURE__*/React.createElement("p", null, "Beside me was a colleague \u2014 a good man, a believer \u2014 who did a simple thing. He picked up my phone, put a Bible on it, and asked me to read the Gospel of John that night. Back in the hotel room, I opened it. I'd read John many times before. But this time I couldn't get past the first few verses before I was on my knees. I didn't see anything. I didn't hear anything. What I felt was a peace I had never known in my life \u2014 no judgment, only love. I came to Him with empty hands, and He gave me everything. That night, the man who had to carry it all finally got to set it down."), /*#__PURE__*/React.createElement("p", null, "I won't pretend every day since has been easy. I still have hard ones. The difference is that I don't face them alone anymore \u2014 I bring them to Him, and He carries what I can't. And I've come to see what my wife has seen all along: God's fingerprints on truly everything, from the galaxies down to a single cell dividing under a microscope. We really are fearfully and wonderfully made. I have never been more grateful for anything in my life, and I want that same hope for you more than I know how to say."), /*#__PURE__*/React.createElement("p", null, "That's the only reason this exists. I'm not speaking to you from the outside \u2014 I've known the fear and the grief, and I've struggled to hold faith and science in the same two hands. So to anyone who thinks they have to choose between God and science: you don't. God is the science. I count it one of the great honors of my life that I got to study His work up close. Wonderfully Made Labs is for the families living what I lived \u2014 frightened, worn down, and quietly hoping for something both true and kind. None of this is about me. The glory is His. I'm just here to walk alongside you, and to let the wonder of how you're made point you home to the One who made you.")), /*#__PURE__*/React.createElement("blockquote", {
     className: "tp-pull fade-up"
@@ -1285,7 +1285,7 @@ function Gate({
     className: "series-tag eyebrow"
   }, "Wonderfully Made Labs \xB7 Studying His Creation"), /*#__PURE__*/React.createElement("p", {
     className: "verse"
-  }, "\u201CI will give thanks to you, for I am fearfully and wonderfully made. Your works are wonderful.\u201D \u2014 from Psalm 139:14 (WEB)"), /*#__PURE__*/React.createElement("h1", {
+  }, "\u201CI will give thanks to you, for I am fearfully and wonderfully made. Your works are wonderful.\u201D \u2014 from Psalm 139:14 (WEBU)"), /*#__PURE__*/React.createElement("h1", {
     className: "display"
   }, "The River That Forgot How to Flow"), /*#__PURE__*/React.createElement("p", {
     className: "lede"

@@ -7,7 +7,7 @@ window.WML2 = {
   meta: {
     title: "The Guards Who Forgot Their Friends",
     subtitle: "Autoimmunity — when the body's own defenders mistake friend for foe",
-    verse: "I praise you because I am fearfully and wonderfully made; your works are wonderful, I know that full well. — Psalm 139:14",
+    verse: "I will give thanks to you, for I am fearfully and wonderfully made. Your works are wonderful. My soul knows that very well. — Psalm 139:14",
     backbone: { t: "ACR Clinical Practice Guidelines", u: "https://rheumatology.org/clinical-practice-guidelines" }
   },
 

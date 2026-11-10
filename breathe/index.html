@@ -166,7 +166,7 @@ body.immersive #session{display:block}
       <p class="gift" id="gift" hidden>Someone who cares about you sent you this. Take a quiet minute.</p>
       <h1 id="t">Be still with the One who gave you breath.</h1>
       <p class="lede">Slow your breathing, pray one line of Scripture, and rest in His presence. No score, no hurry, nothing to finish.</p>
-      <p class="verse">“Yahweh God formed man from the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.”<small>Genesis 2:7 (WEB)</small></p>
+      <p class="verse">“The LORD God formed man from the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.”<small>Genesis 2:7 (WEBU)</small></p>
     </div>
   </section>
 
@@ -281,14 +281,14 @@ body.immersive #session{display:block}
 
 <script>
 (function(){
-  // Every verse is World English Bible, word for word. Partial verses are labelled "from".
+  // Every verse is World English Bible Updated, word for word. Partial verses are labelled "from".
   var PRAYERS=[
-    {id:'still',need:'To slow down',inn:'Be still,',out:'and know that I am God.',ref:'from Psalm 46:10',full:'“Be still, and know that I am God. I will be exalted among the nations. I will be exalted in the earth.”',fullRef:'Psalm 46:10 (WEB)',art:'dawn',short:'Be still'},
-    {id:'peace',need:'When I\u2019m anxious',inn:'Peace I leave with you.',out:'My peace I give to you;',ref:'from John 14:27',full:'“Peace I leave with you. My peace I give to you; not as the world gives, give I to you. Don\u2019t let your heart be troubled, neither let it be fearful.”',fullRef:'John 14:27 (WEB)',art:'sea',short:'Peace I leave with you'},
-    {id:'rest',need:'When I\u2019m weary',inn:'My soul rests in God alone.',out:'My salvation is from him.',ref:'Psalm 62:1',full:'“My soul rests in God alone. My salvation is from him.”',fullRef:'Psalm 62:1 (WEB)',art:'lilies',short:'My soul rests'},
-    {id:'shepherd',need:'When I feel I\u2019m lacking',inn:'Yahweh is my shepherd:',out:'I shall lack nothing.',ref:'Psalm 23:1',full:'“Yahweh is my shepherd: I shall lack nothing.”',fullRef:'Psalm 23:1 (WEB)',art:'lilies',short:'My shepherd'},
-    {id:'made',need:'To thank Him for my body',inn:'I will give thanks to you,',out:'for I am fearfully and wonderfully made.',ref:'from Psalm 139:14',full:'“I will give thanks to you, for I am fearfully and wonderfully made. Your works are wonderful. My soul knows that very well.”',fullRef:'Psalm 139:14 (WEB)',art:'dawn',short:'Wonderfully made'},
-    {id:'night',need:'At bedtime',inn:'In peace I will both lay myself down and sleep,',out:'for you, Yahweh alone, make me live in safety.',ref:'Psalm 4:8',full:'“In peace I will both lay myself down and sleep, for you, Yahweh alone, make me live in safety.”',fullRef:'Psalm 4:8 (WEB)',art:'stars',short:'In peace I will sleep'},
+    {id:'still',need:'To slow down',inn:'Be still,',out:'and know that I am God.',ref:'from Psalm 46:10',full:'“Be still, and know that I am God. I will be exalted among the nations. I will be exalted on the earth.”',fullRef:'Psalm 46:10 (WEBU)',art:'dawn',short:'Be still'},
+    {id:'peace',need:'When I\u2019m anxious',inn:'Peace I leave with you.',out:'My peace I give to you;',ref:'from John 14:27',full:'“Peace I leave with you. My peace I give to you; not as the world gives, I give to you. Don\u2019t let your heart be troubled, neither let it be fearful.”',fullRef:'John 14:27 (WEBU)',art:'sea',short:'Peace I leave with you'},
+    {id:'rest',need:'When I\u2019m weary',inn:'My soul rests in God alone.',out:'My salvation is from him.',ref:'Psalm 62:1',full:'“My soul rests in God alone. My salvation is from him.”',fullRef:'Psalm 62:1 (WEBU)',art:'lilies',short:'My soul rests'},
+    {id:'shepherd',need:'When I feel I\u2019m lacking',inn:'The LORD is my shepherd;',out:'I shall lack nothing.',ref:'Psalm 23:1',full:'“The LORD is my shepherd; I shall lack nothing.”',fullRef:'Psalm 23:1 (WEBU)',art:'lilies',short:'My shepherd'},
+    {id:'made',need:'To thank Him for my body',inn:'I will give thanks to you,',out:'for I am fearfully and wonderfully made.',ref:'from Psalm 139:14',full:'“I will give thanks to you, for I am fearfully and wonderfully made. Your works are wonderful. My soul knows that very well.”',fullRef:'Psalm 139:14 (WEBU)',art:'dawn',short:'Wonderfully made'},
+    {id:'night',need:'At bedtime',inn:'In peace I will both lay myself down and sleep,',out:'for you alone, LORD, make me live in safety.',ref:'Psalm 4:8',full:'“In peace I will both lay myself down and sleep, for you alone, LORD, make me live in safety.”',fullRef:'Psalm 4:8 (WEBU)',art:'stars',short:'In peace I will sleep'},
     {id:'mercy',need:'When I need mercy',inn:'Lord Jesus Christ, Son of God,',out:'have mercy on me.',ref:'The Jesus Prayer, an ancient Christian prayer',full:'“Lord Jesus Christ, Son of God, have mercy on me.”',fullRef:'The Jesus Prayer, prayed by Christians since the early centuries of the church',art:'stars',short:'The Jesus Prayer'}
   ];
   var WONDERS=[
@@ -315,7 +315,7 @@ body.immersive #session{display:block}
     b.innerHTML='<span class="need"></span><span class="line"></span><span class="ref"></span>';
     b.querySelector('.need').textContent=p.need;
     b.querySelector('.line').textContent=p.inn+' '+p.out;
-    b.querySelector('.ref').textContent=p.ref+(p.id==='mercy'?'':' (WEB)');
+    b.querySelector('.ref').textContent=p.ref+(p.id==='mercy'?'':' (WEBU)');
     b.addEventListener('click',function(){prefs.p=p.id;sync();});
     li.appendChild(b);ul.appendChild(li);
   });
@@ -429,7 +429,7 @@ body.immersive #session{display:block}
   function enterWord(){
     state.step='word';state.wordStart=state.t;phaseEl.textContent='Breathe the Word';
     showPhrase(state.half===1?state.p.inn:state.p.out);
-    sub.style.opacity=1;sub.textContent=state.p.ref+(state.p.id==='mercy'?'':' (WEB)');
+    sub.style.opacity=1;sub.textContent=state.p.ref+(state.p.id==='mercy'?'':' (WEBU)');
     setTimeout(function(){if(state&&state.step==='word')sub.style.opacity=.6},12000);
   }
   function finish(done){
@@ -452,7 +452,7 @@ body.immersive #session{display:block}
   function close(save){
     if(save&&state){
       var log=getJSON('wml-breathe-log',[]);
-      log.push({d:Date.now(),p:state.p.id,ref:state.p.fullRef.replace(' (WEB)',''),m:+prefs.len,t:($('reply').value||'').trim().slice(0,2000)});
+      log.push({d:Date.now(),p:state.p.id,ref:state.p.fullRef.replace(' (WEBU)',''),m:+prefs.len,t:($('reply').value||'').trim().slice(0,2000)});
       S.set('wml-breathe-log',JSON.stringify(log.slice(-200)));
     }
     clearInterval(timer);clearTimeout(breathT);timer=breathT=null;audioLevel(false);

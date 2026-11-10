@@ -15,7 +15,7 @@ window.WML4 = {
   meta: {
     title: "The Worker Who Forgot the Rule",
     subtitle: "What cancer really is — and why it is never your fault",
-    verse: "I praise you because I am fearfully and wonderfully made; your works are wonderful, I know that full well. — Psalm 139:14",
+    verse: "I will give thanks to you, for I am fearfully and wonderfully made. Your works are wonderful. My soul knows that very well. — Psalm 139:14",
     backbone: { t: "National Cancer Institute — What Is Cancer", u: "https://www.cancer.gov/about-cancer/understanding/what-is-cancer" }
   },
 

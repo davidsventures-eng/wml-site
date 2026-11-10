@@ -11,7 +11,7 @@ window.WML_ADULT = {
     eyebrow: "For Adults · Take Heart",
     title: "Take Heart",
     sub: "You've been told it's your cholesterol, your weight, your lifestyle — yet heart disease is still the world's #1 killer. Here is the truth cardiologists now tell, the numbers that actually matter, and the part no clinic puts on the wall.",
-    verse: "“Cheer up! I have overcome the world.” — from John 16:33 (WEB)",
+    verse: "“cheer up! I have overcome the world.” — from John 16:33 (WEBU)",
     cta: "Start here"
   },
 
@@ -55,7 +55,7 @@ window.WML_ADULT = {
       "I spent over twenty years as a molecular pathologist studying exactly how this disease takes hold. I know the science cold. And I will tell you plainly: the science never made the fear go away on its own. What changed was coming to the Lord — going to Him with nothing, and being given everything. My old self died, and I was made new.",
       "So when I say take heart, I don't mean ignore your numbers or pray instead of seeing your doctor. I mean: do the work of caring for this body — and let yourself be held while you do it."
     ],
-    verse: "“Casting all your worries on him, because he cares for you.” — 1 Peter 5:7 (WEB)",
+    verse: "“casting all your worries on him, because he cares for you.” — 1 Peter 5:7 (WEBU)",
     close: "I died with my old self, and I was made new. Praise God in the highest."
   },
 
@@ -138,7 +138,7 @@ window.WML_ADULT = {
   },
 
   close: {
-    verse: "“Cheer up! I have overcome the world.” — from John 16:33 (WEB)",
+    verse: "“cheer up! I have overcome the world.” — from John 16:33 (WEBU)",
     body: "Tend this body well — know your numbers, do the daily work, and lean on good care. But hold one more truth gently: the most wonderfully made heart still wears out one day. That is true for every one of us. The hope this page finally points to isn't a perfect heart — it's the One who overcame death, so that we don't have to face it alone or afraid.",
     sign: "— Molecular pathologist, husband, and the one writing these stories",
     cta: "↑ Back to the top"

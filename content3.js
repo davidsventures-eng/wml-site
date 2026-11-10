@@ -14,7 +14,7 @@ window.WML3 = {
   meta: {
     title: "The Furnace Friend",
     subtitle: "Preventive health — why our moms bug us to eat our vegetables and move our bodies",
-    verse: "I praise you because I am fearfully and wonderfully made; your works are wonderful, I know that full well. — Psalm 139:14",
+    verse: "I will give thanks to you, for I am fearfully and wonderfully made. Your works are wonderful. My soul knows that very well. — Psalm 139:14",
     backbone: { t: "ACSM Physical Activity Guidelines", u: "https://acsm.org/physical-activity-guidelines-faqs/" }
   },
 

@@ -396,8 +396,8 @@
 
   function finish() {
     const s = P.secret, n = P.n;
-    $('doneT').textContent = s.verse.charAt(0).toUpperCase() + s.verse.slice(1);
-    $('doneRef').textContent = `${s.ref} (WEB)`;
+    $('doneT').textContent = s.verse;
+    $('doneRef').textContent = `${s.ref} (WEBU)`;
     $('donePrompt').textContent = s.prompt;
     const jk = `wml-seek-j${n}`;
     const j = $('journal'); j.value = store.get(jk) || '';

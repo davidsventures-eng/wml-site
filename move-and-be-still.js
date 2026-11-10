@@ -163,7 +163,7 @@
         { tag: "Pray & respond", body: "Thank You for this body I did not make — for the breath in my lungs and the strength I just spent. Help me to care for it as Yours, and to see the wonder You built into it. To God be the glory." }
       ] },
     { title: "Strength for the Weary", ref: "Isaiah 40:29–31",
-      verse: "He gives power to the weak. He increases the strength of him who has no might… those who wait for Yahweh will renew their strength.",
+      verse: "He gives power to the weak. He increases the strength of him who has no might. Even the youths faint and get weary, and the young men utterly fall; but those who wait for the LORD will renew their strength. They will mount up with wings like eagles. They will run, and not be weary. They will walk, and not faint.",
       teaching: "Some days the movement feels like a lot — that's honest. Physical strength is real and worth building, but Scripture points to a deeper strength that doesn't run out, given to the tired and the faint. Train your body, and lean on a strength beyond it.",
       prayer: "When I am weary, renew me — in body, and in the places training can't reach.",
       layers: [
@@ -173,7 +173,7 @@
         { tag: "Pray & respond", body: "When I am weary, renew me — in my body, and in the places training can't reach. I stop striving for a moment and wait on You. Be my strength today. To God be the glory." }
       ] },
     { title: "The Temple", ref: "1 Corinthians 6:19–20",
-      verse: "Or don’t you know that your body is a temple of the Holy Spirit who is in you… Therefore glorify God in your body and in your spirit, which are God’s.",
+      verse: "Or don’t you know that your body is a temple of the Holy Spirit who is in you, whom you have from God? You are not your own, for you were bought with a price. Therefore glorify God in your body and in your spirit, which are God’s.",
       teaching: "Caring for your body isn't vanity — it's stewardship. You're tending something entrusted to you. This movement, this breath, is a quiet way of honoring the One who dwells with you.",
       prayer: "Let the way I treat my body be an offering back to You.",
       layers: [
@@ -183,7 +183,7 @@
         { tag: "Pray & respond", body: "Let the way I treat my body be an offering back to You — how I move it, feed it, and rest it. Make this temple a place where Your presence is welcome. To God be the glory." }
       ] },
     { title: "Rest for the Restless", ref: "Matthew 11:28–29",
-      verse: "Come to me, all you who labor and are heavily burdened, and I will give you rest… you will find rest for your souls.",
+      verse: "Come to me, all you who labor and are heavily burdened, and I will give you rest. Take my yoke upon you and learn from me, for I am gentle and humble in heart; and you will find rest for your souls.",
       teaching: "We spend so much of the day pulled at by screens and noise. You just unplugged — that alone is a small rebellion against the hurry. But the deepest rest isn't a break; it's the One who offers rest for the soul itself. Come as you are.",
       prayer: "Quiet the noise in me. I bring You my tired mind and receive Your rest.",
       layers: [
