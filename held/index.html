@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Held | A 7-Day Guided Journal and Walk for Heavy Hearts | Wonderfully Made Labs</title>
+<meta name="description" content="Seven days for grief, stress, hurt and heartbreak: one promise from Scripture, a breath prayer, a gentle walk with audio guidance, and two journal questions each day. No sign-up needed." />
+<link rel="canonical" href="https://wonderfullymadelabs.com/held/" />
+<meta property="og:title" content="Held: a 7-day guided journal and walk" />
+<meta property="og:description" content="One promise a day, a breath prayer, and a gentle walk with the God who stays." />
+<meta property="og:image" content="https://wonderfullymadelabs.com/held/art/hero.jpg" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#23344a" />
+<link rel="icon" type="image/png" href="/assets/favicon-48.png" />
+<link rel="preconnect" href="https://api.fontshare.com" />
+<link href="https://api.fontshare.com/v2/css?f[]=chillax@500,600,700&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/site/nav.css?v=3" />
+<link rel="stylesheet" href="/site/home.css?v=3" />
+<script defer src="/site/nav.js?v=3"></script>
+<script defer data-domain="wonderfullymadelabs.com" src="https://plausible.io/js/script.tagged-events.js"></script>
+<script>window.plausible = window.plausible || function(){(window.plausible.q = window.plausible.q || []).push(arguments)}</script>
+<link rel="preload" as="image" href="/held/art/hero.jpg" />
+<style>
+.h-hero{padding:0;background:var(--navy);color:#f3ede0;overflow:hidden}
+.h-grid{display:grid;grid-template-columns:1.05fr .95fr;min-height:520px}
+.h-copy{padding:64px 48px 60px max(20px,calc((100vw - 1200px)/2 + 20px));display:flex;flex-direction:column;justify-content:center}
+.h-hero .eyebrow{color:var(--gold)}
+.h-hero h1{color:#fff;font-size:clamp(44px,6vw,76px);font-weight:700;max-width:11ch}
+.h-hero .lede{color:#e9e1cf;max-width:520px}
+.h-hero .hero-verse{color:#e4dac4;border-left-color:var(--gold)}
+.h-hero .hero-verse span{color:#cdbf9f}
+.h-art{position:relative;min-height:320px}
+.h-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.h-art::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 0%,rgba(35,52,74,0) 28%)}
+.h-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.h-cta .btn-line{color:#fff;border-color:rgba(255,255,255,.4)}
+.h-cta .btn-line:hover{border-color:#fff}
+.free-note{font-size:14px;color:#cdbf9f;margin:14px 0 0}
+
+.how{padding:56px 0 8px}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.how-grid div{background:#fff;border-radius:18px;padding:20px 20px 18px;box-shadow:0 0 0 1px rgba(35,52,74,.07)}
+.how-grid b{display:block;font-family:var(--alt);color:var(--navy);font-size:17px;margin:6px 0 4px}
+.how-grid span{color:var(--soft);font-size:15.5px}
+.how-grid i{font-style:normal;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--navy);font-family:var(--alt);font-weight:700;font-size:14px}
+
+.days{padding:48px 0 72px;scroll-margin-top:64px}
+.picker{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 26px;padding:0;list-style:none}
+.picker button{display:flex;align-items:center;gap:8px;border:1.5px solid rgba(35,52,74,.18);background:#fff;border-radius:999px;padding:9px 16px 9px 10px;min-height:44px;cursor:pointer;font-family:var(--alt);font-weight:600;font-size:15px;color:var(--navy)}
+.picker button .dot{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--cream-2);font-size:13px;font-weight:700}
+.picker button.done .dot{background:var(--teal);color:#fff}
+.picker button[aria-current="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.picker button[aria-current="true"] .dot{background:var(--gold);color:var(--navy)}
+.picker button:hover{border-color:var(--gold)}
+
+.day{background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 0 0 1px rgba(35,52,74,.08),0 30px 60px -40px rgba(35,52,74,.45)}
+.day-top{display:grid;grid-template-columns:.9fr 1.1fr}
+.day-img{position:relative;min-height:340px;background:var(--cream-2)}
+.day-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.day-head{padding:40px 40px 32px}
+.day-head h2{font-size:clamp(32px,4vw,46px);margin-bottom:18px}
+.promise{margin:0;padding:18px 20px;border-radius:16px;background:var(--cream);font-family:var(--display);color:var(--navy);font-size:clamp(19px,2vw,22px);line-height:1.4;font-weight:500}
+.promise cite{display:block;font-family:var(--alt);font-style:normal;font-size:13.5px;color:var(--soft);font-weight:600;margin-top:10px;letter-spacing:.02em}
+.also{margin:12px 0 0;color:var(--soft);font-size:15.5px;font-style:italic}
+.also span{font-style:normal;font-size:13px}
+.day-body{padding:8px 40px 40px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.blk{border-radius:18px;padding:22px 22px 20px;background:var(--cream)}
+.blk h3{font-family:var(--alt);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-d);margin:0 0 10px}
+.blk p{margin:0}
+.blk p+p{margin-top:10px}
+.blk.wide{grid-column:1/-1}
+.blk.faith p{font-family:var(--display);color:var(--navy);font-size:20px;line-height:1.35;font-weight:500}
+.listen{background:var(--navy);color:#e9e1cf}
+.listen h3{color:var(--gold)}
+.listen audio{width:100%;margin-top:14px;height:44px}
+.listen .meta{font-size:14px;color:#cdbf9f;margin-top:8px}
+.listen details{margin-top:12px}
+.listen summary{cursor:pointer;font-family:var(--alt);font-weight:600;color:#fff;font-size:15px}
+.listen .tx{font-size:15px;color:#dcd3bf;margin-top:8px;white-space:pre-line}
+.bp{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+.bp div{background:#fff;border-radius:14px;padding:14px}
+.bp small{display:block;font-family:var(--alt);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.bp b{display:block;font-family:var(--display);color:var(--navy);font-weight:500;font-size:19px;line-height:1.25;margin-top:4px}
+.journal label{display:block;font-weight:700;color:var(--navy);margin:14px 0 8px;font-size:16.5px}
+.journal label:first-of-type{margin-top:0}
+.journal textarea{font:inherit;font-size:16px;width:100%;min-height:120px;padding:14px 16px;border-radius:14px;border:1.5px solid rgba(35,52,74,.18);background:#fff;color:var(--ink);resize:vertical}
+.journal textarea:focus{border-color:var(--teal);outline:none;box-shadow:0 0 0 3px rgba(42,125,140,.15)}
+.saved{font-size:13.5px;color:var(--soft);margin-top:8px;min-height:1.3em}
+.pray p{font-style:italic;font-size:18px;color:var(--navy)}
+.day-foot{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:0 40px 36px}
+.day-foot .fine{flex:1 1 240px;font-size:14px;color:var(--soft);margin:0}
+.btn[disabled]{opacity:.5;cursor:default;transform:none}
+button.btn{cursor:pointer;font-family:var(--alt)}
+
+.tools{padding:0 0 64px}
+.tools-in{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+.tools .card{background:#fff;border-radius:22px;padding:28px;box-shadow:0 0 0 1px rgba(35,52,74,.08)}
+.tools h2{font-size:28px;margin-bottom:8px}
+.tools .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.next a{display:block;text-decoration:none;color:var(--ink);padding:12px 14px;border-radius:12px;background:var(--cream);margin-top:8px}
+.next a b{display:block;color:var(--navy);font-family:var(--alt)}
+.next a span{font-size:14px;color:var(--soft)}
+.next a:hover{box-shadow:0 0 0 2px var(--gold)}
+.care{max-width:860px;margin:0 auto;padding:0 20px 24px}
+.care p{background:#fff;border-radius:14px;padding:14px 18px;box-shadow:0 0 0 1px rgba(168,69,42,.25);font-size:15px;margin:0 0 10px}
+.glory{text-align:center;font-family:var(--display);color:var(--navy);font-size:20px;padding:10px 0 56px;margin:0}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);opacity:0;background:var(--navy);color:#fff;padding:12px 18px;border-radius:999px;font-family:var(--alt);font-weight:600;font-size:15px;transition:all .25s;pointer-events:none;z-index:50}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media (max-width:900px){
+  .h-grid{grid-template-columns:1fr;min-height:0}
+  .h-art{order:-1;min-height:240px}
+  .h-art::after{background:linear-gradient(0deg,var(--navy) 0%,rgba(35,52,74,0) 55%)}
+  .h-copy{padding:8px 20px 44px}
+  .how-grid{grid-template-columns:1fr}
+  .day-top{grid-template-columns:1fr}
+  .day-img{min-height:220px}
+  .day-head{padding:26px 22px 20px}
+  .day-body{grid-template-columns:1fr;padding:4px 22px 24px;gap:14px}
+  .day-foot{padding:0 22px 26px}
+  .day-foot .btn{flex:1 1 100%}
+  .tools-in{grid-template-columns:1fr}
+  .tools .card{padding:22px}
+}
+@media (max-width:420px){.bp{grid-template-columns:1fr}}
+@media print{
+  .nav,header,footer,.h-hero,.how,.picker,.listen,.day-foot,.tools,.toast,.care,.glory,#site-nav,.site-footer{display:none!important}
+  body.home{background:#fff}
+  .days{padding:0}
+  .day{box-shadow:none}
+  .day-img{display:none}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","url":"https://wonderfullymadelabs.com/held/","name":"Held: a 7-day guided journal and walk","description":"Seven days of Scripture, breath prayer, a gentle walk with audio guidance, and journal questions for grief, stress, hurt and heartbreak.","publisher":{"@type":"Organization","name":"Wonderfully Made Labs"}}</script>
+</head>
+<body class="home">
+<main id="main">
+<section class="h-hero" aria-labelledby="hH">
+  <div class="h-grid">
+    <div class="h-copy">
+      <p class="eyebrow">Held &middot; 7 days</p>
+      <h1 id="hH">You are held.</h1>
+      <p class="lede">For grief, stress, hurt and heartbreak. Each day brings one promise from Scripture, a breath prayer, a gentle walk with a guide in your ear, and two questions for your journal. About fifteen minutes a day with the God who stays.</p>
+      <div class="h-cta">
+        <a class="btn btn-gold" href="#days" id="startBtn" data-t="held_start">Start Day 1</a>
+        <a class="btn btn-line" href="/held/Held_7-Day_Journal.pdf" download data-t="held_pdf">Printable journal (PDF)</a>
+      </div>
+      <p class="free-note">No sign-up needed. What you write stays on this device.</p>
+      <p class="hero-verse">&ldquo;The LORD is near to those who have a broken heart, and saves those who have a crushed spirit.&rdquo; <span>Psalm 34:18 (WEBU)</span></p>
+    </div>
+    <div class="h-art"><img src="/held/art/hero.jpg" alt="An old stone archway with its wooden door open onto a sunlit path through wildflowers" width="1600" height="900" fetchpriority="high" /></div>
+  </div>
+</section>
+
+<section class="how" aria-labelledby="howH">
+  <div class="wrap">
+    <p class="eyebrow">How each day works</p>
+    <h2 id="howH">Listen, walk, then write.</h2>
+    <div class="how-grid">
+      <div><i>1</i><b>Press play and walk</b><span>A calm voice reads the day&rsquo;s promise and walks with you for about five minutes. If you can&rsquo;t walk today, sit by a window and listen.</span></div>
+      <div><i>2</i><b>Pray with your breath</b><span>Breathe in one short line, breathe out another. A long, slow exhale helps your body settle while your heart turns to Him.</span></div>
+      <div><i>3</i><b>Write two answers</b><span>Two honest questions. Type here and it saves on your device, or print the journal and write by hand.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="days" id="days" aria-labelledby="daysH">
+  <div class="wrap">
+    <p class="eyebrow" id="progress">Your seven days</p>
+    <h2 id="daysH">Choose your day.</h2>
+    <ol class="picker" id="picker" aria-label="Days"></ol>
+    <article class="day" id="day" tabindex="-1" aria-live="polite"></article>
+  </div>
+</section>
+
+<section class="tools" aria-label="Your journal">
+  <div class="wrap tools-in">
+    <div class="card">
+      <h2>Keep what you wrote.</h2>
+      <p class="sub">Your answers stay in this browser on this device. Download a copy to keep, or print the journal pages and write by hand.</p>
+      <div class="acts">
+        <button class="btn btn-gold" type="button" id="dlBtn">Download my journal</button>
+        <a class="btn btn-line" href="/held/Held_7-Day_Journal.pdf" download data-t="held_pdf">Printable journal (PDF)</a>
+        <button class="btn btn-line" type="button" id="clearBtn">Clear my answers</button>
+      </div>
+    </div>
+    <div class="card next">
+      <h2>When you need more</h2>
+      <a href="/walk/" data-t="held_next_walk"><b>Walk with Him</b><span>Start from how you feel right now</span></a>
+      <a href="/breathe/" data-t="held_next_breathe"><b>Breath Prayer</b><span>Three quiet minutes, breathing a verse</span></a>
+      <a href="/jesus/#pray" data-t="held_next_pray"><b>Ask us to pray for you</b><span>Share what is heavy. It stays private.</span></a>
+      <a href="/jesus/" data-t="held_next_jesus"><b>Who is Jesus?</b><span>The good news, simply</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="care">
+  <p><b>If you are in danger or thinking about ending your life,</b> please call or text <a href="tel:988">988</a> (the Suicide &amp; Crisis Lifeline in the US) or your local emergency number now. You are not alone.</p>
+  <p>Held is for encouragement and prayer. It isn&rsquo;t a replacement for care from a doctor, counselor or pastor. If grief or worry feels too heavy to carry, please reach out to someone you trust.</p>
+</div>
+<p class="glory">To God be the glory.</p>
+</main>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  var D = [{"n": 1, "slug": "near", "title": "He is near", "need": "For grief", "ref": "Psalm 34:18", "key": "PSA 34:18", "verse": "The LORD is near to those who have a broken heart, and saves those who have a crushed spirit.", "also": ["Matthew 5:4", "MAT 5:4"], "wonder": "Grief lives in the body, not only the mind. It is common for sleep, appetite and focus to change for a while after a loss. That is not weakness. You were made to love, and love that loses someone aches.", "faith": "God is not waiting for you to pull yourself together. He is near to the brokenhearted right now, in the middle of it.", "bin": "You are near", "bout": "I am not alone", "walk": "Walk for about ten minutes at an easy pace, slow enough that you could still talk. Look for one thing that is still growing.", "q1": "Who or what are you grieving today? Tell Him their name, or what you miss most.", "q2": "Where did you notice Him near today, even a little?", "prayer": "Lord, You are near to the brokenhearted. Here is my heart. Stay close to me today. Amen.", "also_text": "Blessed are those who mourn, for they shall be comforted.", "script": "Welcome to Held, day 1. He is near. Find a safe place to walk, at whatever pace your body allows today. If walking isn't possible, you can sit by a window and simply listen. Here is today's promise, from Psalm 34:18. The Lord is near to those who have a broken heart, and saves those who have a crushed spirit. Grief lives in the body, not only the mind. It is common for sleep, appetite and focus to change for a while after a loss. That is not weakness. You were made to love, and love that loses someone aches. God is not waiting for you to pull yourself together. He is near to the brokenhearted right now, in the middle of it. Let's begin walking. As you go, we'll pray with our breath. Breathe in: You are near. Breathe out: I am not alone. Again. Breathe in: You are near. Breathe out: I am not alone. Keep walking, and keep praying that with each breath. I'll be quiet for a little while.\n\n(Quiet walking)\n\nStill walking with you. Look for one thing that is still growing. Breathe in: You are near. Breathe out: I am not alone. You don't have to feel anything special. Just keep walking with Him.\n\n(Quiet walking)\n\nWhen you're ready, begin to turn toward home. Later today, open your journal and sit with this: Who or what are you grieving today? Tell Him their name, or what you miss most. Let's pray. Lord, You are near to the brokenhearted. Here is my heart. Stay close to me today. Amen. One more time, today's promise. The Lord is near to those who have a broken heart, and saves those who have a crushed spirit. That's day 1. Tomorrow, we'll walk again. You are held.", "mins": 5, "alt": "A footpath through tall grass beside a misty lake at dawn, with a small wooden bench by the shore"}, {"n": 2, "slug": "breathe", "title": "Breathe with Him", "need": "For the racing mind", "ref": "Philippians 4:6–7", "key": "PHI 4:6-7", "verse": "In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus.", "also": null, "wonder": "When you breathe out slowly, your heart rate gently slows. A long exhale engages the calming side of your nervous system, partly through the vagus nerve, which runs from your brainstem down to your heart and gut.", "faith": "God does not scold the worried mind. He invites you to bring Him the whole list, with thanksgiving, and His peace will stand guard over your heart and thoughts.", "bin": "I bring this to You", "bout": "Your peace will guard me", "walk": "Walk for about ten minutes. As you go, name three things you can see, two you can hear and one you can feel.", "q1": "Write the whole list of what is weighing on you. Beside each one, write: I give this to You.", "q2": "What is one thing you can thank Him for today?", "prayer": "Father, I bring You everything on my mind. Guard my heart and my thoughts in Christ Jesus. Amen.", "script": "Welcome to Held, day 2. Breathe with Him. Welcome back. Find a safe place to walk, at whatever pace your body allows. Here is today's promise, from Philippians 4:6 to 7. In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus. When you breathe out slowly, your heart rate gently slows. A long exhale engages the calming side of your nervous system, partly through the vagus nerve, which runs from your brainstem down to your heart and gut. God does not scold the worried mind. He invites you to bring Him the whole list, with thanksgiving, and His peace will stand guard over your heart and thoughts. Let's begin walking. As you go, we'll pray with our breath. Breathe in: I bring this to You. Breathe out: Your peace will guard me. Again. Breathe in: I bring this to You. Breathe out: Your peace will guard me. Keep walking, and keep praying that with each breath. I'll be quiet for a little while.\n\n(Quiet walking)\n\nStill walking with you. As you go, name three things you can see, two you can hear and one you can feel. Breathe in: I bring this to You. Breathe out: Your peace will guard me. You don't have to feel anything special. Just keep walking with Him.\n\n(Quiet walking)\n\nWhen you're ready, begin to turn toward home. Later today, open your journal and sit with this: Write the whole list of what is weighing on you. Beside each one, write: I give this to You. Let's pray. Father, I bring You everything on my mind. Guard my heart and my thoughts in Christ Jesus. Amen. One more time, today's promise. In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus. That's day 2. Tomorrow, we'll walk again. You are held.", "mins": 5, "alt": "A misty meadow at sunrise with soft light across the grass and low hills"}, {"n": 3, "slug": "stays", "title": "His love stays", "need": "For heartbreak", "ref": "Romans 8:38–39", "key": "ROM 8:38-39", "verse": "For I am persuaded that neither death, nor life, nor angels, nor principalities, nor things present, nor things to come, nor powers, nor height, nor depth, nor any other created thing will be able to separate us from God’s love which is in Christ Jesus our Lord.", "also": null, "wonder": "Being left out or let go can truly hurt. Researchers have found that social rejection activates some of the same brain areas involved in physical pain. The ache you feel is real.", "faith": "A person may withdraw their love. God cannot be talked out of His. Nothing in all creation can separate you from His love in Christ Jesus.", "bin": "Nothing can separate", "bout": "me from Your love", "walk": "Walk for about ten minutes. Look for something that has stood for a long time: an old tree, a stone wall, a hill.", "q1": "What words were spoken over you that still hurt?", "q2": "Now write what God says, with your name in it: Nothing can separate ___ from My love.", "prayer": "Lord Jesus, when others leave, You stay. Let me rest in a love that does not let go. Amen.", "script": "Welcome to Held, day 3. His love stays. Welcome back. Find a safe place to walk, at whatever pace your body allows. Here is today's promise, from Romans 8:38 to 39. For I am persuaded that neither death, nor life, nor angels, nor principalities, nor things present, nor things to come, nor powers, nor height, nor depth, nor any other created thing will be able to separate us from God's love which is in Christ Jesus our Lord. Being left out or let go can truly hurt. Researchers have found that social rejection activates some of the same brain areas involved in physical pain. The ache you feel is real. A person may withdraw their love. God cannot be talked out of His. Nothing in all creation can separate you from His love in Christ Jesus. Let's begin walking. As you go, we'll pray with our breath. Breathe in: Nothing can separate. Breathe out: me from Your love. Again. Breathe in: Nothing can separate. Breathe out: me from Your love. Keep walking, and keep praying that with each breath. I'll be quiet for a little while.\n\n(Quiet walking)\n\nStill walking with you. Look for something that has stood for a long time: an old tree, a stone wall, a hill. Breathe in: Nothing can separate. Breathe out: me from Your love. You don't have to feel anything special. Just keep walking with Him.\n\n(Quiet walking)\n\nWhen you're ready, begin to turn toward home. Later today, open your journal and sit with this: What words were spoken over you that still hurt? Let's pray. Lord Jesus, when others leave, You stay. Let me rest in a love that does not let go. Amen. One more time, today's promise. For I am persuaded that neither death, nor life, nor angels, nor principalities, nor things present, nor things to come, nor powers, nor height, nor depth, nor any other created thing will be able to separate us from God's love which is in Christ Jesus our Lord. That's day 3. Tomorrow, we'll walk again. You are held.", "mins": 5, "alt": "An ancient olive tree on a sunlit hillside with a path passing beside it"}, {"n": 4, "slug": "rest", "title": "Come and rest", "need": "For the weary", "ref": "Matthew 11:28–29", "key": "MAT 11:28-29", "verse": "“Come to me, all you who labor and are heavily burdened, and I will give you rest. Take my yoke upon you and learn from me, for I am gentle and humble in heart; and you will find rest for your souls.", "also": null, "wonder": "Rest is part of how you were made. During deep sleep your brain is busy: it sorts and stores memories, and researchers have found it clears away waste that builds up while you are awake.", "faith": "Jesus does not say try harder. He says come to Me. He is gentle and humble in heart, and He gives rest to the weary.", "bin": "I come to You", "bout": "You give me rest", "walk": "Walk a little slower than usual, for five to ten minutes. Each time you breathe out, let your shoulders drop.", "q1": "What are you carrying that was never yours to carry?", "q2": "What would real rest look like for you this week?", "prayer": "Jesus, I am tired. I come to You. Teach me to rest in You. Amen.", "script": "Welcome to Held, day 4. Come and rest. Welcome back. Find a safe place to walk, at whatever pace your body allows. Here is today's promise, from Matthew 11:28 to 29. Come to me, all you who labor and are heavily burdened, and I will give you rest. Take my yoke upon you and learn from me, for I am gentle and humble in heart; and you will find rest for your souls. Rest is part of how you were made. During deep sleep your brain is busy: it sorts and stores memories, and researchers have found it clears away waste that builds up while you are awake. Jesus does not say try harder. He says come to Me. He is gentle and humble in heart, and He gives rest to the weary. Let's begin walking. As you go, we'll pray with our breath. Breathe in: I come to You. Breathe out: You give me rest. Again. Breathe in: I come to You. Breathe out: You give me rest. Keep walking, and keep praying that with each breath. I'll be quiet for a little while.\n\n(Quiet walking)\n\nStill walking with you. Each time you breathe out, let your shoulders drop. Breathe in: I come to You. Breathe out: You give me rest. You don't have to feel anything special. Just keep walking with Him.\n\n(Quiet walking)\n\nWhen you're ready, begin to turn toward home. Later today, open your journal and sit with this: What are you carrying that was never yours to carry? Let's pray. Jesus, I am tired. I come to You. Teach me to rest in You. Amen. One more time, today's promise. Come to me, all you who labor and are heavily burdened, and I will give you rest. Take my yoke upon you and learn from me, for I am gentle and humble in heart; and you will find rest for your souls. That's day 4. Tomorrow, we'll walk again. You are held.", "mins": 5, "alt": "A wooden bench in the shade of a large tree beside a quiet stream"}, {"n": 5, "slug": "tears", "title": "Every tear", "need": "For what you hold in", "ref": "Psalm 56:8", "key": "PSA 56:8", "verse": "You count my wanderings. You put my tears into your container. Aren’t they in your book?", "also": null, "wonder": "Your eyes make tears all day long, in tiny amounts, to keep them clean and protected. Tears are part of how you were made, and there is no shame in them.", "faith": "Not one of your tears has been missed. God keeps count of your wanderings, and He treasures every tear.", "bin": "You see me", "bout": "You hold my tears", "walk": "Walk for about ten minutes. Look for water or anything that catches the light: a puddle, a window, dew on a leaf.", "q1": "What have you been holding in?", "q2": "Write a prayer that begins: Lord, You saw when…", "prayer": "Father, You have seen every tear. Thank You that nothing about me is hidden from Your care. Amen.", "script": "Welcome to Held, day 5. Every tear. Welcome back. Find a safe place to walk, at whatever pace your body allows. Here is today's promise, from Psalm 56:8. You count my wanderings. You put my tears into your container. Aren't they in your book? Your eyes make tears all day long, in tiny amounts, to keep them clean and protected. Tears are part of how you were made, and there is no shame in them. Not one of your tears has been missed. God keeps count of your wanderings, and He treasures every tear. Let's begin walking. As you go, we'll pray with our breath. Breathe in: You see me. Breathe out: You hold my tears. Again. Breathe in: You see me. Breathe out: You hold my tears. Keep walking, and keep praying that with each breath. I'll be quiet for a little while.\n\n(Quiet walking)\n\nStill walking with you. Look for water or anything that catches the light: a puddle, a window, dew on a leaf. Breathe in: You see me. Breathe out: You hold my tears. You don't have to feel anything special. Just keep walking with Him.\n\n(Quiet walking)\n\nWhen you're ready, begin to turn toward home. Later today, open your journal and sit with this: What have you been holding in? Let's pray. Father, You have seen every tear. Thank You that nothing about me is hidden from Your care. Amen. One more time, today's promise. You count my wanderings. You put my tears into your container. Aren't they in your book? That's day 5. Tomorrow, we'll walk again. You are held.", "mins": 5, "alt": "Wildflowers along a garden path beside a small pool reflecting the golden sky"}, {"n": 6, "slug": "sings", "title": "He sings over you", "need": "For feeling unwanted", "ref": "Zephaniah 3:17", "key": "ZEP 3:17", "verse": "The LORD, your God, is among you, a mighty one who will save. He will rejoice over you with joy. He will calm you in his love. He will rejoice over you with singing.", "also": null, "wonder": "Singing and humming stretch out your breath into long, slow exhales, the same rhythm that helps your body settle. That is one reason a quiet hymn can feel so calming.", "faith": "God does not love you grimly, from far away. He rejoices over you with joy, and He rejoices over you with singing.", "bin": "You rejoice over me", "bout": "You calm me in Your love", "walk": "Walk for about ten minutes. Softly hum a hymn or worship song you love as you go.", "q1": "What would it mean to believe that God delights in you?", "q2": "Write down a song or verse that has carried you.", "prayer": "Lord, thank You that You rejoice over me. Calm me in Your love today. Amen.", "script": "Welcome to Held, day 6. He sings over you. Welcome back. Find a safe place to walk, at whatever pace your body allows. Here is today's promise, from Zephaniah 3:17. The Lord, your God, is among you, a mighty one who will save. He will rejoice over you with joy. He will calm you in his love. He will rejoice over you with singing. Singing and humming stretch out your breath into long, slow exhales, the same rhythm that helps your body settle. That is one reason a quiet hymn can feel so calming. God does not love you grimly, from far away. He rejoices over you with joy, and He rejoices over you with singing. Let's begin walking. As you go, we'll pray with our breath. Breathe in: You rejoice over me. Breathe out: You calm me in Your love. Again. Breathe in: You rejoice over me. Breathe out: You calm me in Your love. Keep walking, and keep praying that with each breath. I'll be quiet for a little while.\n\n(Quiet walking)\n\nStill walking with you. Softly hum a hymn or worship song you love as you go. Breathe in: You rejoice over me. Breathe out: You calm me in Your love. You don't have to feel anything special. Just keep walking with Him.\n\n(Quiet walking)\n\nWhen you're ready, begin to turn toward home. Later today, open your journal and sit with this: What would it mean to believe that God delights in you? Let's pray. Lord, thank You that You rejoice over me. Calm me in Your love today. Amen. One more time, today's promise. The Lord, your God, is among you, a mighty one who will save. He will rejoice over you with joy. He will calm you in his love. He will rejoice over you with singing. That's day 6. Tomorrow, we'll walk again. You are held.", "mins": 5, "alt": "A hillside of wildflowers at golden hour with birds in a glowing sky"}, {"n": 7, "slug": "new", "title": "New every morning", "need": "For tomorrow", "ref": "Lamentations 3:22–23", "key": "LAM 3:22-23", "verse": "It is because of the LORD’s loving kindnesses that we are not consumed, because his mercies don’t fail. They are new every morning. Great is your faithfulness.", "also": ["Isaiah 41:10", "ISA 41:10"], "wonder": "Your body is always renewing. The lining of your gut replaces itself every few days, and the outer layer of your skin renews over a few weeks.", "faith": "His mercies do not run out. They are new every morning. Whatever tomorrow holds, His faithfulness will already be there.", "bin": "Your mercies are new", "bout": "Great is Your faithfulness", "walk": "Walk for about ten minutes, toward the morning light if you can. Look for one sign of something new.", "q1": "Look back over these seven days. Where did He meet you?", "q2": "What is one promise you will carry with you from here?", "prayer": "Faithful God, thank You for walking with me these seven days. Your mercies are new this morning. I am held. Amen.", "also_text": "Don’t you be afraid, for I am with you. Don’t be dismayed, for I am your God. I will strengthen you. Yes, I will help you. Yes, I will uphold you with the right hand of my righteousness.", "script": "Welcome to Held, day 7. New every morning. Welcome back. Find a safe place to walk, at whatever pace your body allows. Here is today's promise, from Lamentations 3:22 to 23. It is because of the Lord's loving kindnesses that we are not consumed, because his mercies don't fail. They are new every morning. Great is your faithfulness. Your body is always renewing. The lining of your gut replaces itself every few days, and the outer layer of your skin renews over a few weeks. His mercies do not run out. They are new every morning. Whatever tomorrow holds, His faithfulness will already be there. Let's begin walking. As you go, we'll pray with our breath. Breathe in: Your mercies are new. Breathe out: Great is Your faithfulness. Again. Breathe in: Your mercies are new. Breathe out: Great is Your faithfulness. Keep walking, and keep praying that with each breath. I'll be quiet for a little while.\n\n(Quiet walking)\n\nStill walking with you. Look for one sign of something new. Breathe in: Your mercies are new. Breathe out: Great is Your faithfulness. You don't have to feel anything special. Just keep walking with Him.\n\n(Quiet walking)\n\nWhen you're ready, begin to turn toward home. Later today, open your journal and sit with this: Look back over these seven days. Where did He meet you? Let's pray. Faithful God, thank You for walking with me these seven days. Your mercies are new this morning. I am held. Amen. One more time, today's promise. It is because of the Lord's loving kindnesses that we are not consumed, because his mercies don't fail. They are new every morning. Great is your faithfulness. That's the end of Held. Thank you for walking these seven days. You are held. To God be the glory.", "mins": 5, "alt": "Sunrise over rolling hills with a path leading toward the light"}];
+  var KEY='wml-held';
+  var st={day:1,done:{},ans:{}};
+  try{var s=JSON.parse(localStorage.getItem(KEY)||'null');if(s)st=Object.assign(st,s);}catch(e){}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
+  function track(n,p){try{window.plausible&&window.plausible(n,{props:p||{}})}catch(e){}}
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function q(t){return t.replace(/^\u201c/,'').replace(/\u201d$/,'')}
+  var picker=document.getElementById('picker'),box=document.getElementById('day'),toast=document.getElementById('toast');
+  function flash(m){toast.textContent=m;toast.classList.add('show');clearTimeout(flash.t);flash.t=setTimeout(function(){toast.classList.remove('show')},2200)}
+  function nDone(){return Object.keys(st.done).length}
+  function drawPicker(){
+    picker.innerHTML=D.map(function(d){return '<li><button type="button" data-d="'+d.n+'" class="'+(st.done[d.n]?'done':'')+'" aria-current="'+(st.day===d.n)+'"><span class="dot">'+(st.done[d.n]?'\u2713':d.n)+'</span>'+esc(d.title)+'</button></li>'}).join('');
+    var c=nDone();document.getElementById('progress').textContent=c?('Your seven days \u00b7 '+c+' of 7 walked'):'Your seven days';
+    var sb=document.getElementById('startBtn');var nx=firstOpen();sb.textContent=c===0?'Start Day 1':(c===7?'Walk it again':'Continue with Day '+nx);sb.dataset.day=nx;
+  }
+  function firstOpen(){for(var i=1;i<=7;i++)if(!st.done[i])return i;return 1}
+  function draw(focus){
+    var d=D[st.day-1],a=st.ans[d.n]||{};
+    var tx=d.script;
+    box.innerHTML=
+     '<div class="day-top"><div class="day-img"><img src="/held/art/day'+d.n+'.jpg" alt="'+esc(d.alt)+'" width="1200" height="900" /></div>'+
+     '<div class="day-head"><p class="eyebrow">Day '+d.n+' of 7 \u00b7 '+esc(d.need)+'</p><h2>'+esc(d.title)+'</h2>'+
+     '<blockquote class="promise">\u201c'+esc(q(d.verse))+'\u201d<cite>'+esc(d.ref)+' (WEBU)</cite></blockquote>'+
+     (d.also?'<p class="also">\u201c'+esc(q(d.also_text))+'\u201d <span>'+esc(d.also[0])+' (WEBU)</span></p>':'')+
+     '</div></div>'+
+     '<div class="day-body">'+
+      '<div class="blk listen wide"><h3>Walk with the audio guide</h3><p>Press play, put the phone in your pocket, and walk at whatever pace your body allows.</p>'+
+       '<audio controls preload="none" src="/held/audio/held-day'+d.n+'.mp3" data-n="'+d.n+'"></audio><p class="meta">About '+d.mins+' minutes \u00b7 includes quiet stretches for walking</p>'+
+       '<details><summary>Read the words instead</summary><p class="tx">'+esc(tx)+'</p></details></div>'+
+      '<div class="blk"><h3>Wonder</h3><p>'+esc(d.wonder)+'</p></div>'+
+      '<div class="blk faith"><h3>Faith</h3><p>'+esc(d.faith)+'</p></div>'+
+      '<div class="blk"><h3>Breath prayer</h3><div class="bp"><div><small>Breathe in</small><b>'+esc(d.bin)+'</b></div><div><small>Breathe out</small><b>'+esc(d.bout)+'</b></div></div></div>'+
+      '<div class="blk"><h3>Today&rsquo;s walk</h3><p>'+esc(d.walk)+'</p></div>'+
+      '<div class="blk wide journal"><h3>Journal</h3>'+
+       '<label for="q1">'+esc(d.q1)+'</label><textarea id="q1" data-k="q1" placeholder="Write anything. He already knows.">'+esc(a.q1||'')+'</textarea>'+
+       '<label for="q2">'+esc(d.q2)+'</label><textarea id="q2" data-k="q2" placeholder="A word or a page is enough.">'+esc(a.q2||'')+'</textarea>'+
+       '<p class="saved" id="saved"></p></div>'+
+      '<div class="blk wide pray"><h3>Pray</h3><p>'+esc(d.prayer)+'</p></div>'+
+     '</div>'+
+     '<div class="day-foot"><p class="fine">'+(st.done[d.n]?'You walked this day. You can come back to it anytime.':'When you have walked and written, mark the day as done.')+'</p>'+
+      (st.day>1?'<button class="btn btn-line" type="button" data-step="-1">Day '+(d.n-1)+'</button>':'')+
+      '<button class="btn btn-gold" type="button" id="doneBtn">'+(d.n===7?(st.done[7]?'Day 7 walked':'I walked Day 7'):(st.done[d.n]?'Go to Day '+(d.n+1):'I walked today \u00b7 next day'))+'</button></div>';
+    var au=box.querySelector('audio');au.addEventListener('play',function(){track('Held audio play',{day:String(d.n)})},{once:true});
+    box.querySelectorAll('textarea').forEach(function(t){t.addEventListener('input',function(){st.ans[d.n]=st.ans[d.n]||{};st.ans[d.n][t.dataset.k]=t.value;save();var s=document.getElementById('saved');s.textContent='Saved on this device';clearTimeout(t._t);t._t=setTimeout(function(){s.textContent=''},1800)})});
+    if(focus){box.focus({preventScroll:true});document.getElementById('days').scrollIntoView({behavior:'smooth',block:'start'})}
+  }
+  function go(n,focus){st.day=Math.min(7,Math.max(1,n));save();drawPicker();draw(focus);try{history.replaceState(null,'','#day-'+st.day)}catch(e){}}
+  picker.addEventListener('click',function(e){var b=e.target.closest('button[data-d]');if(b)go(+b.dataset.d,true)});
+  box.addEventListener('click',function(e){
+    var s=e.target.closest('[data-step]');if(s){go(st.day+(+s.dataset.step),true);return}
+    if(e.target.closest('#doneBtn')){var n=st.day;if(!st.done[n]){st.done[n]=Date.now();track('Held day done',{day:String(n)})}save();
+      if(n<7){go(n+1,true);flash('Day '+n+' walked. Day '+(n+1)+' is ready when you are.')}else{drawPicker();draw(false);flash('Seven days walked. You are held.')}}
+  });
+  document.getElementById('startBtn').addEventListener('click',function(e){e.preventDefault();go(+this.dataset.day||1,true);track('Held start')});
+  document.getElementById('dlBtn').addEventListener('click',function(){
+    var out='HELD \u00b7 My 7-day journal\nwonderfullymadelabs.com/held/\n\n';
+    D.forEach(function(d){var a=st.ans[d.n]||{};out+='DAY '+d.n+': '+d.title.toUpperCase()+'\n\u201c'+q(d.verse)+'\u201d '+d.ref+' (WEBU)\n\n'+d.q1+'\n'+(a.q1||'')+'\n\n'+d.q2+'\n'+(a.q2||'')+'\n\n--------------------\n\n'});
+    out+='To God be the glory.\n';
+    var b=new Blob([out],{type:'text/plain'}),u=URL.createObjectURL(b),l=document.createElement('a');l.href=u;l.download='Held-my-journal.txt';document.body.appendChild(l);l.click();l.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000);track('Held journal download');flash('Your journal was downloaded');
+  });
+  var armed=false;document.getElementById('clearBtn').addEventListener('click',function(){
+    if(!armed){armed=true;this.textContent='Tap again to clear';var b=this;setTimeout(function(){armed=false;b.textContent='Clear my answers'},4000);return}
+    st.ans={};st.done={};save();armed=false;this.textContent='Clear my answers';go(1,false);flash('Your answers were cleared');
+  });
+  var m=location.hash.match(/day-(\d)/);go(m?+m[1]:(st.day||1),!!m);
+  setTimeout(function(){for(var i=1;i<=7;i++){var im=new Image();im.src='/held/art/day'+i+'.jpg'}},2000);
+})();
+</script>
+</body>
+</html>

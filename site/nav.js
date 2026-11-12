@@ -20,6 +20,7 @@
       { t: 'Guided Journals', d: 'For fear, grief, and heavy days', u: '/learn/#journals' }
     ]},
     { id: 'hard', label: 'Hard Seasons', blurb: 'He is near to those who have a broken heart', items: [
+      { t: 'I\u2019m grieving or heartbroken', d: 'Held: a 7-day journal and walk, with audio', u: '/held/' },
       { t: 'I just got a heart diagnosis', d: 'What is happening, what to do, what comes next', u: '/learn/#patient' },
       { t: 'Someone I love has cancer', d: 'A gentle companion for patients and families', u: '/learn/#cancer' },
       { t: 'I\u2019m scared or anxious', d: 'Name what you feel, then breathe and pray', u: '/still-tool.html' },
