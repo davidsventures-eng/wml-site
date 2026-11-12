@@ -9,6 +9,7 @@ Source for https://wonderfullymadelabs.com/mission/. Not deployed (see .vercelig
 3. Check at 1366px and 375px, commit with the Co-authored-by trailer, push (Vercel deploys).
 
 ## Rules
+- Public page shows FUNDED TO DATE only (sources: founder, sales, outside; given away). Never list individual charges or cost line items. `out` in ledger.json is a private record for the totals.
 - Keep the "not a nonprofit / not a donation / not tax-deductible" notice.
 - Anonymous: founder money is one line. No names, surnames or places.
 - Never claim everything is free. Sign off "To God be the glory."

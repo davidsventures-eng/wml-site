@@ -31,11 +31,11 @@ page=f'''<!DOCTYPE html>
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mission Funded | Where the Money Comes From and Where It Goes | Wonderfully Made Labs</title>
-<meta name="description" content="An open ledger for Wonderfully Made Labs: what has funded the work, what it has been spent on, and how any surplus will be given away. We are not a nonprofit, and money sent to us is not a donation." />
+<title>Mission Funded | Where the Money Comes From | Wonderfully Made Labs</title>
+<meta name="description" content="An open ledger for Wonderfully Made Labs: what has funded the work and how any surplus will be given away. We are not a nonprofit, and money sent to us is not a donation." />
 <link rel="canonical" href="https://wonderfullymadelabs.com/mission/" />
 <meta property="og:title" content="Mission Funded: an open ledger" />
-<meta property="og:description" content="What has funded the work, where it has gone, and how any surplus will be given away." />
+<meta property="og:description" content="What has funded the work and how any surplus will be given away." />
 <meta property="og:image" content="https://wonderfullymadelabs.com/assets/home_door.jpg" />
 <meta property="og:type" content="website" />
 <meta name="theme-color" content="#23344a" />
@@ -106,7 +106,7 @@ ol.steps{{list-style:none;padding:0;margin:0}}
 <main id="main">
 <section class="m-hero" aria-labelledby="mH"><div class="wrap">
   <p class="eyebrow">Mission Funded</p>
-  <h1 id="mH">Where the money comes from, and where it goes.</h1>
+  <h1 id="mH">Where the money comes from, and where it will go.</h1>
   <p class="lede">An open ledger for this work. The goal is to break even on what it costs to run, then give away whatever is left as resources for people in hard seasons.</p>
   {q('2CO 8:21','2 Corinthians 8:21','Having regard for honorable things, not only in the sight of the Lord, but also in the sight of men.')}
 </div></section>
@@ -120,24 +120,19 @@ ol.steps{{list-style:none;padding:0;margin:0}}
 
 <section class="sec" aria-labelledby="fH">
   <p class="eyebrow">The ledger</p>
-  <h2 id="fH">Funding and spending to date</h2>
-  <p class="intro">Every amount comes from a receipt. Founder money is shown as one anonymous line, because the point is the work, not who paid for it.</p>
+  <h2 id="fH">Funded to date</h2>
+  <p class="intro">Founder money is shown as one anonymous line, because the point is the work, not who paid for it.</p>
   {q('LUK 14:28','Luke 14:28','For which of you, desiring to build a tower, doesn’t first sit down and count the cost, to see if he has enough to complete it?')}
   <div class="kpis" style="margin-top:26px">
-    <div class="kpi"><small>Money in</small><b>{m(tin)}</b></div>
-    <div class="kpi"><small>Money spent</small><b>{m(tout)}</b></div>
+    <div class="kpi"><small>Funded to date</small><b>{m(tin)}</b></div>
+    <div class="kpi"><small>From sales</small><b>{m(L['in'][1][1])}</b></div>
     <div class="kpi"><small>Given away so far</small><b>{m(L['given'])}</b></div>
   </div>
-  <table class="led"><caption>Where the money came from</caption>
+  <table class="led"><caption>Where the funding came from</caption>
     <thead><tr><th>Source</th><th class="n">Amount</th></tr></thead>
     <tbody>{rows_in}</tbody>
-    <tfoot><tr><td>Total in</td><td class="n">{m(tin)}</td></tr></tfoot></table>
-  <table class="led"><caption>What it paid for</caption>
-    <thead><tr><th>Cost</th><th class="d">When</th><th class="n">Amount</th></tr></thead>
-    <tbody>{rows_out}</tbody>
-    <tfoot><tr><td>Total spent</td><td class="d"></td><td class="n">{m(tout)}</td></tr></tfoot></table>
-  <div class="bars" aria-hidden="true">{bars}</div>
-  <p class="fine">Last updated {L['updated']}. Ongoing costs: the domain renews at about $12 a year, and build credits are bought only as new work is made.</p>
+    <tfoot><tr><td>Funded to date</td><td class="n">{m(tin)}</td></tr></tfoot></table>
+  <p class="fine">Last updated {L['updated']}.</p>
 </section>
 
 <section class="sec" aria-labelledby="bH">
