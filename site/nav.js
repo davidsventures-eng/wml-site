@@ -166,7 +166,7 @@
         MENU.map(function (g) {
           return '<div class="wml-foot-col"><h4>' + esc(g.label) + '</h4>' + g.items.map(function (i) { return '<a href="' + i.u + '">' + esc(i.t) + '</a>'; }).join('') + '</div>';
         }).join('') +
-        '<div class="wml-foot-col"><h4>Serve</h4><a href="/#serve">Serve with us</a><a href="/color/#boardH">Fellowship board</a><a href="/free/">Free Printables</a><a href="/shop.html">The Shop</a><a href="https://www.etsy.com/shop/WonderfullyMadeLab" target="_blank" rel="noopener">Printables on Etsy</a><a href="https://buy.stripe.com/9B600ka9p5aiddBcX39Zm00" target="_blank" rel="noopener">Support the mission</a><a href="/learn/">The full library</a></div>' +
+        '<div class="wml-foot-col"><h4>Serve</h4><a href="/#serve">Serve with us</a><a href="/color/#boardH">Fellowship board</a><a href="/latest/">Latest videos &amp; posts</a><a href="/free/">Free Printables</a><a href="/shop.html">The Shop</a><a href="https://www.etsy.com/shop/WonderfullyMadeLab" target="_blank" rel="noopener">Printables on Etsy</a><a href="https://buy.stripe.com/9B600ka9p5aiddBcX39Zm00" target="_blank" rel="noopener">Support the mission</a><a href="/learn/">The full library</a></div>' +
         '</div><p class="wml-foot-fine">Scripture quotations are from the World English Bible Updated. Educational content, not medical advice. To God be the glory.</p>';
       document.body.appendChild(f);
     }
