@@ -14,10 +14,8 @@ def q(code,ref,text,partial=False):
     lab=('from ' if partial else '')+ref+' (WEBU)'
     return f'<blockquote class="mv"><p>&ldquo;{html.escape(text)}&rdquo;</p><cite>{lab}</cite></blockquote>'
 m=lambda x:f"${x:,.2f}"
-tin=sum(a for _,a in L['in']); tout=sum(r[2] for r in L['out'])
+tin=sum(a for _,a in L['in']); tout=sum(r[2] for r in L.get('out',[]))
 rows_in=''.join(f'<tr><td>{html.escape(n)}</td><td class="n">{m(a)}</td></tr>' for n,a in L['in'])
-rows_out=''.join(f'<tr><td><b>{html.escape(n)}</b><small>{html.escape(d)}</small></td><td class="d">{html.escape(w)}</td><td class="n">{m(a)}</td></tr>' for n,d,a,w in L['out'])
-bars=''.join(f'<div class="bar"><span class="bl">{html.escape(n)}</span><span class="bt"><i style="width:{max(0.6,a/tout*100):.1f}%"></i></span><span class="bv">{m(a)}</span></div>' for n,d,a,w in L['out'] if a>0)
 steps=[
  ("1","First, give back to God","The first 10% of every sale is set aside to give, before anything else is paid.",q('PRO 3:9','Proverbs 3:9','Honor the LORD with your substance, with the first fruits of all your increase;')),
  ("2","Pay what we owe","Running costs and taxes are paid next, on time and in full.",q('ROM 13:7','Romans 13:7','Therefore give everyone what you owe: if you owe taxes, pay taxes;',True)),
