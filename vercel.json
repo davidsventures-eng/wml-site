@@ -39,6 +39,46 @@
       ],
       "destination": "https://wonderfullymadelabs.com/:path*",
       "permanent": true
+    },
+    {
+      "source": "/held/Held_7-Day_Journal.pdf",
+      "destination": "/held/held-journal.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/held/audio/held-day1.mp3",
+      "destination": "/held/audio/Held-01-Day-One-He-Is-Near.mp3",
+      "permanent": false
+    },
+    {
+      "source": "/held/audio/held-day2.mp3",
+      "destination": "/held/audio/Held-02-Day-Two-He-Binds-Up-Wounds.mp3",
+      "permanent": false
+    },
+    {
+      "source": "/held/audio/held-day3.mp3",
+      "destination": "/held/audio/Held-03-Day-Three-He-Will-Never-Leave.mp3",
+      "permanent": false
+    },
+    {
+      "source": "/held/audio/held-day4.mp3",
+      "destination": "/held/audio/Held-04-Day-Four-His-Love-Cannot-Be-Lost.mp3",
+      "permanent": false
+    },
+    {
+      "source": "/held/audio/held-day5.mp3",
+      "destination": "/held/audio/Held-05-Day-Five-Cast-Your-Cares.mp3",
+      "permanent": false
+    },
+    {
+      "source": "/held/audio/held-day6.mp3",
+      "destination": "/held/audio/Held-06-Day-Six-Through-the-Valley.mp3",
+      "permanent": false
+    },
+    {
+      "source": "/held/audio/held-day7.mp3",
+      "destination": "/held/audio/Held-07-Day-Seven-Strength-for-the-Next-Step.mp3",
+      "permanent": false
     }
   ]
 }
