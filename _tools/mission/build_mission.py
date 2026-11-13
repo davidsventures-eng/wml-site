@@ -60,7 +60,7 @@ page=f'''<!DOCTYPE html>
 .sec{{max-width:880px;margin:0 auto;padding:64px 20px 0}}
 .sec>h2{{font-size:clamp(28px,3.4vw,38px);margin-bottom:10px}}
 .sec>p.intro{{color:var(--soft);max-width:640px;margin:0 0 24px}}
-.kpis{{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:8px 0 26px}}
+.kpis{{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:8px 0 26px}}
 .kpi{{background:#fff;border-radius:14px;padding:18px 20px;box-shadow:0 0 0 1px rgba(35,52,74,.08)}}
 .kpi small{{display:block;font-family:var(--alt);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:var(--soft)}}
 .kpi b{{display:block;font-family:var(--display);font-size:30px;color:var(--navy);margin-top:6px;font-variant-numeric:tabular-nums}}
@@ -123,10 +123,9 @@ ol.steps{{list-style:none;padding:0;margin:0}}
   {q('LUK 14:28','Luke 14:28','For which of you, desiring to build a tower, doesn’t first sit down and count the cost, to see if he has enough to complete it?')}
   <div class="kpis" style="margin-top:26px">
     <div class="kpi"><small>Funded to date</small><b>{m(tin)}</b></div>
-    <div class="kpi"><small>From sales</small><b>{m(L['in'][1][1])}</b></div>
     <div class="kpi"><small>Given away so far</small><b>{m(L['given'])}</b></div>
   </div>
-  <table class="led"><caption>Where the funding came from</caption>
+  <table class="led"><caption>Contributions to the work</caption>
     <thead><tr><th>Source</th><th class="n">Amount</th></tr></thead>
     <tbody>{rows_in}</tbody>
     <tfoot><tr><td>Funded to date</td><td class="n">{m(tin)}</td></tr></tfoot></table>
@@ -156,21 +155,21 @@ ol.steps{{list-style:none;padding:0;margin:0}}
 <section class="sec" aria-labelledby="hH">
   <p class="eyebrow">How we handle money</p>
   <h2 id="hH">Five rules, in this order</h2>
-  <p class="intro">Any money that comes in, from sales or contributions, follows these steps.</p>
+  <p class="intro">The first 10% of every sale is set aside for giving. Running costs and taxes, no debt, a small reserve, and surplus giving follow in that order.</p>
   <ol class="steps">{steps_html}</ol>
 </section>
 
 <section class="sec" aria-labelledby="gH">
   <p class="eyebrow">Where the giving goes</p>
   <h2 id="gH">Resources in bulk, for people in hard seasons</h2>
-  <p class="intro">Once sales cover the cost of running, the giving share buys books, journals and printed resources in bulk for groups that walk with people in hard seasons. Each gift will be listed here with what was sent and where it went (the kind of group, not names).</p>
+  <p class="intro">The firstfruits share is set aside from the first sale. After running costs and taxes are paid and the reserve is in place, any surplus also goes toward books, journals and printed resources in bulk for groups that walk with people in hard seasons. Giving updates will describe the resources sent and the kind of group served, without identifying recipients or publishing individual charges.</p>
   <div class="grid2">
     <div class="card"><h3>Who we hope to serve</h3><ul>
       <li>Grief groups and hospice teams</li>
       <li>Hospital chaplains and children’s hospitals</li>
       <li>Churches and pregnancy centers</li></ul></div>
     <div class="card"><h3>What we will post</h3><ul>
-      <li>What was bought, and what it cost</li>
+      <li>Resources given and the total given away to date</li>
       <li>What kind of group received it</li>
       <li>The date it was sent</li></ul></div>
   </div>
@@ -188,7 +187,7 @@ ol.steps{{list-style:none;padding:0;margin:0}}
     <a class="btn btn-line" href="/jesus/#pray" data-t="mission_pray">Pray with us</a>
     <a class="btn btn-line" href="https://buy.stripe.com/9B600ka9p5aiddBcX39Zm00" target="_blank" rel="noopener" data-t="mission_contribute">Contribute to the work</a>
   </div>
-  <p class="fine">A contribution is a gift to a small business, not a donation to a charity. It is not tax-deductible, and it is counted above as outside contributions.</p>
+  <p class="fine">A contribution is a gift to a small business, not a donation to a charity. It is not tax-deductible, and it is counted above as other contributions.</p>
   {q('2CO 8:20','2 Corinthians 8:20','We are avoiding this, that any man should blame us concerning this abundance which is administered by us.')}
   {q('1CO 4:2','1 Corinthians 4:2','Here, moreover, it is required of stewards that they be found faithful.')}
 </section>
