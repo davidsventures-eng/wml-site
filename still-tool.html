@@ -87,8 +87,8 @@
   .allglory{text-align:center;font-family:'Fraunces',serif;color:var(--navy);margin-top:22px;font-size:15px}
   .allglory2{text-align:center;font-family:'Fraunces',serif;color:var(--navy);margin-top:18px;font-size:15px}
 </style>
-<link rel="stylesheet" href="/site/nav.css?v=3" />
-<script defer src="/site/nav.js?v=3"></script>
+<link rel="stylesheet" href="/site/nav.css?v=4" />
+<script defer src="/site/nav.js?v=4"></script>
 </head>
 <body>
 <div class="wrap">
@@ -169,6 +169,7 @@
     <div class="rtitle" id="r-title">The Anger</div>
     <div class="rsub" id="r-sub"></div>
     <div class="card" id="r-card"></div>
+    <p id="r-thoughts" hidden style="margin:14px 0 0;padding:14px 16px;border-radius:14px;background:#eaf3f4;color:#1d4f58;font-weight:600">Thoughts still spinning? Try <a href="/thoughts/">When your thoughts won't stop</a>: five minutes with a guided voice, calming water sounds, and Scripture.</p>
 
     <div class="cta">
       <h3>Want to keep going?</h3>
@@ -236,7 +237,7 @@
       write1:"Where you honestly are with work right now — the frustration and the hope both:",
       write2:"Now write this, and mean it: \"My worth is not in this. My worth is in the One who made me.\"",
       pn:'Laying It Down',
-      practice:"At the end of the workday, before you cross back into the rest of your life, pause at the door — literal or mental. Take one breath and pray: <em>\"I did what I could. The rest I leave with You.\"</em> You are telling your body the striving is over for today, letting cortisol fall — and telling your soul that its worth was never on the line to begin with.",
+      practice:"At the end of the workday, before you cross back into the rest of your life, pause at the door — literal or mental. Take one breath and pray: <em>\"I did what I could. The rest I leave with You.\"</em> You are telling your body the striving is over for today — and telling your soul that its worth was never on the line to begin with.",
       ret:"You came in worn thin by work that takes more than it gives. Hear this plainly: your worth was settled long before your first day on the job — assigned by the God who made you in His image — and nothing you do or fail to do can add to it or take from it. Bring the weariness to the Lord. He gives rest to the heavy-laden, and He is making you new."},
 
     "return":{title:'The Return',sub:"Coming back to the Word",
@@ -247,7 +248,7 @@
       write1:"What keeps you from returning to the Word — time, guilt, distraction, or something you haven't named:",
       write2:"Copy out, by hand, the one verse that has met you most. Then write why it reached you:",
       pn:'One Verse, Slowly',
-      practice:"Open to one verse — any verse. Read it out loud, slowly, three times. The slow reading engages the vagus nerve and settles the body; the repetition lets the words land. The first time to hear it, the second to let it settle, the third as if God were saying it directly to you — because in His Word, He is. One verse is enough to begin.",
+      practice:"Open to one verse — any verse. Read it out loud, slowly, three times. Slow, spoken prayer has been shown to slow breathing to about six breaths a minute (<a href='https://pmc.ncbi.nlm.nih.gov/articles/PMC61046/' target='_blank' rel='noopener'>BMJ, 2001</a>), which helps settle the body; the repetition lets the words land. The first time to hear it, the second to let it settle, the third as if God were saying it directly to you — because in His Word, He is. One verse is enough to begin.",
       ret:"You came in feeling the distance. But coming back was never meant to be a performance you pass or fail — it's a homecoming, and the door was never locked. Set the noise down, pick the Word up, and let Him meet you there. <em>Draw near, and He draws near.</em> He is making all things new, starting with you."},
 
     stillness:{title:'The Stillness',sub:'Practicing peace on purpose',
@@ -264,6 +265,7 @@
 
   function render(){
     var e=EMO[state.emotion];
+    var rt=document.getElementById('r-thoughts');if(rt)rt.hidden=['noise','impatience','work'].indexOf(state.emotion)<0;
     document.getElementById('r-title').textContent=e.title;
     document.getElementById('r-sub').textContent=e.sub;
     var noticeLines={

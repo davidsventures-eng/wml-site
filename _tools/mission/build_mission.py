@@ -43,7 +43,7 @@ page=f'''<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/site/nav.css?v=3" />
+<link rel="stylesheet" href="/site/nav.css?v=4" />
 <link rel="stylesheet" href="/site/home.css?v=3" />
 <script defer src="/site/nav.js?v=4"></script>
 <script defer data-domain="wonderfullymadelabs.com" src="https://plausible.io/js/script.tagged-events.js"></script>

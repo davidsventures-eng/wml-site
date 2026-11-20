@@ -24,6 +24,7 @@
       { t: 'I just got a heart diagnosis', d: 'What is happening, what to do, what comes next', u: '/learn/#patient' },
       { t: 'Someone I love has cancer', d: 'A gentle companion for patients and families', u: '/learn/#cancer' },
       { t: 'I\u2019m scared or anxious', d: 'Name what you feel, then breathe and pray', u: '/still-tool.html' },
+      { t: 'My thoughts won\u2019t stop', d: 'Five minutes with a guided voice, water sounds, and Scripture', u: '/thoughts/', badge: 'New' },
       { t: 'I feel far from God', d: 'Finding Christ in the darkness, 31 days', u: '/prayer' },
       { t: 'Essays for the journey', d: 'Faith and medicine, written plainly', u: '/learn/#essays' }
     ]},
