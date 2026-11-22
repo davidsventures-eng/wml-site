@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lab Badges: Unlock Character Cards and Verse Badges | Wonderfully Made Labs</title>
+<meta name="description" content="Enter the code words from Wonderfully Made Labs books and printables to unlock character cards and Bible verse badges. No account, no sign-up, and nothing leaves your device." />
+<link rel="canonical" href="https://wonderfullymadelabs.com/lab/" /><link rel="icon" type="image/png" href="/assets/favicon-48.png" />
+<meta property="og:title" content="Lab Badges | Wonderfully Made Labs" /><meta property="og:description" content="Unlock character cards and verse badges with the code words in our books." />
+<meta property="og:image" content="https://wonderfullymadelabs.com/lab/img/iris.jpg" /><meta property="og:url" content="https://wonderfullymadelabs.com/lab/" />
+<style>
+:root{--navy:#1f2f4f;--gold:#c9a24a;--cream:#fbf6ea}
+*{box-sizing:border-box}body{margin:0;font-family:Georgia,serif;background:var(--cream);color:#2b2a28}
+header{background:var(--navy);color:#fff;text-align:center;padding:22px 20px 30px}header a{color:#fff}
+.nav{max-width:1000px;margin:0 auto 12px;display:flex;justify-content:space-between;font-family:system-ui,sans-serif;font-size:15px}.nav a{text-decoration:none}
+h1{margin:6px 0;font-size:clamp(28px,4.5vw,42px)}header p{color:#e9e4d6;max-width:640px;margin:0 auto}
+main{max-width:1000px;margin:0 auto;padding:24px 18px 40px}
+.box{background:#fff;border-radius:14px;box-shadow:0 10px 30px -18px rgba(0,0,0,.35);padding:18px;margin-bottom:22px}
+form{display:flex;gap:10px;flex-wrap:wrap}input{flex:1;min-width:200px;font-size:18px;padding:12px;border:2px solid #d8cfb8;border-radius:10px;text-transform:uppercase;letter-spacing:.06em}
+button{font-size:17px;padding:12px 20px;border:0;border-radius:10px;background:var(--gold);color:#1f2f4f;font-weight:700;cursor:pointer}
+#msg{min-height:1.4em;margin:10px 0 0;font-family:system-ui,sans-serif}
+.rank{font-family:system-ui,sans-serif}.bar{height:12px;background:#eee6d2;border-radius:6px;overflow:hidden;margin-top:8px}.bar i{display:block;height:100%;background:var(--gold);width:0}
+h2{color:var(--navy);margin:8px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.card{background:#fff;border-radius:14px;padding:12px;box-shadow:0 10px 30px -18px rgba(0,0,0,.35);text-align:center}
+.card img{width:100%;height:180px;object-fit:contain;background:#fff}
+.card.locked{opacity:.55}.card.locked img{filter:blur(6px) grayscale(1)}
+.card h3{margin:8px 0 4px;color:var(--navy)}.card p{margin:0;font-size:15px}
+.badge{display:flex;align-items:center;justify-content:center;width:120px;height:120px;margin:4px auto 8px;border-radius:50%;background:radial-gradient(circle,#fff6d9,#e8c96a);border:4px solid var(--gold);font-weight:700;color:var(--navy);font-size:16px;padding:10px}
+.locked .badge{background:#eee;border-color:#ccc;color:#999}
+.small{font-family:system-ui,sans-serif;font-size:14px;color:#5d5a52}
+footer{text-align:center;padding:10px 18px 40px;font-family:system-ui,sans-serif;font-size:14px;color:#5d5a52}footer .g{font-family:Georgia,serif;color:var(--navy);font-size:20px}
+</style>
+<script defer data-domain="wonderfullymadelabs.com" src="https://plausible.io/js/script.tagged-events.js"></script>
+</head><body>
+<header><div class="nav"><a href="/">← Wonderfully Made Labs</a><a href="/shop.html?utm_source=wml_site&amp;utm_medium=lab">Shop</a></div>
+<h1>Lab Badges</h1><p>Every Wonderfully Made Labs book and printable ends with secret code words. Type one in to unlock a character card or a Bible verse badge.</p></header>
+<main>
+<div class="box">
+<form id="f"><label for="code" class="small" style="width:100%">Code word</label><input id="code" autocomplete="off" placeholder="Code word" /><button>Unlock</button></form>
+<p id="msg" role="status"></p>
+<div class="rank"><strong id="rank">Explorer</strong> · <span id="count">0</span> of <span id="total">0</span> unlocked<div class="bar"><i id="bar"></i></div></div>
+</div>
+<h2>Character cards</h2><div class="grid" id="chars"></div>
+<h2 style="margin-top:26px">Verse badges</h2><div class="grid" id="verses"></div>
+<div class="box" style="margin-top:26px">
+<h2>How it works</h2>
+<p>Look for the Lab Badge page at the back of our books and printables. Each code word unlocks something new. Ranks go from Explorer to Investigator to Scientist, and the last rank is "Give God the glory", because every wonder we find points back to Him.</p>
+<p class="small">No account, no names, no email. Progress is saved only in this browser on this device, and nothing is sent anywhere. Clearing your browser data resets it. <button type="button" id="reset" style="font-size:13px;padding:6px 10px;background:#eee6d2">Reset my badges</button></p>
+</div>
+</main>
+<footer><div class="g">To God be the glory.</div>Scripture quoted from the World English Bible Updated (WEBU, public domain). Characters by Cher.</footer>
+<script>
+(function(){
+var CHARS=[
+ {id:'iris',code:'MANYEYES',name:'Iris',img:'img/iris.jpg',text:'Iris watches over the eyes. She has many eyes on stalks and one big eye in the middle of her face. Your eyes can tell apart about a million colors.'},
+ {id:'sunny',code:'GOODLIGHT',name:'Sunny',img:'img/sunny.jpg',text:'Sunny has one eye, and he always wears his glasses. He looks closely at everything, because God made every part of you with care.'},
+ {id:'tempo',code:'HEARTBEAT',name:'Tempo',img:'img/tempo.jpg',text:'Tempo keeps the beat. His one eye sits on a stalk on top of his head. Your heart beats about 100,000 times a day.'}
+];
+var VERSES=[
+ {id:'psa139',code:'WONDERFUL',ref:'Psalm 139:14',text:'"I will give thanks to you, for I am fearfully and wonderfully made." from Psalm 139:14 (WEBU)'},
+ {id:'psa56',code:'TRUSTHIM',ref:'Psalm 56:3',text:'"When I am afraid, I will put my trust in you." Psalm 56:3 (WEBU)'},
+ {id:'psa4',code:'SLEEPSAFE',ref:'Psalm 4:8',text:'"In peace I will both lay myself down and sleep, for you alone, LORD, make me live in safety." Psalm 4:8 (WEBU)'},
+ {id:'phi4',code:'PRAYFIRST',ref:'Philippians 4:6',text:'"In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God." Philippians 4:6 (WEBU)'},
+ {id:'gen1',code:'LETTHERE',ref:'Genesis 1:3',text:'"God said, \u201cLet there be light,\u201d and there was light." Genesis 1:3 (WEBU)'},
+ {id:'luk2',code:'SAVIORBORN',ref:'Luke 2:11',text:'"For there is born to you today, in David\u2019s city, a Savior, who is Christ the Lord." Luke 2:11 (WEBU)'}
+];
+var KEY='wml_lab_v1',got={};try{got=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(got))}catch(e){}}
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.textContent=h;return e}
+function render(){
+ var ch=document.getElementById('chars'),vs=document.getElementById('verses');ch.innerHTML='';vs.innerHTML='';
+ CHARS.forEach(function(c){var on=got[c.id],d=el('div','card'+(on?'':' locked'));var i=el('img');i.src=c.img;i.alt=on?c.name+' coloring art':'Locked character card';i.loading='lazy';d.appendChild(i);d.appendChild(el('h3','',on?c.name:'Locked'));d.appendChild(el('p','',on?c.text:'Find this code word in a book or printable.'));ch.appendChild(d)});
+ VERSES.forEach(function(v){var on=got[v.id],d=el('div','card'+(on?'':' locked'));d.appendChild(el('div','badge',on?v.ref:'?'));d.appendChild(el('p','',on?v.text:'Locked verse badge'));vs.appendChild(d)});
+ var all=CHARS.length+VERSES.length,n=Object.keys(got).filter(function(k){return got[k]}).length,p=n/all;
+ document.getElementById('count').textContent=n;document.getElementById('total').textContent=all;document.getElementById('bar').style.width=(p*100)+'%';
+ document.getElementById('rank').textContent=p>=1?'Give God the glory':p>=.6?'Scientist':p>=.3?'Investigator':'Explorer';
+}
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+ var c=document.getElementById('code').value.toUpperCase().replace(/[^A-Z]/g,''),m=document.getElementById('msg'),hit=null;
+ CHARS.concat(VERSES).forEach(function(x){if(x.code===c)hit=x});
+ if(!hit){m.textContent='That code word did not match. Check the spelling and try again.';return}
+ if(got[hit.id]){m.textContent='You already unlocked '+(hit.name||hit.ref)+'.';return}
+ got[hit.id]=1;save();render();m.textContent='Unlocked: '+(hit.name||hit.ref)+'!';document.getElementById('code').value='';
+});
+document.getElementById('reset').addEventListener('click',function(){if(confirm('Reset all badges on this device?')){got={};save();render()}});
+render();
+})();
+</script>
+</body></html>
